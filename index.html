@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TFM Metalúrgica - Soluções Industriais de Aço</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* --- VARIÁVEIS DE COR E TIPOGRAFIA --- */
+        :root {
+            --cor-fundo-escuro: #121212;
+            --cor-fundo-cinza: #1e1e1e;
+            --cor-fundo-claro: #f4f4f4;
+            --cor-texto-claro: #ffffff;
+            --cor-texto-escuro: #333333;
+            --cor-azul-tecnologia: #003366;
+            --cor-laranja-cta: #ff6600;
+            --cor-laranja-hover: #e65c00;
+            --fonte-titulo: 'Montserrat', sans-serif;
+            --fonte-texto: 'Roboto', sans-serif;
+        }
+
+        /* --- RESET GERAL --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--fonte-texto);
+            color: var(--cor-texto-escuro);
+            line-height: 1.6;
+            background-color: var(--cor-fundo-claro);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--fonte-titulo);
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- BOTÕES --- */
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-family: var(--fonte-titulo);
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+
+        .btn-primario {
+            background-color: var(--cor-laranja-cta);
+            color: var(--cor-texto-claro);
+        }
+
+        .btn-primario:hover {
+            background-color: var(--cor-laranja-hover);
+        }
+
+        .btn-secundario {
+            background-color: transparent;
+            color: var(--cor-texto-claro);
+            border: 2px solid var(--cor-texto-claro);
+        }
+
+        .btn-secundario:hover {
+            background-color: var(--cor-texto-claro);
+            color: var(--cor-texto-escuro);
+        }
+
+        /* --- CABEÇALHO --- */
+        header {
+            background-color: var(--cor-fundo-escuro);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--fonte-titulo);
+            font-size: 24px;
+            color: var(--cor-texto-claro);
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--cor-laranja-cta);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: var(--cor-texto-claro);
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--cor-laranja-cta);
+        }
+
+        /* --- HERO SECTION (Home) --- */
+        #home {
+            height: 100vh;
+            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)), url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--cor-texto-claro);
+            padding-top: 80px;
+        }
+
+        #home h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        #home h2 {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #cccccc;
+        }
+
+        #home p.proposta {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+        }
+
+        .hero-botoes {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* --- PARCEIROS --- */
+        #parceiros {
+            background-color: var(--cor-fundo-claro);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .parceiros-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            opacity: 0.6;
+        }
+
+        .parceiros-logos span {
+            font-family: var(--fonte-titulo);
+            font-size: 24px;
+            font-weight: 700;
+            color: #555;
+        }
+
+        /* --- SOBRE NÓS --- */
+        #sobre {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+        .section-titulo {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: var(--cor-azul-tecnologia);
+            text-transform: uppercase;
+        }
+
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .sobre-texto h3 {
+            margin-bottom: 15px;
+            color: var(--cor-laranja-cta);
+        }
+
+        .mvv-box {
+            background-color: var(--cor-fundo-claro);
+            padding: 20px;
+            border-left: 4px solid var(--cor-laranja-cta);
+            margin-bottom: 20px;
+        }
+
+        /* --- SERVIÇOS --- */
+        #servicos {
+            padding: 80px 0;
+            background-color: var(--cor-fundo-claro);
+        }
+
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .servico-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .servico-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .servico-card h3 {
+            color: var(--cor-azul-tecnologia);
+            margin-bottom: 15px;
+        }
+
+        .servico-card p {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        /* --- PORTFÓLIO --- */
+        #portfolio {
+            padding: 80px 0;
+            background-color: var(--cor-fundo-escuro);
+            color: var(--cor-texto-claro);
+        }
+
+        #portfolio .section-titulo {
+            color: var(--cor-texto-claro);
+        }
+
+        .case-estudo {
+            background-color: var(--cor-fundo-cinza);
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 8px;
+            border-bottom: 3px solid var(--cor-laranja-cta);
+        }
+
+        .case-estudo h3 {
+            color: var(--cor-laranja-cta);
+            margin-bottom: 10px;
+        }
+
+        .case-estudo strong {
+            color: #ffffff;
+        }
+
+        /* --- CONTATO --- */
+        #contato {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+        .contato-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .formulario-contato {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .formulario-contato input, .formulario-contato select, .formulario-contato textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: var(--fonte-texto);
+        }
+
+        .formulario-contato textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .info-contato {
+            background-color: var(--cor-azul-tecnologia);
+            color: var(--cor-texto-claro);
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .info-contato h3 {
+            margin-bottom: 20px;
+            color: var(--cor-laranja-cta);
+        }
+
+        .info-contato p {
+            margin-bottom: 15px;
+        }
+
+        /* --- RODAPÉ --- */
+        footer {
+            background-color: var(--cor-fundo-escuro);
+            color: var(--cor-texto-claro);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+        }
+
+        /* --- WHATSAPP FLUTUANTE --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            .sobre-grid, .contato-grid {
+                grid-template-columns: 1fr;
+            }
+            #home h1 { font-size: 36px; }
+            nav ul { display: none; } /* Em um site real, aqui entraria um menu hambúrguer */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">TFM <span>Metalúrgica</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#portfolio">Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <h1>Força e Precisão em Soluções Industriais de Aço</h1>
+            <h2>Há 25 anos, transformando desafios complexos em resultados robustos para os setores industriais mais exigentes do mercado.</h2>
+            <p class="proposta">Na TFM Metalúrgica, não entregamos apenas peças de metal; entregamos confiabilidade estrutural. Aliamos tecnologia de ponta, engenharia de precisão e um rigoroso controle de qualidade para garantir que cada projeto atenda às mais rígidas normas técnicas.</p>
+            <div class="hero-botoes">
+                <a href="#contato" class="btn btn-primario">Solicite um Orçamento Personalizado</a>
+                <a href="#servicos" class="btn btn-secundario">Conheça Nossos Serviços</a>
+                <a href="#portfolio" class="btn btn-secundario">Veja Nossos Projetos</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="parceiros">
+        <div class="container">
+            <p>Temos orgulho de ser a base de operações de gigantes do mercado.</p>
+            <div class="parceiros-logos">
+                <span>GERDAU</span>
+                <span>VOTORANTIM</span>
+                <span>NISSIN</span>
+                <span>DSM</span>
+                <span>CSM</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="container">
+            <h2 class="section-titulo">A Forja da Nossa História</h2>
+            <div class="sobre-grid">
+                <div class="sobre-texto">
+                    <p>Fundada há 25 anos em um polo industrial estratégico, a TFM Metalúrgica nasceu com um objetivo claro: suprir a lacuna por soluções metalúrgicas de altíssima complexidade e tolerância zero para falhas. Ao longo de mais de duas décadas, evoluímos de uma caldeiraria tradicional para um complexo fabril de alta tecnologia.</p>
+                    <br>
+                    <p>Investimos continuamente em maquinário CNC, sistemas de corte a laser de última geração e, principalmente, na capacitação técnica do nosso capital humano. Hoje, somos referência nacional para indústrias de base que não podem comprometer a qualidade de suas operações.</p>
+                </div>
+                <div>
+                    <div class="mvv-box">
+                        <h3>Missão</h3>
+                        <p>Fornecer soluções metalúrgicas inovadoras e precisas que impulsionem a produtividade e a segurança das indústrias de base, atuando sempre como um parceiro estratégico focado em resultados reais.</p>
+                    </div>
+                    <div class="mvv-box">
+                        <h3>Visão</h3>
+                        <p>Ser reconhecida como a líder indiscutível em engenharia e fabricação de componentes metálicos de alta complexidade no mercado sul-americano até 2030.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <div class="container">
+            <h2 class="section-titulo">Nossas Especialidades Técnicas</h2>
+            <div class="servicos-grid">
+                
+                <div class="servico-card">
+                    <h3>Soldagem Especializada</h3>
+                    <p>Domínio nos processos MIG/MAG, TIG, Eletrodo Revestido e Solda a Ponto para aços carbono, inoxidáveis e ligas especiais. Total conformidade com normas da AWS.</p>
+                    <strong>Benefícios:</strong> Maior vida útil e integridade estrutural em ambientes de alta vibração.
+                </div>
+
+                <div class="servico-card">
+                    <h3>Corte a Laser de Alta Precisão</h3>
+                    <p>Tecnologia de corte por fibra ótica com precisão milimétrica. Essencial para otimização severa de matéria-prima e cortes limpos sem necessidade de retrabalho.</p>
+                    <strong>Benefícios:</strong> Redução de custos e velocidade de produção incomparável.
+                </div>
+
+                <div class="servico-card">
+                    <h3>Estruturas Metálicas</h3>
+                    <p>Desenvolvimento e pré-montagem de estruturas complexas para galpões industriais modulares e suportes para maquinário pesado.</p>
+                    <strong>Benefícios:</strong> Agilidade na montagem in loco e adequação a memoriais descritivos.
+                </div>
+
+                <div class="servico-card">
+                    <h3>Usinagem CNC</h3>
+                    <p>Alta repetibilidade em tornos e centros de usinagem. Produção desde peças de reposição críticas até lotes para a indústria automotiva.</p>
+                    <strong>Benefícios:</strong> Precisão dimensional extrema e acabamento de superfície superior.
+                </div>
+
+                <div class="servico-card">
+                    <h3>Caldeiraria Pesada</h3>
+                    <p>Fabricação de grandes equipamentos como tanques de armazenamento, vasos de pressão, moegas e silos, suportando ambientes agressivos.</p>
+                    <strong>Benefícios:</strong> Robustez certificada e durabilidade garantida contra desgaste.
+                </div>
+
+                <div class="servico-card">
+                    <h3>Tratamentos de Superfície</h3>
+                    <p>Jateamento, pintura industrial epóxi/poliuretano e galvanização para garantir a longevidade absoluta dos equipamentos.</p>
+                    <strong>Benefícios:</strong> Defesa impenetrável contra corrosão química e intempéries.
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-titulo">Estudos de Caso</h2>
+            
+            <div class="case-estudo">
+                <h3>Expansão de Planta de Processamento Mineral</h3>
+                <p><strong>Setor:</strong> Mineração</p>
+                <p><strong>Desafio:</strong> Fabricar silos de estocagem de minério com reforço contra abrasão extrema em apenas 90 dias.</p>
+                <p><strong>Solução TFM:</strong> Utilização de caldeiraria pesada com aços de alta resistência (Hardox) e soldagem certificada por ultrassom.</p>
+                <p><strong>Resultados:</strong> Entrega 5 dias antes do prazo. Zero falhas de integração e aumento da vida útil do equipamento em 30%.</p>
+            </div>
+
+            <div class="case-estudo">
+                <h3>Suportes Estruturais Offshore</h3>
+                <p><strong>Setor:</strong> Óleo e Gás</p>
+                <p><strong>Desafio:</strong> Componentes metálicos com tolerância milimétrica e tratamento anticorrosivo severo (offshore painting).</p>
+                <p><strong>Solução TFM:</strong> Combinação de corte a laser, usinagem CNC e pintura industrial grau marítimo na mesma planta fabril.</p>
+                <p><strong>Resultados:</strong> Aprovação em 100% dos testes de salinidade, consolidando a TFM como fornecedora Nível A.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div class="container">
+            <h2 class="section-titulo">Pronto para tirar seu projeto do papel?</h2>
+            <div class="contato-grid">
+                
+                <form class="formulario-contato" action="#" method="POST">
+                    <input type="text" placeholder="Nome Completo *" required>
+                    <input type="email" placeholder="E-mail Corporativo *" required>
+                    <input type="tel" placeholder="Telefone / WhatsApp *">
+                    <input type="text" placeholder="Sua Empresa *">
+                    <select required>
+                        <option value="" disabled selected>Qual serviço você necessita? *</option>
+                        <option value="soldagem">Soldagem Especializada</option>
+                        <option value="corte">Corte a Laser</option>
+                        <option value="estruturas">Estruturas Metálicas</option>
+                        <option value="usinagem">Usinagem CNC</option>
+                        <option value="caldeiraria">Caldeiraria Pesada</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                    <textarea placeholder="Fale brevemente sobre as especificações do seu projeto... *" required></textarea>
+                    <button type="submit" class="btn btn-primario" style="width: 100%;">Enviar Solicitação</button>
+                </form>
+
+                <div class="info-contato">
+                    <h3>Fale Direto com a Engenharia</h3>
+                    <p>Nossa equipe técnica avaliará ativamente o seu projeto para sugerir as melhores soluções de fabricação.</p>
+                    <br>
+                    <p><strong>Telefone:</strong> +55 (11) 3000-0000</p>
+                    <p><strong>E-mail:</strong> comercial@tfmmetalurgica.com.br</p>
+                    <p><strong>Endereço:</strong> Via Industrial Norte, 1500 - Distrito Industrial</p>
+                    <br>
+                    <h4>Nossas Certificações:</h4>
+                    <ul>
+                        <li>ISO 9001:2015</li>
+                        <li>Certificação AWS (American Welding Society)</li>
+                        <li>Selo de Conformidade ASME</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 TFM Metalúrgica. Todos os direitos reservados. 25 Anos de Excelência.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5511900000000" class="whatsapp-float" target="_blank" title="Fale com um Especialista no WhatsApp">
+        W</a>
+
+</body>
+</html>
