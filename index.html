@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Método JPS | Comece no Marketing Digital Hoje</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: white;
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 32px;
+      color: #00ff88;
+    }
+    h2 {
+      font-size: 20px;
+      color: #ccc;
+    }
+    .btn {
+      display: inline-block;
+      padding: 15px 25px;
+      background: #00ff88;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    .box {
+      background: #1c1c1c;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 10px;
+    }
+    .timer {
+      font-size: 24px;
+      color: red;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Como ganhar dinheiro no marketing digital mesmo começando do zero</h1>
+  <h2>Sem aparecer, sem experiência e usando apenas o celular</h2>
+
+  <div class="timer" id="timer">05:00</div>
+
+  <a href="https://pay.kiwify.com.br/VU9o5Vd?afid=uz5im4ay" class="btn">QUERO COMEÇAR AGORA</a>
+
+  <div class="box">
+    <h3>Você se identifica?</h3>
+    <p>❌ Já tentou ganhar dinheiro online e não conseguiu</p>
+    <p>❌ Não sabe por onde começar</p>
+    <p>❌ Vê todo mundo ganhando dinheiro e você não</p>
+  </div>
+
+  <div class="box">
+    <h3>O que é o Método JPS?</h3>
+    <p>Um passo a passo simples que te mostra como começar no marketing digital do zero e fazer suas primeiras vendas.</p>
+  </div>
+
+  <div class="box">
+    <h3>O que você vai aprender:</h3>
+    <p>✅ Como vender sem aparecer</p>
+    <p>✅ Como usar apenas o celular</p>
+    <p>✅ Estratégias simples que funcionam</p>
+    <p>✅ Como fazer suas primeiras vendas</p>
+  </div>
+
+  <div class="box">
+    <h3>Depoimentos</h3>
+    <p>"Consegui minha primeira venda em 3 dias!"</p>
+    <p>"Nunca tinha vendido nada, agora entendi tudo."</p>
+  </div>
+
+  <div class="box">
+    <h3>Ainda com dúvidas?</h3>
+    <p>✔ Não precisa experiência</p>
+    <p>✔ Serve para iniciantes</p>
+    <p>✔ Acesso imediato</p>
+  </div>
+
+  <div class="box">
+    <h3>Garantia</h3>
+    <p>Você tem 7 dias para testar. Se não gostar, pode pedir reembolso.</p>
+  </div>
+
+  <a href="https://pay.kiwify.com.br/VU9o5Vd?afid=uz5im4ay" class="btn">COMEÇAR AGORA</a>
+
+</div>
+
+<audio id="alarmSound">
+  <source src="https://www.soundjay.com/buttons/sounds/beep-07.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  let time = 300; // 5 minutos em segundos
+  const timerElement = document.getElementById("timer");
+  const sound = document.getElementById("alarmSound");
+
+  const countdown = setInterval(() => {
+    let minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    timerElement.textContent = `${minutes}:${seconds}`;
+
+    if (time <= 0) {
+      clearInterval(countdown);
+      timerElement.textContent = "TEMPO ESGOTADO!";
+      sound.play();
+    }
+
+    time--;
+  }, 1000);
+</script>
+
+</body>
+</html>
