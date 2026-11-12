@@ -1,0 +1,114 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-paper: #f1ede4;
+  --color-ink: #0b0b10;
+  --color-acid: #c6f432;
+  --color-card: #fbf9f4;
+  --font-serif: 'Instrument Serif', 'Times New Roman', serif;
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  background: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-acid);
+  color: var(--color-ink);
+}
+
+/* ---------- Tema light/dark dirigido pelo scroll ---------- */
+.page {
+  --bg: var(--color-paper);
+  --fg: var(--color-ink);
+  --line: rgb(11 11 16 / 0.12);
+  color: var(--fg);
+  transition: color 0.9s cubic-bezier(0.65, 0, 0.15, 1);
+}
+.page[data-theme='dark'] {
+  --bg: var(--color-ink);
+  --fg: var(--color-paper);
+  --line: rgb(241 237 228 / 0.16);
+}
+/* Fundo próprio em cada seção: mantém o blend da fita correto mesmo quando pinada */
+.theme-bg {
+  background-color: var(--bg);
+  transition: background-color 0.9s cubic-bezier(0.65, 0, 0.15, 1);
+}
+.hairline {
+  border-color: var(--line);
+  transition: border-color 0.9s;
+}
+
+/* ---------- Tipografia editorial ---------- */
+.display {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 0.94;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+.display em {
+  font-style: italic;
+  letter-spacing: -0.035em;
+}
+/* folga para itálicos/descendentes dentro da máscara do SplitText */
+.split-line-mask {
+  padding: 0.06em 0.12em 0.16em;
+  margin: -0.06em -0.12em -0.16em;
+}
+
+/* ---------- Fita de tinta ---------- */
+.ribbon {
+  mix-blend-mode: difference;
+  color: #fff;
+}
+.ribbon-path {
+  stroke-width: 46;
+}
+@media (min-width: 768px) {
+  .ribbon-path {
+    stroke-width: 58;
+  }
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--color-card);
+  color: var(--color-ink);
+  border: 1px solid rgb(11 11 16 / 0.06);
+  border-radius: 18px;
+  box-shadow:
+    0 1px 1px rgb(11 11 16 / 0.04),
+    0 12px 28px -10px rgb(11 11 16 / 0.22);
+}
+.float-card,
+.fc-mouse,
+.fc-idle {
+  will-change: transform;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .page,
+  .theme-bg {
+    transition: none;
+  }
+}
