@@ -53,6 +53,7 @@
       <span class="sk__top mono"><span>${esc(s.codigo)}</span><span>${pad(i + 1)} / ${pad(C.skills.length)}</span></span>
       <span class="sk__icon"><span>${esc(s.titulo.slice(0, 2).toUpperCase())}</span></span>
       <h3>${esc(s.titulo)}</h3>
+      <span class="sk__txt">${esc(s.texto)}</span>
       <span class="sk__bar"><i style="width:${s.nivel}%"></i></span>
     </button>`).join("");
 
@@ -96,7 +97,7 @@
     });
     walk(el); return out;
   }
-  function scramble(el, txt, dur = 450) {
+  function scramble(el, txt, dur = 320) {
     el.dataset.final = txt;
     if (!motion) { el.textContent = txt; return; }
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/#_", t0 = performance.now();
@@ -183,6 +184,17 @@
   const wi = { name: $("#workName"), text: $("#workText"), idx: $("#workIdx"), type: $("#workType"), year: $("#workYear"), count: $("#workCount"), box: $("#workInfo") };
   let spin = { target: 0, rot: -STEP * 0.6, drag: 0, active: -1, down: null, on: false };
   function layoutSpiral(rot) {
+    // celular: carrossel horizontal plano (um card por vez), mais legível que a espiral 3D
+    if (innerWidth < 760) {
+      items.forEach((it, i) => {
+        const k = i - rot / STEP, a = Math.abs(k);
+        it.style.transform = `translate3d(${(k * 80).toFixed(2)}vw, ${(Math.min(a, 1) * 22).toFixed(1)}px, 0) rotate(${(k * -3).toFixed(2)}deg) scale(${(1 - Math.min(a, 1) * 0.14).toFixed(3)})`;
+        it.style.filter = `brightness(${(1 - Math.min(a, 1) * 0.6).toFixed(3)})`;
+        it.style.zIndex = 100 - Math.round(a * 10);
+        it.style.pointerEvents = a < 0.5 ? "auto" : "none";
+      });
+      return Math.max(0, Math.min(C.projetos.length - 1, Math.round(rot / STEP)));
+    }
     const R = Math.min(innerWidth * 0.42, 640), dy = innerWidth < 900 ? 34 : 66;
     items.forEach((it, i) => {
       const a = i * STEP - rot, front = Math.cos((a * Math.PI) / 180);
@@ -319,7 +331,7 @@
         const n = Math.round(range(p, 0.02, 0.62) * mws.length);
         mws.forEach((w, i) => w.classList.toggle("on", i < n));
         marks.forEach(({ m, last }) => { const lit = last.classList.contains("on"); if (lit !== m.classList.contains("lit")) { m.classList.toggle("lit", lit); m.style.setProperty("--mk", lit ? "100%" : "0%"); } });
-        counts.forEach(({ b, end, suf, dec }) => (b.textContent = (end * ease.out(range(p, 0.5, 0.82))).toFixed(dec).replace(".", ",") + suf));
+        counts.forEach(({ b, end, suf, dec }) => (b.textContent = (end * ease.out(range(p, 0.15, 0.45))).toFixed(dec).replace(".", ",") + suf));
         T($(".man__frame"), `translate3d(0, ${((0.5 - p) * 10).toFixed(2)}vh, 0)`);
         T($(".chev--c"), `translate3d(${(-p * 12).toFixed(2)}vw, ${(-p * 8).toFixed(2)}vh, 0)`);
       } },
@@ -333,7 +345,7 @@
           el.style.opacity = v.toFixed(3);
         });
         T($("#inspect"), `translate3d(${((1 - ease.expo(range(p, 0.05, 0.3))) * 60).toFixed(1)}px, 0, 0)`);
-        if (performance.now() > skHoverUntil) showSkill(Math.min(C.skills.length - 1, Math.floor(range(p, 0.3, 0.98) * C.skills.length)));
+        if (innerWidth > 900 && performance.now() > skHoverUntil) showSkill(Math.min(C.skills.length - 1, Math.floor(range(p, 0.3, 0.98) * C.skills.length)));
       } },
 
     { id: "projetos", len: 4.2, enterFx: "circle", enterArgs: [0.5, 0.55],

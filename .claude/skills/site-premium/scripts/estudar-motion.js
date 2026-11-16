@@ -23,7 +23,10 @@ const { serve, routeVendors, contactSheet, arg } = require("./_lib");
   if (!/^https?:/.test(target)) { server = await serve(path.resolve(target)); url = server.url; }
 
   const browser = await chromium.launch();
-  const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, recordVideo: { dir: out, size: { width: 960, height: 600 } } });
+  const mobile = process.argv.includes("--mobile"); // celular: 390x844, toque, rolagem por dedo
+  const ctx = await browser.newContext(mobile
+    ? { viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, deviceScaleFactor: 2, recordVideo: { dir: out, size: { width: 390, height: 844 } } }
+    : { viewport: { width: 1440, height: 900 }, recordVideo: { dir: out, size: { width: 960, height: 600 } } });
   const page = await ctx.newPage();
   await routeVendors(page, arg("vendor"));
   // Registra tweens criados (duração/ease) assim que o GSAP aparecer na página.
@@ -42,7 +45,8 @@ const { serve, routeVendors, contactSheet, arg } = require("./_lib");
   const marks = [{ t: (Date.now() - t0) / 1000, what: "carregado" }];
 
   // passa o mouse pela primeira tela (hover, parallax, cursor)
-  for (let i = 0; i <= 40; i++) { await page.mouse.move(200 + i * 26, 300 + Math.sin(i / 4) * 180); await page.waitForTimeout(40); }
+  if (mobile) { await page.touchscreen.tap(195, 520); await page.waitForTimeout(1200); }
+  else for (let i = 0; i <= 40; i++) { await page.mouse.move(200 + i * 26, 300 + Math.sin(i / 4) * 180); await page.waitForTimeout(40); }
   marks.push({ t: (Date.now() - t0) / 1000, what: "mouse na hero" });
 
   // rola de forma contínua (como uma pessoa usando a roda), do topo ao fim
@@ -50,7 +54,8 @@ const { serve, routeVendors, contactSheet, arg } = require("./_lib");
   const steps = segs * 20, per = Math.max(40, Math.round(H / steps));
   marks.push({ t: (Date.now() - t0) / 1000, what: `rolagem contínua ${per}px a cada 50ms` });
   for (let i = 0; i < steps * 1.15; i++) {
-    await page.mouse.wheel(0, per); await page.waitForTimeout(50);
+    if (mobile) await page.evaluate((s) => window.scrollBy(0, s), per); else await page.mouse.wheel(0, per);
+    await page.waitForTimeout(50);
     if (await page.evaluate(() => scrollY >= document.documentElement.scrollHeight - innerHeight - 4)) break;
   }
   await page.waitForTimeout(1500);
