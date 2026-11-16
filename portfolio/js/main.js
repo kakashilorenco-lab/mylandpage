@@ -442,7 +442,7 @@
   }
 
   /* ---------- carregamento → entrada do topo ---------- */
-  const lines = ["Calibrando sensores", "Escaneando rosto", "Carregando o kit", "Sistema pronto"];
+  const lines = ["Calibrando sensores", "Ajustando o equipamento", "Carregando o kit", "Sistema pronto"];
   const log = $("#loaderLog"), num = $("#loaderNum"), bar = $("#loaderBar"), loader = $("#loader");
   let shown = 0, target = 0.15, shownLines = 0, done = false;
   const t0 = performance.now();

@@ -21,16 +21,16 @@ window.PORTFOLIO = {
   // Fotos do topo. "rosto" é a foto real. "mascarado" é a camada de cima, que o mouse rasga:
   // deixe "" para usar o modo ESCANEAMENTO (a própria foto em pontos neon, gerada sozinha).
   // Se gerar uma versão mascarada na MESMA pose, coloque o caminho dela aqui.
-  fotos: { rosto: "img/retrato.webp", mascarado: "" },
+  fotos: { rosto: "img/retrato.webp", mascarado: "img/mascarado.webp" },
   foco: [0.5, 0.12], // ponto da foto que fica sempre no quadro (x, y de 0 a 1)
 
   // Pontos clicáveis em cima da foto do topo (x/y em % do quadro)
   pecas: [
-    { x: 50, y: 11, codigo: "TRK 01 / CABEÇA", titulo: "Estratégia", nivel: 90, texto: "Planejamento de lançamentos, funis e posicionamento." },
-    { x: 34, y: 29, codigo: "TRK 02 / VISÃO", titulo: "Design", nivel: 85, texto: "Identidade visual, criativos e páginas que convertem." },
-    { x: 43, y: 42, codigo: "TRK 03 / VOZ", titulo: "Copywriting", nivel: 80, texto: "Textos de venda e roteiros que fazem a pessoa agir." },
-    { x: 18, y: 74, codigo: "TRK 04 / OMBRO", titulo: "Tráfego pago", nivel: 75, texto: "Campanhas no Meta Ads e Google Ads com foco em venda." },
-    { x: 62, y: 82, codigo: "TRK 05 / PEITO", titulo: "Conteúdo", nivel: 85, texto: "Reels, carrosséis e edição de vídeo para crescer." },
+    { x: 46, y: 20, codigo: "TRK 01 / BONÉ", titulo: "Estratégia", nivel: 90, texto: "Planejamento de lançamentos, funis e posicionamento." },
+    { x: 54, y: 37, codigo: "TRK 02 / ÓPTICA", titulo: "Design", nivel: 85, texto: "Identidade visual, criativos e páginas que convertem." },
+    { x: 42, y: 50, codigo: "TRK 03 / MÁSCARA", titulo: "Copywriting", nivel: 80, texto: "Textos de venda e roteiros que fazem a pessoa agir." },
+    { x: 22, y: 82, codigo: "TRK 04 / FLASK L", titulo: "Tráfego pago", nivel: 75, texto: "Campanhas no Meta Ads e Google Ads com foco em venda." },
+    { x: 64, y: 82, codigo: "TRK 05 / FLASK R", titulo: "Conteúdo", nivel: 85, texto: "Reels, carrosséis e edição de vídeo para crescer." },
   ],
 
   // Retrato do painel "Manifesto" (vertical). Deixe "" para mostrar o espaço reservado.
