@@ -5,8 +5,8 @@
    ========================================================= */
 window.PORTFOLIO = {
   // Nome curto que aparece GIGANTE no topo e no rodapé (3 a 6 letras fica melhor)
-  nome: "NOME",
-  nomeCompleto: "Seu Nome Completo",
+  nome: "JOSUÉ",
+  nomeCompleto: "Josué",
   cargo: "Marketing digital & design",
   cidade: "Brasil",
   coordenadas: "23.55°S / 46.63°W", // aparece no rodapé, como detalhe técnico
