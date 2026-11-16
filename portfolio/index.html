@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfólio</title>
+  <meta name="description" content="Portfólio — estratégia, design e marketing digital.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Tela de carregamento -->
+  <div class="loader" id="loader">
+    <div class="loader__num"><span id="loaderNum">0</span><small>%</small></div>
+    <div class="loader__bar"><i id="loaderBar"></i></div>
+    <div class="loader__tag mono">INICIANDO SISTEMA</div>
+  </div>
+
+  <div class="cursor" id="cursor" aria-hidden="true"><i></i></div>
+  <canvas class="topo" id="topo" aria-hidden="true"></canvas>
+
+  <header class="hud-top">
+    <a class="logo mono" href="#top" data-brand>NOME</a>
+    <nav class="nav mono" aria-label="Seções">
+      <a href="#sobre">Sobre</a><a href="#skills">Skills</a><a href="#projetos">Projetos</a><a href="#contato">Contato</a>
+    </nav>
+    <span class="hud-meta mono">BR <span id="clock">00:00</span></span>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="top">
+      <div class="stripe stripe--a" aria-hidden="true"></div>
+      <div class="stripe stripe--b" aria-hidden="true"></div>
+      <div class="hero__line" aria-hidden="true"></div>
+
+      <h1 class="giant" id="giant">
+        <span class="giant__sharp" data-brand>NOME</span>
+        <span class="giant__blur" data-brand aria-hidden="true">NOME</span>
+        <span class="glass" aria-hidden="true"><i></i></span>
+      </h1>
+
+      <div class="figure" id="figure">
+        <canvas id="reveal" aria-label="Foto: passe o mouse para revelar o rosto"></canvas>
+        <div class="hotspots" id="hotspots"></div>
+        <span class="tag mono tag--a">TRK 01 / ROSTO</span>
+        <span class="tag mono tag--b">TRK 03 / KIT + FLASKS</span>
+      </div>
+
+      <div class="intro-card">
+        <span class="mono">SISTEMA 01 —</span>
+        <p data-frase></p>
+      </div>
+
+      <div class="hint mono">
+        <span><i class="dot"></i> PASSE O MOUSE PARA REVELAR / CLIQUE NUMA PEÇA</span>
+        <span class="hint__scroll">ROLE ↓</span>
+      </div>
+
+      <aside class="spot-card" id="spotCard" aria-live="polite">
+        <button class="spot-card__close mono" id="spotClose" aria-label="Fechar">✕</button>
+        <span class="mono spot-card__code" id="spotCode"></span>
+        <h3 id="spotTitle"></h3>
+        <p id="spotText"></p>
+        <div class="meter"><i id="spotMeter"></i></div>
+        <span class="mono spot-card__lvl" id="spotLvl"></span>
+      </aside>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee__track" id="marquee"></div></div>
+
+    <!-- ================= SOBRE ================= -->
+    <section class="about" id="sobre">
+      <span class="label mono">[ 01 ] SOBRE</span>
+      <p class="about__text" id="aboutText"></p>
+      <div class="about__stats" id="stats"></div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section class="skills" id="skills">
+      <header class="sec-head">
+        <span class="label mono">[ 02 ] SKILLS</span>
+        <h2>O que eu<br>faço<span class="neon">.</span></h2>
+      </header>
+      <div class="skills__grid" id="skillsGrid"></div>
+    </section>
+
+    <!-- ================= PROJETOS ================= -->
+    <section class="work" id="projetos">
+      <div class="work__pin" id="workPin">
+        <header class="sec-head">
+          <span class="label mono">[ 03 ] PROJETOS</span>
+          <h2>Trabalhos<br>recentes<span class="neon">.</span></h2>
+        </header>
+        <div class="work__track" id="workTrack"></div>
+      </div>
+    </section>
+
+    <!-- ================= CONTATO ================= -->
+    <section class="contact" id="contato">
+      <span class="label mono">[ 04 ] CONTATO</span>
+      <h2 class="contact__big">Vamos<br>conversar<span class="neon">.</span></h2>
+      <div class="contact__links" id="links"></div>
+      <footer class="foot mono">
+        <span>© <span id="year">2026</span> <span data-nome-completo></span></span>
+        <a href="#top">VOLTAR AO TOPO ↑</a>
+      </footer>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="config.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
