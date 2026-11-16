@@ -30,6 +30,9 @@ window.PORTFOLIO = {
     { x: 65, y: 88, codigo: "TRK 05 / FLASK R", titulo: "Conteúdo", nivel: 85, texto: "Reels, carrosséis e edição de vídeo para crescer." },
   ],
 
+  // Retrato do painel "Manifesto" (vertical). Deixe "" para mostrar o espaço reservado.
+  retrato: "img/retrato.webp",
+
   // Manifesto: **palavra** fica marcada em neon
   manifesto: "Eu não faço post bonito. Eu construo **sistemas que vendem**: estratégia, design e conteúdo trabalhando juntos, do **primeiro clique** até a **venda**.",
   numeros: [

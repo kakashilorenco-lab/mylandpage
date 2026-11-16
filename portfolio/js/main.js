@@ -42,7 +42,8 @@
     const pre = /^\s/.test(txt) ? " " : "", post = /\s$/.test(txt) ? " " : ""; // mantém os espaços originais
     return marked ? `<mark>${ws}</mark>` : pre + ws + post;
   }).join("");
-  $("#stats").innerHTML = C.numeros.map((n) => `<div class="stat"><b data-count="${n.valor}" data-suf="${esc(n.sufixo)}">${n.valor}${esc(n.sufixo)}</b><span class="mono">${esc(n.rotulo)}</span></div>`).join("");
+  if (C.retrato) $("#retrato").innerHTML = `<img src="${esc(C.retrato)}" alt="Retrato de ${esc(C.nomeCompleto)}" loading="lazy" decoding="async">`;
+  $("#stats").innerHTML =C.numeros.map((n) => `<div class="stat"><b data-count="${n.valor}" data-suf="${esc(n.sufixo)}">${n.valor}${esc(n.sufixo)}</b><span class="mono">${esc(n.rotulo)}</span></div>`).join("");
 
   const tapeWords = [C.cargo, ...C.skills.map((s) => s.titulo), C.cidade];
   const strip = tapeWords.map((w) => `<span>${esc(w)} <b>✦</b></span>`).join("");

@@ -199,6 +199,7 @@ section { position: relative; background: var(--bg); color: var(--fg); }
 .manifesto { background: transparent; padding: clamp(80px, 14vh, 150px) var(--pad); }
 .panel { position: relative; background: var(--bg); color: var(--fg); padding: clamp(28px, 5vw, 72px); padding-right: clamp(28px, 34vw, 480px); min-height: 70vh; display: flex; flex-direction: column; gap: 32px; }
 .panel .cross { color: var(--neon); }
+.panel .label { align-self: flex-start; }
 .manifesto__text { font-weight: 800; font-variation-settings: "wdth" 112; font-size: clamp(26px, 3.3vw, 54px); line-height: 1.06; letter-spacing: -.02em; max-width: 24ch; }
 .manifesto__text .mw { opacity: .14; transition: opacity .25s; }
 .manifesto__text .mw.on { opacity: 1; }
@@ -209,6 +210,7 @@ section { position: relative; background: var(--bg); color: var(--fg); }
 .stat span { color: var(--mut); }
 .panel__frame { position: absolute; right: clamp(28px, 4vw, 64px); top: 50%; transform: translateY(-50%); width: clamp(220px, 26vw, 380px); aspect-ratio: 4 / 5; padding: 10px; background: var(--neon); --c: 26px; }
 .panel__frame .media { width: 100%; height: calc(100% - 26px); clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px); }
+.panel__frame img { object-position: 50% 14%; } /* foto vertical: mantém o rosto no quadro */
 .panel__frame .mono { display: block; margin-top: 8px; color: var(--ink); font-size: 10px; }
 .panel__no { position: absolute; right: clamp(8px, 1.2vw, 18px); top: 50%; transform: translateY(-50%) rotate(180deg); writing-mode: vertical-rl; font-weight: 900; font-variation-settings: "wdth" 125; font-size: clamp(40px, 4vw, 64px); color: var(--fg); opacity: .9; display: none; }
 @media (min-width: 1300px) { .panel__no { display: block; } .panel__frame { right: 96px; } }
