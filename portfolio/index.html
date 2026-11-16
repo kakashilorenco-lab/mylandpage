@@ -5,41 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portfólio</title>
   <meta name="description" content="Portfólio — estratégia, design e marketing digital.">
+  <meta name="theme-color" content="#0f0f0e">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&family=JetBrains+Mono:wght@400;600&family=Doto:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Tela de carregamento -->
-  <div class="loader" id="loader">
-    <div class="loader__num"><span id="loaderNum">0</span><small>%</small></div>
+  <!-- ===== LOADER ===== -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__name" data-nome>NOME</div>
+    <div class="loader__log mono" id="loaderLog"></div>
     <div class="loader__bar"><i id="loaderBar"></i></div>
-    <div class="loader__tag mono">INICIANDO SISTEMA</div>
+    <div class="loader__foot mono"><span>SISTEMA DE CAMPO 01</span><span><b id="loaderNum">0</b>%</span></div>
   </div>
 
-  <div class="cursor" id="cursor" aria-hidden="true"><i></i></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><i></i><span id="cursorLabel"></span></div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
   <canvas class="topo" id="topo" aria-hidden="true"></canvas>
 
-  <header class="hud-top">
-    <a class="logo mono" href="#top" data-brand>NOME</a>
-    <nav class="nav mono" aria-label="Seções">
-      <a href="#sobre">Sobre</a><a href="#skills">Skills</a><a href="#projetos">Projetos</a><a href="#contato">Contato</a>
+  <!-- ===== HEADER / HUD ===== -->
+  <header class="hd" id="hd" data-theme="light">
+    <a class="hd__logo mono" href="#topo" data-nome>NOME</a>
+    <nav class="hd__nav mono" aria-label="Seções">
+      <a href="#manifesto">Sobre</a><a href="#skills">Skills</a><a href="#projetos">Projetos</a><a href="#trajetoria">Trajetória</a><a href="#contato">Contato</a>
     </nav>
-    <span class="hud-meta mono">BR <span id="clock">00:00</span></span>
+    <span class="hd__where mono"><i></i><b id="where">01 / Topo</b></span>
+    <a class="btn btn--sm" data-acao data-magnetic><span data-acao-texto>Fale comigo</span><span class="btn__ico">↗</span></a>
   </header>
+  <div class="hud-scroll mono" aria-hidden="true"><span data-nome>NOME</span><i><b id="hudBar"></b></i><span id="hudPct">0%</span></div>
 
   <main>
-    <!-- ================= HERO ================= -->
-    <section class="hero" id="top">
+    <!-- ===== 01 HERO ===== -->
+    <section class="hero" id="topo" data-theme="light" data-label="01 / Topo">
       <div class="stripe stripe--a" aria-hidden="true"></div>
       <div class="stripe stripe--b" aria-hidden="true"></div>
       <div class="hero__line" aria-hidden="true"></div>
+      <span class="cross" style="left:22%;top:30%" aria-hidden="true"></span>
+      <span class="cross" style="left:78%;top:62%" aria-hidden="true"></span>
+      <span class="cross" style="left:12%;top:78%" aria-hidden="true"></span>
 
       <h1 class="giant" id="giant">
-        <span class="giant__sharp" data-brand>NOME</span>
-        <span class="giant__blur" data-brand aria-hidden="true">NOME</span>
+        <span class="sr" data-nome-completo></span>
+        <span class="giant__sharp" data-nome aria-hidden="true">NOME</span>
+        <span class="giant__blur" data-nome aria-hidden="true">NOME</span>
         <span class="glass" aria-hidden="true"><i></i></span>
       </h1>
 
@@ -50,17 +60,17 @@
         <span class="tag mono tag--b">TRK 03 / KIT + FLASKS</span>
       </div>
 
-      <div class="intro-card">
-        <span class="mono">SISTEMA 01 —</span>
+      <div class="intro-card chamfer">
+        <span class="mono"><span data-cargo></span></span>
         <p data-frase></p>
       </div>
 
       <div class="hint mono">
-        <span><i class="dot"></i> PASSE O MOUSE PARA REVELAR / CLIQUE NUMA PEÇA</span>
-        <span class="hint__scroll">ROLE ↓</span>
+        <span><i class="dot"></i> Passe o mouse para revelar / clique numa peça</span>
+        <span class="hint__scroll">Role ↓</span>
       </div>
 
-      <aside class="spot-card" id="spotCard" aria-live="polite">
+      <aside class="spot-card chamfer" id="spotCard" aria-live="polite">
         <button class="spot-card__close mono" id="spotClose" aria-label="Fechar">✕</button>
         <span class="mono spot-card__code" id="spotCode"></span>
         <h3 id="spotTitle"></h3>
@@ -70,50 +80,126 @@
       </aside>
     </section>
 
-    <div class="marquee" aria-hidden="true"><div class="marquee__track" id="marquee"></div></div>
-
-    <!-- ================= SOBRE ================= -->
-    <section class="about" id="sobre">
-      <span class="label mono">[ 01 ] SOBRE</span>
-      <p class="about__text" id="aboutText"></p>
-      <div class="about__stats" id="stats"></div>
-    </section>
-
-    <!-- ================= SKILLS ================= -->
-    <section class="skills" id="skills">
-      <header class="sec-head">
-        <span class="label mono">[ 02 ] SKILLS</span>
-        <h2>O que eu<br>faço<span class="neon">.</span></h2>
-      </header>
-      <div class="skills__grid" id="skillsGrid"></div>
-    </section>
-
-    <!-- ================= PROJETOS ================= -->
-    <section class="work" id="projetos">
-      <div class="work__pin" id="workPin">
-        <header class="sec-head">
-          <span class="label mono">[ 03 ] PROJETOS</span>
-          <h2>Trabalhos<br>recentes<span class="neon">.</span></h2>
-        </header>
-        <div class="work__track" id="workTrack"></div>
+    <!-- ===== 02 MANIFESTO ===== -->
+    <section class="manifesto" id="manifesto" data-theme="light" data-label="02 / Sobre">
+      <div class="panel chamfer-lg" data-theme="dark">
+        <span class="mono label">02 / Manifesto</span>
+        <p class="manifesto__text" id="manifestoText"></p>
+        <div class="stats" id="stats"></div>
+        <div class="panel__frame chamfer" aria-hidden="true"><div class="media" data-ph="RETRATO"></div><span class="mono">ARQ-01 / RETRATO</span></div>
+        <span class="panel__no" aria-hidden="true">N°02</span>
+        <span class="cross" style="right:28px;top:28px" aria-hidden="true"></span>
+        <span class="cross" style="left:28px;bottom:28px" aria-hidden="true"></span>
       </div>
     </section>
 
-    <!-- ================= CONTATO ================= -->
-    <section class="contact" id="contato">
-      <span class="label mono">[ 04 ] CONTATO</span>
-      <h2 class="contact__big">Vamos<br>conversar<span class="neon">.</span></h2>
+    <div class="tape" aria-hidden="true"><div class="tape__track" id="tape"></div></div>
+
+    <!-- ===== 03 SKILLS ===== -->
+    <section class="skills" id="skills" data-theme="light" data-label="03 / Skills">
+      <header class="sec-head">
+        <span class="mono label">03 / Skills</span>
+        <h2 class="title" data-split>Seis peças. <em>Um sistema.</em></h2>
+      </header>
+      <div class="skills__wrap">
+        <div class="skills__grid" id="skillsGrid"></div>
+        <aside class="inspect chamfer-lg" id="inspect" data-theme="dark">
+          <span class="mono inspect__code" id="inCode">SK-01</span>
+          <div class="inspect__big" id="inNum">01</div>
+          <h3 id="inTitle">—</h3>
+          <p id="inText">—</p>
+          <div class="meter"><i id="inMeter"></i></div>
+          <div class="inspect__row mono"><span>Nível</span><span id="inLvl">0%</span></div>
+          <div class="inspect__tags mono" id="inTags"></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- transição: faixas diagonais (claro → escuro) -->
+    <div class="t-wipe" aria-hidden="true"><div class="t-wipe__in"><i></i><i></i><i></i></div></div>
+
+    <!-- ===== 04 PROJETOS (espiral) ===== -->
+    <section class="work" id="projetos" data-theme="dark" data-label="04 / Projetos">
+      <div class="work__pin" id="workPin">
+        <header class="sec-head sec-head--row">
+          <div><span class="mono label">04 / Projetos</span>
+          <h2 class="title" data-split>Trabalhos <em>em órbita.</em></h2></div>
+          <p class="lead">Role ou arraste para girar a espiral.</p>
+        </header>
+        <div class="spiral" id="spiral"></div>
+        <a class="work__info chamfer" id="workInfo" href="#">
+          <span class="mono" id="workIdx">01 / 06</span>
+          <h3 id="workName">—</h3>
+          <p id="workText">—</p>
+          <span class="mono work__meta"><span id="workType">—</span><span id="workYear">—</span></span>
+        </a>
+        <div class="work__count" id="workCount" aria-hidden="true">01</div>
+      </div>
+    </section>
+
+    <!-- transição: pixels (escuro → claro) -->
+    <div class="t-pixels" aria-hidden="true"><div class="t-pixels__in" id="pixels"></div></div>
+
+    <!-- ===== 05 KIT (peças explodem) ===== -->
+    <section class="kit" id="kit" data-theme="light" data-label="05 / Kit">
+      <div class="kit__pin" id="kitPin">
+        <h2 class="kit__title title" data-split>Meu kit <em>de campo.</em></h2>
+        <p class="kit__hint mono">Cada ferramenta tem um trabalho</p>
+        <div class="kit__pieces" id="kitPieces"></div>
+      </div>
+    </section>
+
+    <!-- ===== 06 TRAJETÓRIA ===== -->
+    <section class="route" id="trajetoria" data-theme="dark" data-label="06 / Trajetória">
+      <header class="sec-head">
+        <span class="mono label">06 / Trajetória</span>
+        <h2 class="title" data-split>Todo projeto <em>deixa rastro.</em></h2>
+      </header>
+      <div class="route__map" id="routeMap">
+        <svg class="route__svg" id="routeSvg" preserveAspectRatio="none" aria-hidden="true"><path id="routePath"/><path id="routeGhost"/></svg>
+        <div class="route__stops" id="routeStops"></div>
+      </div>
+    </section>
+
+    <!-- ===== 07 PROCESSO ===== -->
+    <section class="process" id="processo" data-theme="light" data-label="07 / Processo">
+      <div class="process__pin" id="processPin">
+        <header class="sec-head"><span class="mono label">07 / Processo</span>
+        <h2 class="title" data-split>Como eu <em>trabalho.</em></h2></header>
+        <div class="steps">
+          <div class="steps__num" id="stepNum">1</div>
+          <div class="steps__list" id="stepList"></div>
+          <svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" class="ring__bg"/><circle cx="60" cy="60" r="52" class="ring__fg" id="ring"/><text x="60" y="66" id="ringTxt">0%</text></svg>
+        </div>
+        <div class="segbar" id="segbar" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ===== 08 CONTATO ===== -->
+    <section class="contact" id="contato" data-theme="accent" data-label="08 / Contato">
+      <span class="mono label label--dark">08 / Contato</span>
+      <h2 class="contact__big" id="contactBig">Vamos <em>conversar?</em></h2>
+      <a class="btn btn--dark btn--lg" data-acao data-magnetic><span data-acao-texto>Fale comigo</span><span class="btn__ico">↗</span></a>
       <div class="contact__links" id="links"></div>
-      <footer class="foot mono">
-        <span>© <span id="year">2026</span> <span data-nome-completo></span></span>
-        <a href="#top">VOLTAR AO TOPO ↑</a>
-      </footer>
     </section>
   </main>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- ===== FOOTER ===== -->
+  <footer class="ft" data-theme="dark">
+    <div class="ft__cols">
+      <div><span class="mono">Base</span><p><span data-nome-completo></span><br><span data-cidade></span><br><span class="mono" data-coord></span></p></div>
+      <div><span class="mono">Navegar</span><a href="#manifesto">Sobre</a><a href="#skills">Skills</a><a href="#projetos">Projetos</a><a href="#trajetoria">Trajetória</a></div>
+      <div><span class="mono">Hora local</span><p class="ft__clock" id="clock">--:--</p></div>
+    </div>
+    <div class="ft__word" id="ftWord" data-nome aria-hidden="true">NOME</div>
+    <div class="ft__base mono"><span>© <span id="year"></span> <span data-nome-completo></span></span><a href="#topo">Voltar ao topo ↑</a></div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="config.js"></script>
-  <script src="main.js"></script>
+  <script src="js/fx.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
