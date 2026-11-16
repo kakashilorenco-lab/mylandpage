@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ÓRBITA — Estúdio de sites</title>
+  <meta name="description" content="Modelo inicial da skill site-premium. Todo o conteúdo é fictício: troque tudo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,800;1,800&family=Manrope:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+  <!-- LOADER -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <span class="loader__brand">ÓRBITA</span>
+    <span class="loader__num mono"><b id="loaderNum">0</b>%</span>
+  </div>
+
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header class="hd" id="hd" data-theme="dark">
+    <a class="hd__logo" href="#inicio">ÓRBITA<sup>™</sup></a>
+    <nav class="hd__nav mono" aria-label="Principal">
+      <a href="#servicos">Serviços</a><a href="#trabalhos">Trabalhos</a><a href="#processo">Processo</a><a href="#faq">Dúvidas</a>
+    </nav>
+    <span class="hd__where mono"><i></i><b id="where">01 Início</b></span>
+    <a class="btn btn--sm" href="#contato" data-magnetic>Fale comigo <span class="btn__ico">→</span></a>
+  </header>
+
+  <main>
+    <!-- 01 HERO -->
+    <section class="scene hero" id="inicio" data-theme="dark" data-label="01 Início">
+      <div class="hero__ghost" aria-hidden="true">ÓRBITA</div>
+      <div class="hero__visual" id="prism" aria-hidden="true">
+        <div class="prism"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="hero__copy">
+        <p class="eyebrow mono" data-scramble>Estúdio digital · Brasil</p>
+        <h1 class="title title--xl" data-split>Presença digital com <em>peso</em> de marca grande</h1>
+        <p class="lead">Estratégia, design e código no mesmo lugar. Do rascunho ao lançamento, sem intermediários.</p>
+        <a class="btn" href="#contato" data-magnetic>Começar um projeto <span class="btn__ico">→</span></a>
+      </div>
+      <span class="hero__hint mono">Role para começar ↓</span>
+    </section>
+
+    <!-- 02 PROBLEMA (cena presa) -->
+    <section class="scene problem" id="problema" data-theme="indigo" data-label="02 Problema">
+      <div class="problem__pin" id="problemPin">
+        <div class="problem__copy">
+          <h2 class="title title--lg" data-split>Bonito não basta. <em>Precisa converter.</em></h2>
+          <p class="lead">Um site lento ou confuso custa clientes todos os dias, e você nem vê isso acontecer.</p>
+        </div>
+        <div class="phone" aria-hidden="true">
+          <div class="phone__bar"></div><div class="phone__bar short"></div><div class="phone__box"><span class="spin"></span></div><div class="phone__bar"></div>
+          <span class="phone__t mono"><b id="secs">1</b> s · carregando</span>
+        </div>
+        <div class="problem__words" aria-hidden="true"><span>Rápido.</span><span>Claro.</span><span><em>Memorável.</em></span></div>
+      </div>
+    </section>
+
+    <!-- TRANSIÇÃO: faixas diagonais -->
+    <div class="t-wipe" aria-hidden="true"><div class="t-wipe__pin"><i></i><i></i><i></i></div></div>
+
+    <!-- 03 SERVIÇOS (cards empilhados) -->
+    <section class="scene services" id="servicos" data-theme="light" data-label="03 Serviços">
+      <header class="scene__head">
+        <h2 class="title title--lg" data-split>O que a gente <em>constrói.</em></h2>
+        <p class="lead">Projetos sob medida para quem quer sair do genérico.</p>
+      </header>
+      <div class="stack">
+        <article class="stack__card"><div class="stack__media media" data-ph="SITE"></div><div class="stack__txt"><span class="mono">01 / Sites</span><h3 class="title title--md">Feito para <em>ser lembrado.</em></h3><p>Sites institucionais e portfólios com animação e carregamento rápido.</p><a class="btn btn--ghost" href="#contato">Detalhes +</a></div></article>
+        <article class="stack__card"><div class="stack__media media" data-ph="LOJA"></div><div class="stack__txt"><span class="mono">02 / E-commerce</span><h3 class="title title--md">Comprar fica <em>fácil.</em></h3><p>Vitrine, carrinho e pagamento pensados para o celular.</p><a class="btn btn--ghost" href="#contato">Detalhes +</a></div></article>
+        <article class="stack__card"><div class="stack__media media" data-ph="MARCA"></div><div class="stack__txt"><span class="mono">03 / Identidade</span><h3 class="title title--md">Uma marca com <em>personalidade.</em></h3><p>Logo, paleta, tipografia e guia de uso.</p><a class="btn btn--ghost" href="#contato">Detalhes +</a></div></article>
+      </div>
+    </section>
+
+    <!-- TRANSIÇÃO: pixels -->
+    <div class="t-pixels" aria-hidden="true"><div class="t-pixels__pin" id="pixels"></div></div>
+
+    <!-- 04 TRABALHOS (espiral 3D) -->
+    <section class="scene work" id="trabalhos" data-theme="dark" data-label="04 Trabalhos">
+      <div class="work__pin" id="workPin">
+        <header class="scene__head scene__head--row">
+          <h2 class="title title--lg" data-split>Projetos <em>em órbita.</em></h2>
+          <p class="lead">Uma seleção de trabalhos. Role ou arraste para girar.</p>
+        </header>
+        <div class="spiral" id="spiral"></div>
+        <div class="work__info" id="workInfo"><span class="mono" id="workIdx">01 / 08</span><h3 class="title title--md" id="workName">—</h3><p id="workType">—</p></div>
+        <span class="work__hint mono">Role ou arraste para girar a espiral</span>
+      </div>
+    </section>
+
+    <!-- 05 SOBRE -->
+    <section class="scene about" id="sobre" data-theme="light" data-label="05 Sobre">
+      <div class="about__photo media" data-ph="RETRATO" data-wipe-reveal></div>
+      <div class="about__txt">
+        <h2 class="title title--lg" data-split>Oi, eu sou a Ana. <em>Design e código</em> lado a lado.</h2>
+        <p class="lead">Mais de cinco anos criando sites para marcas independentes. Você conversa direto com quem faz.</p>
+        <div class="row"><a class="btn" href="#contato" data-magnetic>Marcar conversa <span class="btn__ico">→</span></a><a class="btn btn--ghost" href="#faq">Minha história +</a></div>
+      </div>
+    </section>
+
+    <!-- 06 PROCESSO (passos presos) -->
+    <section class="scene process" id="processo" data-theme="indigo" data-label="06 Processo">
+      <div class="process__pin" id="processPin">
+        <h2 class="title title--lg" data-split>Como funciona <em>na prática.</em></h2>
+        <div class="steps">
+          <div class="steps__num" id="stepNum">1</div>
+          <div class="steps__list" id="stepList">
+            <div class="step"><span class="mono">01 / 04</span><h3 class="title title--md">Imersão.</h3><p>Entender o negócio, o público e o que precisa acontecer.</p></div>
+            <div class="step"><span class="mono">02 / 04</span><h3 class="title title--md">Direção.</h3><p>Conceito visual, estrutura das páginas e textos.</p></div>
+            <div class="step"><span class="mono">03 / 04</span><h3 class="title title--md">Construção.</h3><p>Design e código juntos, com prévias para você acompanhar.</p></div>
+            <div class="step"><span class="mono">04 / 04</span><h3 class="title title--md">Lançamento.</h3><p>Testes, publicação e ajustes finos depois do ar.</p></div>
+          </div>
+          <svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" class="ring__bg"/><circle cx="60" cy="60" r="52" class="ring__fg" id="ring"/><text x="60" y="66" id="ringTxt">0%</text></svg>
+        </div>
+        <div class="segbar" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      </div>
+    </section>
+
+    <!-- 07 INCLUI -->
+    <section class="scene includes" id="inclui" data-theme="dark" data-label="07 Inclui">
+      <h2 class="title title--lg" data-split>Em todo <em>projeto.</em></h2>
+      <ul class="chips">
+        <li><button class="chip" aria-expanded="false">Layout responsivo <span>+</span></button></li>
+        <li><button class="chip" aria-expanded="false">SEO técnico <span>+</span></button></li>
+        <li><button class="chip" aria-expanded="false">Animações sob medida <span>+</span></button></li>
+        <li><button class="chip" aria-expanded="false">Painel para editar <span>+</span></button></li>
+        <li><button class="chip" aria-expanded="false">Hospedagem configurada <span>+</span></button></li>
+        <li><button class="chip" aria-expanded="false">30 dias de suporte <span>+</span></button></li>
+      </ul>
+    </section>
+
+    <!-- 08 FAQ -->
+    <section class="scene faq" id="faq" data-theme="light" data-label="08 Dúvidas">
+      <h2 class="title title--lg" data-split>Antes de <em>começar.</em></h2>
+      <div class="acc">
+        <details><summary>Quanto custa?<span>+</span></summary><div><p>Cada projeto tem orçamento fechado, enviado depois da imersão.</p></div></details>
+        <details><summary>Quanto tempo leva?<span>+</span></summary><div><p>De duas a seis semanas, conforme o tamanho.</p></div></details>
+        <details><summary>Preciso ter logo?<span>+</span></summary><div><p>Não. A identidade visual pode entrar no mesmo projeto.</p></div></details>
+        <details><summary>Vocês fazem manutenção?<span>+</span></summary><div><p>Sim, com planos mensais depois do lançamento.</p></div></details>
+      </div>
+    </section>
+
+    <!-- 09 CTA -->
+    <section class="scene cta" id="contato" data-theme="accent" data-label="09 Contato">
+      <h2 class="title title--xl" data-split>Bora tirar seu projeto <em>do papel?</em></h2>
+      <p class="lead">Conta sua ideia numa mensagem. A resposta chega no mesmo dia.</p>
+      <a class="btn btn--dark" href="https://wa.me/" data-magnetic>Mandar mensagem <span class="btn__ico">→</span></a>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="ft" data-theme="dark">
+    <div class="ft__cols">
+      <div><span class="mono">Estúdio</span><p>ÓRBITA — Ana Exemplo<br>São Paulo, Brasil<br><span id="clock">--:--</span></p></div>
+      <div><span class="mono">Serviços</span><a href="#servicos">Sites</a><a href="#servicos">Lojas</a><a href="#servicos">Marca</a></div>
+      <div><span class="mono">Contato</span><a href="https://instagram.com/">Instagram</a><a href="https://wa.me/">WhatsApp</a><a href="mailto:ola@exemplo.com">E-mail</a></div>
+    </div>
+    <div class="ft__word" id="ftWord" aria-hidden="true">ÓRBITA</div>
+    <div class="ft__base mono"><span>© <span id="year"></span> Órbita</span><a href="#inicio">Voltar ao topo ↑</a></div>
+  </footer>
+
+  <!-- Bibliotecas (versões fixas). Se a CDN for bloqueada, copie para /vendor e troque o caminho. -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
