@@ -22,8 +22,28 @@ Converse com o usuário no idioma dele (normalmente português), em linguagem si
 | `references/receitas-motion.md` | Passo 5, quando precisar de um efeito que o modelo não tem, ou para ajustar um. |
 | `references/imagens.md` | Passo 6, para placeholders e prompts de imagem (Google Flow etc.). |
 | `references/checklist-qa.md` | Passo 7, antes de entregar. |
-| `scripts/analisar-referencia.js` | Passo 2, se o usuário mandou um site de referência. |
+| `scripts/analisar-referencia.js` | Passo 2, se o usuário mandou um site de referência (estrutura, fontes, cores). |
+| `scripts/estudar-motion.js` | Passo 2 e 7: grava VÍDEO rolando e passando o mouse, gera quadros a 6/s e mede pins, scrub, Lenis e eases. |
+| `assets/engine/engine.js` | Passo 5, quando o pedido é motion de alto nível: motor de cenas empilhadas sem GSAP. |
 | `scripts/qa.js` | Passo 7, para prints e verificação automática. |
+
+## Motion de verdade (lição aprendida)
+
+Prints parados não mostram motion. Para referência E para o seu site, rode
+`node scripts/estudar-motion.js <URL|pasta> --out <rascunho>/mot` e olhe as folhas
+`frames-*.png` (cada folha = 4 s). Compare a sensação, não só o tipo de efeito.
+
+O que separa motion "ok" de motion premium:
+- **Tudo ligado à rolagem, quadro a quadro.** Evite "aparece quando entra na tela" (animações
+  disparadas soltas). Títulos, números, cards e transições devem andar junto com o dedo.
+- **Cenas empilhadas**: a próxima cena cresce POR CIMA da atual (degraus, diagonal, círculo,
+  colunas) enquanto a atual encolhe e escurece um pouco. `assets/engine/engine.js` faz isso:
+  cada `<section class="scene">` com `.stage > .stage__exit > .stage__inner`, e você define
+  `enter(t)` e `update(p)` por cena. Conteúdo maior que a tela rola por dentro sozinho.
+- **Camadas em velocidades diferentes** (formas neon, manchas de luz, cruzes) + leve parallax do mouse.
+- **Lenis com lerp ~0.12** (resposta firme, sem "deslizar demais").
+- **Imagem real no topo.** Sem foto boa, nenhum motion salva. Se faltar a foto, gere uma camada
+  derivada da que existe (ex.: escaneamento em pontos neon da própria foto) em vez de desenho.
 
 ## Passo 1 — Briefing curto
 

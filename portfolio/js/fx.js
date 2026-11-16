@@ -1,4 +1,4 @@
-/* Efeitos de canvas: linhas topográficas e "desmascarar" (rasgar a máscara).
+/* Efeitos de canvas: linhas topográficas e "revelar" (rasgar a camada de cima).
    Expõe window.FX = { drawTopo, makeReveal }. */
 (() => {
   const NEON = "#e4ff1a";
@@ -50,24 +50,65 @@
     }
   }
 
-  /* ---------- desmascarar: foto A por cima, buracos rasgados mostram a foto B ---------- */
-  function makeReveal({ fig, cv, srcA, srcB, reduced, onLoad }) {
+  /* ---------- foto "cobrindo" o quadro (como object-fit: cover) com ponto focal ---------- */
+  function drawCover(ctx, img, w, h, fx = 0.5, fy = 0.2) {
+    const ir = img.naturalWidth / img.naturalHeight, r = w / h;
+    let sw = img.naturalWidth, sh = img.naturalHeight, sx = 0, sy = 0;
+    if (ir > r) { sw = sh * r; sx = (img.naturalWidth - sw) * fx; } else { sh = sw / r; sy = (img.naturalHeight - sh) * fy; }
+    ctx.drawImage(img, sx, sy, sw, sh, 0, 0, w, h);
+  }
+
+  /* ---------- camada de "escaneamento": a própria foto em pontos neon ---------- */
+  function makeScan(photo, W, H, cell) {
+    const src = document.createElement("canvas"); src.width = W; src.height = H;
+    src.getContext("2d").drawImage(photo, 0, 0);
+    const data = src.getContext("2d").getImageData(0, 0, W, H).data;
+    const out = document.createElement("canvas"); out.width = W; out.height = H;
+    const c = out.getContext("2d");
+    c.fillStyle = "#0e0e0c"; c.fillRect(0, 0, W, H); // mesma cor do fundo da página
+    c.fillStyle = NEON;
+    for (let y = 0; y < H; y += cell) for (let x = 0; x < W; x += cell) {
+      const i = ((Math.min(H - 1, y + (cell >> 1)) * W) + Math.min(W - 1, x + (cell >> 1))) * 4;
+      const lum = (data[i] * 0.3 + data[i + 1] * 0.59 + data[i + 2] * 0.11) / 255;
+      const r = Math.pow(lum, 1.35) * cell * 0.66;
+      if (r < 0.5) continue;
+      c.globalAlpha = 0.35 + lum * 0.65;
+      c.beginPath(); c.arc(x + cell / 2, y + cell / 2, r, 0, 6.2832); c.fill();
+    }
+    c.globalAlpha = 1;
+    // linhas de varredura
+    c.fillStyle = "rgba(13,13,11,.35)";
+    for (let y = 0; y < H; y += 3 * (cell / 6)) c.fillRect(0, y, W, Math.max(1, cell / 7));
+    return out;
+  }
+
+  /* ---------- revelar: camada A por cima, rasgos mostram a foto B ---------- */
+  function makeReveal({ fig, cv, srcA, srcB, focus = [0.5, 0.18], reduced, onLoad }) {
     const ctx = cv.getContext("2d");
     const ring = document.createElement("canvas"), rctx = ring.getContext("2d");
-    const imgA = new Image(), imgB = new Image();
-    let w = 0, h = 0, dpr = 1, ready = 0, last = null, lastInput = 0, visible = true;
+    const imgA = srcA ? new Image() : null, imgB = new Image();
+    let layerA = null, layerB = null;
+    let w = 0, h = 0, dpr = 1, ready = 0, need = srcA ? 2 : 1, last = null, lastInput = 0, visible = true;
     const tears = [], bits = [];
     const jag = (n, amt) => Array.from({ length: n }, (_, i) => 1 - amt / 2 + Math.random() * amt + (i % 3 === 0 ? -0.1 : 0));
     const lens = { x: 0, y: 0, tx: 0, ty: 0, k: 0, on: false, pts: jag(30, 0.22), r: 0 };
 
+    function bake() {
+      if (ready < need || !w) return;
+      const W = Math.round(w * dpr), H = Math.round(h * dpr);
+      layerB = document.createElement("canvas"); layerB.width = W; layerB.height = H;
+      drawCover(layerB.getContext("2d"), imgB, W, H, focus[0], focus[1]);
+      if (imgA) { layerA = document.createElement("canvas"); layerA.width = W; layerA.height = H; drawCover(layerA.getContext("2d"), imgA, W, H, focus[0], focus[1]); }
+      else layerA = makeScan(layerB, W, H, Math.max(5, Math.round(6 * dpr)));
+    }
     function resize() {
       const r = fig.getBoundingClientRect();
       dpr = Math.min(devicePixelRatio || 1, 2); w = r.width; h = r.height;
       cv.width = ring.width = Math.round(w * dpr); cv.height = ring.height = Math.round(h * dpr);
-      lens.r = w * 0.17;
+      lens.r = w * 0.18; bake();
     }
     function spawn(x, y, big = 1) {
-      tears.push({ x, y, r: w * (0.1 + Math.random() * 0.06) * big, born: performance.now(), life: 1300 + Math.random() * 700, rot: Math.random() * 6.28, pts: jag(26, 0.45) });
+      tears.push({ x, y, r: w * (0.1 + Math.random() * 0.06) * big, born: performance.now(), life: 1400 + Math.random() * 700, rot: Math.random() * 6.28, pts: jag(26, 0.45) });
       if (tears.length > 40) tears.shift();
       if (!reduced) for (let i = 0; i < 3; i++) bits.push({ x, y, vx: (Math.random() - 0.5) * 2.4, vy: -Math.random() * 2 - 0.4, s: 3 + Math.random() * 5, a: 1 });
     }
@@ -93,35 +134,35 @@
 
     function frame(now) {
       requestAnimationFrame(frame);
-      if (ready < 2 || !w || !visible) return;
-      if (!reduced && now - lastInput > 2600 && Math.random() < 0.018) spawn(w * (0.38 + Math.random() * 0.24), h * (0.26 + Math.random() * 0.3));
+      if (!layerA || !visible) return;
+      if (!reduced && now - lastInput > 2400 && Math.random() < 0.02) spawn(w * (0.36 + Math.random() * 0.28), h * (0.18 + Math.random() * 0.32));
       lens.k += ((lens.on ? 1 : 0) - lens.k) * 0.14;
       lens.x += (lens.tx - lens.x) * 0.25; lens.y += (lens.ty - lens.y) * 0.25;
       const list = [];
       for (let i = tears.length - 1; i >= 0; i--) { const k = scaleOf(tears[i], now); if (k < 0) tears.splice(i, 1); else { tears[i].k = Math.max(0, k); list.push(tears[i]); } }
       if (lens.k > 0.01) list.push({ x: lens.x, y: lens.y, r: lens.r, k: lens.k, pts: lens.pts, rot: 0 });
 
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.globalCompositeOperation = "source-over";
-      ctx.clearRect(0, 0, w, h);
-      ctx.drawImage(imgA, 0, 0, w, h);
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      ctx.drawImage(layerA, 0, 0);
       if (list.length) {
-        ctx.globalCompositeOperation = "destination-out"; paths(ctx, 0, now, list); ctx.fill();
-        ctx.globalCompositeOperation = "source-over";
-        ctx.save(); paths(ctx, 0, now, list); ctx.clip(); ctx.drawImage(imgB, 0, 0, w, h); ctx.restore();
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.save(); paths(ctx, 0, now, list); ctx.clip();
+        ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.drawImage(layerB, 0, 0); ctx.restore();
         rctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         rctx.globalCompositeOperation = "source-over"; rctx.clearRect(0, 0, w, h);
-        rctx.fillStyle = "rgba(228,255,26,.35)"; paths(rctx, 10, now, list); rctx.fill();
+        rctx.fillStyle = "rgba(228,255,26,.32)"; paths(rctx, 11, now, list); rctx.fill();
         rctx.fillStyle = NEON; paths(rctx, 4, now, list); rctx.fill();
         rctx.fillStyle = "#fff"; paths(rctx, 1.2, now, list); rctx.fill();
         rctx.globalCompositeOperation = "destination-out"; paths(rctx, 0, now, list); rctx.fill();
-        ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalCompositeOperation = "source-atop"; ctx.drawImage(ring, 0, 0);
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.globalCompositeOperation = "source-over";
+        ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.drawImage(ring, 0, 0);
       }
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       for (let i = bits.length - 1; i >= 0; i--) {
         const b = bits[i]; b.x += b.vx; b.y += b.vy; b.vy += 0.03; b.a -= 0.018;
         if (b.a <= 0) { bits.splice(i, 1); continue; }
-        ctx.globalAlpha = b.a; ctx.fillStyle = i % 2 ? NEON : "#111"; ctx.fillRect(b.x, b.y, b.s, b.s);
+        ctx.globalAlpha = b.a; ctx.fillStyle = i % 2 ? NEON : "#fff"; ctx.fillRect(b.x, b.y, b.s, b.s);
       }
       ctx.globalAlpha = 1;
     }
@@ -135,14 +176,12 @@
       if (!last || Math.hypot(p.x - last.x, p.y - last.y) > w * 0.055) { spawn(p.x, p.y); last = p; }
     });
     cv.addEventListener("pointerdown", (e) => { const p = local(e); lastInput = performance.now(); spawn(p.x, p.y, 1.5); });
-    // pausa quando a hero sai da tela (economiza bateria)
-    new IntersectionObserver(([en]) => (visible = en.isIntersecting)).observe(fig);
 
-    const done = () => { ready++; onLoad && onLoad(ready / 2); };
-    imgA.onload = imgB.onload = imgA.onerror = imgB.onerror = done;
-    imgA.src = srcA; imgB.src = srcB;
+    const done = () => { ready++; onLoad && onLoad(ready / need); if (ready >= need) bake(); };
+    imgB.onload = imgB.onerror = done; imgB.src = srcB;
+    if (imgA) { imgA.onload = imgA.onerror = done; imgA.src = srcA; }
     resize(); requestAnimationFrame(frame);
-    return { resize, burst: (xp, yp) => spawn((xp / 100) * w, (yp / 100) * h, 1.8) };
+    return { resize, setVisible: (v) => (visible = v), burst: (xp, yp) => spawn((xp / 100) * w, (yp / 100) * h, 1.8) };
   }
 
   window.FX = { drawTopo, makeReveal };
