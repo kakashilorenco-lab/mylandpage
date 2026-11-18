@@ -27,7 +27,7 @@
     "@type": "BeautySalon",
     "name": "Studio Maria Charmosa",
     "description": "Salão de beleza pé na areia na orla da Praia dos Cavaleiros, em Macaé/RJ.",
-    "image": "assets/salao-vista-mar.jpg",
+    "image": "assets/salao-mar.jpg",
     "telephone": "+55 22 99948-1780",
     "address": {
       "@type": "PostalAddress",
@@ -111,7 +111,10 @@
     .loader { display: none; }
     .js .loader { display: block; position: fixed; inset: 0; z-index: 400; background: var(--cream); color: var(--ink); padding: 26px var(--gutter); }
     .ld-top { display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
-    .ld-pearl { position: absolute; left: 50%; top: 46%; width: 120px; height: 120px; margin: -60px 0 0 -60px; border-radius: 50%; transform: scale(0);
+    .ld-mono { position: absolute; left: 50%; top: 44%; width: 180px; height: 150px; margin: -75px 0 0 -90px; color: var(--gold); transform: scale(.6); opacity: 0; }
+    .ld-mono .mono { width: 100%; height: 100%; }
+    .ld-mono .mono .mc-c { stroke-width: 1.4; }
+    .ld-pearl { display: none; position: absolute; left: 50%; top: 46%; width: 120px; height: 120px; margin: -60px 0 0 -60px; border-radius: 50%; transform: scale(0);
       background: radial-gradient(circle at 32% 28%, #fff 0 8%, rgba(255,255,255,0) 26%), radial-gradient(circle at 70% 78%, rgba(14,42,56,.28), transparent 55%), conic-gradient(from 40deg, #f3ddb8, #cfe2ea, #bfdce6, #f6e3c0, #f3ddb8);
       box-shadow: 0 30px 70px -20px rgba(212,170,96,.55); }
     .ld-count { position: absolute; left: var(--gutter); bottom: 14px; font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96; font-size: clamp(6rem, 22vw, 20rem); line-height: .8; letter-spacing: -.04em; }
@@ -198,11 +201,59 @@
     .menu-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; color: rgba(251,244,236,.7); font-size: 15px; border-top: 1px solid rgba(251,244,236,.16); padding-top: 20px; }
 
     /* ── Hero ── */
-    .hero { min-height: 100vh; min-height: 100svh; display: grid; grid-template-rows: 1fr auto; padding: 92px var(--gutter) 20px; overflow: hidden; }
+    .hero { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: space-between; padding: 100px var(--gutter) 20px; overflow: hidden; }
+    .hero-grid { flex: 1; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: clamp(24px, 4vw, 72px); align-items: end; }
+    .hero-left { position: relative; z-index: 2; padding-bottom: 6px; }
+    .hero-left .hero-title { margin-bottom: clamp(22px, 2.6vw, 40px); }
+    .hero-title .ht-2 { text-align: left; margin-top: -.04em; padding-right: 0; }
+    .hero-title .ht-1 { text-transform: none; }
+    .hero-arch { position: relative; z-index: 0; margin: 0; justify-self: end; width: min(100%, 430px, 50vh); }
+    .hero-arch::before { content: ""; position: absolute; left: 16px; top: 16px; right: -16px; bottom: 46px; border: 1px solid var(--gold); border-radius: 999px 999px 34px 34px; pointer-events: none; }
+    .arch-img { position: relative; aspect-ratio: .74; border-radius: 999px 999px 30px 30px; overflow: hidden; background: var(--sand); box-shadow: 0 50px 90px -50px rgba(14,42,56,.6); }
+    .arch-img img { position: absolute; left: 0; top: -6%; width: 100%; height: 112%; object-fit: cover; object-position: 50% 42%; }
+    .hero-arch figcaption { display: flex; justify-content: space-between; gap: 12px; margin-top: 14px; font-size: 13px; color: var(--muted); }
+    .hero-arch .sticker { position: absolute; left: -74px; bottom: 70px; z-index: 3; background: var(--bg); border-radius: 50%; }
+    .mono { width: 44px; height: 37px; color: var(--gold); flex: none; overflow: visible; }
+    .mono text { font-family: var(--serif); }
+    .mono .mc-m { font-size: 82px; fill: currentColor; }
+    .mono .mc-c { font-size: 112px; font-style: italic; fill: none; stroke: currentColor; stroke-width: 2.6; }
+    .logo-txt { display: flex; flex-direction: column; line-height: 1; font-family: var(--serif); font-size: 21px; letter-spacing: -.01em; }
+    .logo-txt small { font-size: 9px; letter-spacing: .5em; text-transform: uppercase; margin-bottom: 5px; }
+
+    /* reveal (full-bleed photo that opens on scroll) */
+    .rv { overflow: hidden; }
+    .rv-pin { position: relative; height: 100vh; height: 100svh; }
+    .rv-frame { position: absolute; inset: 0; overflow: hidden; }
+    .rv-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 55%; }
+    .rv-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,42,56,.25) 0%, rgba(14,42,56,0) 35%, rgba(14,42,56,.1) 55%, rgba(14,42,56,.82) 100%); }
+    .rv-text { position: absolute; left: 0; right: 0; bottom: clamp(28px, 6vh, 70px); z-index: 2; color: #F7F2EB; }
+    .rv-text .tag { border-color: rgba(247,242,235,.35); }
+    .rv-text .big-title { margin-top: 18px; max-width: 11em; }
+    .rv-text .big-title em { color: #E8C98F; }
+    .rv-meta { display: flex; flex-wrap: wrap; gap: 8px 26px; margin-top: 20px; font-size: 15px; color: rgba(247,242,235,.82); }
+
+    /* gallery */
+    .gal { padding: clamp(110px, 13vw, 190px) 0 clamp(60px, 8vw, 120px); }
+    .gal-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 24px; }
+    .gal-head p { margin: 0; max-width: 24em; color: var(--muted); font-size: 1.1rem; }
+    .gal-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; margin-top: clamp(48px, 6vw, 90px); align-items: start; }
+    .g { margin: 0; }
+    .g1 { grid-column: 1 / 8; }
+    .g2 { grid-column: 8 / 13; grid-row: span 2; margin-top: 14vh; }
+    .g3 { grid-column: 2 / 7; margin-top: 2vh; }
+    .g-img { position: relative; overflow: hidden; border-radius: 28px; background: var(--sand); }
+    .g1 .g-img { aspect-ratio: 1320 / 864; }
+    .g2 .g-img { aspect-ratio: 1320 / 1551; border-radius: 999px 999px 28px 28px; }
+    .g3 .g-img { aspect-ratio: 1170 / 791; }
+    .g-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s var(--ease); }
+    .g:hover .g-img img { transform: scale(1.06); }
+    .g figcaption { display: flex; gap: 12px; margin-top: 14px; font-size: 14.5px; color: var(--muted); }
+    .g figcaption b { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); font-size: 18px; line-height: 1; }
     .hero-title { position: relative; z-index: 0; margin: 0; pointer-events: none; padding-top: 1vh; font-weight: 400; }
-    .ht-1 { font-family: var(--sans); font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96; font-size: min(25vw, 41vh);
-      line-height: .8; letter-spacing: -.018em; text-transform: uppercase; margin-left: -.03em; }
-    .ht-2 { font-family: var(--serif); font-style: italic; font-size: min(18.4vw, 30vh); line-height: .9; letter-spacing: -.035em;
+    .ht-k { display: block; font-family: var(--serif); font-size: clamp(13px, 1.25vw, 19px); letter-spacing: .62em; text-transform: uppercase; margin: 0 0 1.4vw .2em; }
+    .ht-1 { font-family: var(--serif); font-weight: 400; font-size: min(10.6vw, 19vh);
+      line-height: .92; letter-spacing: -.035em; margin-left: -.04em; }
+    .ht-2 { font-family: var(--serif); font-style: italic; font-size: min(10.6vw, 19vh); line-height: .95; letter-spacing: -.035em; padding-left: .32em !important;
       text-align: right; color: var(--accent); margin-top: -.12em; padding-right: .06em; }
     .ht-1, .ht-2 { display: block; overflow: hidden; padding-bottom: .05em; }
     .hero-bottom { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 32px; }
@@ -333,8 +384,12 @@
     .ceiling .spot { fill: #FFF3D6; filter: drop-shadow(0 0 6px #FFE3A0); animation: twinkle 3s ease-in-out infinite; }
     .ceiling .spot:nth-of-type(2n) { animation-delay: -1.5s; }
     .panel-gold { position: absolute; bottom: 10%; width: 22%; aspect-ratio: .62; border-radius: 999px 999px 18px 18px; border: 3px solid #D4AA60;
-      background: radial-gradient(60% 50% at 50% 40%, rgba(255,226,160,.9), rgba(212,170,96,.25) 70%), #F7EBD4; box-shadow: 0 0 40px rgba(242,196,107,.55), inset 0 0 20px rgba(255,255,255,.6); display: grid; place-items: center;
-      font-family: var(--serif); font-style: italic; font-size: clamp(2rem, 3.4vw, 3.4rem); color: #9C5B33; animation: glow 4s ease-in-out infinite; }
+      background: radial-gradient(60% 50% at 50% 40%, rgba(255,226,160,.9), rgba(212,170,96,.25) 70%), #F7EBD4; box-shadow: 0 0 40px rgba(242,196,107,.55), inset 0 0 20px rgba(255,255,255,.6);
+      display: grid; grid-template-columns: repeat(4, 1fr); align-content: center; gap: 7px 6px; padding: 26% 14% 12%; animation: glow 4s ease-in-out infinite; }
+    .panel-gold i { display: block; height: clamp(10px, 1.2vw, 16px); border-radius: 3px 3px 2px 2px; background: var(--b, #C9706A); box-shadow: inset 0 3px 0 rgba(0,0,0,.18); }
+    .panel-gold i:nth-child(4n+1) { --b: #B3343E; } .panel-gold i:nth-child(4n+2) { --b: #E4B9A6; }
+    .panel-gold i:nth-child(4n+3) { --b: #D9727F; } .panel-gold i:nth-child(4n) { --b: #8A3A4A; }
+    .panel-gold i:nth-child(5n) { --b: #F2DCCB; } .panel-gold i:nth-child(7n) { --b: #C24A5A; }
     .panel-gold.p1 { left: 16%; } .panel-gold.p2 { right: 16%; animation-delay: -2s; }
     @keyframes led { to { stroke-dashoffset: 0; } }
     @keyframes twinkle { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
@@ -474,11 +529,21 @@
       .logo { font-size: 19px; }
       .nav .btn-sm { display: none; }
       .hero { padding-top: 84px; }
-      .ht-1 { font-size: 31vw; }
-      .ht-2 { font-size: 19.4vw; margin-top: -.02em; }
+      .ht-1, .ht-2 { font-size: 19vw; }
+      .ht-2 { padding-left: .35em !important; }
+      .hero-grid { grid-template-columns: 1fr; gap: 0; }
+      .hero-left { display: contents; }
+      .hero-left .hero-title { order: 1; margin-bottom: 26px; }
+      .hero-arch { order: 2; justify-self: end; width: 50vw; margin: -6px 10px 26px 0; }
+      .hero-arch figcaption { display: none; }
+      .hero-lede { order: 3; }
+      .hero-actions { order: 4; }
+      .hero-lede, .hero-actions { position: relative; z-index: 2; }
+      .gal-grid { grid-template-columns: 1fr; gap: 34px; }
+      .g1, .g2, .g3 { grid-column: auto; margin-top: 0; }
+      .g2 { grid-row: auto; }
       .ocean { height: 440px; }
       .ocean-word { top: 10%; }
-      .hero-bottom { grid-template-columns: 1fr; gap: 0; }
       .sticker { display: none; }
       .hero-actions .btn { flex: 1 1 100%; }
       .hero-foot .scroll-hint { display: none; }
@@ -503,8 +568,8 @@
 
   <!-- Loader -->
   <div class="loader" id="loader" aria-hidden="true">
-    <div class="ld-top"><span>Maria Charmosa</span><span>Macaé · RJ</span></div>
-    <div class="ld-pearl" id="ldPearl"></div>
+    <div class="ld-top"><span>Studio Maria Charmosa</span><span>Macaé · RJ</span></div>
+    <div class="ld-mono" id="ldPearl"><svg class="mono" viewBox="0 0 120 100" aria-hidden="true"><text class="mc-c" x="50" y="86" text-anchor="middle">C</text><text class="mc-m" x="66" y="80" text-anchor="middle">M</text></svg></div>
     <div class="ld-count"><span id="ldNum">0</span><small>%</small></div>
     <div class="ld-caption">trazendo o mar até você…</div>
   </div>
@@ -513,7 +578,7 @@
 
   <!-- Nav -->
   <header class="nav" id="nav">
-    <a class="logo" href="#top" aria-label="Studio Maria Charmosa, início"><span class="logo-pearl"></span><span>Maria <em>Charmosa</em></span></a>
+    <a class="logo" href="#top" aria-label="Studio Maria Charmosa, início"><svg class="mono" viewBox="0 0 120 100" aria-hidden="true"><text class="mc-c" x="50" y="86" text-anchor="middle">C</text><text class="mc-m" x="66" y="80" text-anchor="middle">M</text></svg><span class="logo-txt"><small>Studio</small>Maria Charmosa</span></a>
     <div class="nav-status"><span class="status-dot" id="statusDot"></span><span id="statusText">Terça a sábado · 9h às 20h</span></div>
     <div class="nav-right">
       <a class="btn btn-gold btn-sm" href="#agendar" data-cursor="Bora!"><span class="roll"><span data-t="Agendar">Agendar</span></span></a>
@@ -525,7 +590,7 @@
     <nav class="menu-links" aria-label="Menu">
       <a href="#studio"><small>01</small>O <em>studio</em></a>
       <a href="#servicos"><small>02</small>Serviços</a>
-      <a href="#experiencia"><small>03</small>O <em>espaço</em></a>
+      <a href="#espaco"><small>03</small>O <em>espaço</em></a>
       <a href="#agendar"><small>04</small>Agendar</a>
       <a href="#visite"><small>05</small>Visite</a>
     </nav>
@@ -535,47 +600,77 @@
   <main>
     <!-- ───────── HERO ───────── -->
     <section class="hero" id="top" data-theme="light" data-pearl="hero">
-      <h1 class="hero-title">
-        <span class="sr">Studio Maria Charmosa: salão de beleza pé na areia em Macaé</span>
-        <span class="ht-1" aria-hidden="true">Maria</span>
-        <span class="ht-2" aria-hidden="true">Charmosa</span>
-      </h1>
-
-      <div>
-        <div class="hero-bottom">
-          <div>
-            <p class="hero-lede" data-hero>Salão de vidro <em>pé na areia</em> na Av. Atlântica, Praia dos Cavaleiros. Cabelo, unhas, cílios, sobrancelhas, depilação e massagem, com o mar ali na janela.</p>
-            <div class="hero-actions" data-hero>
-              <a class="btn btn-gold" data-wa="Oi, Studio Maria Charmosa! Vim pelo site e quero agendar um horário." href="#agendar" target="_blank" rel="noopener" data-cursor="WhatsApp">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.42 1.3-1.96 1.38-.5.07-1.13.1-1.82-.12-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.18-4.94-4.37-.15-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.3.58-.37.78-.37h.56c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.15.12.32.02.51-.1.2-.15.32-.29.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.3 2.36 1.45.3.15.46.12.63-.07.17-.2.73-.85.92-1.15.2-.3.39-.24.66-.15.27.1 1.71.81 2 .96.3.15.49.22.56.34.07.12.07.7-.17 1.37Z"/></svg>
-                <span class="roll"><span data-t="Agendar pelo WhatsApp">Agendar pelo WhatsApp</span></span>
-              </a>
-              <a class="btn btn-line" href="#servicos" data-cursor="Ver"><span class="roll"><span data-t="Ver serviços">Ver serviços</span></span></a>
-            </div>
+      <div class="hero-grid">
+        <div class="hero-left">
+          <h1 class="hero-title">
+            <span class="sr">Studio Maria Charmosa: salão de beleza pé na areia em Macaé</span>
+            <span class="ht-k" aria-hidden="true" data-hero>Studio</span>
+            <span class="ht-1" aria-hidden="true">Maria</span>
+            <span class="ht-2" aria-hidden="true">Charmosa</span>
+          </h1>
+          <p class="hero-lede" data-hero>Salão de vidro <em>pé na areia</em> na Av. Atlântica, Praia dos Cavaleiros. Cabelo, unhas, cílios, sobrancelhas, depilação e massagem, com o mar ali na janela.</p>
+          <div class="hero-actions" data-hero>
+            <a class="btn btn-gold" data-wa="Oi, Studio Maria Charmosa! Vim pelo site e quero agendar um horário." href="#agendar" target="_blank" rel="noopener" data-cursor="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.42 1.3-1.96 1.38-.5.07-1.13.1-1.82-.12-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.18-4.94-4.37-.15-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.3.58-.37.78-.37h.56c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.15.12.32.02.51-.1.2-.15.32-.29.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.3 2.36 1.45.3.15.46.12.63-.07.17-.2.73-.85.92-1.15.2-.3.39-.24.66-.15.27.1 1.71.81 2 .96.3.15.49.22.56.34.07.12.07.7-.17 1.37Z"/></svg>
+              <span class="roll"><span data-t="Agendar pelo WhatsApp">Agendar pelo WhatsApp</span></span>
+            </a>
+            <a class="btn btn-line" href="#servicos" data-cursor="Ver"><span class="roll"><span data-t="Ver serviços">Ver serviços</span></span></a>
           </div>
+        </div>
+        <figure class="hero-arch">
+          <div class="arch-img"><img src="assets/hero-fachada.jpg" alt="Fachada de vidro do Studio Maria Charmosa com o monograma dourado e a grade bronze, na Av. Atlântica" width="622" height="864"></div>
+          <figcaption><span>A fachada na orla</span><span>Av. Atlântica, 2200</span></figcaption>
           <a class="sticker" href="#agendar" data-hero aria-label="Agendar horário" data-cursor="Bora!">
             <svg class="ring" viewBox="0 0 150 150" aria-hidden="true"><defs><path id="stk" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs><text><textPath href="#stk">pé na areia ✺ Macaé ✺ desde 2018 ✺ </textPath></text></svg>
             <span class="core"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
           </a>
-        </div>
+        </figure>
+      </div>
+
         <div class="hero-foot" data-hero>
           <span><span class="stars" aria-hidden="true">★★★★★</span> <b>4,9</b> no Google · 62 avaliações</span>
           <span>Av. Atlântica, 2200 · Cavaleiros</span>
           <span class="scroll-hint"><i></i>role pra ver o mar</span>
         </div>
-      </div>
     </section>
 
     <!-- ───────── INTRO ───────── -->
     <section class="intro" id="studio" data-theme="light" data-pearl="intro">
       <div class="wrap content">
         <span class="tag" data-reveal><i></i>O studio</span>
-        <p class="statement" id="statement">Um salão de vidro <span class="pill"><img src="assets/salao-duo.jpg" alt="" loading="lazy"></span> de frente pro mar <span class="pill pill-wave"><svg viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 Q15 12 30 22 T60 22 T90 22 T120 22 V40 H0Z" fill="#8FC3D6"/><path d="M0 28 Q15 20 30 28 T60 28 T90 28 T120 28 V40 H0Z" fill="#F7F2EB" opacity=".85"/></svg></span>, com teto em onda e brilho dourado <span class="pill pill-orb"></span>, onde cabelo, unhas e cílios ganham hora marcada e <em>aquela vista</em> que só a Praia dos Cavaleiros <span class="pill"><img src="assets/entrada-duo.jpg" alt="" loading="lazy"></span> tem.</p>
+        <p class="statement" id="statement">Um salão de vidro <span class="pill"><img src="assets/pill-mar.jpg" alt="" loading="lazy"></span> de frente pro mar <span class="pill pill-wave"><svg viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 Q15 12 30 22 T60 22 T90 22 T120 22 V40 H0Z" fill="#8FC3D6"/><path d="M0 28 Q15 20 30 28 T60 28 T90 28 T120 28 V40 H0Z" fill="#F7F2EB" opacity=".85"/></svg></span>, cadeiras de couro <span class="pill"><img src="assets/pill-cadeiras.jpg" alt="" loading="lazy"></span> e a marca em dourado <span class="pill"><img src="assets/pill-marca.jpg" alt="" loading="lazy"></span>, onde cabelo, unhas e cílios ganham hora marcada e <em>aquela vista</em> que só a Praia dos Cavaleiros <span class="pill pill-orb"></span> tem.</p>
 
         <div class="facts">
           <div class="fact" data-reveal><b data-count="2018" data-from="1990">2018</b><span>Pé na areia desde</span></div>
           <div class="fact" data-reveal><b><span data-count="6">6</span> <em>em 1</em></b><span>Especialidades num só endereço</span></div>
           <div class="fact" data-reveal><b>9h<em>–</em>20h</b><span>De terça a sábado, com hora marcada</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── REVEAL ───────── -->
+    <section class="rv" id="espaco" data-theme="dark" data-pearl="reveal">
+      <div class="rv-pin">
+        <div class="rv-frame"><img src="assets/salao-mar.jpg" alt="Interior do Studio Maria Charmosa: cadeiras de couro caramelo, bancada branca, teto em onda, nichos dourados de esmaltes e janelas de vidro com vista para a Praia dos Cavaleiros" loading="lazy"></div>
+        <div class="rv-text wrap">
+          <span class="tag"><i></i>O espaço</span>
+          <h2 class="big-title">Senta, relaxa <em>e olha o mar.</em></h2>
+          <div class="rv-meta"><span>Fachada de vidro</span><span>Teto em onda</span><span>Nichos dourados de esmaltes</span><span>Cadeiras de couro</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── GALLERY ───────── -->
+    <section class="gal" id="galeria" data-theme="light" data-pearl="gallery">
+      <div class="wrap content">
+        <div class="gal-head">
+          <h2 class="big-title" data-split>Cada canto <em>tem charme.</em></h2>
+          <p data-reveal>Da fachada de vidro ao pufe de couro: é assim o Studio Maria Charmosa, na orla de Macaé.</p>
+        </div>
+        <div class="gal-grid">
+          <figure class="g g1" data-speed="-6" data-cursor="Charme"><div class="g-img"><img src="assets/fachada.jpg" alt="Fachada do Studio Maria Charmosa com vidro, monograma dourado e grade bronze" loading="lazy"></div><figcaption><b>01</b>A fachada de vidro com a grade bronze, de frente pra praia</figcaption></figure>
+          <figure class="g g2" data-speed="8" data-cursor="Charme"><div class="g-img"><img src="assets/noite.jpg" alt="Salão à noite com pufe e cadeiras de couro caramelo e o teto em onda iluminado" loading="lazy"></div><figcaption><b>02</b>À noite, o teto em onda acende sobre o couro caramelo</figcaption></figure>
+          <figure class="g g3" data-speed="-3" data-cursor="Charme"><div class="g-img"><img src="assets/marca.jpg" alt="Logo dourado do Studio Maria Charmosa na parede de cimento queimado com luz em onda" loading="lazy"></div><figcaption><b>03</b>A marca dourada na parede de cimento queimado</figcaption></figure>
         </div>
       </div>
     </section>
@@ -687,20 +782,16 @@
           <article class="stack-card sc-1" style="--i:0">
             <div class="sc-text">
               <span class="sc-n">01</span>
-              <div><h3>Vista <em>pro mar.</em></h3><p>Fachada de vidro na Av. Atlântica. Você senta na cadeira de couro e o mar aparece na janela.</p></div>
+              <div><h3>Couro, madeira <em>e luz quente.</em></h3><p>Cadeiras e pufe de couro caramelo, piso de madeira e a luz dourada do teto. Dá vontade de ficar mais um pouco.</p></div>
             </div>
             <div class="sc-visual">
-              <div class="sc-photo"><img src="assets/salao-duo.jpg" alt="Interior do Studio Maria Charmosa com janelas de vidro de frente para a praia" loading="lazy"></div>
-              <div class="sc-waves" aria-hidden="true">
-                <svg class="wv1" viewBox="0 0 800 100" preserveAspectRatio="none"><path d="M0 50 Q100 20 200 50 T400 50 T600 50 T800 50 V100 H0Z" fill="#D4AA60" opacity=".9"/></svg>
-                <svg class="wv2" viewBox="0 0 800 100" preserveAspectRatio="none"><path d="M0 64 Q100 40 200 64 T400 64 T600 64 T800 64 V100 H0Z" fill="#0E2A38"/></svg>
-              </div>
+              <div class="sc-photo"><img src="assets/onda-noite.jpg" alt="Cadeiras de couro caramelo e o teto em onda iluminado do Studio Maria Charmosa" loading="lazy"></div>
             </div>
           </article>
           <article class="stack-card sc-onda" style="--i:1">
             <div class="sc-text">
               <span class="sc-n">02</span>
-              <div><h3>Até o teto <em>faz onda.</em></h3><p>O teto do salão desenha uma onda iluminada e os painéis dourados brilham na parede. A gente trouxe o mar pra dentro.</p></div>
+              <div><h3>Até o teto <em>faz onda.</em></h3><p>O teto do salão desenha uma onda de luz e os nichos dourados guardam a paleta de esmaltes. A gente trouxe o mar pra dentro.</p></div>
             </div>
             <div class="sc-visual">
               <div class="ceiling" aria-hidden="true">
@@ -709,8 +800,8 @@
                   <path class="led" d="M0 190 C20 190 40 210 80 210 C150 210 170 120 250 120 C330 120 340 230 420 230 C500 230 520 150 600 150"/>
                   <circle class="spot" cx="120" cy="70" r="7"/><circle class="spot" cx="300" cy="55" r="7"/><circle class="spot" cx="480" cy="80" r="7"/>
                 </svg>
-                <div class="panel-gold p1">M</div>
-                <div class="panel-gold p2">C</div>
+                <div class="panel-gold p1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="panel-gold p2"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
               </div>
             </div>
           </article>
@@ -838,7 +929,7 @@
           </div>
           <div class="map" data-reveal>
             <iframe id="mapFrame" title="Mapa: Studio Maria Charmosa, Av. Atlântica, 2200, Macaé" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <div class="map-chip"><img src="assets/entrada-duo.jpg" alt="Fachada de vidro do Studio Maria Charmosa" loading="lazy"><div><strong>Studio Maria Charmosa</strong><span>Fachada de vidro, de frente pra praia</span></div></div>
+            <div class="map-chip"><img src="assets/hero-fachada.jpg" alt="Fachada de vidro do Studio Maria Charmosa" loading="lazy"><div><strong>Studio Maria Charmosa</strong><span>Fachada de vidro, de frente pra praia</span></div></div>
           </div>
         </div>
       </div>
@@ -886,7 +977,7 @@
   };
 
   /* Shared state read by the 3D scene (module script below) */
-  window.PEARL = { x: 0.16, y: -0.02, s: 0, distort: 0.3, color: '#F3DDB8', vel: 0, mx: 0, my: 0, ocean: 0 };
+  window.PEARL = { x: 0.3, y: 0.34, s: 0, distort: 0.3, color: '#F3DDB8', vel: 0, mx: 0, my: 0, ocean: 0 };
 
   (function () {
     'use strict';
@@ -1019,10 +1110,10 @@
 
     /* ---------- Mobile CTA ---------- */
     const mobileCta = $('#mobileCta');
-    let pastHero = false, inBook = false;
+    let pastHero = true, inBook = false;
     const updCta = () => mobileCta.classList.toggle('show', pastHero && !inBook);
+    setTimeout(updCta, 4200);
     if ('IntersectionObserver' in window) {
-      new IntersectionObserver((e) => { pastHero = !e[0].isIntersecting; updCta(); }, { threshold: .05 }).observe($('#top'));
       new IntersectionObserver((e) => { inBook = e[0].isIntersecting; updCta(); }, { threshold: .05 }).observe($('#agendar'));
     }
 
@@ -1030,7 +1121,7 @@
     const loader = $('#loader');
     if (!motion) {
       if (loader) loader.remove();
-      window.PEARL.s = 1;
+      Object.assign(window.PEARL, window.innerWidth >= 900 ? { x: .3, y: .34, s: .42 } : { x: -.5, y: -.08, s: .36 });
       return;
     }
 
@@ -1130,6 +1221,8 @@
 
     /* ---------- Hero intro ---------- */
     const c1 = splitChars($('.ht-1')), c2 = splitChars($('.ht-2'));
+    gsap.set('.arch-img', { clipPath: 'inset(100% 0% 0% 0%)' });
+    gsap.set('.arch-img img', { scale: 1.35 });
     gsap.set(c1, { yPercent: 105, rotate: 6 });
     gsap.set(c2, { yPercent: 110, rotate: -8 });
     gsap.set('[data-hero]', { opacity: 0, y: 30 });
@@ -1138,7 +1231,9 @@
       const tl = gsap.timeline({ defaults: { ease: 'expo.out' }, onComplete: () => { introDone = true; goPearl(pendingPearl); } });
       tl.to(c1, { yPercent: 0, rotate: 0, duration: 1.6, stagger: .06 })
         .to(c2, { yPercent: 0, rotate: 0, duration: 1.6, stagger: .045 }, .12)
-        .to(window.PEARL, { s: 1, duration: 2.2, ease: 'elastic.out(1, .55)' }, .25)
+        .to('.arch-img', { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.6, ease: 'expo.inOut' }, .05)
+        .to('.arch-img img', { scale: 1, duration: 2.2, ease: 'expo.out' }, .3)
+        .to(window.PEARL, { s: (isDesk() ? .42 : .4), duration: 2.2, ease: 'elastic.out(1, .55)' }, .6)
         .to('[data-hero]', { opacity: 1, y: 0, duration: 1.3, stagger: .1 }, .5)
         .add(() => lenis && lenis.start(), .6);
     };
@@ -1148,7 +1243,7 @@
     gsap.set(loader, { clipPath: 'inset(0% 0% 0% 0%)' });
     const ltl = gsap.timeline();
     ltl.to(counter, { v: 100, duration: 1.9, ease: 'power2.inOut', onUpdate: () => { $('#ldNum').textContent = Math.round(counter.v); } })
-      .to('#ldPearl', { scale: 1, duration: 1.9, ease: 'power2.inOut' }, 0)
+      .to('#ldPearl', { scale: 1, opacity: 1, duration: 1.9, ease: 'power2.inOut' }, 0)
       .to('#ldPearl', { scale: 14, opacity: 0, duration: .9, ease: 'expo.in' })
       .to(loader, { clipPath: 'inset(0 0 100% 0)', duration: 1, ease: 'expo.inOut' }, '-=.45')
       .add(intro, '-=.65')
@@ -1156,8 +1251,24 @@
     setTimeout(() => { if (document.body.contains(loader)) { loader.remove(); intro(); } }, 7000);
 
     // hero parallax on scroll
-    gsap.to('.ht-1', { xPercent: -14, ease: 'none', scrollTrigger: { trigger: '#top', start: 'top top', end: 'bottom top', scrub: true } });
-    gsap.to('.ht-2', { xPercent: 12, ease: 'none', scrollTrigger: { trigger: '#top', start: 'top top', end: 'bottom top', scrub: true } });
+    gsap.to('.ht-1', { xPercent: -10, ease: 'none', scrollTrigger: { trigger: '#top', start: 'top top', end: 'bottom top', scrub: true } });
+    gsap.to('.ht-2', { xPercent: 10, ease: 'none', scrollTrigger: { trigger: '#top', start: 'top top', end: 'bottom top', scrub: true } });
+    gsap.to('.arch-img img', { yPercent: 8, ease: 'none', scrollTrigger: { trigger: '#top', start: 'top top', end: 'bottom top', scrub: true } });
+
+    /* ---------- Reveal: the salon opens up to full screen ---------- */
+    const rvTl = gsap.timeline({ scrollTrigger: { trigger: '#espaco', start: 'top top', end: () => '+=' + Math.round(window.innerHeight * (isDesk() ? 1.3 : .9)), pin: true, scrub: 1, invalidateOnRefresh: true } });
+    rvTl.fromTo('.rv-frame', { clipPath: () => isDesk() ? 'inset(20% 32% 20% 32% round 320px 320px 32px 32px)' : 'inset(18% 12% 18% 12% round 200px 200px 28px 28px)' },
+                             { clipPath: 'inset(0% 0% 0% 0% round 0px 0px 0px 0px)', ease: 'power2.inOut', duration: 1 })
+        .fromTo('.rv-frame img', { scale: 1.45 }, { scale: 1, ease: 'power2.out', duration: 1 }, 0)
+        .fromTo('.rv-text > *', { y: 60, opacity: 0 }, { y: 0, opacity: 1, stagger: .08, duration: .45, ease: 'power3.out' }, .6);
+
+    /* ---------- Gallery: curtain reveal + parallax ---------- */
+    $$('.g').forEach((g) => {
+      const box = $('.g-img', g), img = $('img', g);
+      gsap.fromTo(box, { clipPath: 'inset(100% 0% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.5, ease: 'expo.inOut', scrollTrigger: { trigger: g, start: 'top 88%' } });
+      gsap.fromTo(img, { scale: 1.35 }, { scale: 1, duration: 2, ease: 'expo.out', scrollTrigger: { trigger: g, start: 'top 88%' } });
+      if (isDesk()) gsap.to(g, { yPercent: +g.dataset.speed || 0, ease: 'none', scrollTrigger: { trigger: g, start: 'top bottom', end: 'bottom top', scrub: true } });
+    });
 
     /* ---------- Titles & reveals ---------- */
     $$('[data-split]').forEach((el) => {
@@ -1256,7 +1367,9 @@
       gold:  { '--bg': '#D4AA60', '--fg': '#14101A', '--muted': 'rgba(20,16,26,0.72)', '--line': 'rgba(20,16,26,0.22)', '--accent': '#0E2A38' }
     };
     const PSTATES = {
-      hero:     { d: { x: .16, y: -.04, s: 1, distort: .19, color: '#F0D3A6' },  m: { x: .22, y: .02, s: .74, distort: .19, color: '#F0D3A6' } },
+      hero:     { d: { x: .3, y: .34, s: .42, distort: .2, color: '#F0D3A6' },  m: { x: -.5, y: -.08, s: .36, distort: .2, color: '#F0D3A6' } },
+      reveal:   { d: { x: 0, y: 0, s: 0, distort: .2, color: '#F0D3A6' },     m: { x: 0, y: 0, s: 0, distort: .2, color: '#F0D3A6' } },
+      gallery:  { d: { x: .84, y: .7, s: .3, distort: .26, color: '#F6E6CC' },  m: { x: .7, y: .82, s: .26, distort: .26, color: '#F6E6CC' } },
       intro:    { d: { x: .68, y: -.34, s: .5, distort: .26, color: '#F6E6CC' }, m: { x: .55, y: .7, s: .45, distort: .26, color: '#F6E6CC' } },
       services: { d: { x: .62, y: -.5, s: .62, distort: .25, color: '#D8E9F0' },  m: { x: .55, y: .72, s: .4, distort: .25, color: '#D8E9F0' } },
       exp:      { d: { x: .82, y: .66, s: .34, distort: .31, color: '#EBD7BC' },  m: { x: .6, y: .82, s: .28, distort: .31, color: '#EBD7BC' } },

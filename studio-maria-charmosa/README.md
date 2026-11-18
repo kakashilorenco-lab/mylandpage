@@ -3,28 +3,45 @@
 Site de uma página para o Studio Maria Charmosa (Av. Atlântica, 2200, Cavaleiros, Macaé/RJ).
 É HTML estático e pode ser hospedado em qualquer lugar: GitHub Pages, Netlify, Vercel ou Hostinger.
 
-**Direção de arte "Pérola & Maré":** creme, azul-oceano e coral, com Bodoni Moda e Bricolage Grotesque.
+**Identidade:** segue a marca e o espaço reais.
+- Monograma MC dourado.
+- "Studio Maria Charmosa" em serifa.
+- Cores do salão: dourado dos nichos e do logo, caramelo do couro, areia e cimento das paredes, azul do mar.
 
-## O que tem
-- Pérola 3D em three.js, iridescente e mudando de forma, que acompanha a rolagem pelo site todo, muda de cor e de lugar a cada seção e reage ao mouse.
-- Carregamento com contador, título que entra letra por letra e cores de fundo que mudam por seção.
-- Serviços em carrossel horizontal com cartões de vidro, inclinação 3D e esferas iridescentes. No celular vira um carrossel de arrastar.
-- Cartões que se empilham em 3D, nota 4,9 em contador giratório e faixas de texto cruzadas.
-- Agendamento que monta a mensagem e abre o WhatsApp.
-- Rodapé com um mar de partículas 3D que reage ao mouse.
-- Rolagem suave (Lenis), cursor com rótulo e botões magnéticos.
-- Quem ativa "reduzir movimento" no celular ou computador vê o site sem animações, com o conteúdo completo.
+## Seções
+1. **Abertura**
+   - Nome na tipografia da marca.
+   - Foto da fachada em arco.
+   - Pérola 3D (three.js).
+2. **O studio:** frase com fotos dentro do texto.
+3. **O espaço:** a foto do salão abre até a tela cheia enquanto a página rola.
+4. **Galeria:** fachada, salão à noite e a parede com a marca, com movimento ao rolar.
+5. **Serviços:** carrossel horizontal com cartões de vidro.
+6. **Por que quem vem, volta:**
+   - Cartões empilhados: couro e luz, teto em onda com nichos de esmaltes, hora marcada, tudo num só lugar.
+7. **Nota 4,9 no Google.**
+8. **Agendamento:** monta a mensagem e abre o WhatsApp.
+9. **Visite:** mapa, horários e mar de partículas 3D no rodapé.
+
+## Fotos (`assets/`)
+| Arquivo | O que é |
+|---|---|
+| `salao-mar.jpg` | Salão com vista pro mar (seção "O espaço") |
+| `hero-fachada.jpg`, `fachada.jpg` | Fachada de vidro com o logo |
+| `noite.jpg`, `onda-noite.jpg` | Salão à noite, couro e teto em onda |
+| `marca.jpg` | Parede com a marca dourada |
+| `pill-*.jpg` | Recortes pequenos usados dentro do texto |
+
+Para trocar uma foto, mantenha o mesmo nome de arquivo. Fotos em resolução maior (1600px ou mais) deixam tudo mais nítido.
 
 ## Como editar
 - **Dados do studio** (WhatsApp, telefone, Instagram, horários): bloco `CONFIG` no `index.html`.
-- **Fotos** em `assets/`:
-  - `salao-duo.jpg` e `entrada-duo.jpg`: versões estilizadas em duas cores (as originais são de baixa resolução).
-  - `salao-vista-mar.jpg` e `entrada-studio.jpg`: originais.
-  - Troque por fotos em alta resolução, mantendo os nomes.
+- **Logo:** o monograma do site é uma recriação aproximada em fonte. Se o studio tiver o arquivo do logo (SVG ou PNG transparente), dá pra trocar.
 
 ## Conferir com o studio antes de publicar
 - WhatsApp **(22) 99948-1780**. O número veio de um cadastro público, então confirme.
 - Horário **terça a sábado, 9h às 20h**.
-- Ano de abertura **2018**, tirado do registro da empresa.
-- Lista e descrição dos serviços.
-- @ do Instagram: preencher em `CONFIG.instagram`.
+- Ano de abertura **2018**.
+- Lista de serviços.
+- @ do Instagram.
+- Autorização para usar as fotos.
