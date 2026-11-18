@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Studio Maria Charmosa | Salão de beleza de frente para o mar em Macaé</title>
-  <meta name="description" content="Studio Maria Charmosa: salão de beleza e bem-estar na orla da Praia dos Cavaleiros, em Macaé/RJ. Cabelo, unhas, cílios, sobrancelhas, depilação e massagem. Nota 4,9 no Google. Agende pelo WhatsApp.">
-  <meta name="theme-color" content="#16110E">
+  <title>Studio Maria Charmosa | Salão de beleza pé na areia em Macaé</title>
+  <meta name="description" content="Studio Maria Charmosa: salão de beleza pé na areia na Praia dos Cavaleiros, Macaé/RJ. Cabelo, unhas, cílios, sobrancelhas, depilação e massagem com vista pro mar. Nota 4,9 no Google. Agende pelo WhatsApp.">
+  <meta name="theme-color" content="#FBF4EC">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:title" content="Studio Maria Charmosa · Beleza com vista para o mar">
-  <meta property="og:description" content="Salão de beleza e bem-estar na orla da Praia dos Cavaleiros, Macaé/RJ. Nota 4,9 no Google.">
+  <meta property="og:title" content="Studio Maria Charmosa · Beleza pé na areia em Macaé">
+  <meta property="og:description" content="Salão de beleza com vista pro mar na Praia dos Cavaleiros, Macaé/RJ. Nota 4,9 no Google.">
   <meta property="og:image" content="assets/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
 
   <script>document.documentElement.classList.add('js');</script>
 
@@ -26,7 +26,7 @@
     "@context": "https://schema.org",
     "@type": "BeautySalon",
     "name": "Studio Maria Charmosa",
-    "description": "Salão de beleza e bem-estar na orla da Praia dos Cavaleiros, em Macaé/RJ.",
+    "description": "Salão de beleza pé na areia na orla da Praia dos Cavaleiros, em Macaé/RJ.",
     "image": "assets/salao-vista-mar.jpg",
     "telephone": "+55 22 99948-1780",
     "address": {
@@ -42,43 +42,33 @@
       "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
       "opens": "09:00",
       "closes": "20:00"
-    }],
-    "makesOffer": [
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cabelo feminino e masculino"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Manicure, pedicure e alongamento de unhas"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Extensão de cílios"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Design de sobrancelhas"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Depilação"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Massoterapia"}}
-    ]
+    }]
   }
   </script>
 
   <style>
     :root {
-      --ink: #16110E;
-      --ink-2: #211915;
-      --ink-3: #2C221C;
-      --ivory: #F5EFE6;
-      --sand: #EAE0D2;
-      --sand-2: #DFD2C0;
-      --champagne: #C8A46E;
-      --champagne-2: #E2C79B;
-      --rose: #B9826A;
-      --sea: #1E3A3C;
-      --text-dark: #1B1511;
-      --muted-dark: #6E6157;
-      --muted-light: rgba(245, 239, 230, .64);
-      --line-dark: rgba(27, 21, 17, .14);
-      --line-light: rgba(245, 239, 230, .16);
+      --cream: #FBF4EC;
+      --sand: #F3E5D6;
+      --sea: #0C1B33;
+      --sea-2: #16294B;
+      --coral: #FF6F5E;
+      --coral-2: #FF9A8B;
+      --lilac: #DCD1FF;
+      --aqua: #9BE7DA;
+      --ink: #14101A;
 
-      --serif: "Instrument Serif", "Cormorant Garamond", Georgia, serif;
-      --sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+      /* theme (tweened by JS between sections) */
+      --bg: #FBF4EC;
+      --fg: #14101A;
+      --muted: rgba(20, 16, 26, .62);
+      --line: rgba(20, 16, 26, .14);
+      --accent: #FF6F5E;
 
-      --gutter: clamp(16px, 4vw, 56px);
-      --max: 1360px;
+      --serif: "Bodoni Moda", Didot, "Bodoni 72", Georgia, serif;
+      --sans: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --gutter: clamp(16px, 3.6vw, 52px);
       --ease: cubic-bezier(.16, 1, .3, 1);
-      --radius: 22px;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -86,719 +76,673 @@
     html { -webkit-text-size-adjust: 100%; }
     html.lenis, html.lenis body { height: auto; }
     .lenis.lenis-smooth { scroll-behavior: auto !important; }
+    .lenis.lenis-stopped { overflow: hidden; }
     body {
-      margin: 0;
-      background: var(--ivory);
-      color: var(--text-dark);
-      font-family: var(--sans);
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      overflow-x: hidden;
+      margin: 0; background: var(--bg); color: var(--fg);
+      font-family: var(--sans); font-size: 17px; line-height: 1.55;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden;
     }
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
-    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
-    ::selection { background: var(--champagne); color: var(--ink); }
-    :focus-visible { outline: 2px solid var(--champagne); outline-offset: 4px; border-radius: 6px; }
+    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; padding: 0; }
+    ::selection { background: var(--coral); color: var(--ink); }
+    :focus-visible { outline: 2px solid var(--coral); outline-offset: 4px; border-radius: 8px; }
+    .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .wrap { width: 100%; max-width: 1480px; margin: 0 auto; padding: 0 var(--gutter); }
+    em { font-family: var(--serif); font-style: italic; font-weight: 400; }
 
-    .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
-    em, .it { font-style: italic; }
-    .serif { font-family: var(--serif); font-weight: 400; }
+    /* Fallback colours when motion is off: each section paints its own theme */
+    html:not(.motion) .nav { background: rgba(251,244,236,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    html:not(.motion) [data-theme="dark"] { --bg: #0C1B33; --fg: #FBF4EC; --muted: rgba(251,244,236,.64); --line: rgba(251,244,236,.16); --accent: #FF8A7A; background: var(--bg); color: var(--fg); }
+    html:not(.motion) [data-theme="coral"] { --bg: #FF6F5E; --fg: #14101A; --muted: rgba(20,16,26,.7); --line: rgba(20,16,26,.2); --accent: #0C1B33; background: var(--bg); color: var(--fg); }
 
-    /* Grain overlay */
-    .grain::after {
-      content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 2;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      opacity: .09; mix-blend-mode: overlay;
-    }
+    /* ── WebGL layers ── */
+    #gl { position: fixed; top: 0; left: 0; width: 100%; height: 100lvh; z-index: 1; pointer-events: none; display: block; }
+    html:not(.motion) #gl { position: absolute; height: 100svh; }
+    main section:not(.hero) { position: relative; z-index: 2; }
+    .content { position: relative; z-index: 2; }
 
-    /* Labels & titles */
-    .label {
-      display: inline-flex; align-items: center; gap: 12px;
-      font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
-      color: var(--muted-dark);
-    }
-    .label::before { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .6; }
-    .dark .label { color: var(--muted-light); }
-    .title {
-      font-family: var(--serif); font-weight: 400;
-      font-size: clamp(2.6rem, 6vw, 5.9rem);
-      line-height: .96; letter-spacing: -.02em;
-      margin: 22px 0 0;
-    }
-    .title em { color: var(--rose); }
-    .dark .title em { color: var(--champagne-2); }
-    .lead { font-size: clamp(1.02rem, 1.3vw, 1.15rem); color: var(--muted-dark); max-width: 34em; }
-    .dark .lead { color: var(--muted-light); }
+    .grain { position: fixed; inset: -50%; z-index: 60; pointer-events: none; opacity: .07;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      animation: grain 1.2s steps(6) infinite; }
+    @keyframes grain { 0%,100% { transform: translate(0,0); } 20% { transform: translate(-3%,2%); } 40% { transform: translate(2%,-3%); } 60% { transform: translate(-2%,-1%); } 80% { transform: translate(3%,3%); } }
 
-    /* Split words */
-    .w { display: inline-block; overflow: hidden; vertical-align: top; padding: 0 .07em .1em 0; margin: 0 -.07em -.1em 0; }
-    .wi { display: inline-block; will-change: transform; }
-
-    /* Buttons */
-    .btn {
-      position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 12px;
-      height: 58px; padding: 0 30px; border-radius: 999px;
-      font-size: 15px; font-weight: 600; letter-spacing: .01em; white-space: nowrap;
-      transition: background-color .5s var(--ease), color .5s var(--ease), border-color .5s var(--ease), transform .5s var(--ease);
-      isolation: isolate; overflow: hidden;
-    }
-    .btn svg { width: 18px; height: 18px; flex: none; }
-    .btn-gold { background: var(--champagne); color: var(--ink); }
-    .btn-gold::before {
-      content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
-      background: var(--ivory); transform: translateY(101%); transition: transform .6s var(--ease);
-    }
-    .btn-gold:hover::before { transform: translateY(0); }
-    .btn-ghost { border: 1px solid var(--line-light); color: var(--ivory); background: rgba(245,239,230,.04); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
-    .btn-ghost:hover { border-color: var(--champagne); color: var(--champagne-2); }
-    .btn-ink { background: var(--ink); color: var(--ivory); }
-    .btn-ink::before {
-      content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
-      background: var(--rose); transform: translateY(101%); transition: transform .6s var(--ease);
-    }
-    .btn-ink:hover::before { transform: translateY(0); }
-    .btn-line { border: 1px solid var(--line-dark); color: var(--text-dark); }
-    .btn-line:hover { border-color: var(--text-dark); }
-    .dark .btn-line { border-color: var(--line-light); color: var(--ivory); }
-    .dark .btn-line:hover { border-color: var(--champagne); color: var(--champagne-2); }
-
-    /* ───────────── Loader ───────────── */
+    /* ── Loader ── */
     .loader { display: none; }
-    .js .loader {
-      display: flex; position: fixed; inset: 0; z-index: 200;
-      background: var(--ink); color: var(--ivory);
-      align-items: center; justify-content: center; flex-direction: column; gap: 28px;
-    }
-    .loader-word { font-family: var(--serif); font-size: clamp(2.6rem, 7vw, 5.5rem); line-height: 1; letter-spacing: -.02em; display: flex; gap: .25em; }
-    .loader-word em { color: var(--champagne-2); }
-    .loader-bar { width: min(240px, 50vw); height: 1px; background: var(--line-light); overflow: hidden; }
-    .loader-bar i { display: block; height: 100%; width: 100%; background: var(--champagne); transform-origin: left; transform: scaleX(0); }
-    .loader-meta { font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--muted-light); }
+    .js .loader { display: block; position: fixed; inset: 0; z-index: 400; background: var(--cream); color: var(--ink); padding: 26px var(--gutter); }
+    .ld-top { display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+    .ld-pearl { position: absolute; left: 50%; top: 46%; width: 120px; height: 120px; margin: -60px 0 0 -60px; border-radius: 50%; transform: scale(0);
+      background: radial-gradient(circle at 32% 28%, #fff 0 8%, rgba(255,255,255,0) 26%), radial-gradient(circle at 70% 78%, rgba(12,27,51,.28), transparent 55%), conic-gradient(from 40deg, #ffd8cc, #dcd1ff, #b8efe4, #ffe9b8, #ffd8cc);
+      box-shadow: 0 30px 70px -20px rgba(255,111,94,.55); }
+    .ld-count { position: absolute; left: var(--gutter); bottom: 14px; font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96; font-size: clamp(6rem, 22vw, 20rem); line-height: .8; letter-spacing: -.04em; }
+    .ld-count small { font-size: .3em; vertical-align: top; color: var(--coral); }
+    .ld-caption { position: absolute; right: var(--gutter); bottom: 34px; font-family: var(--serif); font-style: italic; font-size: clamp(1.1rem, 2vw, 1.6rem); }
 
-    /* ───────────── Nav ───────────── */
-    .nav {
-      position: fixed; z-index: 100; top: 0; left: 0; right: 0;
-      display: flex; align-items: center; justify-content: space-between; gap: 24px;
-      padding: 18px var(--gutter);
-      color: var(--ivory);
-      transition: background-color .6s var(--ease), padding .6s var(--ease), border-color .6s var(--ease);
-      border-bottom: 1px solid transparent;
-    }
-    .nav.scrolled {
-      background: rgba(22, 17, 14, .9);
-      backdrop-filter: blur(18px) saturate(1.3); -webkit-backdrop-filter: blur(18px) saturate(1.3);
-      padding-top: 12px; padding-bottom: 12px;
-      border-color: var(--line-light);
-    }
-    .brand { display: flex; flex-direction: column; line-height: 1; }
-    .brand-kicker { font-size: 10px; font-weight: 600; letter-spacing: .38em; text-transform: uppercase; color: var(--champagne-2); margin-bottom: 5px; }
-    .brand-name { font-family: var(--serif); font-size: 26px; letter-spacing: -.01em; }
-    .brand-name em { color: var(--champagne-2); }
-    .nav-links { display: flex; gap: 36px; font-size: 14px; font-weight: 500; }
-    .nav-links a { position: relative; opacity: .82; transition: opacity .3s; }
-    .nav-links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 1px; background: var(--champagne); transform: scaleX(0); transform-origin: right; transition: transform .5s var(--ease); }
-    .nav-links a:hover { opacity: 1; }
-    .nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
-    .nav-right { display: flex; align-items: center; gap: 12px; }
-    .nav-cta { height: 46px; padding: 0 22px; font-size: 14px; }
-    .menu-btn { display: none; height: 46px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--line-light); font-size: 14px; font-weight: 600; align-items: center; gap: 10px; }
-    .menu-btn i { display: grid; gap: 4px; }
-    .menu-btn i::before, .menu-btn i::after { content: ""; width: 16px; height: 1.5px; background: currentColor; display: block; transition: transform .5s var(--ease); }
-    .menu-open .menu-btn i::before { transform: translateY(2.75px) rotate(45deg); }
-    .menu-open .menu-btn i::after { transform: translateY(-2.75px) rotate(-45deg); }
+    /* ── Cursor ── */
+    .cursor { position: fixed; top: 0; left: 0; z-index: 350; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%;
+      background: var(--coral); pointer-events: none; display: none; place-items: center;
+      transition: width .45s var(--ease), height .45s var(--ease), margin .45s var(--ease), background-color .3s, border-color .3s; border: 1px solid transparent; }
+    .has-cursor .cursor { display: grid; }
+    .cursor.hover { width: 48px; height: 48px; margin: -24px 0 0 -24px; background: transparent; border-color: var(--coral); }
+    .cursor.label { width: 104px; height: 104px; margin: -52px 0 0 -52px; background: var(--coral); border-color: var(--coral); }
+    .cursor span { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); opacity: 0; transition: opacity .3s; }
+    .cursor.label span { opacity: 1; }
 
-    .menu {
-      position: fixed; inset: 0; z-index: 90; background: var(--ink); color: var(--ivory);
-      display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 120px var(--gutter) 40px;
-      clip-path: inset(0 0 100% 0); visibility: hidden;
-      transition: clip-path .8s var(--ease), visibility 0s .8s;
-    }
-    .menu-open .menu { clip-path: inset(0 0 0 0); visibility: visible; transition: clip-path .8s var(--ease), visibility 0s; }
-    .menu a.menu-link { font-family: var(--serif); font-size: clamp(2.6rem, 11vw, 4rem); line-height: 1.1; display: flex; align-items: baseline; gap: 14px; }
-    .menu a.menu-link span { font-family: var(--sans); font-size: 12px; color: var(--champagne-2); letter-spacing: .1em; }
-    .menu-foot { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line-light); color: var(--muted-light); font-size: 14px; display: grid; gap: 6px; }
+    /* ── Buttons ── */
+    .btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 58px; padding: 0 28px;
+      border-radius: 999px; font-size: 16px; font-weight: 600; white-space: nowrap; overflow: hidden; isolation: isolate;
+      transition: color .5s var(--ease), border-color .5s; }
+    .btn svg { width: 18px; height: 18px; flex: none; }
+    .btn::before { content: ""; position: absolute; left: 50%; top: 100%; width: 140%; aspect-ratio: 1; border-radius: 50%; z-index: -1;
+      transform: translate(-50%, 0) scale(0); transition: transform .7s var(--ease); }
+    .btn:hover::before { transform: translate(-50%, -62%) scale(1); }
+    .btn-coral { background: var(--coral); color: var(--ink); }
+    .btn-coral::before { background: var(--sea); }
+    .btn-coral:hover { color: var(--cream); }
+    .btn-line { border: 1.5px solid var(--fg); color: var(--fg); }
+    .btn-line::before { background: var(--fg); }
+    .btn-line:hover { color: var(--bg); }
+    .btn-ink { background: var(--ink); color: var(--cream); }
+    .btn-ink::before { background: var(--cream); }
+    .btn-ink:hover { color: var(--ink); }
+    .btn-sm { height: 46px; padding: 0 20px; font-size: 15px; }
 
-    /* ───────────── Hero ───────────── */
-    .hero {
-      position: relative; min-height: 100vh; min-height: 100svh;
-      background: radial-gradient(120% 90% at 75% 20%, #5b3a2c 0%, transparent 55%),
-                  radial-gradient(90% 70% at 10% 90%, #1E3A3C 0%, transparent 60%),
-                  var(--ink);
-      color: var(--ivory); overflow: hidden;
-      display: flex; flex-direction: column; justify-content: flex-end;
-    }
-    .hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-    .hero-shade { position: absolute; inset: 0; z-index: 1; pointer-events: none;
-      background: linear-gradient(180deg, rgba(22,17,14,.5) 0%, rgba(22,17,14,0) 24%, rgba(22,17,14,0) 50%, rgba(22,17,14,.62) 100%),
-                  linear-gradient(90deg, rgba(22,17,14,.45) 0%, rgba(22,17,14,0) 62%); }
-    .hero-inner { position: relative; z-index: 3; padding-top: 140px; padding-bottom: 34px; }
-    .hero-kicker { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; font-weight: 500; color: var(--champagne-2); }
-    .hero-kicker .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--champagne); }
-    .hero h1 {
-      font-family: var(--serif); font-weight: 400;
-      font-size: clamp(3.5rem, 10.4vw, 10.6rem);
-      line-height: .9; letter-spacing: -.035em;
-      margin: 26px 0 0; max-width: 11.5em;
-    }
-    .hero h1 em { color: var(--champagne-2); }
-    .hero-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 40px; align-items: end; margin-top: 40px; }
-    .hero-sub { font-size: clamp(1.02rem, 1.25vw, 1.18rem); color: rgba(245,239,230,.78); max-width: 33em; margin: 0; }
-    .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
-    .hero-bar {
-      position: relative; z-index: 3;
-      border-top: 1px solid var(--line-light);
-    }
-    .hero-bar .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 32px; padding-top: 22px; padding-bottom: 26px; font-size: 14px; color: rgba(245,239,230,.82); }
-    .hero-bar .item { display: inline-flex; align-items: center; gap: 10px; }
-    .stars { color: var(--champagne); letter-spacing: 2px; font-size: 13px; }
-    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #7BC8A0; box-shadow: 0 0 0 0 rgba(123,200,160,.6); animation: pulse 2.2s infinite; }
-    .status-dot.closed { background: var(--rose); animation: none; }
-    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(123,200,160,.55); } 70% { box-shadow: 0 0 0 10px rgba(123,200,160,0); } 100% { box-shadow: 0 0 0 0 rgba(123,200,160,0); } }
-    .scroll-cue { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted-light); }
-    .scroll-cue i { width: 1px; height: 34px; background: var(--line-light); position: relative; overflow: hidden; }
-    .scroll-cue i::after { content: ""; position: absolute; left: 0; right: 0; top: -40%; height: 40%; background: var(--champagne); animation: cue 2.4s var(--ease) infinite; }
-    @keyframes cue { to { top: 110%; } }
+    .roll { display: inline-flex; overflow: hidden; }
+    .roll > span { display: inline-block; position: relative; transition: transform .6s var(--ease); }
+    .roll > span::after { content: attr(data-t); position: absolute; left: 0; top: 100%; }
+    a:hover > .roll > span, .roll:hover > span { transform: translateY(-100%); }
 
-    /* ───────────── Marquee ───────────── */
-    .marquee { background: var(--ivory); border-bottom: 1px solid var(--line-dark); overflow: hidden; padding: 34px 0; }
-    .marquee-track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
-    .marquee-group { display: flex; align-items: center; gap: 44px; padding-right: 44px; }
-    .marquee span { font-family: var(--serif); font-size: clamp(2.4rem, 5.4vw, 4.8rem); line-height: 1; white-space: nowrap; }
-    .marquee span:nth-child(4n+3) { font-style: italic; color: var(--rose); }
-    .marquee svg { width: 26px; height: 26px; color: var(--champagne); flex: none; }
-    @keyframes marquee { to { transform: translateX(-50%); } }
+    .tag { display: inline-flex; align-items: center; gap: 10px; height: 34px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line);
+      font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+    .tag i { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
 
-    /* ───────────── Studio ───────────── */
-    .section { position: relative; padding: clamp(96px, 13vw, 180px) 0; }
-    .studio-grid { display: grid; grid-template-columns: 1.25fr .9fr; gap: clamp(40px, 7vw, 120px); align-items: center; }
-    .manifesto {
-      font-family: var(--serif); font-size: clamp(1.9rem, 3.5vw, 3.35rem);
-      line-height: 1.12; letter-spacing: -.012em; margin: 30px 0 0;
-    }
-    .manifesto em { color: var(--rose); }
-    .arch {
-      position: relative; border-radius: 999px 999px var(--radius) var(--radius);
-      overflow: hidden; aspect-ratio: 4 / 5; background: var(--sand-2);
-      box-shadow: 0 40px 80px -40px rgba(27, 21, 17, .45);
-    }
-    .arch img { width: 100%; height: 118%; object-fit: cover; object-position: 30% 50%; position: absolute; top: -9%; left: 0; }
-    .arch::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(200,164,110,.08), rgba(22,17,14,.18)); pointer-events: none; }
-    .arch-wrap { position: relative; max-width: 400px; justify-self: end; width: 100%; }
-    .arch-badge {
-      position: absolute; left: -38px; bottom: 54px; z-index: 3;
-      width: 128px; height: 128px; border-radius: 50%;
-      background: var(--ink); color: var(--ivory);
-      display: grid; place-items: center;
-    }
-    .arch-badge svg { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 22s linear infinite; }
-    .arch-badge text { font-family: var(--sans); font-size: 9.6px; letter-spacing: .32em; text-transform: uppercase; fill: var(--champagne-2); }
-    .arch-badge b { font-family: var(--serif); font-weight: 400; font-size: 34px; font-style: italic; color: var(--champagne-2); }
+    .big-title { margin: 0; font-family: var(--sans); font-weight: 800; font-variation-settings: "wdth" 76, "opsz" 96;
+      font-size: clamp(3.2rem, 8.6vw, 9.4rem); line-height: .86; letter-spacing: -.035em; }
+    .big-title em { color: var(--accent); letter-spacing: -.02em; font-variation-settings: normal; }
+
+    /* split helpers */
+    .ln { display: block; overflow: hidden; padding-bottom: .06em; margin-bottom: -.06em; }
+    .w { display: inline-block; overflow: hidden; vertical-align: top; padding: 0 .08em .1em 0; margin: 0 -.08em -.1em 0; }
+    .wi, .ch { display: inline-block; will-change: transform; }
+
+    /* ── Nav ── */
+    .nav { position: fixed; z-index: 100; top: 0; left: 0; right: 0; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px;
+      padding: 18px var(--gutter); color: var(--fg); transition: transform .7s var(--ease); }
+    .nav.hide { transform: translateY(-120%); }
+    .logo { display: inline-flex; align-items: center; gap: 10px; font-family: var(--serif); font-size: 22px; line-height: 1; letter-spacing: -.01em; justify-self: start; }
+    .logo-pearl { width: 18px; height: 18px; border-radius: 50%; flex: none;
+      background: radial-gradient(circle at 32% 28%, #fff 0 10%, rgba(255,255,255,0) 34%), conic-gradient(from 40deg, #ffd8cc, #dcd1ff, #b8efe4, #ffe9b8, #ffd8cc);
+      box-shadow: 0 2px 8px rgba(255,111,94,.45); }
+    .logo em { color: var(--accent); }
+    .nav-status { display: inline-flex; align-items: center; gap: 10px; height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line);
+      font-size: 14px; font-weight: 500; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #27C08A; animation: pulse 2s infinite; }
+    .status-dot.closed { background: var(--coral); animation: none; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(39,192,138,.5); } 70% { box-shadow: 0 0 0 10px rgba(39,192,138,0); } 100% { box-shadow: 0 0 0 0 rgba(39,192,138,0); } }
+    .nav-right { display: flex; align-items: center; gap: 10px; justify-self: end; }
+    .burger { width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid var(--fg); display: grid; place-content: center; gap: 6px; }
+    .burger span { display: block; width: 18px; height: 1.5px; background: currentColor; transition: transform .5s var(--ease); }
+    .menu-open .burger span:nth-child(1) { transform: translateY(3.75px) rotate(45deg); }
+    .menu-open .burger span:nth-child(2) { transform: translateY(-3.75px) rotate(-45deg); }
+
+    .menu { position: fixed; inset: 0; z-index: 90; background: var(--sea); color: var(--cream); padding: 110px var(--gutter) 32px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      clip-path: circle(0% at calc(100% - 50px) 40px); visibility: hidden; transition: clip-path .9s var(--ease), visibility 0s .9s; }
+    .menu-open .menu { clip-path: circle(150% at calc(100% - 50px) 40px); visibility: visible; transition: clip-path .9s var(--ease), visibility 0s; }
+    .menu-open .nav { color: var(--cream); }
+    .menu-links { display: grid; gap: 2px; }
+    .menu-links a { display: flex; align-items: baseline; gap: 18px; font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96;
+      font-size: clamp(3rem, 9vw, 7.4rem); line-height: .95; text-transform: uppercase; letter-spacing: -.02em; }
+    .menu-links a small { font-size: 14px; font-weight: 600; color: var(--coral-2); letter-spacing: .1em; }
+    .menu-links a:hover em, .menu-links a em { color: var(--coral); text-transform: none; }
+    .menu-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; color: rgba(251,244,236,.7); font-size: 15px; border-top: 1px solid rgba(251,244,236,.16); padding-top: 20px; }
+
+    /* ── Hero ── */
+    .hero { min-height: 100vh; min-height: 100svh; display: grid; grid-template-rows: 1fr auto; padding: 92px var(--gutter) 20px; overflow: hidden; }
+    .hero-title { position: relative; z-index: 0; margin: 0; pointer-events: none; padding-top: 1vh; font-weight: 400; }
+    .ht-1 { font-family: var(--sans); font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96; font-size: min(25vw, 41vh);
+      line-height: .8; letter-spacing: -.018em; text-transform: uppercase; margin-left: -.03em; }
+    .ht-2 { font-family: var(--serif); font-style: italic; font-size: min(18.4vw, 30vh); line-height: .9; letter-spacing: -.035em;
+      text-align: right; color: var(--accent); margin-top: -.12em; padding-right: .06em; }
+    .ht-1, .ht-2 { display: block; overflow: hidden; padding-bottom: .05em; }
+    .hero-bottom { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 32px; }
+    .hero-lede { margin: 0; max-width: 27em; font-size: clamp(1.06rem, 1.3vw, 1.3rem); line-height: 1.45; }
+    .hero-lede em { color: var(--accent); font-size: 1.12em; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .sticker { position: relative; width: 150px; height: 150px; border-radius: 50%; display: grid; place-items: center; flex: none; }
+    .sticker svg.ring { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 16s linear infinite; }
+    .sticker text { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: .26em; text-transform: uppercase; fill: currentColor; }
+    .sticker .core { width: 64px; height: 64px; border-radius: 50%; background: var(--coral); color: var(--ink); display: grid; place-items: center; transition: transform .6s var(--ease); }
+    .sticker:hover .core { transform: scale(1.15) rotate(45deg); }
+    .sticker .core svg { width: 22px; height: 22px; }
     @keyframes spin { to { transform: rotate(360deg); } }
-    .caption { margin-top: 16px; font-size: 13px; color: var(--muted-dark); display: flex; justify-content: space-between; gap: 16px; }
+    .hero-foot { position: relative; z-index: 2; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 28px; margin-top: 26px; padding-top: 16px;
+      border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+    .hero-foot b { color: var(--fg); font-weight: 700; }
+    .stars { color: var(--coral); letter-spacing: 2px; }
+    .scroll-hint { display: inline-flex; align-items: center; gap: 10px; }
+    .scroll-hint i { width: 22px; height: 34px; border-radius: 12px; border: 1.5px solid var(--muted); position: relative; }
+    .scroll-hint i::after { content: ""; position: absolute; left: 50%; top: 7px; width: 4px; height: 7px; margin-left: -2px; border-radius: 2px; background: var(--coral); animation: wheel 1.8s var(--ease) infinite; }
+    @keyframes wheel { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(12px); opacity: 0; } }
 
-    .stats { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: clamp(72px, 9vw, 130px); border-top: 1px solid var(--line-dark); }
-    .stat { padding: 30px 24px 0 0; }
-    .stat + .stat { padding-left: 24px; border-left: 1px solid var(--line-dark); }
-    .stat-num { font-family: var(--serif); font-size: clamp(3rem, 6vw, 5.4rem); line-height: 1; letter-spacing: -.03em; }
-    .stat-num sup { font-size: .4em; color: var(--champagne); vertical-align: top; position: relative; top: .25em; margin-left: 4px; }
-    .stat-label { margin-top: 10px; font-size: 14px; color: var(--muted-dark); }
+    /* ── Intro statement ── */
+    .intro { padding: clamp(110px, 16vw, 230px) 0 clamp(70px, 9vw, 130px); }
+    .statement { margin: 28px 0 0; font-family: var(--serif); font-weight: 400; font-size: clamp(2.1rem, 4.7vw, 5rem); line-height: 1.1; letter-spacing: -.02em; max-width: 15.5em; }
+    .statement em { color: var(--accent); }
+    .pill { display: inline-block; height: .8em; width: 2.1em; border-radius: 999px; overflow: hidden; vertical-align: -.06em; margin: 0 .08em; position: relative; background: var(--sand); }
+    .pill img { width: 100%; height: 100%; object-fit: cover; }
+    .pill-wave { width: 1.9em; background: var(--sea); }
+    .pill-wave svg { position: absolute; left: 0; top: 0; width: 200%; height: 100%; animation: wave 3.6s linear infinite; }
+    @keyframes wave { to { transform: translateX(-50%); } }
+    .pill-orb { width: .8em; background: conic-gradient(from 0deg, #ffd8cc, #dcd1ff, #b8efe4, #ffe9b8, #ffd8cc); animation: spin 6s linear infinite; }
+    .pill-orb::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #fff 0 10%, rgba(255,255,255,0) 40%); }
+    .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: clamp(64px, 8vw, 120px); border-top: 1px solid var(--line); }
+    .fact { padding: 26px 24px 0 0; }
+    .fact + .fact { padding-left: 24px; border-left: 1px solid var(--line); }
+    .fact b { display: block; font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96; font-size: clamp(3rem, 6.4vw, 6.4rem); line-height: .9; letter-spacing: -.03em; }
+    .fact b em { color: var(--accent); font-weight: 400; }
+    .fact span { display: block; margin-top: 10px; color: var(--muted); font-size: 15px; }
 
-    .wave { display: block; width: 100%; height: 90px; color: var(--champagne); }
+    /* ── Marquee rows ── */
+    .mq { padding: clamp(30px, 5vw, 70px) 0; overflow: hidden; }
+    .mq-row { display: flex; white-space: nowrap; }
+    .mq-row + .mq-row { margin-top: .1em; }
+    .mq-track { display: flex; flex: none; align-items: center; will-change: transform; }
+    .mq-item { display: inline-flex; align-items: center; gap: .35em; padding-right: .35em; font-size: clamp(3.4rem, 9vw, 9.6rem); line-height: 1; }
+    .mq-item .s { font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96; text-transform: uppercase; letter-spacing: -.03em; }
+    .mq-item .o { font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96; text-transform: uppercase; letter-spacing: -.03em; color: transparent; -webkit-text-stroke: 1.5px var(--fg); }
+    .mq-item em { color: var(--accent); }
+    .mq-item svg { width: .42em; height: .42em; color: var(--accent); flex: none; }
 
-    /* ───────────── Services ───────────── */
-    .dark { background: var(--ink); color: var(--ivory); }
-    .services-head { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; }
-    .svc-list { margin-top: clamp(56px, 7vw, 96px); border-top: 1px solid var(--line-light); }
-    .svc {
-      position: relative; display: grid;
-      grid-template-columns: 70px minmax(0, 1.1fr) minmax(0, 1fr) 64px;
-      gap: 28px; align-items: center;
-      padding: 34px 0; border-bottom: 1px solid var(--line-light);
-      isolation: isolate;
-    }
-    .svc::before {
-      content: ""; position: absolute; inset: 0 calc(var(--gutter) * -1); z-index: -1;
-      background: linear-gradient(90deg, rgba(200,164,110,.16), rgba(185,130,106,.08));
-      transform: scaleY(0); transform-origin: bottom; transition: transform .7s var(--ease);
-    }
-    .svc:hover::before, .svc:focus-visible::before { transform: scaleY(1); }
-    .svc-num { font-size: 13px; letter-spacing: .14em; color: var(--muted-light); transition: color .5s; }
-    .svc-name { font-family: var(--serif); font-size: clamp(2.3rem, 4.6vw, 4.4rem); line-height: 1; letter-spacing: -.02em; transition: transform .7s var(--ease), color .5s; }
-    .svc-desc { color: var(--muted-light); font-size: 15.5px; max-width: 30em; }
-    .svc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-    .svc-tags span { font-size: 12px; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line-light); color: rgba(245,239,230,.74); }
-    .svc-arrow {
-      width: 58px; height: 58px; border-radius: 50%; border: 1px solid var(--line-light);
-      display: grid; place-items: center; justify-self: end;
-      transition: background-color .5s var(--ease), border-color .5s, transform .7s var(--ease), color .5s;
-    }
-    .svc-arrow svg { width: 20px; height: 20px; transition: transform .7s var(--ease); }
-    .svc:hover .svc-num { color: var(--champagne-2); }
-    .svc:hover .svc-name { transform: translateX(14px); color: var(--champagne-2); }
-    .svc:hover .svc-arrow { background: var(--champagne); border-color: var(--champagne); color: var(--ink); }
-    .svc:hover .svc-arrow svg { transform: rotate(-45deg); }
+    /* ── Horizontal services ── */
+    .hs { overflow: hidden; }
+    .hs-pin { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 100px 0 40px; }
+    .hs-bar { display: flex; align-items: center; gap: 22px; margin-bottom: 28px; font-size: 14px; color: var(--muted); }
+    .hs-bar .hs-count { font-variant-numeric: tabular-nums; color: var(--fg); font-weight: 600; }
+    .hs-progress { flex: 1; height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; }
+    .hs-progress i { display: block; height: 100%; background: var(--coral); transform-origin: left; transform: scaleX(0); }
+    .hs-mhead { display: none; }
+    .hs-mhead p { color: var(--muted); font-size: 1.05rem; margin: 18px 0 0; }
+    .hs-mhead b { color: var(--coral); }
+    .hs-track { display: flex; gap: 22px; padding: 0 var(--gutter); width: max-content; align-items: stretch; }
+    .hs-intro { width: min(560px, 80vw); display: flex; flex-direction: column; justify-content: space-between; padding: 10px 40px 10px 0; }
+    .hs-intro p { font-size: 1.12rem; color: var(--muted); max-width: 22em; margin: 26px 0 0; }
+    .hs-hint { display: inline-flex; align-items: center; gap: 12px; font-weight: 600; color: var(--coral); font-size: 15px; }
+    .hs-hint svg { width: 34px; animation: nudge 1.6s var(--ease) infinite; }
+    @keyframes nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(10px); } }
+    .svc-card { position: relative; width: clamp(300px, 30vw, 470px); height: min(66vh, 620px); min-height: 480px; border-radius: 32px; padding: 26px;
+      background: rgba(22,41,75,.5); backdrop-filter: blur(16px) saturate(1.2); -webkit-backdrop-filter: blur(16px) saturate(1.2); border: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between;
+      overflow: hidden; transform-style: preserve-3d; }
+    .svc-card::before { content: ""; position: absolute; inset: auto -30% -40% -30%; height: 70%; background: radial-gradient(50% 50% at 50% 50%, var(--g, rgba(255,111,94,.35)), transparent 70%); opacity: .55; pointer-events: none; }
+    .svc-top { display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); position: relative; }
+    .svc-n { font-family: var(--serif); font-style: italic; font-size: 34px; letter-spacing: 0; text-transform: none; color: var(--coral-2); line-height: 1; }
+    .orb3d { position: relative; width: 58%; aspect-ratio: 1; margin: 0 auto; border-radius: 50%; animation: float 6s ease-in-out infinite; }
+    .orb3d .core { position: absolute; inset: 0; border-radius: 50%; overflow: hidden;
+      box-shadow: inset -18px -26px 50px rgba(12,27,51,.45), inset 10px 14px 30px rgba(255,255,255,.35), 0 40px 70px -30px var(--g, rgba(255,111,94,.6)); }
+    .orb3d .core::before { content: ""; position: absolute; inset: -25%; background: conic-gradient(from 0deg, var(--c1), var(--c2), var(--c3), var(--c4), var(--c1)); animation: spin 9s linear infinite; filter: blur(6px); }
+    .orb3d .core::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 30% 26%, rgba(255,255,255,.95) 0 6%, rgba(255,255,255,0) 30%), radial-gradient(circle at 72% 80%, rgba(255,255,255,.25), transparent 35%); }
+    .orb3d svg { position: absolute; left: 50%; top: 50%; width: 34%; height: 34%; transform: translate(-50%, -50%); color: var(--sea); stroke-width: 1.4; z-index: 2; }
+    .orb3d::after { content: ""; position: absolute; left: 15%; right: 15%; bottom: -14%; height: 10%; border-radius: 50%; background: rgba(0,0,0,.35); filter: blur(10px); animation: shadow 6s ease-in-out infinite; }
+    @keyframes float { 0%, 100% { transform: translateY(-8px) rotate(-2deg); } 50% { transform: translateY(10px) rotate(2deg); } }
+    @keyframes shadow { 0%, 100% { transform: scale(.85); opacity: .5; } 50% { transform: scale(1); opacity: .8; } }
+    .svc-bottom { position: relative; }
+    .svc-card h3 { margin: 0; font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(2.6rem, 3.8vw, 4rem); line-height: .95; letter-spacing: -.02em; }
+    .svc-card p { margin: 12px 0 0; color: var(--muted); font-size: 15.5px; }
+    .svc-cta { margin-top: 20px; display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; color: var(--coral-2); }
+    .svc-cta b { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: var(--coral); color: var(--ink); transition: transform .6s var(--ease); }
+    .svc-card:hover .svc-cta b { transform: rotate(45deg) scale(1.1); }
+    .hs-outro { width: min(520px, 80vw); display: flex; flex-direction: column; justify-content: center; gap: 28px; padding: 0 60px 0 40px; }
+    .hs-outro h3 { margin: 0; font-weight: 800; font-variation-settings: "wdth" 76, "opsz" 96; font-size: clamp(2.8rem, 5vw, 5.4rem); line-height: .9; letter-spacing: -.03em; }
+    .hs-outro h3 em { color: var(--coral-2); }
 
-    .cursor-bubble {
-      position: fixed; top: 0; left: 0; z-index: 80; pointer-events: none;
-      width: 112px; height: 112px; border-radius: 50%;
-      background: var(--champagne); color: var(--ink);
-      display: grid; place-items: center; text-align: center;
-      font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; line-height: 1.3;
-      transform: translate(-50%, -50%) scale(0);
-      opacity: 0;
-    }
+    /* ── Stacking cards ── */
+    .exp { padding: clamp(110px, 13vw, 190px) 0 clamp(60px, 8vw, 120px); }
+    .exp-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 26px; margin-bottom: clamp(48px, 6vw, 90px); }
+    .exp-head p { max-width: 24em; color: var(--muted); margin: 0; font-size: 1.1rem; }
+    .stack-card { position: sticky; top: calc(96px + var(--i) * 26px); height: min(74vh, 680px); min-height: 520px; margin-bottom: 8vh;
+      border-radius: 40px; padding: clamp(26px, 3.6vw, 56px); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 60px);
+      transform-origin: center top; overflow: hidden; will-change: transform; }
+    .stack-card:last-child { margin-bottom: 0; }
+    .sc-1 { background: var(--sea); color: var(--cream); }
+    .sc-2 { background: var(--coral); color: var(--ink); }
+    .sc-3 { background: var(--lilac); color: var(--ink); }
+    .sc-text { display: flex; flex-direction: column; justify-content: space-between; }
+    .sc-n { font-family: var(--serif); font-style: italic; font-size: clamp(4rem, 8vw, 8rem); line-height: .8; }
+    .sc-1 .sc-n { color: var(--coral-2); }
+    .stack-card h3 { margin: 0; font-weight: 800; font-variation-settings: "wdth" 76, "opsz" 96; font-size: clamp(2.8rem, 5.4vw, 5.8rem); line-height: .88; letter-spacing: -.03em; }
+    .stack-card h3 em { font-weight: 400; }
+    .sc-1 h3 em { color: var(--coral-2); }
+    .stack-card p { margin: 18px 0 0; font-size: clamp(1.02rem, 1.25vw, 1.2rem); max-width: 26em; opacity: .82; }
+    .sc-visual { position: relative; border-radius: 28px; overflow: hidden; }
+    .sc-photo { position: absolute; inset: 0; }
+    .sc-photo img { width: 100%; height: 120%; object-fit: cover; object-position: 35% 50%; position: absolute; top: -10%; }
+    .sc-waves { position: absolute; left: 0; right: 0; bottom: -2px; height: 34%; }
+    .sc-waves svg { position: absolute; left: 0; bottom: 0; width: 200%; height: 100%; }
+    .sc-waves .wv1 { animation: wave 9s linear infinite; }
+    .sc-waves .wv2 { animation: wave 6s linear infinite reverse; }
+    .sc-2 .sc-visual { background: rgba(20,16,26,.08); display: grid; place-items: center; }
+    .ring-text { position: relative; width: min(82%, 420px); aspect-ratio: 1; display: grid; place-items: center; }
+    .ring-text svg { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 22s linear infinite; }
+    .ring-text text { font-family: var(--sans); font-weight: 800; font-size: 15px; letter-spacing: .18em; text-transform: uppercase; fill: var(--ink); }
+    .ring-clock { width: 46%; aspect-ratio: 1; border-radius: 50%; background: var(--cream); position: relative; box-shadow: 0 30px 60px -20px rgba(12,27,51,.45); }
+    .ring-clock i { position: absolute; left: 50%; bottom: 50%; width: 3px; margin-left: -1.5px; border-radius: 3px; background: var(--ink); transform-origin: bottom center; }
+    .ring-clock .hh { height: 26%; animation: spin 40s linear infinite; }
+    .ring-clock .mm { height: 38%; background: var(--coral); animation: spin 6s linear infinite; }
+    .ring-clock::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 12px; margin: -6px; border-radius: 50%; background: var(--ink); }
+    .sc-3 .sc-visual { background: rgba(255,255,255,.35); }
+    .floaters { position: absolute; inset: 0; }
+    .floaters span { position: absolute; padding: 12px 22px; border-radius: 999px; background: var(--cream); color: var(--ink); font-weight: 700; font-size: clamp(14px, 1.3vw, 18px);
+      box-shadow: 0 18px 40px -18px rgba(12,27,51,.45); animation: bob 5s ease-in-out infinite; white-space: nowrap; }
+    .floaters span:nth-child(2n) { background: var(--sea); color: var(--cream); }
+    .floaters span:nth-child(3n) { background: var(--coral); }
+    @keyframes bob { 0%, 100% { transform: translateY(-10px) rotate(var(--r, -4deg)); } 50% { transform: translateY(10px) rotate(calc(var(--r, -4deg) * -1)); } }
 
-    /* ───────────── Experience ───────────── */
-    .exp-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: clamp(40px, 7vw, 110px); align-items: start; }
-    .exp-sticky { position: sticky; top: 130px; }
-    .exp-sticky .btn { margin-top: 36px; }
-    .exp-cards { display: grid; gap: 22px; }
-    .card {
-      position: relative; overflow: hidden;
-      background: var(--sand); border-radius: var(--radius);
-      padding: clamp(28px, 3.4vw, 44px);
-      min-height: 280px; display: flex; flex-direction: column; justify-content: space-between; gap: 40px;
-      transition: transform .8s var(--ease), background-color .6s;
-    }
-    .card:hover { transform: translateY(-6px); background: var(--sand-2); }
-    .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
-    .card-num { font-family: var(--serif); font-size: 74px; line-height: .8; color: var(--champagne); font-style: italic; }
-    .card-icon { width: 54px; height: 54px; border-radius: 50%; border: 1px solid var(--line-dark); display: grid; place-items: center; color: var(--rose); flex: none; }
-    .card-icon svg { width: 24px; height: 24px; }
-    .card h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.9rem, 2.8vw, 2.6rem); line-height: 1.02; margin: 0 0 12px; letter-spacing: -.01em; }
-    .card p { margin: 0; color: var(--muted-dark); max-width: 30em; }
-    .card.feature { background: var(--ink); color: var(--ivory); }
-    .card.feature:hover { background: var(--ink-3); }
-    .card.feature p { color: var(--muted-light); }
-    .card.feature .card-icon { border-color: var(--line-light); color: var(--champagne-2); }
-    .card-wave { position: absolute; right: -20px; bottom: -10px; width: 260px; color: var(--champagne); opacity: .3; pointer-events: none; }
+    /* ── Rating ── */
+    .rate { padding: clamp(120px, 14vw, 200px) 0; overflow: hidden; text-align: center; }
+    .bands { position: absolute; inset: 0; pointer-events: none; }
+    .band { position: absolute; left: -10%; right: -10%; padding: 14px 0; overflow: hidden; white-space: nowrap; font-weight: 800; font-variation-settings: "wdth" 76, "opsz" 96;
+      font-size: clamp(1.4rem, 2.4vw, 2.2rem); text-transform: uppercase; letter-spacing: .01em; }
+    .band-a { top: 16%; background: var(--ink); color: var(--cream); transform: rotate(-5deg); }
+    .band-b { bottom: 14%; background: var(--cream); color: var(--ink); transform: rotate(4deg); }
+    .band-track { display: inline-flex; animation: marquee 26s linear infinite; }
+    .band-b .band-track { animation-direction: reverse; }
+    .band-track span { padding-right: 1.4em; }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+    .rate-inner { position: relative; }
+    .odo { display: inline-flex; align-items: flex-start; font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96; font-size: clamp(10rem, 34vw, 30rem); line-height: .82; letter-spacing: -.05em; }
+    .odo-col { display: inline-block; height: .82em; overflow: hidden; }
+    .odo-strip { display: flex; flex-direction: column; }
+    .odo-strip span { height: .82em; display: block; }
+    .odo-comma { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: 0; }
+    .rate-stars { display: flex; justify-content: center; gap: 10px; margin-top: 18px; font-size: clamp(30px, 4vw, 52px); line-height: 1; color: var(--ink); }
+    .rate-stars span { display: inline-block; }
+    .rate p { margin: 22px auto 0; max-width: 28em; font-size: clamp(1.1rem, 1.6vw, 1.45rem); }
+    .rate p em { font-size: 1.1em; }
+    .rate .btn { margin-top: 30px; }
 
-    /* ───────────── Rating ───────────── */
-    .rating { position: relative; overflow: hidden; text-align: center; }
-    .rating-glow { position: absolute; inset: -20% -10% auto; height: 120%; pointer-events: none;
-      background: radial-gradient(50% 50% at 50% 50%, rgba(200,164,110,.22), transparent 70%); }
-    .rating-num { position: relative; font-family: var(--serif); font-size: clamp(9rem, 30vw, 24rem); line-height: .8; letter-spacing: -.05em; margin: 34px 0 0; color: var(--ivory); }
-    .rating-num em { color: var(--champagne-2); }
-    .rating-stars { position: relative; display: inline-block; font-size: clamp(26px, 3.4vw, 40px); letter-spacing: 8px; margin-top: 34px; line-height: 1; }
-    .rating-stars .base { color: rgba(245,239,230,.14); }
-    .rating-stars .fill { position: absolute; inset: 0 auto 0 0; width: 98%; overflow: hidden; white-space: nowrap; color: var(--champagne); }
-    .rating p { position: relative; font-size: clamp(1.05rem, 1.5vw, 1.3rem); color: var(--muted-light); margin: 22px auto 0; max-width: 30em; }
-    .rating .btn { margin-top: 38px; }
-
-    /* ───────────── Booking ───────────── */
-    .booking-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(32px, 5vw, 72px); margin-top: clamp(48px, 6vw, 80px); align-items: start; }
-    .panel { background: #fff; border-radius: 28px; padding: clamp(24px, 3.4vw, 48px); box-shadow: 0 50px 100px -60px rgba(27,21,17,.35); border: 1px solid var(--line-dark); }
-    .step + .step { margin-top: 38px; padding-top: 34px; border-top: 1px solid var(--line-dark); }
-    .step-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 18px; }
-    .step-head b { font-family: var(--serif); font-weight: 400; font-style: italic; font-size: 28px; color: var(--champagne); line-height: 1; }
-    .step-head h3 { margin: 0; font-size: 17px; font-weight: 600; }
-    .step-head small { color: var(--muted-dark); font-size: 13px; margin-left: auto; }
-    .chips { display: flex; flex-wrap: wrap; gap: 10px; }
-    .chip {
-      height: 46px; padding: 0 20px; border-radius: 999px; border: 1px solid var(--line-dark);
-      font-size: 14.5px; font-weight: 500; color: var(--text-dark); background: var(--ivory);
-      display: inline-flex; align-items: center; gap: 8px;
-      transition: background-color .35s, color .35s, border-color .35s, transform .35s var(--ease);
-    }
-    .chip:hover { border-color: var(--text-dark); }
-    .chip[aria-pressed="true"] { background: var(--ink); color: var(--ivory); border-color: var(--ink); }
-    .chip[aria-pressed="true"]::before { content: "✓"; font-size: 12px; color: var(--champagne-2); }
-    .chip.day { flex-direction: column; justify-content: center; gap: 0; height: 64px; min-width: 72px; padding: 0 14px; line-height: 1.15; }
-    .chip.day::before { display: none; }
-    .chip.day small { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; opacity: .7; }
-    .chip.day strong { font-family: var(--serif); font-weight: 400; font-size: 22px; }
-    .field { width: 100%; height: 56px; border-radius: 16px; border: 1px solid var(--line-dark); background: var(--ivory); padding: 0 20px; font: inherit; font-size: 16px; color: var(--text-dark); transition: border-color .3s; }
-    .field:focus { outline: none; border-color: var(--champagne); box-shadow: 0 0 0 4px rgba(200,164,110,.2); }
-    .form-error { color: #A2462C; font-size: 14px; margin: 14px 0 0; min-height: 1px; }
-
-    .preview { position: sticky; top: 120px; }
-    .phone {
-      background: var(--ink); border-radius: 34px; padding: 14px; color: var(--ivory);
-      box-shadow: 0 60px 120px -60px rgba(27,21,17,.65);
-    }
-    .phone-top { display: flex; align-items: center; gap: 12px; padding: 12px 12px 16px; border-bottom: 1px solid var(--line-light); }
-    .avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--champagne); color: var(--ink); display: grid; place-items: center; font-family: var(--serif); font-size: 25px; font-style: italic; flex: none; line-height: 1; }
-    .phone-top strong { display: block; font-size: 15px; font-weight: 600; }
-    .phone-top span { font-size: 12px; color: var(--muted-light); }
-    .chat { padding: 22px 10px 14px; min-height: 290px; display: flex; flex-direction: column; justify-content: flex-end;
-      background: radial-gradient(80% 60% at 80% 0%, rgba(200,164,110,.12), transparent 70%); border-radius: 0 0 22px 22px; }
-    .bubble { align-self: flex-end; max-width: 92%; background: #2E4A3E; color: #F1F5EF; border-radius: 18px 18px 4px 18px; padding: 14px 16px 10px; font-size: 14.5px; line-height: 1.5; white-space: pre-line; position: relative; }
+    /* ── Booking ── */
+    .book { padding: clamp(110px, 13vw, 190px) 0; }
+    .book-head { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 30px; }
+    .book-head p { margin: 0; max-width: 24em; color: var(--muted); font-size: 1.1rem; }
+    .book-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(24px, 4vw, 60px); margin-top: clamp(44px, 6vw, 80px); align-items: start; }
+    .panel { background: #fff; border-radius: 34px; padding: clamp(22px, 3.2vw, 46px); border: 1px solid var(--line); box-shadow: 0 50px 100px -60px rgba(12,27,51,.4); }
+    .step + .step { margin-top: 34px; padding-top: 30px; border-top: 1px dashed var(--line); }
+    .step-h { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+    .step-h b { width: 34px; height: 34px; border-radius: 50%; background: var(--sea); color: var(--cream); display: grid; place-items: center; font-size: 14px; font-weight: 700; flex: none; }
+    .step-h h3 { margin: 0; font-size: 19px; font-weight: 700; }
+    .step-h small { margin-left: auto; color: var(--muted); font-size: 13px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { height: 46px; padding: 0 18px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--cream); font-size: 15px; font-weight: 600;
+      display: inline-flex; align-items: center; gap: 8px; transition: background-color .3s, color .3s, border-color .3s, transform .5s var(--ease); }
+    .chip:hover { border-color: var(--ink); transform: translateY(-2px); }
+    .chip[aria-pressed="true"] { background: var(--coral); border-color: var(--coral); color: var(--ink); }
+    .chip.day { flex-direction: column; justify-content: center; gap: 0; height: 66px; min-width: 74px; padding: 0 12px; border-radius: 22px; line-height: 1.1; }
+    .chip.day small { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; opacity: .7; }
+    .chip.day strong { font-size: 21px; font-weight: 800; font-variation-settings: "wdth" 80; }
+    .field { width: 100%; height: 58px; border-radius: 18px; border: 1.5px solid var(--line); background: var(--cream); padding: 0 20px; font: inherit; font-size: 16px; color: var(--ink); }
+    .field:focus { outline: none; border-color: var(--coral); box-shadow: 0 0 0 4px rgba(255,111,94,.2); }
+    .form-error { color: #C23B2A; font-size: 14px; font-weight: 600; margin: 12px 0 0; min-height: 1px; }
+    .preview { position: sticky; top: 110px; }
+    .phone { background: var(--sea); color: var(--cream); border-radius: 38px; padding: 14px; box-shadow: 0 60px 120px -50px rgba(12,27,51,.7); }
+    .phone-top { display: flex; align-items: center; gap: 12px; padding: 10px 10px 16px; border-bottom: 1px solid rgba(251,244,236,.14); }
+    .avatar { width: 44px; height: 44px; border-radius: 50%; flex: none;
+      background: radial-gradient(circle at 32% 28%, #fff 0 10%, rgba(255,255,255,0) 34%), conic-gradient(from 40deg, #ffd8cc, #dcd1ff, #b8efe4, #ffe9b8, #ffd8cc); }
+    .phone-top strong { display: block; font-size: 15px; }
+    .phone-top span { font-size: 12px; opacity: .65; }
+    .chat { min-height: 300px; padding: 22px 8px 12px; display: flex; flex-direction: column; justify-content: flex-end; }
+    .bubble { align-self: flex-end; max-width: 94%; background: #1F5C4C; color: #EFF7F2; border-radius: 20px 20px 4px 20px; padding: 14px 16px 10px; font-size: 14.5px; line-height: 1.5; white-space: pre-line; transform-origin: bottom right; }
     .bubble time { display: block; text-align: right; font-size: 11px; opacity: .6; margin-top: 4px; }
     .send { width: 100%; margin-top: 14px; }
-    .preview-note { font-size: 13px; color: var(--muted-dark); margin-top: 16px; text-align: center; }
+    .note { margin: 14px 0 0; text-align: center; color: var(--muted); font-size: 13.5px; }
 
-    /* ───────────── Visit ───────────── */
-    .visit-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(36px, 6vw, 90px); margin-top: clamp(48px, 6vw, 80px); align-items: stretch; }
-    .info-block + .info-block { margin-top: 34px; padding-top: 30px; border-top: 1px solid var(--line-light); }
-    .info-block h4 { margin: 0 0 12px; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--champagne-2); font-weight: 600; }
-    .address { font-family: var(--serif); font-size: clamp(1.7rem, 2.6vw, 2.3rem); line-height: 1.15; margin: 0; }
-    .hours { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
-    .hours li { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px dashed var(--line-light); font-size: 15px; color: var(--muted-light); }
-    .hours li.today { color: var(--ivory); font-weight: 600; }
-    .hours li.today span:first-child::after { content: " · hoje"; color: var(--champagne-2); font-weight: 500; }
-    .visit-ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 34px; }
-    .visit-ctas .btn { height: 52px; padding: 0 22px; font-size: 14px; }
-    .map {
-      position: relative; border-radius: 28px; overflow: hidden; min-height: 460px;
-      background: radial-gradient(60% 60% at 60% 40%, rgba(200,164,110,.18), transparent 70%), var(--ink-2);
-      border: 1px solid var(--line-light);
-    }
-    .map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: grayscale(1) invert(.92) sepia(.25) contrast(.9) brightness(.95); }
-    .map-card {
-      position: absolute; left: 18px; bottom: 18px; z-index: 2; display: flex; gap: 14px; align-items: center;
-      background: rgba(22,17,14,.82); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--line-light); border-radius: 20px; padding: 10px 18px 10px 10px; max-width: calc(100% - 36px);
-    }
-    .map-card img { width: 64px; height: 64px; object-fit: cover; border-radius: 14px; }
-    .map-card strong { display: block; font-size: 14px; }
-    .map-card span { font-size: 12.5px; color: var(--muted-light); }
+    /* ── Visit + footer ── */
+    .visit { padding-top: clamp(110px, 13vw, 190px); overflow: hidden; }
+    .visit-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: clamp(28px, 5vw, 80px); margin-top: clamp(44px, 6vw, 80px); }
+    .addr { margin: 0; font-family: var(--serif); font-size: clamp(2rem, 3.4vw, 3.3rem); line-height: 1.05; letter-spacing: -.02em; }
+    .addr em { color: var(--accent); }
+    .info-h { margin: 34px 0 12px; font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+    .hours { list-style: none; margin: 0; padding: 0; }
+    .hours li { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 15.5px; color: var(--muted); }
+    .hours li.today { color: var(--fg); font-weight: 700; }
+    .hours li.today span:first-child::after { content: "  ← hoje"; color: var(--coral-2); }
+    .visit-ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+    .map { position: relative; min-height: 480px; border-radius: 34px; overflow: hidden; background: var(--sea-2); border: 1px solid var(--line); }
+    .map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: invert(.92) hue-rotate(180deg) saturate(.55) brightness(.92) contrast(.95); }
+    .map-chip { position: absolute; left: 16px; bottom: 16px; right: 16px; max-width: 360px; display: flex; align-items: center; gap: 14px; padding: 10px 18px 10px 10px; border-radius: 22px;
+      background: rgba(12,27,51,.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(251,244,236,.14); color: var(--cream); }
+    .map-chip img { width: 62px; height: 62px; border-radius: 16px; object-fit: cover; }
+    .map-chip strong { display: block; font-size: 15px; }
+    .map-chip span { font-size: 13px; opacity: .7; }
+    .ocean { position: relative; height: clamp(360px, 62vh, 640px); margin-top: clamp(60px, 8vw, 120px); }
+    .ocean canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    .ocean-word { position: absolute; left: 0; right: 0; top: 4%; text-align: center; font-family: var(--serif); font-style: italic; font-size: min(21vw, 300px); line-height: .9;
+      letter-spacing: -.04em; color: var(--cream); pointer-events: none; white-space: nowrap; }
+    .ocean-word .ch { will-change: transform; }
+    .foot { position: relative; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px 28px; padding-top: 22px; padding-bottom: 26px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+    .foot nav { display: flex; flex-wrap: wrap; gap: 22px; }
+    .foot a:hover { color: var(--coral-2); }
 
-    /* ───────────── Footer ───────────── */
-    .footer { background: var(--ink); color: var(--ivory); padding: clamp(80px, 10vw, 140px) 0 28px; overflow: hidden; border-top: 1px solid var(--line-light); }
-    .footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; }
-    .footer-top h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 4vw, 3.6rem); line-height: 1; margin: 0; letter-spacing: -.02em; }
-    .footer-top h3 em { color: var(--champagne-2); }
-    .footer-col h4 { margin: 0 0 14px; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted-light); font-weight: 600; }
-    .footer-col a, .footer-col p { display: block; margin: 0 0 8px; font-size: 15px; color: rgba(245,239,230,.86); }
-    .footer-col a:hover { color: var(--champagne-2); }
-    .wordmark {
-      font-family: var(--serif); font-size: clamp(3.6rem, 15.4vw, 15.5rem); line-height: .82; letter-spacing: -.045em;
-      margin: clamp(70px, 9vw, 130px) 0 0; white-space: nowrap; text-align: center;
-      background: linear-gradient(180deg, var(--ivory) 30%, rgba(245,239,230,.12));
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-    }
-    .wordmark em { font-style: italic; }
-    .footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line-light); font-size: 13px; color: var(--muted-light); }
+    .mobile-cta { position: fixed; left: 12px; right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); z-index: 80; display: none; transform: translateY(150%); transition: transform .7s var(--ease); }
+    .mobile-cta.show { transform: none; }
+    .mobile-cta .btn { width: 100%; box-shadow: 0 20px 40px -14px rgba(12,27,51,.5); }
 
-    /* Mobile sticky CTA */
-    .mobile-cta {
-      position: fixed; z-index: 70; left: 12px; right: 12px; bottom: max(12px, env(safe-area-inset-bottom));
-      display: none; transform: translateY(140%); transition: transform .7s var(--ease);
+    /* ── Responsive ── */
+    @media (max-width: 1100px) {
+      .book-grid, .visit-grid { grid-template-columns: 1fr; }
+      .preview { position: static; }
     }
-    .mobile-cta.show { transform: translateY(0); }
-    .mobile-cta .btn { width: 100%; box-shadow: 0 20px 40px -12px rgba(0,0,0,.45); }
-
-    /* ───────────── Responsive ───────────── */
-    @media (max-width: 1080px) {
-      .nav-links { display: none; }
-      .menu-btn { display: inline-flex; }
-      .studio-grid, .exp-grid, .booking-grid, .visit-grid { grid-template-columns: 1fr; }
-      .arch-wrap { justify-self: center; max-width: 420px; }
-      .exp-sticky, .preview { position: static; }
-      .footer-top { grid-template-columns: 1fr 1fr; }
-      .footer-top > :first-child { grid-column: 1 / -1; }
+    @media (max-width: 899px) {
+      .nav { grid-template-columns: 1fr auto; }
+      .nav-status { display: none; }
+      .hs-pin { padding-top: 90px; min-height: 0; }
+      .hs-track { overflow-x: auto; width: 100%; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 10px; }
+      .hs-track::-webkit-scrollbar { display: none; }
+      .hs-track > * { scroll-snap-align: center; flex: none; }
+      .hs-mhead { display: block; margin-bottom: 30px; }
+      .hs-intro { display: none; }
+      .svc-card { width: 82vw; height: 560px; min-height: 0; }
+      .hs-outro { width: 80vw; padding: 0 20px; }
+      .stack-card { grid-template-columns: 1fr; grid-template-rows: auto 1fr; height: auto; min-height: 78vh; top: calc(76px + var(--i) * 14px); border-radius: 30px; }
+      .sc-visual { min-height: 300px; }
+      .sc-n { display: none; }
+      .facts { grid-template-columns: 1fr; }
+      .fact + .fact { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
+      .fact { padding: 22px 0; }
+      .book-head { grid-template-columns: 1fr; }
     }
-    @media (max-width: 760px) {
-      body { font-size: 15.5px; }
-      .nav { padding-top: 14px; padding-bottom: 14px; }
-      .nav-cta { display: none; }
-      .brand-name { font-size: 23px; }
-      .hero-inner { padding-top: 120px; padding-bottom: 26px; }
-      .hero h1 { letter-spacing: -.03em; }
-      .hero-row { grid-template-columns: 1fr; gap: 28px; margin-top: 28px; }
-      .hero-ctas .btn { flex: 1 1 100%; }
-      .hero-bar .wrap { font-size: 13px; gap: 10px 20px; }
-      .scroll-cue { display: none; }
-      .hero-kicker .dot { display: none; }
-      .hero-kicker { flex-direction: column; align-items: flex-start; gap: 6px; font-size: 12px; }
-      .services-head { grid-template-columns: 1fr; gap: 24px; }
-      .svc { grid-template-columns: 1fr auto; gap: 8px 16px; padding: 28px 0; }
-      .svc-num { grid-column: 1 / -1; }
-      .svc-name { grid-column: 1; }
-      .svc-arrow { grid-column: 2; grid-row: 2; width: 50px; height: 50px; }
-      .svc-desc { grid-column: 1 / -1; }
-      .stats { grid-template-columns: 1fr 1fr; }
-      .stat { padding: 26px 16px 26px 0; }
-      .stat + .stat { padding-left: 16px; }
-      .stat:nth-child(3) { padding-left: 0; border-left: 0; }
-      .stat:nth-child(n+3) { border-top: 1px solid var(--line-dark); }
-      .arch-badge { left: -8px; bottom: 30px; width: 104px; height: 104px; }
-      .arch-badge b { font-size: 28px; }
-      .card { min-height: 0; }
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      .logo { font-size: 19px; }
+      .nav .btn-sm { display: none; }
+      .hero { padding-top: 84px; }
+      .ht-1 { font-size: 31vw; }
+      .ht-2 { font-size: 19.4vw; margin-top: -.02em; }
+      .ocean { height: 440px; }
+      .ocean-word { top: 10%; }
+      .hero-bottom { grid-template-columns: 1fr; gap: 0; }
+      .sticker { display: none; }
+      .hero-actions .btn { flex: 1 1 100%; }
+      .hero-foot .scroll-hint { display: none; }
+      .mq-item { font-size: 17vw; }
+      .step-h small { display: none; }
       .map { min-height: 360px; }
-      .footer-top { grid-template-columns: 1fr; }
       .mobile-cta { display: block; }
-      .footer { padding-bottom: 96px; }
-      .step-head small { display: none; }
+      .foot { padding-bottom: 100px; }
+      .band { font-size: 1.15rem; padding: 10px 0; }
+      .band-a { top: 8%; }
+      .band-b { bottom: 6%; }
     }
-
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
-      .marquee-track { animation: none; }
+      *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
     }
   </style>
 </head>
 <body>
 
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
   <!-- Loader -->
   <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader-word"><span class="w"><span class="wi">Maria</span></span> <span class="w"><em class="wi">Charmosa</em></span></div>
-    <div class="loader-bar"><i></i></div>
-    <div class="loader-meta">Praia dos Cavaleiros · Macaé</div>
+    <div class="ld-top"><span>Maria Charmosa</span><span>Macaé · RJ</span></div>
+    <div class="ld-pearl" id="ldPearl"></div>
+    <div class="ld-count"><span id="ldNum">0</span><small>%</small></div>
+    <div class="ld-caption">trazendo o mar até você…</div>
   </div>
+
+  <div class="cursor" id="cursor" aria-hidden="true"><span></span></div>
 
   <!-- Nav -->
   <header class="nav" id="nav">
-    <a class="brand" href="#top" aria-label="Studio Maria Charmosa, voltar ao início">
-      <span class="brand-kicker">Studio</span>
-      <span class="brand-name">Maria <em>Charmosa</em></span>
-    </a>
-    <nav class="nav-links" aria-label="Principal">
-      <a href="#studio">O Studio</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#experiencia">Experiência</a>
-      <a href="#visite">Visite</a>
-    </nav>
+    <a class="logo" href="#top" aria-label="Studio Maria Charmosa, início"><span class="logo-pearl"></span><span>Maria <em>Charmosa</em></span></a>
+    <div class="nav-status"><span class="status-dot" id="statusDot"></span><span id="statusText">Terça a sábado · 9h às 20h</span></div>
     <div class="nav-right">
-      <a class="btn btn-gold nav-cta" href="#agendar">Agendar horário</a>
-      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu"><i></i>Menu</button>
+      <a class="btn btn-coral btn-sm" href="#agendar" data-cursor="Bora!"><span class="roll"><span data-t="Agendar">Agendar</span></span></a>
+      <button class="burger" id="menuBtn" aria-expanded="false" aria-controls="menu"><span></span><span></span><b class="sr">Menu</b></button>
     </div>
   </header>
 
   <div class="menu" id="menu" aria-hidden="true">
-    <a class="menu-link" href="#studio"><span>01</span>O Studio</a>
-    <a class="menu-link" href="#servicos"><span>02</span>Serviços</a>
-    <a class="menu-link" href="#experiencia"><span>03</span>Experiência</a>
-    <a class="menu-link" href="#agendar"><span>04</span>Agendar</a>
-    <a class="menu-link" href="#visite"><span>05</span>Visite</a>
-    <div class="menu-foot">
-      <span>Av. Atlântica, 2200 · Cavaleiros, Macaé/RJ</span>
-      <span>Terça a sábado · 9h às 20h</span>
-    </div>
+    <nav class="menu-links" aria-label="Menu">
+      <a href="#studio"><small>01</small>O <em>studio</em></a>
+      <a href="#servicos"><small>02</small>Serviços</a>
+      <a href="#experiencia"><small>03</small>A <em>vibe</em></a>
+      <a href="#agendar"><small>04</small>Agendar</a>
+      <a href="#visite"><small>05</small>Visite</a>
+    </nav>
+    <div class="menu-foot"><span>Av. Atlântica, 2200 · Cavaleiros, Macaé/RJ</span><span>Terça a sábado · 9h às 20h</span></div>
   </div>
 
-  <main id="top">
+  <main>
+    <!-- ───────── HERO ───────── -->
+    <section class="hero" id="top" data-theme="light" data-pearl="hero">
+      <h1 class="hero-title">
+        <span class="sr">Studio Maria Charmosa: salão de beleza pé na areia em Macaé</span>
+        <span class="ht-1" aria-hidden="true">Maria</span>
+        <span class="ht-2" aria-hidden="true">Charmosa</span>
+      </h1>
 
-    <!-- ───────────── HERO ───────────── -->
-    <section class="hero grain" id="hero" aria-label="Apresentação">
-      <canvas id="shader" aria-hidden="true"></canvas>
-      <div class="hero-shade"></div>
-
-      <div class="hero-inner wrap">
-        <div class="hero-kicker" data-hero>
-          <span>Studio de beleza &amp; bem-estar</span><span class="dot"></span><span>Praia dos Cavaleiros · Macaé</span>
-        </div>
-        <h1 id="heroTitle">Beleza com<br><em>vista para o mar.</em></h1>
-        <div class="hero-row">
-          <p class="hero-sub" data-hero>Cabelo, unhas, cílios, sobrancelhas, depilação e massagem em um studio de frente para a orla. Chegue, respire e saia ainda mais você.</p>
-          <div class="hero-ctas" data-hero>
-            <a class="btn btn-gold" data-wa="Olá, Studio Maria Charmosa! Vim pelo site e gostaria de agendar um horário." href="#agendar" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.42 1.3-1.96 1.38-.5.07-1.13.1-1.82-.12-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.18-4.94-4.37-.15-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.3.58-.37.78-.37h.56c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.15.12.32.02.51-.1.2-.15.32-.29.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.3 2.36 1.45.3.15.46.12.63-.07.17-.2.73-.85.92-1.15.2-.3.39-.24.66-.15.27.1 1.71.81 2 .96.3.15.49.22.56.34.07.12.07.7-.17 1.37Z"/></svg>
-              Agendar pelo WhatsApp
-            </a>
-            <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-bar" data-hero>
-        <div class="wrap">
-          <span class="item"><span class="stars" aria-hidden="true">★★★★★</span> <strong>4,9</strong>&nbsp;· 62 avaliações no Google</span>
-          <span class="item"><span class="status-dot" id="statusDot"></span><span id="statusText">Terça a sábado, 9h às 20h</span></span>
-          <span class="item">Av. Atlântica, 2200 · Cavaleiros</span>
-          <span class="scroll-cue"><i></i>Role</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ───────────── MARQUEE ───────────── -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <div class="marquee-group">
-          <span>Cabelo</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg>
-          <span>Unhas</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg>
-          <span>Cílios</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg>
-          <span>Sobrancelhas</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg>
-          <span>Depilação</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg>
-          <span>Massagem</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg>
-          <span>Vista para o mar</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg>
-          <span>Bem-estar</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg>
-        </div>
-      </div>
-    </div>
-
-    <!-- ───────────── STUDIO ───────────── -->
-    <section class="section" id="studio">
-      <div class="wrap">
-        <div class="studio-grid">
+      <div>
+        <div class="hero-bottom">
           <div>
-            <span class="label" data-reveal>01 · O Studio</span>
-            <p class="manifesto" id="manifesto">Na orla da Praia dos Cavaleiros, o Studio Maria Charmosa nasceu para ser <em>o seu respiro da semana.</em> Técnica apurada, atendimento com hora marcada e uma vista que transforma qualquer horário em um pequeno ritual.</p>
-          </div>
-          <figure class="arch-wrap" style="margin:0">
-            <div class="arch" data-reveal>
-              <img id="archImg" src="assets/salao-vista-mar.jpg" alt="Interior do Studio Maria Charmosa: cadeiras de couro, bancada iluminada e janelas de vidro com vista para a Praia dos Cavaleiros" width="671" height="527" loading="lazy">
+            <p class="hero-lede" data-hero>Studio de beleza <em>pé na areia</em> na Praia dos Cavaleiros, em Macaé. Cabelo, unhas, cílios, sobrancelhas, depilação e massagem com o mar ali na janela.</p>
+            <div class="hero-actions" data-hero>
+              <a class="btn btn-coral" data-wa="Oi, Studio Maria Charmosa! Vim pelo site e quero agendar um horário." href="#agendar" target="_blank" rel="noopener" data-cursor="WhatsApp">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.42 1.3-1.96 1.38-.5.07-1.13.1-1.82-.12-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.18-4.94-4.37-.15-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.3.58-.37.78-.37h.56c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.15.12.32.02.51-.1.2-.15.32-.29.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.3 2.36 1.45.3.15.46.12.63-.07.17-.2.73-.85.92-1.15.2-.3.39-.24.66-.15.27.1 1.71.81 2 .96.3.15.49.22.56.34.07.12.07.7-.17 1.37Z"/></svg>
+                <span class="roll"><span data-t="Agendar pelo WhatsApp">Agendar pelo WhatsApp</span></span>
+              </a>
+              <a class="btn btn-line" href="#servicos" data-cursor="Ver"><span class="roll"><span data-t="Ver serviços">Ver serviços</span></span></a>
             </div>
-            <div class="arch-badge" aria-hidden="true">
-              <svg viewBox="0 0 128 128"><defs><path id="circ" d="M64,64 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs><text><textPath href="#circ">De frente para o mar · desde 2018 · </textPath></text></svg>
-              <b>mc</b>
+          </div>
+          <a class="sticker" href="#agendar" data-hero aria-label="Agendar horário" data-cursor="Bora!">
+            <svg class="ring" viewBox="0 0 150 150" aria-hidden="true"><defs><path id="stk" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs><text><textPath href="#stk">pé na areia ✺ Macaé ✺ desde 2018 ✺ </textPath></text></svg>
+            <span class="core"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </a>
+        </div>
+        <div class="hero-foot" data-hero>
+          <span><span class="stars" aria-hidden="true">★★★★★</span> <b>4,9</b> no Google · 62 avaliações</span>
+          <span>Av. Atlântica, 2200 · Cavaleiros</span>
+          <span class="scroll-hint"><i></i>role pra ver o mar</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── INTRO ───────── -->
+    <section class="intro" id="studio" data-theme="light" data-pearl="intro">
+      <div class="wrap content">
+        <span class="tag" data-reveal><i></i>O studio</span>
+        <p class="statement" id="statement">Um salão de vidro <span class="pill"><img src="assets/salao-duo.jpg" alt="" loading="lazy"></span> de frente pro mar <span class="pill pill-wave"><svg viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 Q15 12 30 22 T60 22 T90 22 T120 22 V40 H0Z" fill="#9BE7DA"/><path d="M0 28 Q15 20 30 28 T60 28 T90 28 T120 28 V40 H0Z" fill="#FBF4EC" opacity=".85"/></svg></span>, onde cabelo, unhas e cílios <span class="pill pill-orb"></span> ganham hora marcada, calma e <em>aquela vista</em> que só a Praia dos Cavaleiros <span class="pill"><img src="assets/entrada-duo.jpg" alt="" loading="lazy"></span> tem.</p>
+
+        <div class="facts">
+          <div class="fact" data-reveal><b data-count="2018" data-from="1990">2018</b><span>Pé na areia desde</span></div>
+          <div class="fact" data-reveal><b><span data-count="6">6</span> <em>em 1</em></b><span>Especialidades num só endereço</span></div>
+          <div class="fact" data-reveal><b>9h<em>–</em>20h</b><span>De terça a sábado, com hora marcada</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── MARQUEE ───────── -->
+    <section class="mq" data-theme="light" data-pearl="intro" aria-hidden="true">
+      <div class="mq-row"><div class="mq-track">
+        <span class="mq-item"><span class="s">Cabelo</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg></span>
+        <span class="mq-item"><em>unhas</em><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg></span>
+        <span class="mq-item"><span class="o">Cílios</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg></span>
+        <span class="mq-item"><em>sobrancelhas</em><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg></span>
+      </div></div>
+      <div class="mq-row"><div class="mq-track">
+        <span class="mq-item"><span class="o">Depilação</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg></span>
+        <span class="mq-item"><em>massagem</em><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg></span>
+        <span class="mq-item"><span class="s">Vista pro mar</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg></span>
+      </div></div>
+    </section>
+
+    <!-- ───────── SERVICES (horizontal) ───────── -->
+    <section class="hs" id="servicos" data-theme="dark" data-pearl="services">
+      <div class="hs-pin">
+        <div class="hs-mhead wrap">
+          <h2 class="big-title" data-split>O menu da <em>beleza.</em></h2>
+          <p>Escolhe, toca e agenda direto no WhatsApp. Atendimento feminino e masculino, sempre com hora marcada. <b>Arrasta pro lado →</b></p>
+        </div>
+        <div class="hs-bar wrap"><span>Serviços</span><span class="hs-count"><span id="hsNow">01</span> / 06</span><div class="hs-progress"><i id="hsBar"></i></div></div>
+        <div class="hs-track" id="hsTrack">
+          <div class="hs-intro">
+            <div>
+              <h2 class="big-title" data-split>O menu da <em>beleza.</em></h2>
+              <p>Escolhe, toca e agenda direto no WhatsApp. Atendimento feminino e masculino, sempre com hora marcada.</p>
             </div>
-            <figcaption class="caption"><span>O salão, de frente para a orla</span><span>Av. Atlântica, 2200</span></figcaption>
-          </figure>
-        </div>
-
-        <div class="stats">
-          <div class="stat" data-reveal><div class="stat-num"><span data-count="2018" data-plain>2018</span></div><div class="stat-label">Na orla de Macaé desde</div></div>
-          <div class="stat" data-reveal><div class="stat-num"><span data-count="4.9" data-decimals="1">4,9</span><sup>★</sup></div><div class="stat-label">Nota média no Google</div></div>
-          <div class="stat" data-reveal><div class="stat-num"><span data-count="62">62</span></div><div class="stat-label">Avaliações de clientes</div></div>
-          <div class="stat" data-reveal><div class="stat-num"><span data-count="6">6</span></div><div class="stat-label">Especialidades num só lugar</div></div>
-        </div>
-      </div>
-    </section>
-
-    <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true" style="background:var(--ivory)">
-      <path id="wavePath" d="M0 45 C 120 10, 240 10, 360 45 S 600 80, 720 45 S 960 10, 1080 45 S 1320 80, 1440 45" fill="none" stroke="currentColor" stroke-width="1.2"/>
-    </svg>
-
-    <!-- ───────────── SERVICES ───────────── -->
-    <section class="section dark grain" id="servicos" style="overflow:hidden">
-      <div class="wrap" style="position:relative;z-index:3">
-        <div class="services-head">
-          <div>
-            <span class="label" data-reveal>02 · Serviços</span>
-            <h2 class="title" data-split>Tudo o que você ama, <em>num só endereço.</em></h2>
-          </div>
-          <p class="lead" data-reveal style="margin:0">Escolha um serviço e fale direto com o studio pelo WhatsApp. Atendimento feminino e masculino, sempre com hora marcada.</p>
-        </div>
-
-        <div class="svc-list" id="svcList">
-          <a class="svc" href="#agendar" data-wa="Olá! Vim pelo site e gostaria de agendar um horário de CABELO. Quais horários vocês têm disponíveis?" target="_blank" rel="noopener">
-            <span class="svc-num">01</span>
-            <span class="svc-name">Cabelo</span>
-            <span class="svc-desc">Corte, escova, tratamentos e transformação de cor. Para ela e para ele.
-              <span class="svc-tags"><span>Feminino</span><span>Masculino</span></span></span>
-            <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </a>
-          <a class="svc" href="#agendar" data-wa="Olá! Vim pelo site e gostaria de agendar UNHAS (manicure/pedicure/alongamento). Quais horários vocês têm disponíveis?" target="_blank" rel="noopener">
-            <span class="svc-num">02</span>
-            <span class="svc-name">Unhas</span>
-            <span class="svc-desc">Manicure, pedicure e alongamento de unhas com acabamento impecável.
-              <span class="svc-tags"><span>Manicure</span><span>Pedicure</span><span>Alongamento</span></span></span>
-            <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </a>
-          <a class="svc" href="#agendar" data-wa="Olá! Vim pelo site e gostaria de agendar EXTENSÃO DE CÍLIOS. Quais horários vocês têm disponíveis?" target="_blank" rel="noopener">
-            <span class="svc-num">03</span>
-            <span class="svc-name">Cílios</span>
-            <span class="svc-desc">Extensão de cílios para um olhar marcante, do efeito natural ao volume.
-              <span class="svc-tags"><span>Extensão</span></span></span>
-            <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </a>
-          <a class="svc" href="#agendar" data-wa="Olá! Vim pelo site e gostaria de agendar DESIGN DE SOBRANCELHAS. Quais horários vocês têm disponíveis?" target="_blank" rel="noopener">
-            <span class="svc-num">04</span>
-            <span class="svc-name">Sobrancelhas</span>
-            <span class="svc-desc">Design de sobrancelhas pensado para valorizar o seu rosto.
-              <span class="svc-tags"><span>Design</span></span></span>
-            <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </a>
-          <a class="svc" href="#agendar" data-wa="Olá! Vim pelo site e gostaria de agendar DEPILAÇÃO. Quais horários vocês têm disponíveis?" target="_blank" rel="noopener">
-            <span class="svc-num">05</span>
-            <span class="svc-name">Depilação</span>
-            <span class="svc-desc">Depilação com cuidado, higiene e conforto do início ao fim.
-              <span class="svc-tags"><span>Corpo</span><span>Rosto</span></span></span>
-            <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </a>
-          <a class="svc" href="#agendar" data-wa="Olá! Vim pelo site e gostaria de agendar MASSAGEM / MASSOTERAPIA. Quais horários vocês têm disponíveis?" target="_blank" rel="noopener">
-            <span class="svc-num">06</span>
-            <span class="svc-name">Massoterapia</span>
-            <span class="svc-desc">Massagem para desacelerar o corpo e a mente, com o mar logo ali.
-              <span class="svc-tags"><span>Relaxamento</span><span>Bem-estar</span></span></span>
-            <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </a>
-        </div>
-      </div>
-    </section>
-    <div class="cursor-bubble" id="bubble" aria-hidden="true">Agendar<br>agora</div>
-
-    <!-- ───────────── EXPERIENCE ───────────── -->
-    <section class="section" id="experiencia">
-      <div class="wrap">
-        <div class="exp-grid">
-          <div class="exp-sticky">
-            <span class="label" data-reveal>03 · A experiência</span>
-            <h2 class="title" data-split>Mais que um horário. <em>Um momento seu.</em></h2>
-            <p class="lead" data-reveal style="margin-top:26px">Um salão envidraçado, a luz da orla entrando e uma equipe que cuida de cada detalhe. É por isso que quem vem, volta.</p>
-            <a class="btn btn-ink" href="#agendar" data-reveal>Quero viver isso <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <span class="hs-hint">Arrasta pro lado <svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h32M27 1l5 5-5 5"/></svg></span>
           </div>
 
-          <div class="exp-cards">
-            <article class="card feature" data-reveal>
-              <div class="card-top">
-                <span class="card-num">01</span>
-                <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="9" r="3.5"/><path d="M2 17c2.5-2 5-2 7.5 0s5 2 7.5 0 3.5-1.5 5-1.2M2 21c2.5-2 5-2 7.5 0s5 2 7.5 0 3.5-1.5 5-1.2"/></svg></span>
-              </div>
-              <div>
-                <h3>Vista para o mar</h3>
-                <p>Um salão de vidro, de frente para a Praia dos Cavaleiros. A luz da orla faz parte do atendimento.</p>
-              </div>
-              <svg class="card-wave" viewBox="0 0 260 80" fill="none" stroke="currentColor" aria-hidden="true"><path d="M0 40 C 40 10, 80 10, 130 40 S 220 70, 260 40"/><path d="M0 58 C 40 28, 80 28, 130 58 S 220 88, 260 58"/></svg>
-            </article>
-            <article class="card" data-reveal>
-              <div class="card-top">
-                <span class="card-num">02</span>
-                <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-              </div>
-              <div>
-                <h3>Com hora marcada, sem pressa</h3>
-                <p>Atendimento com agendamento para tudo acontecer no seu tempo. Sem fila e sem correria.</p>
-              </div>
-            </article>
-            <article class="card" data-reveal>
-              <div class="card-top">
-                <span class="card-num">03</span>
-                <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 2c.6 5 4 8.4 9 9-5 .6-8.4 4-9 9-.6-5-4-8.4-9-9 5-.6 8.4-4 9-9Z"/></svg></span>
-              </div>
-              <div>
-                <h3>Tudo num só lugar</h3>
-                <p>Cabelo, unhas, cílios, sobrancelhas, depilação e massagem. Resolva tudo numa única visita.</p>
-              </div>
-            </article>
-            <article class="card" data-reveal>
-              <div class="card-top">
-                <span class="card-num">04</span>
-                <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8 6.6 19.7l1.1-6.1-4.5-4.2 6.1-.8L12 3Z"/></svg></span>
-              </div>
-              <div>
-                <h3>Nota 4,9 no Google</h3>
-                <p>São 62 avaliações de quem já passou por aqui. A melhor propaganda é cliente que volta.</p>
-              </div>
-            </article>
+          <article class="svc-card" style="--c1:#FFD8CC;--c2:#FF9A8B;--c3:#DCD1FF;--c4:#FFE9B8;--g:rgba(255,111,94,.55)">
+            <div class="svc-top"><span class="svc-n">01</span><span>Feminino · Masculino</span></div>
+            <div class="orb3d"><div class="core"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg></div>
+            <div class="svc-bottom">
+              <h3>Cabelo</h3>
+              <p>Corte, escova, tratamento e cor. Do jeito que você imaginou.</p>
+              <a class="svc-cta" data-wa="Oi! Vim pelo site e quero agendar CABELO. Quais horários vocês têm?" href="#agendar" target="_blank" rel="noopener" data-cursor="Agendar">Agendar <b>↗</b></a>
+            </div>
+          </article>
+          <article class="svc-card" style="--c1:#FFC2CF;--c2:#FFE9B8;--c3:#FF8A7A;--c4:#F7D6FF;--g:rgba(255,154,139,.5)">
+            <div class="svc-top"><span class="svc-n">02</span><span>Mãos &amp; pés</span></div>
+            <div class="orb3d"><div class="core"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 2h5v5h-5z"/><path d="M8 7h8l1.2 4v9a2 2 0 0 1-2 2H8.8a2 2 0 0 1-2-2v-9z"/><path d="M9.5 14h5"/></svg></div>
+            <div class="svc-bottom">
+              <h3>Unhas</h3>
+              <p>Manicure, pedicure e alongamento com acabamento impecável.</p>
+              <a class="svc-cta" data-wa="Oi! Vim pelo site e quero agendar UNHAS (manicure/pedicure/alongamento). Quais horários vocês têm?" href="#agendar" target="_blank" rel="noopener" data-cursor="Agendar">Agendar <b>↗</b></a>
+            </div>
+          </article>
+          <article class="svc-card" style="--c1:#DCD1FF;--c2:#9BE7DA;--c3:#FFFFFF;--c4:#C7B8FF;--g:rgba(155,231,218,.45)">
+            <div class="svc-top"><span class="svc-n">03</span><span>Olhar</span></div>
+            <div class="orb3d"><div class="core"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 13s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"/><circle cx="12" cy="13" r="2.6"/><path d="M12 3.5v2M6.5 5l1 1.8M17.5 5l-1 1.8M3 8l1.7 1.2M21 8l-1.7 1.2"/></svg></div>
+            <div class="svc-bottom">
+              <h3>Cílios</h3>
+              <p>Extensão de cílios do efeito natural ao volume marcante.</p>
+              <a class="svc-cta" data-wa="Oi! Vim pelo site e quero agendar EXTENSÃO DE CÍLIOS. Quais horários vocês têm?" href="#agendar" target="_blank" rel="noopener" data-cursor="Agendar">Agendar <b>↗</b></a>
+            </div>
+          </article>
+          <article class="svc-card" style="--c1:#FFE9B8;--c2:#FFD8CC;--c3:#B8EFE4;--c4:#FFFFFF;--g:rgba(255,233,184,.4)">
+            <div class="svc-top"><span class="svc-n">04</span><span>Design</span></div>
+            <div class="orb3d"><div class="core"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5c3-3.6 9-4.6 15-2l3 1.5"/><path d="M5 15.5s2.5-3 7-3 7 3 7 3-2.5 3-7 3-7-3-7-3z"/><circle cx="12" cy="15.5" r="1.6"/></svg></div>
+            <div class="svc-bottom">
+              <h3>Sobrancelhas</h3>
+              <p>Design que respeita o seu rosto e valoriza o olhar.</p>
+              <a class="svc-cta" data-wa="Oi! Vim pelo site e quero agendar DESIGN DE SOBRANCELHAS. Quais horários vocês têm?" href="#agendar" target="_blank" rel="noopener" data-cursor="Agendar">Agendar <b>↗</b></a>
+            </div>
+          </article>
+          <article class="svc-card" style="--c1:#B8EFE4;--c2:#DCD1FF;--c3:#FFD8CC;--c4:#9BE7DA;--g:rgba(155,231,218,.4)">
+            <div class="svc-top"><span class="svc-n">05</span><span>Corpo &amp; rosto</span></div>
+            <div class="orb3d"><div class="core"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5s6.5 7 6.5 11.5a6.5 6.5 0 0 1-13 0C5.5 9.5 12 2.5 12 2.5z"/><path d="M9 15a3 3 0 0 0 3 3"/></svg></div>
+            <div class="svc-bottom">
+              <h3>Depilação</h3>
+              <p>Com cuidado, higiene e conforto do começo ao fim.</p>
+              <a class="svc-cta" data-wa="Oi! Vim pelo site e quero agendar DEPILAÇÃO. Quais horários vocês têm?" href="#agendar" target="_blank" rel="noopener" data-cursor="Agendar">Agendar <b>↗</b></a>
+            </div>
+          </article>
+          <article class="svc-card" style="--c1:#FF9A8B;--c2:#DCD1FF;--c3:#FFE9B8;--c4:#FFC2CF;--g:rgba(220,209,255,.45)">
+            <div class="svc-top"><span class="svc-n">06</span><span>Bem-estar</span></div>
+            <div class="orb3d"><div class="core"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="19" rx="8" ry="2.6"/><ellipse cx="12" cy="13.4" rx="5.8" ry="2.2"/><ellipse cx="12" cy="8.4" rx="3.8" ry="1.8"/><path d="M12 3v2"/></svg></div>
+            <div class="svc-bottom">
+              <h3>Massagem</h3>
+              <p>Massoterapia pra desacelerar, com o barulho do mar lá fora.</p>
+              <a class="svc-cta" data-wa="Oi! Vim pelo site e quero agendar MASSAGEM. Quais horários vocês têm?" href="#agendar" target="_blank" rel="noopener" data-cursor="Agendar">Agendar <b>↗</b></a>
+            </div>
+          </article>
+
+          <div class="hs-outro">
+            <h3>Quer juntar <em>vários?</em></h3>
+            <a class="btn btn-coral" href="#agendar" data-cursor="Bora!" style="align-self:flex-start"><span class="roll"><span data-t="Montar meu horário">Montar meu horário</span></span></a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ───────────── RATING ───────────── -->
-    <section class="section dark rating grain" aria-label="Avaliações">
-      <div class="rating-glow" aria-hidden="true"></div>
-      <div class="wrap" style="position:relative;z-index:3">
-        <span class="label" data-reveal>Quem conhece, recomenda</span>
-        <div class="rating-num" aria-label="Nota 4,9 de 5"><span id="ratingInt">4</span><em>,<span id="ratingDec">9</span></em></div>
-        <div class="rating-stars" aria-hidden="true"><span class="base">★★★★★</span><span class="fill" id="starFill">★★★★★</span></div>
-        <p data-reveal>Nota média de clientes reais no Google, com 62 avaliações. Venha descobrir por quê.</p>
-        <a class="btn btn-line" id="reviewsLink" href="#" target="_blank" rel="noopener" data-reveal>Ler as avaliações no Google <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+    <!-- ───────── EXPERIENCE (stacking cards) ───────── -->
+    <section class="exp" id="experiencia" data-theme="light" data-pearl="exp">
+      <div class="wrap content">
+        <div class="exp-head">
+          <h2 class="big-title" data-split>Por que quem vem, <em>volta.</em></h2>
+          <p data-reveal>Três motivos que fazem a orla inteira marcar horário de novo.</p>
+        </div>
+
+        <div class="stack">
+          <article class="stack-card sc-1" style="--i:0">
+            <div class="sc-text">
+              <span class="sc-n">01</span>
+              <div><h3>Vista <em>pro mar.</em></h3><p>Salão envidraçado na Av. Atlântica. Você senta na cadeira e o mar aparece na janela.</p></div>
+            </div>
+            <div class="sc-visual">
+              <div class="sc-photo"><img src="assets/salao-duo.jpg" alt="Interior do Studio Maria Charmosa com janelas de vidro de frente para a praia" loading="lazy"></div>
+              <div class="sc-waves" aria-hidden="true">
+                <svg class="wv1" viewBox="0 0 800 100" preserveAspectRatio="none"><path d="M0 50 Q100 20 200 50 T400 50 T600 50 T800 50 V100 H0Z" fill="#FF6F5E" opacity=".9"/></svg>
+                <svg class="wv2" viewBox="0 0 800 100" preserveAspectRatio="none"><path d="M0 64 Q100 40 200 64 T400 64 T600 64 T800 64 V100 H0Z" fill="#0C1B33"/></svg>
+              </div>
+            </div>
+          </article>
+          <article class="stack-card sc-2" style="--i:1">
+            <div class="sc-text">
+              <span class="sc-n">02</span>
+              <div><h3>No seu <em>tempo.</em></h3><p>Atendimento com hora marcada. Sem fila, sem correria, sem ficar olhando o relógio.</p></div>
+            </div>
+            <div class="sc-visual">
+              <div class="ring-text">
+                <svg viewBox="0 0 300 300" aria-hidden="true"><defs><path id="rt" d="M150,150 m-120,0 a120,120 0 1,1 240,0 a120,120 0 1,1 -240,0"/></defs><text><textPath href="#rt">sem fila ✺ sem pressa ✺ hora marcada ✺ sem correria ✺ </textPath></text></svg>
+                <div class="ring-clock" aria-hidden="true"><i class="hh"></i><i class="mm"></i></div>
+              </div>
+            </div>
+          </article>
+          <article class="stack-card sc-3" style="--i:2">
+            <div class="sc-text">
+              <span class="sc-n">03</span>
+              <div><h3>Tudo num <em>só lugar.</em></h3><p>Cabelo, unhas, cílios, sobrancelhas, depilação e massagem. Uma visita, tudo resolvido.</p></div>
+            </div>
+            <div class="sc-visual">
+              <div class="floaters" aria-hidden="true">
+                <span style="left:8%;top:12%;--r:-6deg">Cabelo</span>
+                <span style="right:10%;top:20%;--r:5deg;animation-delay:-1s">Unhas</span>
+                <span style="left:22%;top:40%;--r:3deg;animation-delay:-2.2s">Cílios</span>
+                <span style="right:6%;top:52%;--r:-4deg;animation-delay:-3s">Sobrancelhas</span>
+                <span style="left:6%;top:68%;--r:6deg;animation-delay:-1.6s">Depilação</span>
+                <span style="right:18%;top:80%;--r:-5deg;animation-delay:-.6s">Massagem</span>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- ───────────── BOOKING ───────────── -->
-    <section class="section" id="agendar">
-      <div class="wrap">
-        <span class="label" data-reveal>04 · Agendamento</span>
-        <h2 class="title" data-split>Reserve o seu <em>momento.</em></h2>
-        <p class="lead" data-reveal style="margin-top:24px">Monte o seu pedido em poucos segundos e envie direto para o WhatsApp do studio. A equipe confirma o melhor horário para você.</p>
+    <!-- ───────── RATING ───────── -->
+    <section class="rate" id="avaliacoes" data-theme="coral" data-pearl="rate">
+      <div class="bands" aria-hidden="true">
+        <div class="band band-a"><div class="band-track"><span>★ 4,9 no Google</span><span>★ 62 avaliações</span><span>★ Quem conhece, recomenda</span><span>★ 4,9 no Google</span><span>★ 62 avaliações</span><span>★ Quem conhece, recomenda</span></div></div>
+        <div class="band band-b"><div class="band-track"><span>✺ Pé na areia</span><span>✺ Vista pro mar</span><span>✺ Macaé</span><span>✺ Pé na areia</span><span>✺ Vista pro mar</span><span>✺ Macaé</span></div></div>
+      </div>
+      <div class="wrap content rate-inner">
+        <div class="odo" role="img" aria-label="Nota 4,9 de 5">
+          <span class="odo-col" data-digit="4"><span class="odo-strip"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></span></span><span class="odo-comma">,</span><span class="odo-col" data-digit="9"><span class="odo-strip"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></span></span>
+        </div>
+        <div class="rate-stars" aria-hidden="true"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p data-reveal>São <b>62 avaliações</b> no Google. <em>Quem conhece, recomenda.</em></p>
+        <a class="btn btn-ink" id="reviewsLink" href="#" target="_blank" rel="noopener" data-reveal data-cursor="Ler"><span class="roll"><span data-t="Ler as avaliações ↗">Ler as avaliações ↗</span></span></a>
+      </div>
+    </section>
 
-        <div class="booking-grid">
+    <!-- ───────── BOOKING ───────── -->
+    <section class="book" id="agendar" data-theme="light" data-pearl="book">
+      <div class="wrap content">
+        <div class="book-head">
+          <h2 class="big-title" data-split>Bora <em>marcar?</em></h2>
+          <p data-reveal>Monta seu horário em segundos e manda direto no WhatsApp do studio. A equipe confirma pra você.</p>
+        </div>
+
+        <div class="book-grid">
           <form class="panel" id="bookingForm" novalidate data-reveal>
             <div class="step">
-              <div class="step-head"><b>1</b><h3>Quais serviços?</h3><small>Pode escolher mais de um</small></div>
+              <div class="step-h"><b>1</b><h3>O que você quer fazer?</h3><small>Pode escolher vários</small></div>
               <div class="chips" id="svcChips" role="group" aria-label="Serviços">
                 <button type="button" class="chip" aria-pressed="false" data-value="Cabelo">Cabelo</button>
                 <button type="button" class="chip" aria-pressed="false" data-value="Manicure">Manicure</button>
                 <button type="button" class="chip" aria-pressed="false" data-value="Pedicure">Pedicure</button>
-                <button type="button" class="chip" aria-pressed="false" data-value="Alongamento de unhas">Alongamento de unhas</button>
+                <button type="button" class="chip" aria-pressed="false" data-value="Alongamento de unhas">Alongamento</button>
                 <button type="button" class="chip" aria-pressed="false" data-value="Extensão de cílios">Cílios</button>
                 <button type="button" class="chip" aria-pressed="false" data-value="Design de sobrancelhas">Sobrancelhas</button>
                 <button type="button" class="chip" aria-pressed="false" data-value="Depilação">Depilação</button>
@@ -806,11 +750,11 @@
               </div>
             </div>
             <div class="step">
-              <div class="step-head"><b>2</b><h3>Qual dia fica melhor?</h3><small>Terça a sábado</small></div>
+              <div class="step-h"><b>2</b><h3>Qual dia?</h3><small>Terça a sábado</small></div>
               <div class="chips" id="dayChips" role="group" aria-label="Dia"></div>
             </div>
             <div class="step">
-              <div class="step-head"><b>3</b><h3>Em que período?</h3></div>
+              <div class="step-h"><b>3</b><h3>Que horas, mais ou menos?</h3></div>
               <div class="chips" id="periodChips" role="group" aria-label="Período">
                 <button type="button" class="chip" aria-pressed="false" data-value="Manhã (9h–12h)">Manhã</button>
                 <button type="button" class="chip" aria-pressed="false" data-value="Tarde (12h–17h)">Tarde</button>
@@ -818,96 +762,70 @@
               </div>
             </div>
             <div class="step">
-              <div class="step-head"><b>4</b><h3>Como podemos te chamar?</h3></div>
-              <label for="clientName" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Seu nome</label>
-              <input class="field" id="clientName" name="nome" type="text" autocomplete="given-name" placeholder="Seu nome" maxlength="60">
+              <div class="step-h"><b>4</b><h3>Seu nome</h3></div>
+              <label for="clientName" class="sr">Seu nome</label>
+              <input class="field" id="clientName" type="text" autocomplete="given-name" placeholder="Como podemos te chamar?" maxlength="60">
               <p class="form-error" id="formError" role="alert"></p>
             </div>
           </form>
 
           <aside class="preview" data-reveal>
             <div class="phone">
-              <div class="phone-top">
-                <span class="avatar">mc</span>
-                <div><strong>Studio Maria Charmosa</strong><span>WhatsApp · costuma responder rápido</span></div>
-              </div>
-              <div class="chat">
-                <div class="bubble" id="bubbleText" aria-live="polite"></div>
-              </div>
+              <div class="phone-top"><span class="avatar"></span><div><strong>Studio Maria Charmosa</strong><span>WhatsApp · online</span></div></div>
+              <div class="chat"><div class="bubble" id="bubbleText" aria-live="polite"></div></div>
             </div>
-            <button class="btn btn-ink send" type="submit" form="bookingForm">
+            <button class="btn btn-coral send" type="submit" form="bookingForm" data-cursor="Enviar">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.42 1.3-1.96 1.38-.5.07-1.13.1-1.82-.12-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.18-4.94-4.37-.15-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.3.58-.37.78-.37h.56c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.15.12.32.02.51-.1.2-.15.32-.29.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.3 2.36 1.45.3.15.46.12.63-.07.17-.2.73-.85.92-1.15.2-.3.39-.24.66-.15.27.1 1.71.81 2 .96.3.15.49.22.56.34.07.12.07.7-.17 1.37Z"/></svg>
-              Enviar pedido pelo WhatsApp
+              <span class="roll"><span data-t="Enviar no WhatsApp">Enviar no WhatsApp</span></span>
             </button>
-            <p class="preview-note">Sem cadastro e sem compromisso. O horário é confirmado pela equipe.</p>
+            <p class="note">Sem cadastro e sem compromisso. O horário é confirmado pela equipe.</p>
           </aside>
         </div>
       </div>
     </section>
 
-    <!-- ───────────── VISIT ───────────── -->
-    <section class="section dark grain" id="visite">
-      <div class="wrap" style="position:relative;z-index:3">
-        <span class="label" data-reveal>05 · Visite</span>
-        <h2 class="title" data-split>Na orla da <em>Praia dos Cavaleiros.</em></h2>
-
+    <!-- ───────── VISIT + FOOTER ───────── -->
+    <section class="visit" id="visite" data-theme="dark" data-pearl="visit">
+      <div class="wrap content">
+        <h2 class="big-title" data-split>Vem ver o mar <em>daqui.</em></h2>
         <div class="visit-grid">
-          <div>
-            <div class="info-block" data-reveal>
-              <h4>Endereço</h4>
-              <p class="address">Av. Atlântica, 2200<br>Cavaleiros, Macaé · RJ</p>
-              <p style="color:var(--muted-light);margin:10px 0 0;font-size:15px">CEP 27920-390</p>
-            </div>
-            <div class="info-block" data-reveal>
-              <h4>Horários</h4>
-              <ul class="hours" id="hoursList"></ul>
-            </div>
-            <div class="visit-ctas" data-reveal>
-              <a class="btn btn-gold" id="routeLink" href="#" target="_blank" rel="noopener">Como chegar</a>
-              <a class="btn btn-line" data-wa="Olá, Studio Maria Charmosa! Vim pelo site e tenho uma dúvida." href="#" target="_blank" rel="noopener">WhatsApp</a>
-              <a class="btn btn-line" id="callLink" href="#">Ligar</a>
+          <div data-reveal>
+            <p class="addr">Av. Atlântica, 2200<br><em>Cavaleiros</em>, Macaé · RJ</p>
+            <p style="margin:10px 0 0;color:var(--muted)">CEP 27920-390 · na orla da Praia dos Cavaleiros</p>
+            <h3 class="info-h">Horários</h3>
+            <ul class="hours" id="hoursList"></ul>
+            <div class="visit-ctas">
+              <a class="btn btn-coral" id="routeLink" href="#" target="_blank" rel="noopener" data-cursor="Rota"><span class="roll"><span data-t="Como chegar">Como chegar</span></span></a>
+              <a class="btn btn-line" data-wa="Oi, Studio Maria Charmosa! Vim pelo site e tenho uma dúvida." href="#" target="_blank" rel="noopener"><span class="roll"><span data-t="WhatsApp">WhatsApp</span></span></a>
+              <a class="btn btn-line" id="callLink" href="#"><span class="roll"><span data-t="Ligar">Ligar</span></span></a>
             </div>
           </div>
           <div class="map" data-reveal>
             <iframe id="mapFrame" title="Mapa: Studio Maria Charmosa, Av. Atlântica, 2200, Macaé" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <div class="map-card">
-              <img src="assets/entrada-studio.jpg" alt="Fachada de vidro do Studio Maria Charmosa" width="398" height="531" loading="lazy">
-              <div><strong>Studio Maria Charmosa</strong><span>Fachada de vidro, de frente para a praia</span></div>
-            </div>
+            <div class="map-chip"><img src="assets/entrada-duo.jpg" alt="Fachada de vidro do Studio Maria Charmosa" loading="lazy"><div><strong>Studio Maria Charmosa</strong><span>Fachada de vidro, de frente pra praia</span></div></div>
           </div>
         </div>
       </div>
+
+      <div class="ocean" id="oceanWrap">
+        <canvas id="ocean" aria-hidden="true"></canvas>
+        <div class="ocean-word" id="oceanWord" aria-hidden="true">Charmosa</div>
+      </div>
+
+      <footer class="foot wrap content">
+        <span>© <span id="year">2026</span> Studio Maria Charmosa · pé na areia desde 2018</span>
+        <nav aria-label="Rodapé">
+          <a data-wa="Oi, Studio Maria Charmosa! Vim pelo site." href="#" target="_blank" rel="noopener">WhatsApp</a>
+          <a id="footerPhone" href="#">(22) 99948-1780</a>
+          <a id="footerInsta" href="#" target="_blank" rel="noopener" hidden>Instagram</a>
+          <a href="#top">Voltar ao topo ↑</a>
+        </nav>
+      </footer>
     </section>
   </main>
 
-  <!-- ───────────── FOOTER ───────────── -->
-  <footer class="footer">
-    <div class="wrap">
-      <div class="footer-top">
-        <h3>O mar lá fora.<br><em>Você em primeiro lugar.</em></h3>
-        <div class="footer-col">
-          <h4>Contato</h4>
-          <a data-wa="Olá, Studio Maria Charmosa! Vim pelo site." href="#" target="_blank" rel="noopener">WhatsApp</a>
-          <a id="footerPhone" href="#">(22) 99948-1780</a>
-          <a id="footerInsta" href="#" target="_blank" rel="noopener" hidden>Instagram</a>
-        </div>
-        <div class="footer-col">
-          <h4>Visite</h4>
-          <p>Av. Atlântica, 2200 · Cavaleiros</p>
-          <p>Macaé · RJ · 27920-390</p>
-          <p>Terça a sábado · 9h às 20h</p>
-        </div>
-      </div>
-      <div class="wordmark" aria-hidden="true">Maria <em>Charmosa</em></div>
-      <div class="footer-bottom">
-        <span>© <span id="year">2026</span> Studio Maria Charmosa. Todos os direitos reservados.</span>
-        <a href="#top">Voltar ao topo ↑</a>
-      </div>
-    </div>
-  </footer>
-
   <div class="mobile-cta" id="mobileCta">
-    <a class="btn btn-gold" data-wa="Olá, Studio Maria Charmosa! Vim pelo site e gostaria de agendar um horário." href="#agendar" target="_blank" rel="noopener">
+    <a class="btn btn-coral" data-wa="Oi, Studio Maria Charmosa! Vim pelo site e quero agendar um horário." href="#agendar" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.42 1.3-1.96 1.38-.5.07-1.13.1-1.82-.12-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.18-4.94-4.37-.15-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.3.58-.37.78-.37h.56c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.15.12.32.02.51-.1.2-.15.32-.29.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.3 2.36 1.45.3.15.46.12.63-.07.17-.2.73-.85.92-1.15.2-.3.39-.24.66-.15.27.1 1.71.81 2 .96.3.15.49.22.56.34.07.12.07.7-.17 1.37Z"/></svg>
       Agendar pelo WhatsApp
     </a>
@@ -919,26 +837,29 @@
 
   <script>
   /* ==========================================================
-     CONFIGURAÇÃO — edite aqui os dados do studio
+     CONFIGURAÇÃO: edite aqui os dados do studio
      ========================================================== */
   const CONFIG = {
     name: 'Studio Maria Charmosa',
-    whatsapp: '5522999481780',          // só números, com 55 + DDD
+    whatsapp: '5522999481780',          // só números: 55 + DDD + número
     phoneDisplay: '(22) 99948-1780',
     instagram: '',                       // ex.: 'https://instagram.com/studiomariacharmosa'
     address: 'Av. Atlântica, 2200 - Cavaleiros, Macaé - RJ, 27920-390',
     mapsQuery: 'Studio Maria Charmosa, Av. Atlântica, 2200 - Cavaleiros, Macaé - RJ',
-    // 0 = domingo ... 6 = sábado  →  [abre, fecha] em horas
-    hours: { 2: [9, 20], 3: [9, 20], 4: [9, 20], 5: [9, 20], 6: [9, 20] }
+    hours: { 2: [9, 20], 3: [9, 20], 4: [9, 20], 5: [9, 20], 6: [9, 20] } // 0 = domingo … 6 = sábado
   };
+
+  /* Shared state read by the 3D scene (module script below) */
+  window.PEARL = { x: 0.16, y: -0.02, s: 0, distort: 0.3, color: '#FFD8CC', vel: 0, mx: 0, my: 0, ocean: 0 };
 
   (function () {
     'use strict';
     const $ = (s, c = document) => c.querySelector(s);
     const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     const hasGSAP = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
+    const motion = hasGSAP && !reduce;
 
     /* ---------- Links ---------- */
     const waLink = (msg) => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
@@ -950,65 +871,45 @@
     $('#footerPhone').textContent = CONFIG.phoneDisplay;
     if (CONFIG.instagram) { const ig = $('#footerInsta'); ig.href = CONFIG.instagram; ig.hidden = false; }
     $('#year').textContent = new Date().getFullYear();
-    // Map loads only when close to the viewport
     const mapFrame = $('#mapFrame');
     const mapSrc = 'https://www.google.com/maps?q=' + encodeURIComponent(CONFIG.mapsQuery) + '&z=16&output=embed';
     if ('IntersectionObserver' in window) {
-      const mo = new IntersectionObserver((e) => { if (e[0].isIntersecting) { mapFrame.src = mapSrc; mo.disconnect(); } }, { rootMargin: '600px' });
+      const mo = new IntersectionObserver((e) => { if (e[0].isIntersecting) { mapFrame.src = mapSrc; mo.disconnect(); } }, { rootMargin: '800px' });
       mo.observe(mapFrame);
-    } else { mapFrame.src = mapSrc; }
+    } else mapFrame.src = mapSrc;
 
-    /* ---------- Time in Macaé (UTC−3, sem horário de verão) ---------- */
-    const nowBR = () => new Date(Date.now() - 3 * 3600e3); // use getUTC* methods
+    /* ---------- Time in Macaé (UTC−3) ---------- */
+    const nowBR = () => new Date(Date.now() - 3 * 3600e3);
     const DAYS = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
     const DAYS_SHORT = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
-
     function openStatus() {
-      const n = nowBR();
-      const d = n.getUTCDay();
-      const h = n.getUTCHours() + n.getUTCMinutes() / 60;
-      const today = CONFIG.hours[d];
-      if (today && h >= today[0] && h < today[1]) return { open: true, text: `Aberto agora · até ${today[1]}h` };
-      if (today && h < today[0]) return { open: false, text: `Fechado agora · abre hoje às ${today[0]}h` };
+      const n = nowBR(), d = n.getUTCDay(), h = n.getUTCHours() + n.getUTCMinutes() / 60, t = CONFIG.hours[d];
+      if (t && h >= t[0] && h < t[1]) return { open: true, text: `Aberto agora · até ${t[1]}h` };
+      if (t && h < t[0]) return { open: false, text: `Fechado · abre hoje às ${t[0]}h` };
       for (let i = 1; i <= 7; i++) {
         const nd = (d + i) % 7;
-        if (CONFIG.hours[nd]) {
-          const when = i === 1 ? 'amanhã' : DAYS[nd].toLowerCase();
-          return { open: false, text: `Fechado agora · abre ${when} às ${CONFIG.hours[nd][0]}h` };
-        }
+        if (CONFIG.hours[nd]) return { open: false, text: `Fechado · abre ${i === 1 ? 'amanhã' : DAYS[nd].toLowerCase()} às ${CONFIG.hours[nd][0]}h` };
       }
       return { open: false, text: 'Consulte os horários' };
     }
-    function paintStatus() {
-      const s = openStatus();
-      $('#statusText').textContent = s.text;
-      $('#statusDot').classList.toggle('closed', !s.open);
-    }
-    paintStatus();
-    setInterval(paintStatus, 60000);
-
-    // Hours list
+    const paintStatus = () => { const s = openStatus(); $('#statusText').textContent = s.text; $('#statusDot').classList.toggle('closed', !s.open); };
+    paintStatus(); setInterval(paintStatus, 60000);
     const todayIdx = nowBR().getUTCDay();
-    const order = [1, 2, 3, 4, 5, 6, 0];
-    $('#hoursList').innerHTML = order.map((d) => {
-      const hrs = CONFIG.hours[d];
-      return `<li class="${d === todayIdx ? 'today' : ''}"><span>${DAYS[d]}</span><span>${hrs ? `${hrs[0]}h às ${hrs[1]}h` : 'Fechado'}</span></li>`;
+    $('#hoursList').innerHTML = [1, 2, 3, 4, 5, 6, 0].map((d) => {
+      const h = CONFIG.hours[d];
+      return `<li class="${d === todayIdx ? 'today' : ''}"><span>${DAYS[d]}</span><span>${h ? `${h[0]}h às ${h[1]}h` : 'Fechado'}</span></li>`;
     }).join('');
 
     /* ---------- Booking builder ---------- */
     const state = { services: new Set(), day: '', period: '' };
     const dayWrap = $('#dayChips');
     (function buildDays() {
-      const base = nowBR();
-      const out = [];
+      const base = nowBR(); const out = [];
       for (let i = 0; out.length < 8 && i < 21; i++) {
-        const dt = new Date(base.getTime() + i * 86400e3);
-        const wd = dt.getUTCDay();
-        const hrs = CONFIG.hours[wd];
-        if (!hrs) continue;
-        if (i === 0 && base.getUTCHours() >= hrs[1] - 1) continue; // hoje já está fechando
-        const dd = String(dt.getUTCDate()).padStart(2, '0');
-        const mm = String(dt.getUTCMonth() + 1).padStart(2, '0');
+        const dt = new Date(base.getTime() + i * 86400e3), wd = dt.getUTCDay(), h = CONFIG.hours[wd];
+        if (!h) continue;
+        if (i === 0 && base.getUTCHours() >= h[1] - 1) continue;
+        const dd = String(dt.getUTCDate()).padStart(2, '0'), mm = String(dt.getUTCMonth() + 1).padStart(2, '0');
         const top = i === 0 ? 'Hoje' : i === 1 ? 'Amanhã' : DAYS_SHORT[wd];
         const full = `${i === 0 ? 'hoje, ' : i === 1 ? 'amanhã, ' : ''}${DAYS[wd].toLowerCase()} ${dd}/${mm}`;
         out.push(`<button type="button" class="chip day" aria-pressed="false" data-value="${full}"><small>${top}</small><strong>${dd}/${mm}</strong></button>`);
@@ -1016,55 +917,52 @@
       out.push('<button type="button" class="chip day" aria-pressed="false" data-value="a combinar"><small>Outro</small><strong>dia</strong></button>');
       dayWrap.innerHTML = out.join('');
     })();
-
+    const pop = () => { if (motion) gsap.fromTo('#bubbleText', { scale: .94, rotate: -1.5 }, { scale: 1, rotate: 0, duration: .6, ease: 'back.out(3)' }); };
     function single(group, key) {
       group.addEventListener('click', (e) => {
-        const btn = e.target.closest('.chip'); if (!btn) return;
-        const on = btn.getAttribute('aria-pressed') !== 'true';
+        const b = e.target.closest('.chip'); if (!b) return;
+        const on = b.getAttribute('aria-pressed') !== 'true';
         $$('.chip', group).forEach((c) => c.setAttribute('aria-pressed', 'false'));
-        btn.setAttribute('aria-pressed', String(on));
-        state[key] = on ? btn.dataset.value : '';
-        renderMsg();
+        b.setAttribute('aria-pressed', String(on));
+        state[key] = on ? b.dataset.value : '';
+        renderMsg(); pop();
       });
     }
     single(dayWrap, 'day');
     single($('#periodChips'), 'period');
     $('#svcChips').addEventListener('click', (e) => {
-      const btn = e.target.closest('.chip'); if (!btn) return;
-      const on = btn.getAttribute('aria-pressed') !== 'true';
-      btn.setAttribute('aria-pressed', String(on));
-      on ? state.services.add(btn.dataset.value) : state.services.delete(btn.dataset.value);
+      const b = e.target.closest('.chip'); if (!b) return;
+      const on = b.getAttribute('aria-pressed') !== 'true';
+      b.setAttribute('aria-pressed', String(on));
+      on ? state.services.add(b.dataset.value) : state.services.delete(b.dataset.value);
       $('#formError').textContent = '';
-      renderMsg();
+      renderMsg(); pop();
     });
     $('#clientName').addEventListener('input', renderMsg);
-
     function buildMsg() {
-      const name = $('#clientName').value.trim();
-      const svcs = [...state.services];
+      const name = $('#clientName').value.trim(), svcs = [...state.services];
       return [
-        `Olá, ${CONFIG.name}! ✨`,
-        'Vim pelo site e gostaria de agendar:',
-        `• Serviço${svcs.length > 1 ? 's' : ''}: ${svcs.length ? svcs.join(', ') : '(escolha acima)'}`,
+        `Oi, ${CONFIG.name}! ✨`,
+        'Vim pelo site e quero agendar:',
+        `• Serviço${svcs.length > 1 ? 's' : ''}: ${svcs.length ? svcs.join(', ') : '(escolha ao lado)'}`,
         `• Dia: ${state.day || 'a combinar'}`,
-        `• Período: ${state.period || 'qualquer horário'}`,
+        `• Horário: ${state.period || 'qualquer um'}`,
         name ? `\nMeu nome é ${name}.` : ''
       ].join('\n').trim();
     }
     function renderMsg() {
-      const n = nowBR();
-      const t = `${String(n.getUTCHours()).padStart(2, '0')}:${String(n.getUTCMinutes()).padStart(2, '0')}`;
-      const b = $('#bubbleText');
+      const n = nowBR(), b = $('#bubbleText');
       b.textContent = buildMsg();
-      const time = document.createElement('time'); time.textContent = t + ' ✓✓';
-      b.appendChild(time);
+      const t = document.createElement('time');
+      t.textContent = `${String(n.getUTCHours()).padStart(2, '0')}:${String(n.getUTCMinutes()).padStart(2, '0')} ✓✓`;
+      b.appendChild(t);
     }
     renderMsg();
     $('#bookingForm').addEventListener('submit', (e) => {
       e.preventDefault();
       if (!state.services.size) {
-        $('#formError').textContent = 'Escolha pelo menos um serviço para continuar.';
-        $('#svcChips').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        $('#formError').textContent = 'Escolhe pelo menos um serviço pra continuar.';
+        if (motion) gsap.fromTo('#svcChips', { x: -10 }, { x: 0, duration: .6, ease: 'elastic.out(1, .3)' });
         return;
       }
       window.open(waLink(buildMsg()), '_blank', 'noopener');
@@ -1077,148 +975,104 @@
       menuBtn.setAttribute('aria-expanded', String(open));
       $('#menu').setAttribute('aria-hidden', String(!open));
       if (window.__lenis) open ? window.__lenis.stop() : window.__lenis.start();
+      if (open && motion) gsap.fromTo('.menu-links a', { yPercent: 110, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 1, ease: 'expo.out', stagger: .06, delay: .15 });
     };
     menuBtn.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
     $$('#menu a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
 
-    /* ---------- Nav state + mobile CTA ---------- */
-    const nav = $('#nav');
+    /* ---------- Mobile CTA ---------- */
     const mobileCta = $('#mobileCta');
-    const hero = $('#hero');
-    const booking = $('#agendar');
-    let pastHero = false, inBooking = false;
-    const onScroll = () => { nav.classList.toggle('scrolled', window.scrollY > 40); };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+    let pastHero = false, inBook = false;
+    const updCta = () => mobileCta.classList.toggle('show', pastHero && !inBook);
     if ('IntersectionObserver' in window) {
-      new IntersectionObserver((e) => { pastHero = !e[0].isIntersecting; mobileCta.classList.toggle('show', pastHero && !inBooking); }, { threshold: 0.05 }).observe(hero);
-      new IntersectionObserver((e) => { inBooking = e[0].isIntersecting; mobileCta.classList.toggle('show', pastHero && !inBooking); }, { threshold: 0.1 }).observe(booking);
+      new IntersectionObserver((e) => { pastHero = !e[0].isIntersecting; updCta(); }, { threshold: .05 }).observe($('#top'));
+      new IntersectionObserver((e) => { inBook = e[0].isIntersecting; updCta(); }, { threshold: .05 }).observe($('#agendar'));
     }
 
-    /* ---------- WebGL shader (hero) ---------- */
-    (function shader() {
-      const canvas = $('#shader');
-      let gl;
-      try { gl = canvas.getContext('webgl', { antialias: false, alpha: false, powerPreference: 'high-performance' }); } catch (e) { gl = null; }
-      if (!gl) { canvas.remove(); return; }
+    /* ---------- Without motion: show everything as is ---------- */
+    const loader = $('#loader');
+    if (!motion) {
+      if (loader) loader.remove();
+      window.PEARL.s = 1;
+      return;
+    }
 
-      const vs = `attribute vec2 p; void main(){ gl_Position = vec4(p, 0.0, 1.0); }`;
-      const fs = `
-        precision highp float;
-        uniform vec2 uRes; uniform float uTime; uniform vec2 uMouse;
-        float hash(vec2 p){ p = fract(p * vec2(123.34, 456.21)); p += dot(p, p + 45.32); return fract(p.x * p.y); }
-        float noise(vec2 p){
-          vec2 i = floor(p), f = fract(p);
-          vec2 u = f * f * (3.0 - 2.0 * f);
-          return mix(mix(hash(i), hash(i + vec2(1.0, 0.0)), u.x), mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), u.x), u.y);
-        }
-        float fbm(vec2 p){
-          float v = 0.0, a = 0.5;
-          mat2 r = mat2(0.8, -0.6, 0.6, 0.8);
-          for (int i = 0; i < 5; i++) { v += a * noise(p); p = r * p * 2.02; a *= 0.5; }
-          return v;
-        }
-        void main(){
-          vec2 uv = gl_FragCoord.xy / uRes;
-          vec2 p = (gl_FragCoord.xy - 0.5 * uRes) / uRes.y;
-          vec2 m = (uMouse - 0.5 * uRes) / uRes.y;
-          float t = uTime * 0.06;
+    document.documentElement.classList.add('motion');
+    gsap.registerPlugin(ScrollTrigger);
+    const isDesk = () => window.innerWidth >= 900;
 
-          vec3 ink   = vec3(0.075, 0.058, 0.050);
-          vec3 sea   = vec3(0.075, 0.165, 0.170);
-          vec3 cocoa = vec3(0.300, 0.185, 0.140);
-          vec3 rose  = vec3(0.720, 0.480, 0.390);
-          vec3 gold  = vec3(0.930, 0.790, 0.570);
+    /* ---------- Smooth scroll ---------- */
+    let lenis = null;
+    if (typeof window.Lenis !== 'undefined') {
+      lenis = new Lenis({ lerp: .085 });
+      window.__lenis = lenis;
+      lenis.on('scroll', (e) => { ScrollTrigger.update(); window.PEARL.vel = e.velocity; });
+      gsap.ticker.add((t) => lenis.raf(t * 1000));
+      gsap.ticker.lagSmoothing(0);
+      lenis.stop();
+      $$('a[href^="#"]').forEach((a) => a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href'); if (id.length < 2) return;
+        const target = document.querySelector(id); if (!target) return;
+        e.preventDefault();
+        lenis.scrollTo(target, { offset: id === '#top' ? 0 : -20, duration: 1.8 });
+      }));
+    }
 
-          // domain-warped space -> flowing satin ribbons
-          vec2 w = p;
-          w += 0.55 * vec2(fbm(p * 1.1 + vec2(t, -t)), fbm(p * 1.1 + vec2(3.1 - t, 1.7 + t)));
-          w += 0.18 * (m - p) * exp(-1.8 * length(p - m));
-          float n = fbm(w * 1.5 + t * 0.6);
-          float phase = w.x * 2.1 - w.y * 1.7 + n * 5.5 + t * 2.6;
-          float shade = 0.5 + 0.5 * sin(phase);
-          float spec  = pow(shade, 9.0);
-          float sheen = pow(0.5 + 0.5 * sin(phase + 0.45), 22.0);
+    /* ---------- Nav hide on scroll down ---------- */
+    const nav = $('#nav'); let lastY = 0;
+    const onScrollNav = (y) => {
+      if (document.body.classList.contains('menu-open')) return;
+      nav.classList.toggle('hide', y > 300 && y > lastY + 2);
+      if (y < lastY - 2 || y < 300) nav.classList.remove('hide');
+      lastY = y;
+    };
+    if (lenis) lenis.on('scroll', (e) => onScrollNav(e.scroll)); else window.addEventListener('scroll', () => onScrollNav(scrollY), { passive: true });
 
-          vec3 col = mix(ink, mix(sea, cocoa, smoothstep(0.0, 1.0, uv.y + (n - 0.5) * 0.8)), 0.8);
-          col = mix(col, rose * 0.9, smoothstep(0.3, 0.95, shade) * 0.6);
-          col += gold * spec * 0.62;
-          col += vec3(1.0, 0.93, 0.82) * sheen * 0.22;
+    /* ---------- Pointer → 3D + cursor ---------- */
+    window.addEventListener('pointermove', (e) => {
+      window.PEARL.mx = (e.clientX / innerWidth) * 2 - 1;
+      window.PEARL.my = -((e.clientY / innerHeight) * 2 - 1);
+    }, { passive: true });
+    if (fine) {
+      document.documentElement.classList.add('has-cursor');
+      const cur = $('#cursor'), lbl = cur.querySelector('span');
+      const xTo = gsap.quickTo(cur, 'x', { duration: .45, ease: 'power3' }), yTo = gsap.quickTo(cur, 'y', { duration: .45, ease: 'power3' });
+      window.addEventListener('pointermove', (e) => { xTo(e.clientX); yTo(e.clientY); }, { passive: true });
+      document.addEventListener('pointerover', (e) => {
+        const t = e.target.closest('[data-cursor], a, button, .chip');
+        if (!t) { cur.classList.remove('hover', 'label'); return; }
+        const l = t.dataset.cursor || '';
+        lbl.textContent = l;
+        cur.classList.toggle('label', !!l);
+        cur.classList.toggle('hover', !l);
+      });
+      // magnetic buttons
+      $$('.btn, .sticker, .burger').forEach((b) => {
+        b.addEventListener('pointermove', (e) => {
+          const r = b.getBoundingClientRect();
+          gsap.to(b, { x: (e.clientX - r.left - r.width / 2) * .22, y: (e.clientY - r.top - r.height / 2) * .35, duration: .6, ease: 'power3.out' });
+        });
+        b.addEventListener('pointerleave', () => gsap.to(b, { x: 0, y: 0, duration: 1, ease: 'elastic.out(1, .35)' }));
+      });
+      // 3D tilt on service cards
+      $$('.svc-card').forEach((c) => {
+        const orb = $('.orb3d', c);
+        c.addEventListener('pointermove', (e) => {
+          const r = c.getBoundingClientRect(), px = (e.clientX - r.left) / r.width - .5, py = (e.clientY - r.top) / r.height - .5;
+          gsap.to(c, { rotateY: px * 12, rotateX: -py * 12, transformPerspective: 900, duration: .6, ease: 'power3.out' });
+          gsap.to(orb, { x: px * 40, y: py * 40, duration: .8, ease: 'power3.out' });
+        });
+        c.addEventListener('pointerleave', () => { gsap.to(c, { rotateY: 0, rotateX: 0, duration: 1.2, ease: 'elastic.out(1, .4)' }); gsap.to(orb, { x: 0, y: 0, duration: 1.2, ease: 'elastic.out(1, .4)' }); });
+      });
+    }
 
-          // low sun glow, upper right
-          col += vec3(1.0, 0.70, 0.44) * exp(-2.4 * length((p - vec2(0.5, 0.18)) * vec2(0.9, 1.5))) * 0.16;
-
-          // sun glitter on the "sea" (lower part)
-          float glit = hash(floor(gl_FragCoord.xy / 2.0) + floor(uTime * 5.0));
-          col += gold * step(0.998, glit) * smoothstep(0.38, 0.0, uv.y) * (0.2 + spec) * 1.1;
-
-          // vignette
-          col *= 1.0 - 0.4 * pow(length((uv - vec2(0.58, 0.55)) * vec2(1.1, 1.0)), 2.2);
-          gl_FragColor = vec4(col, 1.0);
-        }`;
-      const compile = (type, src) => {
-        const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s);
-        if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) { throw new Error(gl.getShaderInfoLog(s)); }
-        return s;
-      };
-      let prog;
-      try {
-        prog = gl.createProgram();
-        gl.attachShader(prog, compile(gl.VERTEX_SHADER, vs));
-        gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, fs));
-        gl.linkProgram(prog);
-        if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
-      } catch (err) { console.warn('Shader indisponível:', err); canvas.remove(); return; }
-      gl.useProgram(prog);
-      const buf = gl.createBuffer();
-      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
-      const loc = gl.getAttribLocation(prog, 'p');
-      gl.enableVertexAttribArray(loc);
-      gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
-      const uRes = gl.getUniformLocation(prog, 'uRes');
-      const uTime = gl.getUniformLocation(prog, 'uTime');
-      const uMouse = gl.getUniformLocation(prog, 'uMouse');
-
-      const SCALE = Math.min(window.devicePixelRatio || 1, 1.5) * (window.innerWidth < 760 ? 0.5 : 0.6);
-      let W = 0, H = 0;
-      const resize = () => {
-        const r = canvas.getBoundingClientRect();
-        W = Math.max(1, Math.round(r.width * SCALE)); H = Math.max(1, Math.round(r.height * SCALE));
-        canvas.width = W; canvas.height = H; gl.viewport(0, 0, W, H);
-      };
-      resize();
-      window.addEventListener('resize', resize);
-
-      const mouse = { x: 0.68, y: 0.62, tx: 0.68, ty: 0.62 };
-      window.addEventListener('pointermove', (e) => {
-        mouse.tx = e.clientX / window.innerWidth;
-        mouse.ty = 1 - e.clientY / window.innerHeight;
-      }, { passive: true });
-
-      let visible = true, raf = 0;
-      const start = performance.now() - 12000;
-      const frame = (now) => {
-        mouse.x += (mouse.tx - mouse.x) * 0.04;
-        mouse.y += (mouse.ty - mouse.y) * 0.04;
-        gl.uniform2f(uRes, W, H);
-        gl.uniform1f(uTime, (now - start) / 1000);
-        gl.uniform2f(uMouse, mouse.x * W, mouse.y * H);
-        gl.drawArrays(gl.TRIANGLES, 0, 3);
-        if (!reduceMotion && visible) raf = requestAnimationFrame(frame);
-      };
-      raf = requestAnimationFrame(frame);
-      if ('IntersectionObserver' in window) {
-        new IntersectionObserver((e) => {
-          const was = visible; visible = e[0].isIntersecting;
-          if (visible && !was && !reduceMotion) raf = requestAnimationFrame(frame);
-        }).observe(canvas);
-      }
-    })();
-
-    /* ---------- Word splitter ---------- */
-    function splitWords(el) {
+    /* ---------- Split helpers ---------- */
+    function splitChars(el) {
+      const txt = el.textContent; el.textContent = '';
+      return [...txt].map((c) => { const s = document.createElement('span'); s.className = 'ch'; s.textContent = c === ' ' ? ' ' : c; el.appendChild(s); return s; });
+    }
+    function splitWords(el, skip) {
       const walk = (node) => {
         Array.from(node.childNodes).forEach((child) => {
           if (child.nodeType === 3) {
@@ -1231,170 +1085,404 @@
               w.appendChild(i); frag.appendChild(w);
             });
             node.replaceChild(frag, child);
-          } else if (child.nodeType === 1 && child.tagName !== 'BR') walk(child);
+          } else if (child.nodeType === 1 && child.tagName !== 'BR' && !(skip && child.matches(skip))) walk(child);
         });
       };
       walk(el);
       return $$('.wi', el);
     }
 
-    /* ---------- Motion (GSAP) ---------- */
-    const loader = $('#loader');
-    if (!hasGSAP || reduceMotion) {
-      if (loader) loader.remove();
-      return;
-    }
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Smooth scroll
-    if (typeof window.Lenis !== 'undefined') {
-      const lenis = new Lenis({ lerp: 0.09, wheelMultiplier: 1 });
-      window.__lenis = lenis;
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add((time) => lenis.raf(time * 1000));
-      gsap.ticker.lagSmoothing(0);
-      $$('a[href^="#"]').forEach((a) => a.addEventListener('click', (e) => {
-        const id = a.getAttribute('href');
-        if (id.length < 2) return;
-        const target = document.querySelector(id);
-        if (!target) return;
-        e.preventDefault();
-        lenis.scrollTo(target, { offset: id === '#top' ? 0 : -70, duration: 1.6 });
-      }));
-    }
-
-    // Prepare hero
-    const heroWords = splitWords($('#heroTitle'));
-    gsap.set(heroWords, { yPercent: 115 });
-    gsap.set('[data-hero]', { opacity: 0, y: 24 });
-
+    /* ---------- Hero intro ---------- */
+    const c1 = splitChars($('.ht-1')), c2 = splitChars($('.ht-2'));
+    gsap.set(c1, { yPercent: 105, rotate: 6 });
+    gsap.set(c2, { yPercent: 110, rotate: -8 });
+    gsap.set('[data-hero]', { opacity: 0, y: 30 });
+    let introDone = false, pendingPearl = 'hero';
     const intro = () => {
-      const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
-      tl.to(heroWords, { yPercent: 0, duration: 1.6, stagger: 0.07 })
-        .to('[data-hero]', { opacity: 1, y: 0, duration: 1.4, stagger: 0.12 }, '-=1.25');
+      const tl = gsap.timeline({ defaults: { ease: 'expo.out' }, onComplete: () => { introDone = true; goPearl(pendingPearl); } });
+      tl.to(c1, { yPercent: 0, rotate: 0, duration: 1.6, stagger: .06 })
+        .to(c2, { yPercent: 0, rotate: 0, duration: 1.6, stagger: .045 }, .12)
+        .to(window.PEARL, { s: 1, duration: 2.2, ease: 'elastic.out(1, .55)' }, .25)
+        .to('[data-hero]', { opacity: 1, y: 0, duration: 1.3, stagger: .1 }, .5)
+        .add(() => lenis && lenis.start(), .6);
     };
 
-    // Loader sequence
-    if (loader) {
-      const lw = $$('.wi', loader);
-      gsap.set(lw, { yPercent: 110 });
-      const tl = gsap.timeline();
-      tl.to(lw, { yPercent: 0, duration: 1.1, ease: 'expo.out', stagger: 0.1 })
-        .to('.loader-bar i', { scaleX: 1, duration: 1.0, ease: 'power2.inOut' }, 0.15)
-        .to(lw, { yPercent: -110, duration: 0.8, ease: 'expo.in', stagger: 0.06 }, '+=0.15')
-        .to(loader, { clipPath: 'inset(0 0 100% 0)', duration: 1.1, ease: 'expo.inOut' }, '-=0.35')
-        .add(intro, '-=0.6')
-        .add(() => loader.remove());
-      // Safety: never keep the loader forever
-      setTimeout(() => { if (document.body.contains(loader)) { loader.remove(); intro(); } }, 6000);
-    } else { intro(); }
+    /* ---------- Loader ---------- */
+    const counter = { v: 0 };
+    gsap.set(loader, { clipPath: 'inset(0% 0% 0% 0%)' });
+    const ltl = gsap.timeline();
+    ltl.to(counter, { v: 100, duration: 1.9, ease: 'power2.inOut', onUpdate: () => { $('#ldNum').textContent = Math.round(counter.v); } })
+      .to('#ldPearl', { scale: 1, duration: 1.9, ease: 'power2.inOut' }, 0)
+      .to('#ldPearl', { scale: 14, opacity: 0, duration: .9, ease: 'expo.in' })
+      .to(loader, { clipPath: 'inset(0 0 100% 0)', duration: 1, ease: 'expo.inOut' }, '-=.45')
+      .add(intro, '-=.65')
+      .add(() => loader.remove());
+    setTimeout(() => { if (document.body.contains(loader)) { loader.remove(); intro(); } }, 7000);
 
-    // Section titles
+    // hero parallax on scroll
+    gsap.to('.ht-1', { xPercent: -14, ease: 'none', scrollTrigger: { trigger: '#top', start: 'top top', end: 'bottom top', scrub: true } });
+    gsap.to('.ht-2', { xPercent: 12, ease: 'none', scrollTrigger: { trigger: '#top', start: 'top top', end: 'bottom top', scrub: true } });
+
+    /* ---------- Titles & reveals ---------- */
     $$('[data-split]').forEach((el) => {
-      const words = splitWords(el);
-      gsap.from(words, {
-        yPercent: 115, duration: 1.4, ease: 'expo.out', stagger: 0.05,
-        scrollTrigger: { trigger: el, start: 'top 85%' }
-      });
+      const w = splitWords(el);
+      gsap.from(w, { yPercent: 120, rotate: 5, duration: 1.4, ease: 'expo.out', stagger: .06, scrollTrigger: { trigger: el, start: 'top 86%' } });
     });
-
-    // Generic reveals
     $$('[data-reveal]').forEach((el) => {
-      gsap.from(el, {
-        y: 46, opacity: 0, duration: 1.3, ease: 'expo.out',
-        scrollTrigger: { trigger: el, start: 'top 90%' }
-      });
+      gsap.from(el, { y: 50, opacity: 0, duration: 1.3, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 90%' } });
     });
 
-    // Manifesto: words light up with scroll
-    const mWords = splitWords($('#manifesto'));
-    gsap.fromTo(mWords, { opacity: 0.14 }, {
-      opacity: 1, stagger: 0.08, ease: 'none',
-      scrollTrigger: { trigger: '#manifesto', start: 'top 78%', end: 'bottom 48%', scrub: true }
-    });
+    // statement: words light up + pills grow
+    const st = $('#statement');
+    const sw = splitWords(st, '.pill');
+    gsap.fromTo(sw, { opacity: .12 }, { opacity: 1, ease: 'none', stagger: .1, scrollTrigger: { trigger: st, start: 'top 78%', end: 'bottom 50%', scrub: true } });
+    $$('.pill', st).forEach((p) => gsap.from(p, { width: 0, marginLeft: 0, marginRight: 0, duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: p, start: 'top 82%' } }));
 
-    // Arch parallax
-    gsap.fromTo('#archImg', { yPercent: -7 }, {
-      yPercent: 7, ease: 'none',
-      scrollTrigger: { trigger: '.arch', start: 'top bottom', end: 'bottom top', scrub: true }
-    });
-
-    // Wave draws itself
-    const wave = $('#wavePath');
-    if (wave && wave.getTotalLength) {
-      const len = wave.getTotalLength();
-      gsap.set(wave, { strokeDasharray: len, strokeDashoffset: len });
-      gsap.to(wave, { strokeDashoffset: 0, ease: 'none', scrollTrigger: { trigger: wave, start: 'top 95%', end: 'top 40%', scrub: true } });
-    }
-
-    // Count-ups
+    // counters
     $$('[data-count]').forEach((el) => {
-      const end = parseFloat(el.dataset.count);
-      const dec = parseInt(el.dataset.decimals || '0', 10);
-      const from = el.hasAttribute('data-plain') ? end - 18 : 0;
-      const obj = { v: from };
-      const fmt = (v) => dec ? v.toFixed(dec).replace('.', ',') : String(Math.round(v));
-      el.textContent = fmt(from);
-      gsap.to(obj, {
-        v: end, duration: 2.2, ease: 'power3.out',
-        onUpdate: () => { el.textContent = fmt(obj.v); },
-        scrollTrigger: { trigger: el, start: 'top 90%' }
-      });
+      const end = +el.dataset.count, from = +(el.dataset.from || 0), o = { v: from };
+      el.textContent = from;
+      gsap.to(o, { v: end, duration: 2.2, ease: 'power3.out', onUpdate: () => { el.textContent = Math.round(o.v); }, scrollTrigger: { trigger: el, start: 'top 90%' } });
     });
 
-    // Rating
-    const rObj = { v: 0 };
-    gsap.set('#starFill', { width: '0%' });
-    ScrollTrigger.create({
-      trigger: '.rating-num', start: 'top 80%', once: true,
-      onEnter: () => {
-        gsap.to(rObj, {
-          v: 4.9, duration: 2.4, ease: 'power3.out',
-          onUpdate: () => {
-            const s = rObj.v.toFixed(1).split('.');
-            $('#ratingInt').textContent = s[0]; $('#ratingDec').textContent = s[1];
+    /* ---------- Marquee rows driven by scroll velocity ---------- */
+    const mqTweens = $$('.mq-track').map((tr, i) => {
+      tr.innerHTML += tr.innerHTML;
+      return i % 2 === 0
+        ? gsap.to(tr, { xPercent: -50, duration: 26, ease: 'none', repeat: -1 })
+        : gsap.fromTo(tr, { xPercent: -50 }, { xPercent: 0, duration: 26, ease: 'none', repeat: -1 });
+    });
+    let mqDir = 1;
+    gsap.ticker.add(() => {
+      const v = window.PEARL.vel || 0;
+      if (v > .5) mqDir = 1; else if (v < -.5) mqDir = -1;
+      const target = mqDir * (1 + Math.min(Math.abs(v) / 6, 6));
+      mqTweens.forEach((t) => t.timeScale(t.timeScale() + (target - t.timeScale()) * .08));
+      window.PEARL.vel *= .92;
+    });
+
+    /* ---------- Horizontal services ---------- */
+    const mm = gsap.matchMedia();
+    mm.add('(min-width: 900px)', () => {
+      const track = $('#hsTrack');
+      const dist = () => track.scrollWidth - window.innerWidth;
+      const cards = $$('.svc-card');
+      const tw = gsap.to(track, {
+        x: () => -dist(), ease: 'none',
+        scrollTrigger: {
+          trigger: '#servicos', start: 'top top', end: () => '+=' + dist(), pin: true, scrub: 1, invalidateOnRefresh: true, anticipatePin: 1,
+          onUpdate: (self) => {
+            $('#hsBar').style.transform = `scaleX(${self.progress})`;
+            const idx = Math.min(6, Math.max(1, Math.round(self.progress * 6.4)));
+            $('#hsNow').textContent = String(idx).padStart(2, '0');
+            gsap.to(track, { skewX: gsap.utils.clamp(-6, 6, self.getVelocity() / -400), duration: .5, ease: 'power3.out', overwrite: 'auto' });
           }
-        });
-        gsap.to('#starFill', { width: '98%', duration: 2.4, ease: 'power3.out', delay: 0.2 });
-      }
-    });
-    gsap.from('.rating-num', { scale: 0.86, opacity: 0, duration: 1.8, ease: 'expo.out', scrollTrigger: { trigger: '.rating-num', start: 'top 85%' } });
-
-    // Footer wordmark
-    gsap.from('.wordmark', { yPercent: 40, opacity: 0, duration: 1.6, ease: 'expo.out', scrollTrigger: { trigger: '.wordmark', start: 'top 95%' } });
-
-    // Marquee reacts to scroll velocity
-    const track = $('.marquee-track');
-    ScrollTrigger.create({
-      trigger: '.marquee', start: 'top bottom', end: 'bottom top',
-      onUpdate: (self) => {
-        const v = gsap.utils.clamp(-8, 8, self.getVelocity() / 300);
-        gsap.to(track, { skewX: -v, duration: 0.6, ease: 'power3.out', overwrite: true });
-      }
-    });
-
-    // Desktop-only: cursor bubble on services + magnetic buttons
-    if (finePointer) {
-      const bubble = $('#bubble');
-      gsap.set(bubble, { xPercent: -50, yPercent: -50, x: innerWidth / 2, y: innerHeight / 2, scale: 0, opacity: 1 });
-      const xTo = gsap.quickTo(bubble, 'x', { duration: 0.55, ease: 'power3' });
-      const yTo = gsap.quickTo(bubble, 'y', { duration: 0.55, ease: 'power3' });
-      const list = $('#svcList');
-      list.addEventListener('pointermove', (e) => { xTo(e.clientX); yTo(e.clientY); });
-      list.addEventListener('pointerenter', (e) => { gsap.set(bubble, { x: e.clientX, y: e.clientY }); gsap.to(bubble, { scale: 1, duration: 0.6, ease: 'expo.out' }); });
-      list.addEventListener('pointerleave', () => gsap.to(bubble, { scale: 0, duration: 0.5, ease: 'expo.out' }));
-
-      $$('.btn').forEach((btn) => {
-        btn.addEventListener('pointermove', (e) => {
-          const r = btn.getBoundingClientRect();
-          gsap.to(btn, { x: (e.clientX - r.left - r.width / 2) * 0.18, y: (e.clientY - r.top - r.height / 2) * 0.3, duration: 0.6, ease: 'power3.out' });
-        });
-        btn.addEventListener('pointerleave', () => gsap.to(btn, { x: 0, y: 0, duration: 0.9, ease: 'elastic.out(1, .4)' }));
+        }
       });
+      cards.forEach((c) => {
+        gsap.fromTo($('.orb3d', c), { xPercent: 30, rotate: 25 }, { xPercent: -30, rotate: -25, ease: 'none', scrollTrigger: { trigger: c, containerAnimation: tw, start: 'left right', end: 'right left', scrub: true } });
+        gsap.from(c, { y: 80, rotate: 4, opacity: .2, ease: 'none', scrollTrigger: { trigger: c, containerAnimation: tw, start: 'left 105%', end: 'left 65%', scrub: true } });
+      });
+      return () => gsap.set(track, { clearProps: 'all' });
+    });
+
+    /* ---------- Stacking cards ---------- */
+    const stack = $$('.stack-card');
+    stack.forEach((c, i) => {
+      if (i === stack.length - 1) return;
+      gsap.fromTo(c, { scale: 1, rotateX: 0, filter: 'brightness(1)' }, { scale: .9, rotateX: 4, transformPerspective: 1400, filter: 'brightness(.8)', ease: 'none',
+        scrollTrigger: { trigger: stack[i + 1], start: 'top 75%', end: 'top 20%', scrub: true } });
+    });
+    gsap.fromTo('.sc-photo img', { yPercent: -8, scale: 1.1 }, { yPercent: 8, scale: 1, ease: 'none', scrollTrigger: { trigger: '.sc-1', start: 'top bottom', end: 'bottom top', scrub: true } });
+
+    /* ---------- Rating ---------- */
+    gsap.set('.rate-stars span', { scale: 0, rotate: -120 });
+    ScrollTrigger.create({
+      trigger: '.odo', start: 'top 80%', once: true,
+      onEnter: () => {
+        $$('.odo-col').forEach((col, i) => {
+          const d = +col.dataset.digit;
+          gsap.fromTo($('.odo-strip', col), { yPercent: 0 }, { yPercent: -(10 + d) * 5, duration: 2.6, delay: i * .25, ease: 'expo.out' });
+        });
+        gsap.to('.rate-stars span', { scale: 1, rotate: 0, duration: 1.2, stagger: .1, delay: .6, ease: 'elastic.out(1, .4)' });
+      }
+    });
+
+    /* ---------- Ocean word ---------- */
+    const ow = splitChars($('#oceanWord'));
+    gsap.from(ow, { yPercent: 120, rotate: 12, opacity: 0, duration: 1.6, ease: 'expo.out', stagger: .05, scrollTrigger: { trigger: '#oceanWrap', start: 'top 80%' } });
+    ScrollTrigger.create({ trigger: '#oceanWrap', start: 'top bottom', end: 'bottom top', onToggle: (s) => { window.PEARL.ocean = s.isActive ? 1 : 0; } });
+
+    /* ---------- Section themes + pearl choreography ---------- */
+    const THEMES = {
+      light: { '--bg': '#FBF4EC', '--fg': '#14101A', '--muted': 'rgba(20,16,26,0.62)', '--line': 'rgba(20,16,26,0.14)', '--accent': '#FF6F5E' },
+      dark:  { '--bg': '#0C1B33', '--fg': '#FBF4EC', '--muted': 'rgba(251,244,236,0.64)', '--line': 'rgba(251,244,236,0.16)', '--accent': '#FF8A7A' },
+      coral: { '--bg': '#FF6F5E', '--fg': '#14101A', '--muted': 'rgba(20,16,26,0.72)', '--line': 'rgba(20,16,26,0.22)', '--accent': '#0C1B33' }
+    };
+    const PSTATES = {
+      hero:     { d: { x: .16, y: -.04, s: 1, distort: .19, color: '#F7C6BA' },  m: { x: .22, y: .02, s: .74, distort: .19, color: '#F7C6BA' } },
+      intro:    { d: { x: .68, y: -.34, s: .5, distort: .26, color: '#FFE6DA' }, m: { x: .55, y: .7, s: .45, distort: .26, color: '#FFE6DA' } },
+      services: { d: { x: .62, y: -.5, s: .62, distort: .25, color: '#CFE0FF' },  m: { x: .55, y: .72, s: .4, distort: .25, color: '#CFE0FF' } },
+      exp:      { d: { x: .82, y: .66, s: .34, distort: .31, color: '#E6DBFF' },  m: { x: .6, y: .82, s: .28, distort: .31, color: '#E6DBFF' } },
+      rate:     { d: { x: 0, y: -.02, s: 1.08, distort: .29, color: '#FFF2EC' }, m: { x: 0, y: .02, s: 1, distort: .29, color: '#FFF2EC' } },
+      book:     { d: { x: -.86, y: -.66, s: .3, distort: .22, color: '#FFD8CC' }, m: { x: -.7, y: -.85, s: 0, distort: .22, color: '#FFD8CC' } },
+      visit:    { d: { x: 0, y: -.6, s: 0, distort: .19, color: '#CFE0FF' },     m: { x: 0, y: -.6, s: 0, distort: .19, color: '#CFE0FF' } }
+    };
+    function goPearl(key) {
+      pendingPearl = key;
+      if (!introDone) return;
+      const st = PSTATES[key]; if (!st) return;
+      const t = isDesk() ? st.d : st.m;
+      window.PEARL.color = t.color;
+      gsap.to(window.PEARL, { x: t.x, y: t.y, distort: t.distort, duration: 1.8, ease: 'expo.inOut', overwrite: 'auto' });
+      gsap.to(window.PEARL, { s: t.s, duration: 1.6, ease: t.s > window.PEARL.s ? 'back.out(1.6)' : 'expo.inOut' });
     }
+    let current = -1;
+    const secs = $$('main section[data-theme]');
+    const meta = document.querySelector('meta[name="theme-color"]');
+    function activate(i) {
+      if (i < 0 || i === current) return;
+      current = i;
+      const sec = secs[i];
+      gsap.to(document.documentElement, { ...THEMES[sec.dataset.theme], duration: .9, ease: 'power2.out', overwrite: 'auto' });
+      meta.setAttribute('content', THEMES[sec.dataset.theme]['--bg']);
+      goPearl(sec.dataset.pearl);
+    }
+    secs.forEach((sec, i) => ScrollTrigger.create({ trigger: sec, start: 'top 55%', onEnter: () => activate(i), onLeaveBack: () => activate(Math.max(0, i - 1)) }));
+    activate(0);
 
     window.addEventListener('load', () => ScrollTrigger.refresh());
   })();
+  </script>
+
+  <!-- ───────── 3D: pearl + ocean (three.js) ───────── -->
+  <script type="importmap">
+  { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  } }
+  </script>
+  <script type="module">
+    import * as THREE from 'three';
+    import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+    const P = window.PEARL || (window.PEARL = { x: .16, y: 0, s: 1, distort: .19, color: '#FFD8CC', vel: 0, mx: 0, my: 0, ocean: 0 });
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const mobile = window.innerWidth < 760;
+
+    const NOISE = `
+      vec3 mod289(vec3 x){return x-floor(x*(1.0/289.0))*289.0;}
+      vec4 mod289(vec4 x){return x-floor(x*(1.0/289.0))*289.0;}
+      vec4 permute(vec4 x){return mod289(((x*34.0)+1.0)*x);}
+      vec4 taylorInvSqrt(vec4 r){return 1.79284291400159-0.85373472095314*r;}
+      float snoise(vec3 v){
+        const vec2 C=vec2(1.0/6.0,1.0/3.0); const vec4 D=vec4(0.0,0.5,1.0,2.0);
+        vec3 i=floor(v+dot(v,C.yyy)); vec3 x0=v-i+dot(i,C.xxx);
+        vec3 g=step(x0.yzx,x0.xyz); vec3 l=1.0-g; vec3 i1=min(g.xyz,l.zxy); vec3 i2=max(g.xyz,l.zxy);
+        vec3 x1=x0-i1+C.xxx; vec3 x2=x0-i2+C.yyy; vec3 x3=x0-D.yyy;
+        i=mod289(i);
+        vec4 p=permute(permute(permute(i.z+vec4(0.0,i1.z,i2.z,1.0))+i.y+vec4(0.0,i1.y,i2.y,1.0))+i.x+vec4(0.0,i1.x,i2.x,1.0));
+        float n_=0.142857142857; vec3 ns=n_*D.wyz-D.xzx;
+        vec4 j=p-49.0*floor(p*ns.z*ns.z); vec4 x_=floor(j*ns.z); vec4 y_=floor(j-7.0*x_);
+        vec4 x=x_*ns.x+ns.yyyy; vec4 y=y_*ns.x+ns.yyyy; vec4 h=1.0-abs(x)-abs(y);
+        vec4 b0=vec4(x.xy,y.xy); vec4 b1=vec4(x.zw,y.zw);
+        vec4 s0=floor(b0)*2.0+1.0; vec4 s1=floor(b1)*2.0+1.0; vec4 sh=-step(h,vec4(0.0));
+        vec4 a0=b0.xzyw+s0.xzyw*sh.xxyy; vec4 a1=b1.xzyw+s1.xzyw*sh.zzww;
+        vec3 p0=vec3(a0.xy,h.x); vec3 p1=vec3(a0.zw,h.y); vec3 p2=vec3(a1.xy,h.z); vec3 p3=vec3(a1.zw,h.w);
+        vec4 norm=taylorInvSqrt(vec4(dot(p0,p0),dot(p1,p1),dot(p2,p2),dot(p3,p3)));
+        p0*=norm.x; p1*=norm.y; p2*=norm.z; p3*=norm.w;
+        vec4 m=max(0.6-vec4(dot(x0,x0),dot(x1,x1),dot(x2,x2),dot(x3,x3)),0.0); m=m*m;
+        return 42.0*dot(m*m,vec4(dot(p0,x0),dot(p1,x1),dot(p2,x2),dot(p3,x3)));
+      }`;
+
+    /* ================= Pearl ================= */
+    (function pearl() {
+      const canvas = document.getElementById('gl');
+      let renderer;
+      try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' }); }
+      catch (e) { canvas.remove(); return; }
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, mobile ? 1.5 : 1.75));
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.05;
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(35, 1, .1, 100);
+      camera.position.set(0, 0, 8);
+      const pmrem = new THREE.PMREMGenerator(renderer);
+      scene.environment = pmrem.fromScene(new RoomEnvironment(renderer), .04).texture;
+
+      const key = new THREE.DirectionalLight(0xffffff, 1.4); key.position.set(3, 4, 5); scene.add(key);
+      const rim = new THREE.DirectionalLight(0xff6f5e, 2.2); rim.position.set(-4, -2, -1); scene.add(rim);
+      const fill = new THREE.DirectionalLight(0x9be7da, 1.1); fill.position.set(4, -3, 2); scene.add(fill);
+
+      const uniforms = { uTime: { value: 0 }, uDistort: { value: .3 }, uFreq: { value: .78 }, uSpeed: { value: .28 }, uRadius: { value: 1.35 }, uMouse: { value: new THREE.Vector3(0, 0, 1) }, uPull: { value: 0 } };
+      const mat = new THREE.MeshPhysicalMaterial({
+        color: new THREE.Color(P.color), roughness: .14, metalness: .18, clearcoat: 1, clearcoatRoughness: .05,
+        iridescence: 1, iridescenceIOR: 1.6, iridescenceThicknessRange: [120, 520], sheen: .5, sheenColor: new THREE.Color('#C9B8FF'), envMapIntensity: .95
+      });
+      mat.onBeforeCompile = (shader) => {
+        Object.assign(shader.uniforms, uniforms);
+        shader.vertexShader = shader.vertexShader
+          .replace('#include <common>', `#include <common>
+            uniform float uTime; uniform float uDistort; uniform float uFreq; uniform float uSpeed; uniform float uRadius; uniform vec3 uMouse; uniform float uPull;
+            ${NOISE}
+            vec3 dispPos(vec3 n){
+              float d = snoise(n * uFreq + vec3(uTime * uSpeed, 0.0, uTime * uSpeed * .6)) * .88
+                      + snoise(n * uFreq * 1.9 - vec3(0.0, uTime * uSpeed * 1.3, 0.0)) * .12;
+              float pull = uPull * pow(max(dot(n, uMouse), 0.0), 4.0);
+              return n * (uRadius + d * uDistort + pull);
+            }`)
+          .replace('#include <beginnormal_vertex>', `
+            vec3 _n = normalize(position);
+            vec3 _t = normalize(abs(_n.y) < .99 ? cross(_n, vec3(0.0, 1.0, 0.0)) : cross(_n, vec3(1.0, 0.0, 0.0)));
+            vec3 _b = normalize(cross(_n, _t));
+            vec3 _p0 = dispPos(_n);
+            vec3 _p1 = dispPos(normalize(_n + _t * .012));
+            vec3 _p2 = dispPos(normalize(_n + _b * .012));
+            vec3 objectNormal = normalize(cross(_p1 - _p0, _p2 - _p0));
+            #ifdef USE_TANGENT
+              vec3 objectTangent = vec3(tangent.xyz);
+            #endif`)
+          .replace('#include <begin_vertex>', 'vec3 transformed = _p0;');
+      };
+      const seg = mobile ? 120 : 180;
+      const blob = new THREE.Mesh(new THREE.SphereGeometry(1, seg, seg), mat);
+      const group = new THREE.Group();
+      group.add(blob);
+      scene.add(group);
+
+      // small floating pearls
+      const pearlMat = new THREE.MeshPhysicalMaterial({ color: 0xfff1ea, roughness: .14, metalness: .05, clearcoat: 1, iridescence: 1, iridescenceIOR: 1.4, iridescenceThicknessRange: [200, 700], envMapIntensity: 1.3 });
+      const small = [];
+      const sGeo = new THREE.SphereGeometry(1, 32, 32);
+      const count = mobile ? 6 : 10;
+      for (let i = 0; i < count; i++) {
+        const m = new THREE.Mesh(sGeo, pearlMat);
+        const r = .045 + Math.random() * .09;
+        m.scale.setScalar(r);
+        m.userData = { a: Math.random() * Math.PI * 2, rad: 2.1 + Math.random() * 1.2, h: (Math.random() - .5) * 2.4, sp: (.08 + Math.random() * .16) * (Math.random() < .5 ? -1 : 1), bob: Math.random() * 6 };
+        group.add(m); small.push(m);
+      }
+
+      let W = 0, H = 0, halfW = 1, halfH = 1, base = 1;
+      const resize = () => {
+        const w = window.innerWidth, h = window.innerHeight;
+        if (Math.abs(w - W) < 2 && Math.abs(h - H) < 140 && W) return;
+        W = w; H = h;
+        renderer.setSize(W, H, false);
+        camera.aspect = W / H; camera.updateProjectionMatrix();
+        halfH = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * camera.position.z;
+        halfW = halfH * camera.aspect;
+        base = Math.min(1, (halfW * .86) / 1.6);
+      };
+      resize();
+      window.addEventListener('resize', resize);
+
+      const target = new THREE.Color(P.color);
+      const mouse = new THREE.Vector2();
+      const clock = new THREE.Clock();
+      let t = 0, rotY = 0;
+      function frame() {
+        const dt = Math.min(clock.getDelta(), .05);
+        t += reduce ? 0 : dt;
+        mouse.x += ((P.mx || 0) - mouse.x) * .05;
+        mouse.y += ((P.my || 0) - mouse.y) * .05;
+        const vel = Math.min(Math.abs(P.vel || 0) / 60, .25);
+        uniforms.uTime.value = t;
+        uniforms.uDistort.value += ((P.distort + vel) - uniforms.uDistort.value) * .08;
+        uniforms.uPull.value += ((.25 * Math.min(1, Math.hypot(mouse.x, mouse.y))) - uniforms.uPull.value) * .05;
+        uniforms.uMouse.value.set(mouse.x, mouse.y, .7).normalize();
+        target.set(P.color); mat.color.lerp(target, .04);
+
+        const s = Math.max(P.s, 0) * base;
+        group.visible = s > .004;
+        group.scale.setScalar(Math.max(s, .0001));
+        group.position.set(P.x * halfW + mouse.x * .18, P.y * halfH + mouse.y * .12, 0);
+        rotY += dt * .12;
+        blob.rotation.set(-mouse.y * .35, rotY + mouse.x * .5, 0);
+        small.forEach((m) => {
+          const u = m.userData; u.a += u.sp * dt;
+          m.position.set(Math.cos(u.a) * u.rad + mouse.x * .3, u.h + Math.sin(t * .8 + u.bob) * .18 + mouse.y * .2, Math.sin(u.a) * u.rad * .6);
+        });
+        if (group.visible && !document.hidden) renderer.render(scene, camera);
+        else if (!group.visible) renderer.clear();
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    })();
+
+    /* ================= Ocean of particles ================= */
+    (function ocean() {
+      const canvas = document.getElementById('ocean');
+      if (!canvas) return;
+      let renderer;
+      try { renderer = new THREE.WebGLRenderer({ canvas, antialias: false, alpha: true }); } catch (e) { return; }
+      const pr = Math.min(window.devicePixelRatio || 1, 1.5);
+      renderer.setPixelRatio(pr);
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, 1, .1, 100);
+      camera.position.set(0, 2.6, 7); camera.lookAt(0, 0, -3);
+      const COLS = mobile ? 80 : 170, ROWS = mobile ? 46 : 72, SP = .16;
+      const pos = new Float32Array(COLS * ROWS * 3), rnd = new Float32Array(COLS * ROWS);
+      let k = 0;
+      for (let j = 0; j < ROWS; j++) for (let i = 0; i < COLS; i++) {
+        pos[k * 3] = (i - COLS / 2) * SP; pos[k * 3 + 1] = 0; pos[k * 3 + 2] = -j * SP * 1.2 + 2; rnd[k] = Math.random(); k++;
+      }
+      const geo = new THREE.BufferGeometry();
+      geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+      geo.setAttribute('aRand', new THREE.BufferAttribute(rnd, 1));
+      const u = { uTime: { value: 0 }, uMouse: { value: new THREE.Vector2(0, 0) }, uPR: { value: pr } };
+      const mat = new THREE.ShaderMaterial({
+        uniforms: u, transparent: true, depthWrite: false,
+        vertexShader: `
+          uniform float uTime; uniform vec2 uMouse; uniform float uPR; attribute float aRand;
+          varying float vH; varying float vD;
+          void main(){
+            vec3 p = position;
+            float w = sin(p.x * .55 + uTime * .9) * .32 + sin(p.z * .8 + uTime * 1.25) * .22 + sin((p.x + p.z) * .32 + uTime * .55) * .3;
+            float d = distance(p.xz, uMouse);
+            w += exp(-d * d * .35) * .55 * sin(d * 3.2 - uTime * 4.0);
+            p.y += w; vH = w;
+            vec4 mv = modelViewMatrix * vec4(p, 1.0);
+            gl_Position = projectionMatrix * mv;
+            gl_PointSize = (1.6 + aRand * 1.8) * uPR * (9.0 / -mv.z);
+            vD = clamp((-mv.z - 3.0) / 14.0, 0.0, 1.0);
+          }`,
+        fragmentShader: `
+          varying float vH; varying float vD;
+          void main(){
+            float r = length(gl_PointCoord - .5);
+            if (r > .5) discard;
+            vec3 coral = vec3(1.0, .44, .37), aqua = vec3(.61, .91, .85), cream = vec3(.98, .96, .93);
+            vec3 c = mix(coral, aqua, vD);
+            c = mix(c, cream, smoothstep(.15, .7, vH));
+            gl_FragColor = vec4(c, (1.0 - smoothstep(.25, .5, r)) * (1.0 - vD * .8));
+          }`
+      });
+      scene.add(new THREE.Points(geo, mat));
+      const resize = () => {
+        const w = canvas.clientWidth, h = canvas.clientHeight;
+        renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+      };
+      resize(); window.addEventListener('resize', resize);
+      let visible = false;
+      new IntersectionObserver((e) => { visible = e[0].isIntersecting; }, { rootMargin: '100px' }).observe(canvas);
+      const m = new THREE.Vector2();
+      const clock = new THREE.Clock();
+      function frame() {
+        const dt = Math.min(clock.getDelta(), .05);
+        if (visible && !document.hidden) {
+          u.uTime.value += reduce ? 0 : dt;
+          m.x += ((P.mx || 0) * 9 - m.x) * .06;
+          m.y += (-1 - (P.my || 0) * 4 - m.y) * .06;
+          u.uMouse.value.copy(m);
+          renderer.render(scene, camera);
+        }
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    })();
   </script>
 </body>
 </html>
