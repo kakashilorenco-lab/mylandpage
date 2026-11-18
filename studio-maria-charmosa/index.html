@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Studio Maria Charmosa | Salão de beleza pé na areia em Macaé</title>
   <meta name="description" content="Studio Maria Charmosa: salão de beleza pé na areia na Praia dos Cavaleiros, Macaé/RJ. Cabelo, unhas, cílios, sobrancelhas, depilação e massagem com vista pro mar. Nota 4,9 no Google. Agende pelo WhatsApp.">
-  <meta name="theme-color" content="#FBF4EC">
+  <meta name="theme-color" content="#F7F2EB">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
   <meta property="og:type" content="website">
@@ -48,22 +48,22 @@
 
   <style>
     :root {
-      --cream: #FBF4EC;
+      --cream: #F7F2EB;
       --sand: #F3E5D6;
-      --sea: #0C1B33;
-      --sea-2: #16294B;
-      --coral: #FF6F5E;
-      --coral-2: #FF9A8B;
-      --lilac: #DCD1FF;
-      --aqua: #9BE7DA;
+      --sea: #0E2A38;
+      --sea-2: #173B4D;
+      --gold: #D4AA60;
+      --gold-2: #E8C98F;
+      --sky: #CFE2EA;
+      --sea-light: #8FC3D6;
       --ink: #14101A;
 
       /* theme (tweened by JS between sections) */
-      --bg: #FBF4EC;
+      --bg: #F7F2EB;
       --fg: #14101A;
       --muted: rgba(20, 16, 26, .62);
       --line: rgba(20, 16, 26, .14);
-      --accent: #FF6F5E;
+      --accent: #9C5B33;
 
       --serif: "Bodoni Moda", Didot, "Bodoni 72", Georgia, serif;
       --sans: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -85,16 +85,16 @@
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
     button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; padding: 0; }
-    ::selection { background: var(--coral); color: var(--ink); }
-    :focus-visible { outline: 2px solid var(--coral); outline-offset: 4px; border-radius: 8px; }
+    ::selection { background: var(--gold); color: var(--ink); }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 8px; }
     .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
     .wrap { width: 100%; max-width: 1480px; margin: 0 auto; padding: 0 var(--gutter); }
     em { font-family: var(--serif); font-style: italic; font-weight: 400; }
 
     /* Fallback colours when motion is off: each section paints its own theme */
     html:not(.motion) .nav { background: rgba(251,244,236,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-    html:not(.motion) [data-theme="dark"] { --bg: #0C1B33; --fg: #FBF4EC; --muted: rgba(251,244,236,.64); --line: rgba(251,244,236,.16); --accent: #FF8A7A; background: var(--bg); color: var(--fg); }
-    html:not(.motion) [data-theme="coral"] { --bg: #FF6F5E; --fg: #14101A; --muted: rgba(20,16,26,.7); --line: rgba(20,16,26,.2); --accent: #0C1B33; background: var(--bg); color: var(--fg); }
+    html:not(.motion) [data-theme="dark"] { --bg: #0E2A38; --fg: #F7F2EB; --muted: rgba(251,244,236,.64); --line: rgba(251,244,236,.16); --accent: #E8C98F; background: var(--bg); color: var(--fg); }
+    html:not(.motion) [data-theme="gold"] { --bg: #D4AA60; --fg: #14101A; --muted: rgba(20,16,26,.7); --line: rgba(20,16,26,.2); --accent: #0E2A38; background: var(--bg); color: var(--fg); }
 
     /* ── WebGL layers ── */
     #gl { position: fixed; top: 0; left: 0; width: 100%; height: 100lvh; z-index: 1; pointer-events: none; display: block; }
@@ -112,19 +112,19 @@
     .js .loader { display: block; position: fixed; inset: 0; z-index: 400; background: var(--cream); color: var(--ink); padding: 26px var(--gutter); }
     .ld-top { display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
     .ld-pearl { position: absolute; left: 50%; top: 46%; width: 120px; height: 120px; margin: -60px 0 0 -60px; border-radius: 50%; transform: scale(0);
-      background: radial-gradient(circle at 32% 28%, #fff 0 8%, rgba(255,255,255,0) 26%), radial-gradient(circle at 70% 78%, rgba(12,27,51,.28), transparent 55%), conic-gradient(from 40deg, #ffd8cc, #dcd1ff, #b8efe4, #ffe9b8, #ffd8cc);
-      box-shadow: 0 30px 70px -20px rgba(255,111,94,.55); }
+      background: radial-gradient(circle at 32% 28%, #fff 0 8%, rgba(255,255,255,0) 26%), radial-gradient(circle at 70% 78%, rgba(14,42,56,.28), transparent 55%), conic-gradient(from 40deg, #f3ddb8, #cfe2ea, #bfdce6, #f6e3c0, #f3ddb8);
+      box-shadow: 0 30px 70px -20px rgba(212,170,96,.55); }
     .ld-count { position: absolute; left: var(--gutter); bottom: 14px; font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96; font-size: clamp(6rem, 22vw, 20rem); line-height: .8; letter-spacing: -.04em; }
-    .ld-count small { font-size: .3em; vertical-align: top; color: var(--coral); }
+    .ld-count small { font-size: .3em; vertical-align: top; color: var(--gold); }
     .ld-caption { position: absolute; right: var(--gutter); bottom: 34px; font-family: var(--serif); font-style: italic; font-size: clamp(1.1rem, 2vw, 1.6rem); }
 
     /* ── Cursor ── */
     .cursor { position: fixed; top: 0; left: 0; z-index: 350; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%;
-      background: var(--coral); pointer-events: none; display: none; place-items: center;
+      background: var(--gold); pointer-events: none; display: none; place-items: center;
       transition: width .45s var(--ease), height .45s var(--ease), margin .45s var(--ease), background-color .3s, border-color .3s; border: 1px solid transparent; }
     .has-cursor .cursor { display: grid; }
-    .cursor.hover { width: 48px; height: 48px; margin: -24px 0 0 -24px; background: transparent; border-color: var(--coral); }
-    .cursor.label { width: 104px; height: 104px; margin: -52px 0 0 -52px; background: var(--coral); border-color: var(--coral); }
+    .cursor.hover { width: 48px; height: 48px; margin: -24px 0 0 -24px; background: transparent; border-color: var(--gold); }
+    .cursor.label { width: 104px; height: 104px; margin: -52px 0 0 -52px; background: var(--gold); border-color: var(--gold); }
     .cursor span { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); opacity: 0; transition: opacity .3s; }
     .cursor.label span { opacity: 1; }
 
@@ -136,9 +136,9 @@
     .btn::before { content: ""; position: absolute; left: 50%; top: 100%; width: 140%; aspect-ratio: 1; border-radius: 50%; z-index: -1;
       transform: translate(-50%, 0) scale(0); transition: transform .7s var(--ease); }
     .btn:hover::before { transform: translate(-50%, -62%) scale(1); }
-    .btn-coral { background: var(--coral); color: var(--ink); }
-    .btn-coral::before { background: var(--sea); }
-    .btn-coral:hover { color: var(--cream); }
+    .btn-gold { background: var(--gold); color: var(--ink); }
+    .btn-gold::before { background: var(--sea); }
+    .btn-gold:hover { color: var(--cream); }
     .btn-line { border: 1.5px solid var(--fg); color: var(--fg); }
     .btn-line::before { background: var(--fg); }
     .btn-line:hover { color: var(--bg); }
@@ -171,13 +171,13 @@
     .nav.hide { transform: translateY(-120%); }
     .logo { display: inline-flex; align-items: center; gap: 10px; font-family: var(--serif); font-size: 22px; line-height: 1; letter-spacing: -.01em; justify-self: start; }
     .logo-pearl { width: 18px; height: 18px; border-radius: 50%; flex: none;
-      background: radial-gradient(circle at 32% 28%, #fff 0 10%, rgba(255,255,255,0) 34%), conic-gradient(from 40deg, #ffd8cc, #dcd1ff, #b8efe4, #ffe9b8, #ffd8cc);
-      box-shadow: 0 2px 8px rgba(255,111,94,.45); }
+      background: radial-gradient(circle at 32% 28%, #fff 0 10%, rgba(255,255,255,0) 34%), conic-gradient(from 40deg, #f3ddb8, #cfe2ea, #bfdce6, #f6e3c0, #f3ddb8);
+      box-shadow: 0 2px 8px rgba(212,170,96,.45); }
     .logo em { color: var(--accent); }
     .nav-status { display: inline-flex; align-items: center; gap: 10px; height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line);
       font-size: 14px; font-weight: 500; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
     .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #27C08A; animation: pulse 2s infinite; }
-    .status-dot.closed { background: var(--coral); animation: none; }
+    .status-dot.closed { background: var(--gold); animation: none; }
     @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(39,192,138,.5); } 70% { box-shadow: 0 0 0 10px rgba(39,192,138,0); } 100% { box-shadow: 0 0 0 0 rgba(39,192,138,0); } }
     .nav-right { display: flex; align-items: center; gap: 10px; justify-self: end; }
     .burger { width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid var(--fg); display: grid; place-content: center; gap: 6px; }
@@ -193,8 +193,8 @@
     .menu-links { display: grid; gap: 2px; }
     .menu-links a { display: flex; align-items: baseline; gap: 18px; font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96;
       font-size: clamp(3rem, 9vw, 7.4rem); line-height: .95; text-transform: uppercase; letter-spacing: -.02em; }
-    .menu-links a small { font-size: 14px; font-weight: 600; color: var(--coral-2); letter-spacing: .1em; }
-    .menu-links a:hover em, .menu-links a em { color: var(--coral); text-transform: none; }
+    .menu-links a small { font-size: 14px; font-weight: 600; color: var(--gold-2); letter-spacing: .1em; }
+    .menu-links a:hover em, .menu-links a em { color: var(--gold); text-transform: none; }
     .menu-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; color: rgba(251,244,236,.7); font-size: 15px; border-top: 1px solid rgba(251,244,236,.16); padding-top: 20px; }
 
     /* ── Hero ── */
@@ -212,17 +212,17 @@
     .sticker { position: relative; width: 150px; height: 150px; border-radius: 50%; display: grid; place-items: center; flex: none; }
     .sticker svg.ring { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 16s linear infinite; }
     .sticker text { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: .26em; text-transform: uppercase; fill: currentColor; }
-    .sticker .core { width: 64px; height: 64px; border-radius: 50%; background: var(--coral); color: var(--ink); display: grid; place-items: center; transition: transform .6s var(--ease); }
+    .sticker .core { width: 64px; height: 64px; border-radius: 50%; background: var(--gold); color: var(--ink); display: grid; place-items: center; transition: transform .6s var(--ease); }
     .sticker:hover .core { transform: scale(1.15) rotate(45deg); }
     .sticker .core svg { width: 22px; height: 22px; }
     @keyframes spin { to { transform: rotate(360deg); } }
     .hero-foot { position: relative; z-index: 2; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 28px; margin-top: 26px; padding-top: 16px;
       border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
     .hero-foot b { color: var(--fg); font-weight: 700; }
-    .stars { color: var(--coral); letter-spacing: 2px; }
+    .stars { color: var(--accent); letter-spacing: 2px; }
     .scroll-hint { display: inline-flex; align-items: center; gap: 10px; }
     .scroll-hint i { width: 22px; height: 34px; border-radius: 12px; border: 1.5px solid var(--muted); position: relative; }
-    .scroll-hint i::after { content: ""; position: absolute; left: 50%; top: 7px; width: 4px; height: 7px; margin-left: -2px; border-radius: 2px; background: var(--coral); animation: wheel 1.8s var(--ease) infinite; }
+    .scroll-hint i::after { content: ""; position: absolute; left: 50%; top: 7px; width: 4px; height: 7px; margin-left: -2px; border-radius: 2px; background: var(--gold); animation: wheel 1.8s var(--ease) infinite; }
     @keyframes wheel { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(12px); opacity: 0; } }
 
     /* ── Intro statement ── */
@@ -234,7 +234,7 @@
     .pill-wave { width: 1.9em; background: var(--sea); }
     .pill-wave svg { position: absolute; left: 0; top: 0; width: 200%; height: 100%; animation: wave 3.6s linear infinite; }
     @keyframes wave { to { transform: translateX(-50%); } }
-    .pill-orb { width: .8em; background: conic-gradient(from 0deg, #ffd8cc, #dcd1ff, #b8efe4, #ffe9b8, #ffd8cc); animation: spin 6s linear infinite; }
+    .pill-orb { width: .8em; background: conic-gradient(from 0deg, #f3ddb8, #cfe2ea, #bfdce6, #f6e3c0, #f3ddb8); animation: spin 6s linear infinite; }
     .pill-orb::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #fff 0 10%, rgba(255,255,255,0) 40%); }
     .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: clamp(64px, 8vw, 120px); border-top: 1px solid var(--line); }
     .fact { padding: 26px 24px 0 0; }
@@ -260,25 +260,25 @@
     .hs-bar { display: flex; align-items: center; gap: 22px; margin-bottom: 28px; font-size: 14px; color: var(--muted); }
     .hs-bar .hs-count { font-variant-numeric: tabular-nums; color: var(--fg); font-weight: 600; }
     .hs-progress { flex: 1; height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; }
-    .hs-progress i { display: block; height: 100%; background: var(--coral); transform-origin: left; transform: scaleX(0); }
+    .hs-progress i { display: block; height: 100%; background: var(--gold); transform-origin: left; transform: scaleX(0); }
     .hs-mhead { display: none; }
     .hs-mhead p { color: var(--muted); font-size: 1.05rem; margin: 18px 0 0; }
-    .hs-mhead b { color: var(--coral); }
+    .hs-mhead b { color: var(--gold); }
     .hs-track { display: flex; gap: 22px; padding: 0 var(--gutter); width: max-content; align-items: stretch; }
     .hs-intro { width: min(560px, 80vw); display: flex; flex-direction: column; justify-content: space-between; padding: 10px 40px 10px 0; }
     .hs-intro p { font-size: 1.12rem; color: var(--muted); max-width: 22em; margin: 26px 0 0; }
-    .hs-hint { display: inline-flex; align-items: center; gap: 12px; font-weight: 600; color: var(--coral); font-size: 15px; }
+    .hs-hint { display: inline-flex; align-items: center; gap: 12px; font-weight: 600; color: var(--gold); font-size: 15px; }
     .hs-hint svg { width: 34px; animation: nudge 1.6s var(--ease) infinite; }
     @keyframes nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(10px); } }
     .svc-card { position: relative; width: clamp(300px, 30vw, 470px); height: min(66vh, 620px); min-height: 480px; border-radius: 32px; padding: 26px;
-      background: rgba(22,41,75,.5); backdrop-filter: blur(16px) saturate(1.2); -webkit-backdrop-filter: blur(16px) saturate(1.2); border: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between;
+      background: rgba(23,59,77,.5); backdrop-filter: blur(16px) saturate(1.2); -webkit-backdrop-filter: blur(16px) saturate(1.2); border: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between;
       overflow: hidden; transform-style: preserve-3d; }
-    .svc-card::before { content: ""; position: absolute; inset: auto -30% -40% -30%; height: 70%; background: radial-gradient(50% 50% at 50% 50%, var(--g, rgba(255,111,94,.35)), transparent 70%); opacity: .55; pointer-events: none; }
+    .svc-card::before { content: ""; position: absolute; inset: auto -30% -40% -30%; height: 70%; background: radial-gradient(50% 50% at 50% 50%, var(--g, rgba(212,170,96,.35)), transparent 70%); opacity: .55; pointer-events: none; }
     .svc-top { display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); position: relative; }
-    .svc-n { font-family: var(--serif); font-style: italic; font-size: 34px; letter-spacing: 0; text-transform: none; color: var(--coral-2); line-height: 1; }
+    .svc-n { font-family: var(--serif); font-style: italic; font-size: 34px; letter-spacing: 0; text-transform: none; color: var(--gold-2); line-height: 1; }
     .orb3d { position: relative; width: 58%; aspect-ratio: 1; margin: 0 auto; border-radius: 50%; animation: float 6s ease-in-out infinite; }
     .orb3d .core { position: absolute; inset: 0; border-radius: 50%; overflow: hidden;
-      box-shadow: inset -18px -26px 50px rgba(12,27,51,.45), inset 10px 14px 30px rgba(255,255,255,.35), 0 40px 70px -30px var(--g, rgba(255,111,94,.6)); }
+      box-shadow: inset -18px -26px 50px rgba(14,42,56,.45), inset 10px 14px 30px rgba(255,255,255,.35), 0 40px 70px -30px var(--g, rgba(212,170,96,.6)); }
     .orb3d .core::before { content: ""; position: absolute; inset: -25%; background: conic-gradient(from 0deg, var(--c1), var(--c2), var(--c3), var(--c4), var(--c1)); animation: spin 9s linear infinite; filter: blur(6px); }
     .orb3d .core::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 30% 26%, rgba(255,255,255,.95) 0 6%, rgba(255,255,255,0) 30%), radial-gradient(circle at 72% 80%, rgba(255,255,255,.25), transparent 35%); }
     .orb3d svg { position: absolute; left: 50%; top: 50%; width: 34%; height: 34%; transform: translate(-50%, -50%); color: var(--sea); stroke-width: 1.4; z-index: 2; }
@@ -288,12 +288,12 @@
     .svc-bottom { position: relative; }
     .svc-card h3 { margin: 0; font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(2.6rem, 3.8vw, 4rem); line-height: .95; letter-spacing: -.02em; }
     .svc-card p { margin: 12px 0 0; color: var(--muted); font-size: 15.5px; }
-    .svc-cta { margin-top: 20px; display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; color: var(--coral-2); }
-    .svc-cta b { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: var(--coral); color: var(--ink); transition: transform .6s var(--ease); }
+    .svc-cta { margin-top: 20px; display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; color: var(--gold-2); }
+    .svc-cta b { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: var(--gold); color: var(--ink); transition: transform .6s var(--ease); }
     .svc-card:hover .svc-cta b { transform: rotate(45deg) scale(1.1); }
     .hs-outro { width: min(520px, 80vw); display: flex; flex-direction: column; justify-content: center; gap: 28px; padding: 0 60px 0 40px; }
     .hs-outro h3 { margin: 0; font-weight: 800; font-variation-settings: "wdth" 76, "opsz" 96; font-size: clamp(2.8rem, 5vw, 5.4rem); line-height: .9; letter-spacing: -.03em; }
-    .hs-outro h3 em { color: var(--coral-2); }
+    .hs-outro h3 em { color: var(--gold-2); }
 
     /* ── Stacking cards ── */
     .exp { padding: clamp(110px, 13vw, 190px) 0 clamp(60px, 8vw, 120px); }
@@ -304,14 +304,17 @@
       transform-origin: center top; overflow: hidden; will-change: transform; }
     .stack-card:last-child { margin-bottom: 0; }
     .sc-1 { background: var(--sea); color: var(--cream); }
-    .sc-2 { background: var(--coral); color: var(--ink); }
-    .sc-3 { background: var(--lilac); color: var(--ink); }
+    .sc-2 { background: #9C5B33; color: var(--cream); }
+    .sc-onda { background: #FFFFFF; color: var(--ink); box-shadow: 0 40px 80px -50px rgba(14,42,56,.4); }
+    .sc-onda .sc-n { color: var(--accent); }
+    .sc-onda h3 em { color: var(--accent); }
+    .sc-3 { background: var(--sky); color: var(--ink); }
     .sc-text { display: flex; flex-direction: column; justify-content: space-between; }
     .sc-n { font-family: var(--serif); font-style: italic; font-size: clamp(4rem, 8vw, 8rem); line-height: .8; }
-    .sc-1 .sc-n { color: var(--coral-2); }
+    .sc-1 .sc-n { color: var(--gold-2); }
     .stack-card h3 { margin: 0; font-weight: 800; font-variation-settings: "wdth" 76, "opsz" 96; font-size: clamp(2.8rem, 5.4vw, 5.8rem); line-height: .88; letter-spacing: -.03em; }
     .stack-card h3 em { font-weight: 400; }
-    .sc-1 h3 em { color: var(--coral-2); }
+    .sc-1 h3 em { color: var(--gold-2); }
     .stack-card p { margin: 18px 0 0; font-size: clamp(1.02rem, 1.25vw, 1.2rem); max-width: 26em; opacity: .82; }
     .sc-visual { position: relative; border-radius: 28px; overflow: hidden; }
     .sc-photo { position: absolute; inset: 0; }
@@ -320,21 +323,37 @@
     .sc-waves svg { position: absolute; left: 0; bottom: 0; width: 200%; height: 100%; }
     .sc-waves .wv1 { animation: wave 9s linear infinite; }
     .sc-waves .wv2 { animation: wave 6s linear infinite reverse; }
-    .sc-2 .sc-visual { background: rgba(20,16,26,.08); display: grid; place-items: center; }
+    .sc-2 .sc-visual { background: rgba(20,16,26,.14); display: grid; place-items: center; }
+    .sc-onda .sc-visual { background: linear-gradient(180deg, #F3EEE7 0%, #E8DFD3 100%); }
+    .ceiling { position: absolute; inset: 0; }
+    .ceiling svg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+    .ceiling .slab { fill: #FFFFFF; filter: drop-shadow(0 22px 26px rgba(14,42,56,.16)); }
+    .ceiling .led { fill: none; stroke: #F2C46B; stroke-width: 3; stroke-linecap: round; filter: drop-shadow(0 0 6px #F2C46B) drop-shadow(0 0 16px rgba(242,196,107,.8));
+      stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: led 5s var(--ease) infinite alternate; }
+    .ceiling .spot { fill: #FFF3D6; filter: drop-shadow(0 0 6px #FFE3A0); animation: twinkle 3s ease-in-out infinite; }
+    .ceiling .spot:nth-of-type(2n) { animation-delay: -1.5s; }
+    .panel-gold { position: absolute; bottom: 10%; width: 22%; aspect-ratio: .62; border-radius: 999px 999px 18px 18px; border: 3px solid #D4AA60;
+      background: radial-gradient(60% 50% at 50% 40%, rgba(255,226,160,.9), rgba(212,170,96,.25) 70%), #F7EBD4; box-shadow: 0 0 40px rgba(242,196,107,.55), inset 0 0 20px rgba(255,255,255,.6); display: grid; place-items: center;
+      font-family: var(--serif); font-style: italic; font-size: clamp(2rem, 3.4vw, 3.4rem); color: #9C5B33; animation: glow 4s ease-in-out infinite; }
+    .panel-gold.p1 { left: 16%; } .panel-gold.p2 { right: 16%; animation-delay: -2s; }
+    @keyframes led { to { stroke-dashoffset: 0; } }
+    @keyframes twinkle { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+    @keyframes glow { 0%, 100% { box-shadow: 0 0 26px rgba(242,196,107,.4), inset 0 0 20px rgba(255,255,255,.6); } 50% { box-shadow: 0 0 60px rgba(242,196,107,.8), inset 0 0 20px rgba(255,255,255,.6); } }
     .ring-text { position: relative; width: min(82%, 420px); aspect-ratio: 1; display: grid; place-items: center; }
     .ring-text svg { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 22s linear infinite; }
-    .ring-text text { font-family: var(--sans); font-weight: 800; font-size: 15px; letter-spacing: .18em; text-transform: uppercase; fill: var(--ink); }
-    .ring-clock { width: 46%; aspect-ratio: 1; border-radius: 50%; background: var(--cream); position: relative; box-shadow: 0 30px 60px -20px rgba(12,27,51,.45); }
+    .ring-text text { font-family: var(--sans); font-weight: 800; font-size: 15px; letter-spacing: .18em; text-transform: uppercase; fill: var(--cream); }
+    .sc-2 h3 em, .sc-2 .sc-n { color: #F3D6A4; }
+    .ring-clock { width: 46%; aspect-ratio: 1; border-radius: 50%; background: var(--cream); position: relative; box-shadow: 0 30px 60px -20px rgba(14,42,56,.45); }
     .ring-clock i { position: absolute; left: 50%; bottom: 50%; width: 3px; margin-left: -1.5px; border-radius: 3px; background: var(--ink); transform-origin: bottom center; }
     .ring-clock .hh { height: 26%; animation: spin 40s linear infinite; }
-    .ring-clock .mm { height: 38%; background: var(--coral); animation: spin 6s linear infinite; }
+    .ring-clock .mm { height: 38%; background: var(--gold); animation: spin 6s linear infinite; }
     .ring-clock::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 12px; margin: -6px; border-radius: 50%; background: var(--ink); }
     .sc-3 .sc-visual { background: rgba(255,255,255,.35); }
     .floaters { position: absolute; inset: 0; }
     .floaters span { position: absolute; padding: 12px 22px; border-radius: 999px; background: var(--cream); color: var(--ink); font-weight: 700; font-size: clamp(14px, 1.3vw, 18px);
-      box-shadow: 0 18px 40px -18px rgba(12,27,51,.45); animation: bob 5s ease-in-out infinite; white-space: nowrap; }
+      box-shadow: 0 18px 40px -18px rgba(14,42,56,.45); animation: bob 5s ease-in-out infinite; white-space: nowrap; }
     .floaters span:nth-child(2n) { background: var(--sea); color: var(--cream); }
-    .floaters span:nth-child(3n) { background: var(--coral); }
+    .floaters span:nth-child(3n) { background: var(--gold); }
     @keyframes bob { 0%, 100% { transform: translateY(-10px) rotate(var(--r, -4deg)); } 50% { transform: translateY(10px) rotate(calc(var(--r, -4deg) * -1)); } }
 
     /* ── Rating ── */
@@ -365,7 +384,7 @@
     .book-head { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 30px; }
     .book-head p { margin: 0; max-width: 24em; color: var(--muted); font-size: 1.1rem; }
     .book-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(24px, 4vw, 60px); margin-top: clamp(44px, 6vw, 80px); align-items: start; }
-    .panel { background: #fff; border-radius: 34px; padding: clamp(22px, 3.2vw, 46px); border: 1px solid var(--line); box-shadow: 0 50px 100px -60px rgba(12,27,51,.4); }
+    .panel { background: #fff; border-radius: 34px; padding: clamp(22px, 3.2vw, 46px); border: 1px solid var(--line); box-shadow: 0 50px 100px -60px rgba(14,42,56,.4); }
     .step + .step { margin-top: 34px; padding-top: 30px; border-top: 1px dashed var(--line); }
     .step-h { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
     .step-h b { width: 34px; height: 34px; border-radius: 50%; background: var(--sea); color: var(--cream); display: grid; place-items: center; font-size: 14px; font-weight: 700; flex: none; }
@@ -375,18 +394,18 @@
     .chip { height: 46px; padding: 0 18px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--cream); font-size: 15px; font-weight: 600;
       display: inline-flex; align-items: center; gap: 8px; transition: background-color .3s, color .3s, border-color .3s, transform .5s var(--ease); }
     .chip:hover { border-color: var(--ink); transform: translateY(-2px); }
-    .chip[aria-pressed="true"] { background: var(--coral); border-color: var(--coral); color: var(--ink); }
+    .chip[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: var(--ink); }
     .chip.day { flex-direction: column; justify-content: center; gap: 0; height: 66px; min-width: 74px; padding: 0 12px; border-radius: 22px; line-height: 1.1; }
     .chip.day small { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; opacity: .7; }
     .chip.day strong { font-size: 21px; font-weight: 800; font-variation-settings: "wdth" 80; }
     .field { width: 100%; height: 58px; border-radius: 18px; border: 1.5px solid var(--line); background: var(--cream); padding: 0 20px; font: inherit; font-size: 16px; color: var(--ink); }
-    .field:focus { outline: none; border-color: var(--coral); box-shadow: 0 0 0 4px rgba(255,111,94,.2); }
+    .field:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px rgba(212,170,96,.2); }
     .form-error { color: #C23B2A; font-size: 14px; font-weight: 600; margin: 12px 0 0; min-height: 1px; }
     .preview { position: sticky; top: 110px; }
-    .phone { background: var(--sea); color: var(--cream); border-radius: 38px; padding: 14px; box-shadow: 0 60px 120px -50px rgba(12,27,51,.7); }
+    .phone { background: var(--sea); color: var(--cream); border-radius: 38px; padding: 14px; box-shadow: 0 60px 120px -50px rgba(14,42,56,.7); }
     .phone-top { display: flex; align-items: center; gap: 12px; padding: 10px 10px 16px; border-bottom: 1px solid rgba(251,244,236,.14); }
     .avatar { width: 44px; height: 44px; border-radius: 50%; flex: none;
-      background: radial-gradient(circle at 32% 28%, #fff 0 10%, rgba(255,255,255,0) 34%), conic-gradient(from 40deg, #ffd8cc, #dcd1ff, #b8efe4, #ffe9b8, #ffd8cc); }
+      background: radial-gradient(circle at 32% 28%, #fff 0 10%, rgba(255,255,255,0) 34%), conic-gradient(from 40deg, #f3ddb8, #cfe2ea, #bfdce6, #f6e3c0, #f3ddb8); }
     .phone-top strong { display: block; font-size: 15px; }
     .phone-top span { font-size: 12px; opacity: .65; }
     .chat { min-height: 300px; padding: 22px 8px 12px; display: flex; flex-direction: column; justify-content: flex-end; }
@@ -404,12 +423,12 @@
     .hours { list-style: none; margin: 0; padding: 0; }
     .hours li { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 15.5px; color: var(--muted); }
     .hours li.today { color: var(--fg); font-weight: 700; }
-    .hours li.today span:first-child::after { content: "  ← hoje"; color: var(--coral-2); }
+    .hours li.today span:first-child::after { content: "  ← hoje"; color: var(--gold-2); }
     .visit-ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
     .map { position: relative; min-height: 480px; border-radius: 34px; overflow: hidden; background: var(--sea-2); border: 1px solid var(--line); }
     .map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: invert(.92) hue-rotate(180deg) saturate(.55) brightness(.92) contrast(.95); }
     .map-chip { position: absolute; left: 16px; bottom: 16px; right: 16px; max-width: 360px; display: flex; align-items: center; gap: 14px; padding: 10px 18px 10px 10px; border-radius: 22px;
-      background: rgba(12,27,51,.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(251,244,236,.14); color: var(--cream); }
+      background: rgba(14,42,56,.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(251,244,236,.14); color: var(--cream); }
     .map-chip img { width: 62px; height: 62px; border-radius: 16px; object-fit: cover; }
     .map-chip strong { display: block; font-size: 15px; }
     .map-chip span { font-size: 13px; opacity: .7; }
@@ -420,11 +439,11 @@
     .ocean-word .ch { will-change: transform; }
     .foot { position: relative; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px 28px; padding-top: 22px; padding-bottom: 26px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
     .foot nav { display: flex; flex-wrap: wrap; gap: 22px; }
-    .foot a:hover { color: var(--coral-2); }
+    .foot a:hover { color: var(--gold-2); }
 
     .mobile-cta { position: fixed; left: 12px; right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); z-index: 80; display: none; transform: translateY(150%); transition: transform .7s var(--ease); }
     .mobile-cta.show { transform: none; }
-    .mobile-cta .btn { width: 100%; box-shadow: 0 20px 40px -14px rgba(12,27,51,.5); }
+    .mobile-cta .btn { width: 100%; box-shadow: 0 20px 40px -14px rgba(14,42,56,.5); }
 
     /* ── Responsive ── */
     @media (max-width: 1100px) {
@@ -497,7 +516,7 @@
     <a class="logo" href="#top" aria-label="Studio Maria Charmosa, início"><span class="logo-pearl"></span><span>Maria <em>Charmosa</em></span></a>
     <div class="nav-status"><span class="status-dot" id="statusDot"></span><span id="statusText">Terça a sábado · 9h às 20h</span></div>
     <div class="nav-right">
-      <a class="btn btn-coral btn-sm" href="#agendar" data-cursor="Bora!"><span class="roll"><span data-t="Agendar">Agendar</span></span></a>
+      <a class="btn btn-gold btn-sm" href="#agendar" data-cursor="Bora!"><span class="roll"><span data-t="Agendar">Agendar</span></span></a>
       <button class="burger" id="menuBtn" aria-expanded="false" aria-controls="menu"><span></span><span></span><b class="sr">Menu</b></button>
     </div>
   </header>
@@ -506,7 +525,7 @@
     <nav class="menu-links" aria-label="Menu">
       <a href="#studio"><small>01</small>O <em>studio</em></a>
       <a href="#servicos"><small>02</small>Serviços</a>
-      <a href="#experiencia"><small>03</small>A <em>vibe</em></a>
+      <a href="#experiencia"><small>03</small>O <em>espaço</em></a>
       <a href="#agendar"><small>04</small>Agendar</a>
       <a href="#visite"><small>05</small>Visite</a>
     </nav>
@@ -525,9 +544,9 @@
       <div>
         <div class="hero-bottom">
           <div>
-            <p class="hero-lede" data-hero>Studio de beleza <em>pé na areia</em> na Praia dos Cavaleiros, em Macaé. Cabelo, unhas, cílios, sobrancelhas, depilação e massagem com o mar ali na janela.</p>
+            <p class="hero-lede" data-hero>Salão de vidro <em>pé na areia</em> na Av. Atlântica, Praia dos Cavaleiros. Cabelo, unhas, cílios, sobrancelhas, depilação e massagem, com o mar ali na janela.</p>
             <div class="hero-actions" data-hero>
-              <a class="btn btn-coral" data-wa="Oi, Studio Maria Charmosa! Vim pelo site e quero agendar um horário." href="#agendar" target="_blank" rel="noopener" data-cursor="WhatsApp">
+              <a class="btn btn-gold" data-wa="Oi, Studio Maria Charmosa! Vim pelo site e quero agendar um horário." href="#agendar" target="_blank" rel="noopener" data-cursor="WhatsApp">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.42 1.3-1.96 1.38-.5.07-1.13.1-1.82-.12-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.18-4.94-4.37-.15-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.3.58-.37.78-.37h.56c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.15.12.32.02.51-.1.2-.15.32-.29.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.3 2.36 1.45.3.15.46.12.63-.07.17-.2.73-.85.92-1.15.2-.3.39-.24.66-.15.27.1 1.71.81 2 .96.3.15.49.22.56.34.07.12.07.7-.17 1.37Z"/></svg>
                 <span class="roll"><span data-t="Agendar pelo WhatsApp">Agendar pelo WhatsApp</span></span>
               </a>
@@ -551,7 +570,7 @@
     <section class="intro" id="studio" data-theme="light" data-pearl="intro">
       <div class="wrap content">
         <span class="tag" data-reveal><i></i>O studio</span>
-        <p class="statement" id="statement">Um salão de vidro <span class="pill"><img src="assets/salao-duo.jpg" alt="" loading="lazy"></span> de frente pro mar <span class="pill pill-wave"><svg viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 Q15 12 30 22 T60 22 T90 22 T120 22 V40 H0Z" fill="#9BE7DA"/><path d="M0 28 Q15 20 30 28 T60 28 T90 28 T120 28 V40 H0Z" fill="#FBF4EC" opacity=".85"/></svg></span>, onde cabelo, unhas e cílios <span class="pill pill-orb"></span> ganham hora marcada, calma e <em>aquela vista</em> que só a Praia dos Cavaleiros <span class="pill"><img src="assets/entrada-duo.jpg" alt="" loading="lazy"></span> tem.</p>
+        <p class="statement" id="statement">Um salão de vidro <span class="pill"><img src="assets/salao-duo.jpg" alt="" loading="lazy"></span> de frente pro mar <span class="pill pill-wave"><svg viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 Q15 12 30 22 T60 22 T90 22 T120 22 V40 H0Z" fill="#8FC3D6"/><path d="M0 28 Q15 20 30 28 T60 28 T90 28 T120 28 V40 H0Z" fill="#F7F2EB" opacity=".85"/></svg></span>, com teto em onda e brilho dourado <span class="pill pill-orb"></span>, onde cabelo, unhas e cílios ganham hora marcada e <em>aquela vista</em> que só a Praia dos Cavaleiros <span class="pill"><img src="assets/entrada-duo.jpg" alt="" loading="lazy"></span> tem.</p>
 
         <div class="facts">
           <div class="fact" data-reveal><b data-count="2018" data-from="1990">2018</b><span>Pé na areia desde</span></div>
@@ -593,7 +612,7 @@
             <span class="hs-hint">Arrasta pro lado <svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h32M27 1l5 5-5 5"/></svg></span>
           </div>
 
-          <article class="svc-card" style="--c1:#FFD8CC;--c2:#FF9A8B;--c3:#DCD1FF;--c4:#FFE9B8;--g:rgba(255,111,94,.55)">
+          <article class="svc-card" style="--c1:#F3DDB8;--c2:#E8C98F;--c3:#CFE2EA;--c4:#F6E3C0;--g:rgba(212,170,96,.55)">
             <div class="svc-top"><span class="svc-n">01</span><span>Feminino · Masculino</span></div>
             <div class="orb3d"><div class="core"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg></div>
             <div class="svc-bottom">
@@ -602,7 +621,7 @@
               <a class="svc-cta" data-wa="Oi! Vim pelo site e quero agendar CABELO. Quais horários vocês têm?" href="#agendar" target="_blank" rel="noopener" data-cursor="Agendar">Agendar <b>↗</b></a>
             </div>
           </article>
-          <article class="svc-card" style="--c1:#FFC2CF;--c2:#FFE9B8;--c3:#FF8A7A;--c4:#F7D6FF;--g:rgba(255,154,139,.5)">
+          <article class="svc-card" style="--c1:#E9C7A5;--c2:#F6E3C0;--c3:#E8C98F;--c4:#DCEBF0;--g:rgba(232,201,143,.5)">
             <div class="svc-top"><span class="svc-n">02</span><span>Mãos &amp; pés</span></div>
             <div class="orb3d"><div class="core"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 2h5v5h-5z"/><path d="M8 7h8l1.2 4v9a2 2 0 0 1-2 2H8.8a2 2 0 0 1-2-2v-9z"/><path d="M9.5 14h5"/></svg></div>
             <div class="svc-bottom">
@@ -611,7 +630,7 @@
               <a class="svc-cta" data-wa="Oi! Vim pelo site e quero agendar UNHAS (manicure/pedicure/alongamento). Quais horários vocês têm?" href="#agendar" target="_blank" rel="noopener" data-cursor="Agendar">Agendar <b>↗</b></a>
             </div>
           </article>
-          <article class="svc-card" style="--c1:#DCD1FF;--c2:#9BE7DA;--c3:#FFFFFF;--c4:#C7B8FF;--g:rgba(155,231,218,.45)">
+          <article class="svc-card" style="--c1:#CFE2EA;--c2:#8FC3D6;--c3:#FFFFFF;--c4:#A9CFDD;--g:rgba(143,195,214,.45)">
             <div class="svc-top"><span class="svc-n">03</span><span>Olhar</span></div>
             <div class="orb3d"><div class="core"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 13s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"/><circle cx="12" cy="13" r="2.6"/><path d="M12 3.5v2M6.5 5l1 1.8M17.5 5l-1 1.8M3 8l1.7 1.2M21 8l-1.7 1.2"/></svg></div>
             <div class="svc-bottom">
@@ -620,7 +639,7 @@
               <a class="svc-cta" data-wa="Oi! Vim pelo site e quero agendar EXTENSÃO DE CÍLIOS. Quais horários vocês têm?" href="#agendar" target="_blank" rel="noopener" data-cursor="Agendar">Agendar <b>↗</b></a>
             </div>
           </article>
-          <article class="svc-card" style="--c1:#FFE9B8;--c2:#FFD8CC;--c3:#B8EFE4;--c4:#FFFFFF;--g:rgba(255,233,184,.4)">
+          <article class="svc-card" style="--c1:#F6E3C0;--c2:#F3DDB8;--c3:#BFDCE6;--c4:#FFFFFF;--g:rgba(246,227,192,.4)">
             <div class="svc-top"><span class="svc-n">04</span><span>Design</span></div>
             <div class="orb3d"><div class="core"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5c3-3.6 9-4.6 15-2l3 1.5"/><path d="M5 15.5s2.5-3 7-3 7 3 7 3-2.5 3-7 3-7-3-7-3z"/><circle cx="12" cy="15.5" r="1.6"/></svg></div>
             <div class="svc-bottom">
@@ -629,7 +648,7 @@
               <a class="svc-cta" data-wa="Oi! Vim pelo site e quero agendar DESIGN DE SOBRANCELHAS. Quais horários vocês têm?" href="#agendar" target="_blank" rel="noopener" data-cursor="Agendar">Agendar <b>↗</b></a>
             </div>
           </article>
-          <article class="svc-card" style="--c1:#B8EFE4;--c2:#DCD1FF;--c3:#FFD8CC;--c4:#9BE7DA;--g:rgba(155,231,218,.4)">
+          <article class="svc-card" style="--c1:#BFDCE6;--c2:#CFE2EA;--c3:#F3DDB8;--c4:#8FC3D6;--g:rgba(143,195,214,.4)">
             <div class="svc-top"><span class="svc-n">05</span><span>Corpo &amp; rosto</span></div>
             <div class="orb3d"><div class="core"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5s6.5 7 6.5 11.5a6.5 6.5 0 0 1-13 0C5.5 9.5 12 2.5 12 2.5z"/><path d="M9 15a3 3 0 0 0 3 3"/></svg></div>
             <div class="svc-bottom">
@@ -638,7 +657,7 @@
               <a class="svc-cta" data-wa="Oi! Vim pelo site e quero agendar DEPILAÇÃO. Quais horários vocês têm?" href="#agendar" target="_blank" rel="noopener" data-cursor="Agendar">Agendar <b>↗</b></a>
             </div>
           </article>
-          <article class="svc-card" style="--c1:#FF9A8B;--c2:#DCD1FF;--c3:#FFE9B8;--c4:#FFC2CF;--g:rgba(220,209,255,.45)">
+          <article class="svc-card" style="--c1:#E8C98F;--c2:#CFE2EA;--c3:#F6E3C0;--c4:#E9C7A5;--g:rgba(207,226,234,.45)">
             <div class="svc-top"><span class="svc-n">06</span><span>Bem-estar</span></div>
             <div class="orb3d"><div class="core"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="19" rx="8" ry="2.6"/><ellipse cx="12" cy="13.4" rx="5.8" ry="2.2"/><ellipse cx="12" cy="8.4" rx="3.8" ry="1.8"/><path d="M12 3v2"/></svg></div>
             <div class="svc-bottom">
@@ -650,7 +669,7 @@
 
           <div class="hs-outro">
             <h3>Quer juntar <em>vários?</em></h3>
-            <a class="btn btn-coral" href="#agendar" data-cursor="Bora!" style="align-self:flex-start"><span class="roll"><span data-t="Montar meu horário">Montar meu horário</span></span></a>
+            <a class="btn btn-gold" href="#agendar" data-cursor="Bora!" style="align-self:flex-start"><span class="roll"><span data-t="Montar meu horário">Montar meu horário</span></span></a>
           </div>
         </div>
       </div>
@@ -661,26 +680,43 @@
       <div class="wrap content">
         <div class="exp-head">
           <h2 class="big-title" data-split>Por que quem vem, <em>volta.</em></h2>
-          <p data-reveal>Três motivos que fazem a orla inteira marcar horário de novo.</p>
+          <p data-reveal>Quatro motivos que fazem a orla inteira marcar horário de novo.</p>
         </div>
 
         <div class="stack">
           <article class="stack-card sc-1" style="--i:0">
             <div class="sc-text">
               <span class="sc-n">01</span>
-              <div><h3>Vista <em>pro mar.</em></h3><p>Salão envidraçado na Av. Atlântica. Você senta na cadeira e o mar aparece na janela.</p></div>
+              <div><h3>Vista <em>pro mar.</em></h3><p>Fachada de vidro na Av. Atlântica. Você senta na cadeira de couro e o mar aparece na janela.</p></div>
             </div>
             <div class="sc-visual">
               <div class="sc-photo"><img src="assets/salao-duo.jpg" alt="Interior do Studio Maria Charmosa com janelas de vidro de frente para a praia" loading="lazy"></div>
               <div class="sc-waves" aria-hidden="true">
-                <svg class="wv1" viewBox="0 0 800 100" preserveAspectRatio="none"><path d="M0 50 Q100 20 200 50 T400 50 T600 50 T800 50 V100 H0Z" fill="#FF6F5E" opacity=".9"/></svg>
-                <svg class="wv2" viewBox="0 0 800 100" preserveAspectRatio="none"><path d="M0 64 Q100 40 200 64 T400 64 T600 64 T800 64 V100 H0Z" fill="#0C1B33"/></svg>
+                <svg class="wv1" viewBox="0 0 800 100" preserveAspectRatio="none"><path d="M0 50 Q100 20 200 50 T400 50 T600 50 T800 50 V100 H0Z" fill="#D4AA60" opacity=".9"/></svg>
+                <svg class="wv2" viewBox="0 0 800 100" preserveAspectRatio="none"><path d="M0 64 Q100 40 200 64 T400 64 T600 64 T800 64 V100 H0Z" fill="#0E2A38"/></svg>
               </div>
             </div>
           </article>
-          <article class="stack-card sc-2" style="--i:1">
+          <article class="stack-card sc-onda" style="--i:1">
             <div class="sc-text">
               <span class="sc-n">02</span>
+              <div><h3>Até o teto <em>faz onda.</em></h3><p>O teto do salão desenha uma onda iluminada e os painéis dourados brilham na parede. A gente trouxe o mar pra dentro.</p></div>
+            </div>
+            <div class="sc-visual">
+              <div class="ceiling" aria-hidden="true">
+                <svg viewBox="0 0 600 600" preserveAspectRatio="none">
+                  <path class="slab" d="M0 0 H600 V150 C520 150 500 230 420 230 C340 230 330 120 250 120 C170 120 150 210 80 210 C40 210 20 190 0 190 Z"/>
+                  <path class="led" d="M0 190 C20 190 40 210 80 210 C150 210 170 120 250 120 C330 120 340 230 420 230 C500 230 520 150 600 150"/>
+                  <circle class="spot" cx="120" cy="70" r="7"/><circle class="spot" cx="300" cy="55" r="7"/><circle class="spot" cx="480" cy="80" r="7"/>
+                </svg>
+                <div class="panel-gold p1">M</div>
+                <div class="panel-gold p2">C</div>
+              </div>
+            </div>
+          </article>
+          <article class="stack-card sc-2" style="--i:2">
+            <div class="sc-text">
+              <span class="sc-n">03</span>
               <div><h3>No seu <em>tempo.</em></h3><p>Atendimento com hora marcada. Sem fila, sem correria, sem ficar olhando o relógio.</p></div>
             </div>
             <div class="sc-visual">
@@ -690,10 +726,10 @@
               </div>
             </div>
           </article>
-          <article class="stack-card sc-3" style="--i:2">
+          <article class="stack-card sc-3" style="--i:3">
             <div class="sc-text">
-              <span class="sc-n">03</span>
-              <div><h3>Tudo num <em>só lugar.</em></h3><p>Cabelo, unhas, cílios, sobrancelhas, depilação e massagem. Uma visita, tudo resolvido.</p></div>
+              <span class="sc-n">04</span>
+              <div><h3>Tudo num <em>só lugar.</em></h3><p>Cabelo, unhas, cílios, sobrancelhas, depilação e massagem, feminino e masculino. Uma visita, tudo resolvido.</p></div>
             </div>
             <div class="sc-visual">
               <div class="floaters" aria-hidden="true">
@@ -711,7 +747,7 @@
     </section>
 
     <!-- ───────── RATING ───────── -->
-    <section class="rate" id="avaliacoes" data-theme="coral" data-pearl="rate">
+    <section class="rate" id="avaliacoes" data-theme="gold" data-pearl="rate">
       <div class="bands" aria-hidden="true">
         <div class="band band-a"><div class="band-track"><span>★ 4,9 no Google</span><span>★ 62 avaliações</span><span>★ Quem conhece, recomenda</span><span>★ 4,9 no Google</span><span>★ 62 avaliações</span><span>★ Quem conhece, recomenda</span></div></div>
         <div class="band band-b"><div class="band-track"><span>✺ Pé na areia</span><span>✺ Vista pro mar</span><span>✺ Macaé</span><span>✺ Pé na areia</span><span>✺ Vista pro mar</span><span>✺ Macaé</span></div></div>
@@ -774,7 +810,7 @@
               <div class="phone-top"><span class="avatar"></span><div><strong>Studio Maria Charmosa</strong><span>WhatsApp · online</span></div></div>
               <div class="chat"><div class="bubble" id="bubbleText" aria-live="polite"></div></div>
             </div>
-            <button class="btn btn-coral send" type="submit" form="bookingForm" data-cursor="Enviar">
+            <button class="btn btn-gold send" type="submit" form="bookingForm" data-cursor="Enviar">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.42 1.3-1.96 1.38-.5.07-1.13.1-1.82-.12-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.18-4.94-4.37-.15-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.3.58-.37.78-.37h.56c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.15.12.32.02.51-.1.2-.15.32-.29.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.3 2.36 1.45.3.15.46.12.63-.07.17-.2.73-.85.92-1.15.2-.3.39-.24.66-.15.27.1 1.71.81 2 .96.3.15.49.22.56.34.07.12.07.7-.17 1.37Z"/></svg>
               <span class="roll"><span data-t="Enviar no WhatsApp">Enviar no WhatsApp</span></span>
             </button>
@@ -795,7 +831,7 @@
             <h3 class="info-h">Horários</h3>
             <ul class="hours" id="hoursList"></ul>
             <div class="visit-ctas">
-              <a class="btn btn-coral" id="routeLink" href="#" target="_blank" rel="noopener" data-cursor="Rota"><span class="roll"><span data-t="Como chegar">Como chegar</span></span></a>
+              <a class="btn btn-gold" id="routeLink" href="#" target="_blank" rel="noopener" data-cursor="Rota"><span class="roll"><span data-t="Como chegar">Como chegar</span></span></a>
               <a class="btn btn-line" data-wa="Oi, Studio Maria Charmosa! Vim pelo site e tenho uma dúvida." href="#" target="_blank" rel="noopener"><span class="roll"><span data-t="WhatsApp">WhatsApp</span></span></a>
               <a class="btn btn-line" id="callLink" href="#"><span class="roll"><span data-t="Ligar">Ligar</span></span></a>
             </div>
@@ -825,7 +861,7 @@
   </main>
 
   <div class="mobile-cta" id="mobileCta">
-    <a class="btn btn-coral" data-wa="Oi, Studio Maria Charmosa! Vim pelo site e quero agendar um horário." href="#agendar" target="_blank" rel="noopener">
+    <a class="btn btn-gold" data-wa="Oi, Studio Maria Charmosa! Vim pelo site e quero agendar um horário." href="#agendar" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.42 1.3-1.96 1.38-.5.07-1.13.1-1.82-.12-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.18-4.94-4.37-.15-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.3.58-.37.78-.37h.56c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.15.12.32.02.51-.1.2-.15.32-.29.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.3 2.36 1.45.3.15.46.12.63-.07.17-.2.73-.85.92-1.15.2-.3.39-.24.66-.15.27.1 1.71.81 2 .96.3.15.49.22.56.34.07.12.07.7-.17 1.37Z"/></svg>
       Agendar pelo WhatsApp
     </a>
@@ -850,7 +886,7 @@
   };
 
   /* Shared state read by the 3D scene (module script below) */
-  window.PEARL = { x: 0.16, y: -0.02, s: 0, distort: 0.3, color: '#FFD8CC', vel: 0, mx: 0, my: 0, ocean: 0 };
+  window.PEARL = { x: 0.16, y: -0.02, s: 0, distort: 0.3, color: '#F3DDB8', vel: 0, mx: 0, my: 0, ocean: 0 };
 
   (function () {
     'use strict';
@@ -1215,18 +1251,18 @@
 
     /* ---------- Section themes + pearl choreography ---------- */
     const THEMES = {
-      light: { '--bg': '#FBF4EC', '--fg': '#14101A', '--muted': 'rgba(20,16,26,0.62)', '--line': 'rgba(20,16,26,0.14)', '--accent': '#FF6F5E' },
-      dark:  { '--bg': '#0C1B33', '--fg': '#FBF4EC', '--muted': 'rgba(251,244,236,0.64)', '--line': 'rgba(251,244,236,0.16)', '--accent': '#FF8A7A' },
-      coral: { '--bg': '#FF6F5E', '--fg': '#14101A', '--muted': 'rgba(20,16,26,0.72)', '--line': 'rgba(20,16,26,0.22)', '--accent': '#0C1B33' }
+      light: { '--bg': '#F7F2EB', '--fg': '#14101A', '--muted': 'rgba(20,16,26,0.62)', '--line': 'rgba(20,16,26,0.14)', '--accent': '#9C5B33' },
+      dark:  { '--bg': '#0E2A38', '--fg': '#F7F2EB', '--muted': 'rgba(251,244,236,0.64)', '--line': 'rgba(251,244,236,0.16)', '--accent': '#E8C98F' },
+      gold:  { '--bg': '#D4AA60', '--fg': '#14101A', '--muted': 'rgba(20,16,26,0.72)', '--line': 'rgba(20,16,26,0.22)', '--accent': '#0E2A38' }
     };
     const PSTATES = {
-      hero:     { d: { x: .16, y: -.04, s: 1, distort: .19, color: '#F7C6BA' },  m: { x: .22, y: .02, s: .74, distort: .19, color: '#F7C6BA' } },
-      intro:    { d: { x: .68, y: -.34, s: .5, distort: .26, color: '#FFE6DA' }, m: { x: .55, y: .7, s: .45, distort: .26, color: '#FFE6DA' } },
-      services: { d: { x: .62, y: -.5, s: .62, distort: .25, color: '#CFE0FF' },  m: { x: .55, y: .72, s: .4, distort: .25, color: '#CFE0FF' } },
-      exp:      { d: { x: .82, y: .66, s: .34, distort: .31, color: '#E6DBFF' },  m: { x: .6, y: .82, s: .28, distort: .31, color: '#E6DBFF' } },
-      rate:     { d: { x: 0, y: -.02, s: 1.08, distort: .29, color: '#FFF2EC' }, m: { x: 0, y: .02, s: 1, distort: .29, color: '#FFF2EC' } },
-      book:     { d: { x: -.86, y: -.66, s: .3, distort: .22, color: '#FFD8CC' }, m: { x: -.7, y: -.85, s: 0, distort: .22, color: '#FFD8CC' } },
-      visit:    { d: { x: 0, y: -.6, s: 0, distort: .19, color: '#CFE0FF' },     m: { x: 0, y: -.6, s: 0, distort: .19, color: '#CFE0FF' } }
+      hero:     { d: { x: .16, y: -.04, s: 1, distort: .19, color: '#F0D3A6' },  m: { x: .22, y: .02, s: .74, distort: .19, color: '#F0D3A6' } },
+      intro:    { d: { x: .68, y: -.34, s: .5, distort: .26, color: '#F6E6CC' }, m: { x: .55, y: .7, s: .45, distort: .26, color: '#F6E6CC' } },
+      services: { d: { x: .62, y: -.5, s: .62, distort: .25, color: '#D8E9F0' },  m: { x: .55, y: .72, s: .4, distort: .25, color: '#D8E9F0' } },
+      exp:      { d: { x: .82, y: .66, s: .34, distort: .31, color: '#EBD7BC' },  m: { x: .6, y: .82, s: .28, distort: .31, color: '#EBD7BC' } },
+      rate:     { d: { x: 0, y: -.02, s: 1.08, distort: .29, color: '#FFF6E8' }, m: { x: 0, y: .02, s: 1, distort: .29, color: '#FFF6E8' } },
+      book:     { d: { x: -.86, y: -.66, s: .3, distort: .22, color: '#F3DDB8' }, m: { x: -.7, y: -.85, s: 0, distort: .22, color: '#F3DDB8' } },
+      visit:    { d: { x: 0, y: -.6, s: 0, distort: .19, color: '#D8E9F0' },     m: { x: 0, y: -.6, s: 0, distort: .19, color: '#D8E9F0' } }
     };
     function goPearl(key) {
       pendingPearl = key;
@@ -1266,7 +1302,7 @@
     import * as THREE from 'three';
     import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
-    const P = window.PEARL || (window.PEARL = { x: .16, y: 0, s: 1, distort: .19, color: '#FFD8CC', vel: 0, mx: 0, my: 0, ocean: 0 });
+    const P = window.PEARL || (window.PEARL = { x: .16, y: 0, s: 1, distort: .19, color: '#F3DDB8', vel: 0, mx: 0, my: 0, ocean: 0 });
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const mobile = window.innerWidth < 760;
 
@@ -1313,13 +1349,13 @@
       scene.environment = pmrem.fromScene(new RoomEnvironment(renderer), .04).texture;
 
       const key = new THREE.DirectionalLight(0xffffff, 1.4); key.position.set(3, 4, 5); scene.add(key);
-      const rim = new THREE.DirectionalLight(0xff6f5e, 2.2); rim.position.set(-4, -2, -1); scene.add(rim);
-      const fill = new THREE.DirectionalLight(0x9be7da, 1.1); fill.position.set(4, -3, 2); scene.add(fill);
+      const rim = new THREE.DirectionalLight(0xd4aa60, 2.2); rim.position.set(-4, -2, -1); scene.add(rim);
+      const fill = new THREE.DirectionalLight(0x8fc3d6, 1.1); fill.position.set(4, -3, 2); scene.add(fill);
 
       const uniforms = { uTime: { value: 0 }, uDistort: { value: .3 }, uFreq: { value: .78 }, uSpeed: { value: .28 }, uRadius: { value: 1.35 }, uMouse: { value: new THREE.Vector3(0, 0, 1) }, uPull: { value: 0 } };
       const mat = new THREE.MeshPhysicalMaterial({
         color: new THREE.Color(P.color), roughness: .14, metalness: .18, clearcoat: 1, clearcoatRoughness: .05,
-        iridescence: 1, iridescenceIOR: 1.6, iridescenceThicknessRange: [120, 520], sheen: .5, sheenColor: new THREE.Color('#C9B8FF'), envMapIntensity: .95
+        iridescence: 1, iridescenceIOR: 1.6, iridescenceThicknessRange: [120, 520], sheen: .5, sheenColor: new THREE.Color('#E8D3A8'), envMapIntensity: .95
       });
       mat.onBeforeCompile = (shader) => {
         Object.assign(shader.uniforms, uniforms);
@@ -1353,7 +1389,7 @@
       scene.add(group);
 
       // small floating pearls
-      const pearlMat = new THREE.MeshPhysicalMaterial({ color: 0xfff1ea, roughness: .14, metalness: .05, clearcoat: 1, iridescence: 1, iridescenceIOR: 1.4, iridescenceThicknessRange: [200, 700], envMapIntensity: 1.3 });
+      const pearlMat = new THREE.MeshPhysicalMaterial({ color: 0xfff4e4, roughness: .14, metalness: .05, clearcoat: 1, iridescence: 1, iridescenceIOR: 1.4, iridescenceThicknessRange: [200, 700], envMapIntensity: 1.3 });
       const small = [];
       const sGeo = new THREE.SphereGeometry(1, 32, 32);
       const count = mobile ? 6 : 10;
@@ -1454,8 +1490,8 @@
           void main(){
             float r = length(gl_PointCoord - .5);
             if (r > .5) discard;
-            vec3 coral = vec3(1.0, .44, .37), aqua = vec3(.61, .91, .85), cream = vec3(.98, .96, .93);
-            vec3 c = mix(coral, aqua, vD);
+            vec3 gold = vec3(.86, .69, .40), sea = vec3(.56, .76, .84), cream = vec3(.98, .96, .93);
+            vec3 c = mix(gold, sea, vD);
             c = mix(c, cream, smoothstep(.15, .7, vH));
             gl_FragColor = vec4(c, (1.0 - smoothstep(.25, .5, r)) * (1.0 - vD * .8));
           }`
