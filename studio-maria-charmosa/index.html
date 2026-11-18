@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Studio Maria Charmosa | Salão de beleza pé na areia em Macaé</title>
-  <meta name="description" content="Studio Maria Charmosa: salão de beleza pé na areia na Praia dos Cavaleiros, Macaé/RJ. Cabelo, unhas, cílios, sobrancelhas, depilação e massagem com vista pro mar. Nota 4,9 no Google. Agende pelo WhatsApp.">
-  <meta name="theme-color" content="#F7F2EB">
+  <title>Studio Maria Charmosa | Salão de beleza na Praia dos Cavaleiros, Macaé</title>
+  <meta name="description" content="Studio Maria Charmosa: salão de beleza na orla da Praia dos Cavaleiros, em Macaé/RJ. Cabelo feminino e masculino, manicure e pedicure, alongamento de unhas, design de sobrancelhas, extensão de cílios, depilação e massoterapia. Nota 4,9 no Google. Agende pelo WhatsApp.">
+  <meta name="theme-color" content="#11303C">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:title" content="Studio Maria Charmosa · Beleza pé na areia em Macaé">
-  <meta property="og:description" content="Salão de beleza com vista pro mar na Praia dos Cavaleiros, Macaé/RJ. Nota 4,9 no Google.">
+  <meta property="og:title" content="Studio Maria Charmosa · Salão de beleza em Macaé">
+  <meta property="og:description" content="Salão de beleza de frente para o mar na Praia dos Cavaleiros, Macaé/RJ. Nota 4,9 no Google. Agende pelo WhatsApp.">
   <meta property="og:image" content="assets/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <script>document.documentElement.classList.add('js');</script>
 
@@ -26,7 +26,7 @@
     "@context": "https://schema.org",
     "@type": "BeautySalon",
     "name": "Studio Maria Charmosa",
-    "description": "Salão de beleza pé na areia na orla da Praia dos Cavaleiros, em Macaé/RJ.",
+    "description": "Salão de beleza na orla da Praia dos Cavaleiros, em Macaé/RJ.",
     "image": "assets/salao-mar.jpg",
     "telephone": "+55 22 99948-1780",
     "address": {
@@ -48,914 +48,742 @@
 
   <style>
     :root {
-      --cream: #F7F2EB;
-      --sand: #F3E5D6;
-      --sea: #0E2A38;
-      --sea-2: #173B4D;
-      --gold: #D4AA60;
-      --gold-2: #E8C98F;
-      --sky: #CFE2EA;
-      --sea-light: #8FC3D6;
-      --ink: #14101A;
+      --white: #FFFFFF;
+      --cream: #F8F4EE;
+      --sand: #EFE6DA;
+      --ink: #1E1B18;
+      --text: #4B453F;
+      --muted: #81786E;
+      --line: #E7DFD3;
+      --gold: #C6A066;
+      --gold-d: #A9844C;
+      --caramel: #8B5A3C;
+      --sea: #11303C;
+      --sea-2: #18414F;
+      --wa: #25D366;
 
-      /* theme (tweened by JS between sections) */
-      --bg: #F7F2EB;
-      --fg: #14101A;
-      --muted: rgba(20, 16, 26, .62);
-      --line: rgba(20, 16, 26, .14);
-      --accent: #9C5B33;
-
-      --serif: "Bodoni Moda", Didot, "Bodoni 72", Georgia, serif;
-      --sans: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
-      --gutter: clamp(16px, 3.6vw, 52px);
-      --ease: cubic-bezier(.16, 1, .3, 1);
+      --serif: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+      --sans: "Jost", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --radius: 16px;
+      --shadow: 0 24px 60px -30px rgba(30, 27, 24, .28);
+      --ease: cubic-bezier(.22, 1, .36, 1);
     }
-
     *, *::before, *::after { box-sizing: border-box; }
     [hidden] { display: none !important; }
-    html { -webkit-text-size-adjust: 100%; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
     html.lenis, html.lenis body { height: auto; }
     .lenis.lenis-smooth { scroll-behavior: auto !important; }
     .lenis.lenis-stopped { overflow: hidden; }
-    body {
-      margin: 0; background: var(--bg); color: var(--fg);
-      font-family: var(--sans); font-size: 17px; line-height: 1.55;
-      -webkit-font-smoothing: antialiased; overflow-x: hidden;
-    }
+    body { margin: 0; background: var(--white); color: var(--text); font-family: var(--sans); font-size: 17px; line-height: 1.7; font-weight: 400; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
     button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; padding: 0; }
     ::selection { background: var(--gold); color: var(--ink); }
-    :focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 8px; }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
     .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-    .wrap { width: 100%; max-width: 1480px; margin: 0 auto; padding: 0 var(--gutter); }
-    em { font-family: var(--serif); font-style: italic; font-weight: 400; }
+    .container { width: 100%; max-width: 1220px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: clamp(80px, 9vw, 120px) 0; }
+    h1, h2, h3 { font-family: var(--serif); color: var(--ink); font-weight: 600; letter-spacing: -.005em; margin: 0; }
+    h2 { font-size: clamp(2.2rem, 3.8vw, 3.3rem); line-height: 1.08; }
+    h2 em, h1 em { font-style: italic; font-weight: 500; color: var(--caramel); }
+    h3 { font-size: 1.55rem; line-height: 1.2; }
+    p { margin: 0; }
+    .hero-trust b, .stat b, .am-badge strong, .rv-score b { font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 12.5px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-d); margin-bottom: 16px; }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+    .eyebrow.light { color: var(--gold); }
+    .center { text-align: center; }
+    .center .eyebrow::after { content: ""; width: 28px; height: 1px; background: currentColor; }
+    .lead { font-size: 1.08rem; color: var(--muted); max-width: 38em; }
+    .center .lead { margin-left: auto; margin-right: auto; }
+    .sec-head { margin-bottom: clamp(44px, 5vw, 64px); }
+    .sec-head .lead { margin-top: 16px; }
 
-    /* Fallback colours when motion is off: each section paints its own theme */
-    html:not(.motion) .nav { background: rgba(251,244,236,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-    html:not(.motion) [data-theme="dark"] { --bg: #0E2A38; --fg: #F7F2EB; --muted: rgba(251,244,236,.64); --line: rgba(251,244,236,.16); --accent: #E8C98F; background: var(--bg); color: var(--fg); }
-    html:not(.motion) [data-theme="gold"] { --bg: #D4AA60; --fg: #14101A; --muted: rgba(20,16,26,.7); --line: rgba(20,16,26,.2); --accent: #0E2A38; background: var(--bg); color: var(--fg); }
-
-    /* ── WebGL layers ── */
-    #gl { position: fixed; top: 0; left: 0; width: 100%; height: 100lvh; z-index: 1; pointer-events: none; display: block; }
-    html:not(.motion) #gl { position: absolute; height: 100svh; }
-    main section:not(.hero) { position: relative; z-index: 2; }
-    .content { position: relative; z-index: 2; }
-
-    .grain { position: fixed; inset: -50%; z-index: 60; pointer-events: none; opacity: .07;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      animation: grain 1.2s steps(6) infinite; }
-    @keyframes grain { 0%,100% { transform: translate(0,0); } 20% { transform: translate(-3%,2%); } 40% { transform: translate(2%,-3%); } 60% { transform: translate(-2%,-1%); } 80% { transform: translate(3%,3%); } }
-
-    /* ── Loader ── */
-    .loader { display: none; }
-    .js .loader { display: block; position: fixed; inset: 0; z-index: 400; background: var(--cream); color: var(--ink); padding: 26px var(--gutter); }
-    .ld-top { display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
-    .ld-mono { position: absolute; left: 50%; top: 44%; width: 180px; height: 150px; margin: -75px 0 0 -90px; color: var(--gold); transform: scale(.6); opacity: 0; }
-    .ld-mono .mono { width: 100%; height: 100%; }
-    .ld-mono .mono .mc-c { stroke-width: 1.4; }
-    .ld-pearl { display: none; position: absolute; left: 50%; top: 46%; width: 120px; height: 120px; margin: -60px 0 0 -60px; border-radius: 50%; transform: scale(0);
-      background: radial-gradient(circle at 32% 28%, #fff 0 8%, rgba(255,255,255,0) 26%), radial-gradient(circle at 70% 78%, rgba(14,42,56,.28), transparent 55%), conic-gradient(from 40deg, #f3ddb8, #cfe2ea, #bfdce6, #f6e3c0, #f3ddb8);
-      box-shadow: 0 30px 70px -20px rgba(212,170,96,.55); }
-    .ld-count { position: absolute; left: var(--gutter); bottom: 14px; font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96; font-size: clamp(6rem, 22vw, 20rem); line-height: .8; letter-spacing: -.04em; }
-    .ld-count small { font-size: .3em; vertical-align: top; color: var(--gold); }
-    .ld-caption { position: absolute; right: var(--gutter); bottom: 34px; font-family: var(--serif); font-style: italic; font-size: clamp(1.1rem, 2vw, 1.6rem); }
-
-    /* ── Cursor ── */
-    .cursor { position: fixed; top: 0; left: 0; z-index: 350; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%;
-      background: var(--gold); pointer-events: none; display: none; place-items: center;
-      transition: width .45s var(--ease), height .45s var(--ease), margin .45s var(--ease), background-color .3s, border-color .3s; border: 1px solid transparent; }
-    .has-cursor .cursor { display: grid; }
-    .cursor.hover { width: 48px; height: 48px; margin: -24px 0 0 -24px; background: transparent; border-color: var(--gold); }
-    .cursor.label { width: 104px; height: 104px; margin: -52px 0 0 -52px; background: var(--gold); border-color: var(--gold); }
-    .cursor span { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); opacity: 0; transition: opacity .3s; }
-    .cursor.label span { opacity: 1; }
-
-    /* ── Buttons ── */
-    .btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 58px; padding: 0 28px;
-      border-radius: 999px; font-size: 16px; font-weight: 600; white-space: nowrap; overflow: hidden; isolation: isolate;
-      transition: color .5s var(--ease), border-color .5s; }
+    /* buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 54px; padding: 0 28px; border-radius: 999px; font-size: 15px; font-weight: 500; letter-spacing: .02em; white-space: nowrap;
+      transition: background-color .35s var(--ease), color .35s var(--ease), border-color .35s, transform .35s var(--ease), box-shadow .35s; }
     .btn svg { width: 18px; height: 18px; flex: none; }
-    .btn::before { content: ""; position: absolute; left: 50%; top: 100%; width: 140%; aspect-ratio: 1; border-radius: 50%; z-index: -1;
-      transform: translate(-50%, 0) scale(0); transition: transform .7s var(--ease); }
-    .btn:hover::before { transform: translate(-50%, -62%) scale(1); }
-    .btn-gold { background: var(--gold); color: var(--ink); }
-    .btn-gold::before { background: var(--sea); }
-    .btn-gold:hover { color: var(--cream); }
-    .btn-line { border: 1.5px solid var(--fg); color: var(--fg); }
-    .btn-line::before { background: var(--fg); }
-    .btn-line:hover { color: var(--bg); }
-    .btn-ink { background: var(--ink); color: var(--cream); }
-    .btn-ink::before { background: var(--cream); }
-    .btn-ink:hover { color: var(--ink); }
-    .btn-sm { height: 46px; padding: 0 20px; font-size: 15px; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-gold { background: var(--gold); color: var(--ink); box-shadow: 0 14px 30px -14px rgba(169,132,76,.8); }
+    .btn-gold:hover { background: var(--ink); color: var(--white); box-shadow: 0 14px 30px -14px rgba(30,27,24,.6); }
+    .btn-dark { background: var(--ink); color: var(--white); }
+    .btn-dark:hover { background: var(--gold); color: var(--ink); }
+    .btn-outline-light { border: 1px solid rgba(255,255,255,.6); color: var(--white); }
+    .btn-outline-light:hover { background: var(--white); color: var(--ink); border-color: var(--white); }
+    .btn-sm { height: 46px; padding: 0 22px; font-size: 14.5px; }
+    .link-arrow { display: inline-flex; align-items: center; gap: 8px; font-weight: 500; color: var(--caramel); font-size: 15px; }
+    .link-arrow svg { width: 16px; height: 16px; transition: transform .35s var(--ease); }
+    .link-arrow:hover svg { transform: translateX(4px); }
 
-    .roll { display: inline-flex; overflow: hidden; }
-    .roll > span { display: inline-block; position: relative; transition: transform .6s var(--ease); }
-    .roll > span::after { content: attr(data-t); position: absolute; left: 0; top: 100%; }
-    a:hover > .roll > span, .roll:hover > span { transform: translateY(-100%); }
+    /* ── top bar ── */
+    .topbar { background: var(--sea); color: rgba(255,255,255,.82); font-size: 13.5px; }
+    .topbar-in { display: flex; justify-content: space-between; align-items: center; gap: 20px; height: 42px; }
+    .tb-group { display: flex; align-items: center; gap: 26px; }
+    .tb-item { display: inline-flex; align-items: center; gap: 8px; }
+    .tb-item svg { width: 15px; height: 15px; color: var(--gold); }
+    .tb-item a:hover { color: var(--white); }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #3BD08F; box-shadow: 0 0 0 3px rgba(59,208,143,.2); }
+    .status-dot.closed { background: #E0785E; box-shadow: 0 0 0 3px rgba(224,120,94,.2); }
 
-    .tag { display: inline-flex; align-items: center; gap: 10px; height: 34px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line);
-      font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
-    .tag i { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
-
-    .big-title { margin: 0; font-family: var(--sans); font-weight: 800; font-variation-settings: "wdth" 76, "opsz" 96;
-      font-size: clamp(3.2rem, 8.6vw, 9.4rem); line-height: .86; letter-spacing: -.035em; }
-    .big-title em { color: var(--accent); letter-spacing: -.02em; font-variation-settings: normal; }
-
-    /* split helpers */
-    .ln { display: block; overflow: hidden; padding-bottom: .06em; margin-bottom: -.06em; }
-    .w { display: inline-block; overflow: hidden; vertical-align: top; padding: 0 .08em .1em 0; margin: 0 -.08em -.1em 0; }
-    .wi, .ch { display: inline-block; will-change: transform; }
-
-    /* ── Nav ── */
-    .nav { position: fixed; z-index: 100; top: 0; left: 0; right: 0; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px;
-      padding: 18px var(--gutter); color: var(--fg); transition: transform .7s var(--ease); }
-    .nav.hide { transform: translateY(-120%); }
-    .logo { display: inline-flex; align-items: center; gap: 10px; font-family: var(--serif); font-size: 22px; line-height: 1; letter-spacing: -.01em; justify-self: start; }
-    .logo-pearl { width: 18px; height: 18px; border-radius: 50%; flex: none;
-      background: radial-gradient(circle at 32% 28%, #fff 0 10%, rgba(255,255,255,0) 34%), conic-gradient(from 40deg, #f3ddb8, #cfe2ea, #bfdce6, #f6e3c0, #f3ddb8);
-      box-shadow: 0 2px 8px rgba(212,170,96,.45); }
-    .logo em { color: var(--accent); }
-    .nav-status { display: inline-flex; align-items: center; gap: 10px; height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line);
-      font-size: 14px; font-weight: 500; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
-    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #27C08A; animation: pulse 2s infinite; }
-    .status-dot.closed { background: var(--gold); animation: none; }
-    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(39,192,138,.5); } 70% { box-shadow: 0 0 0 10px rgba(39,192,138,0); } 100% { box-shadow: 0 0 0 0 rgba(39,192,138,0); } }
-    .nav-right { display: flex; align-items: center; gap: 10px; justify-self: end; }
-    .burger { width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid var(--fg); display: grid; place-content: center; gap: 6px; }
-    .burger span { display: block; width: 18px; height: 1.5px; background: currentColor; transition: transform .5s var(--ease); }
-    .menu-open .burger span:nth-child(1) { transform: translateY(3.75px) rotate(45deg); }
-    .menu-open .burger span:nth-child(2) { transform: translateY(-3.75px) rotate(-45deg); }
-
-    .menu { position: fixed; inset: 0; z-index: 90; background: var(--sea); color: var(--cream); padding: 110px var(--gutter) 32px;
-      display: flex; flex-direction: column; justify-content: space-between;
-      clip-path: circle(0% at calc(100% - 50px) 40px); visibility: hidden; transition: clip-path .9s var(--ease), visibility 0s .9s; }
-    .menu-open .menu { clip-path: circle(150% at calc(100% - 50px) 40px); visibility: visible; transition: clip-path .9s var(--ease), visibility 0s; }
-    .menu-open .nav { color: var(--cream); }
-    .menu-links { display: grid; gap: 2px; }
-    .menu-links a { display: flex; align-items: baseline; gap: 18px; font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96;
-      font-size: clamp(3rem, 9vw, 7.4rem); line-height: .95; text-transform: uppercase; letter-spacing: -.02em; }
-    .menu-links a small { font-size: 14px; font-weight: 600; color: var(--gold-2); letter-spacing: .1em; }
-    .menu-links a:hover em, .menu-links a em { color: var(--gold); text-transform: none; }
-    .menu-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; color: rgba(251,244,236,.7); font-size: 15px; border-top: 1px solid rgba(251,244,236,.16); padding-top: 20px; }
-
-    /* ── Hero ── */
-    .hero { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: space-between; padding: 100px var(--gutter) 20px; overflow: hidden; }
-    .hero-grid { flex: 1; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: clamp(24px, 4vw, 72px); align-items: end; }
-    .hero-left { position: relative; z-index: 2; padding-bottom: 6px; }
-    .hero-left .hero-title { margin-bottom: clamp(22px, 2.6vw, 40px); }
-    .hero-title .ht-2 { text-align: left; margin-top: -.04em; padding-right: 0; }
-    .hero-title .ht-1 { text-transform: none; }
-    .hero-arch { position: relative; z-index: 0; margin: 0; justify-self: end; width: min(100%, 430px, 50vh); }
-    .hero-arch::before { content: ""; position: absolute; left: 16px; top: 16px; right: -16px; bottom: 46px; border: 1px solid var(--gold); border-radius: 999px 999px 34px 34px; pointer-events: none; }
-    .arch-img { position: relative; aspect-ratio: .74; border-radius: 999px 999px 30px 30px; overflow: hidden; background: var(--sand); box-shadow: 0 50px 90px -50px rgba(14,42,56,.6); }
-    .arch-img img { position: absolute; left: 0; top: -6%; width: 100%; height: 112%; object-fit: cover; object-position: 50% 42%; }
-    .hero-arch figcaption { display: flex; justify-content: space-between; gap: 12px; margin-top: 14px; font-size: 13px; color: var(--muted); }
-    .hero-arch .sticker { position: absolute; left: -74px; bottom: 70px; z-index: 3; background: var(--bg); border-radius: 50%; }
-    .mono { width: 44px; height: 37px; color: var(--gold); flex: none; overflow: visible; }
+    /* ── header ── */
+    .header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.96); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: box-shadow .4s, border-color .4s; }
+    .header.scrolled { box-shadow: 0 10px 30px -20px rgba(30,27,24,.35); border-color: var(--line); }
+    .header-in { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 84px; transition: height .4s var(--ease); }
+    .header.scrolled .header-in { height: 70px; }
+    .logo { display: flex; align-items: center; gap: 12px; color: var(--ink); }
+    .mono { width: 46px; height: 40px; color: var(--gold-d); flex: none; overflow: visible; }
     .mono text { font-family: var(--serif); }
-    .mono .mc-m { font-size: 82px; fill: currentColor; }
-    .mono .mc-c { font-size: 112px; font-style: italic; fill: none; stroke: currentColor; stroke-width: 2.6; }
-    .logo-txt { display: flex; flex-direction: column; line-height: 1; font-family: var(--serif); font-size: 21px; letter-spacing: -.01em; }
-    .logo-txt small { font-size: 9px; letter-spacing: .5em; text-transform: uppercase; margin-bottom: 5px; }
+    .mono .mc-m { font-size: 84px; font-weight: 500; fill: currentColor; }
+    .mono .mc-c { font-size: 112px; font-style: italic; font-weight: 500; fill: none; stroke: currentColor; stroke-width: 2.4; }
+    .logo-txt { display: flex; flex-direction: column; line-height: 1; }
+    .logo-txt small { font-family: var(--sans); font-size: 9.5px; font-weight: 500; letter-spacing: .5em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+    .logo-txt strong { font-family: var(--serif); font-size: 24px; font-weight: 600; letter-spacing: .01em; }
+    .nav { display: flex; align-items: center; gap: 34px; font-size: 15px; font-weight: 500; color: var(--ink); }
+    .nav a { position: relative; padding: 6px 0; }
+    .nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.5px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
+    .nav a:hover::after, .nav a.active::after { transform: scaleX(1); }
+    .nav a.active { color: var(--caramel); }
+    .header-actions { display: flex; align-items: center; gap: 10px; }
+    .burger { display: none; width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--line); place-content: center; gap: 5px; }
+    .burger span { display: block; width: 18px; height: 1.5px; background: var(--ink); }
 
-    /* reveal (full-bleed photo that opens on scroll) */
-    .rv { overflow: hidden; }
-    .rv-pin { position: relative; height: 100vh; height: 100svh; }
-    .rv-frame { position: absolute; inset: 0; overflow: hidden; }
-    .rv-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 55%; }
-    .rv-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,42,56,.25) 0%, rgba(14,42,56,0) 35%, rgba(14,42,56,.1) 55%, rgba(14,42,56,.82) 100%); }
-    .rv-text { position: absolute; left: 0; right: 0; bottom: clamp(28px, 6vh, 70px); z-index: 2; color: #F7F2EB; }
-    .rv-text .tag { border-color: rgba(247,242,235,.35); }
-    .rv-text .big-title { margin-top: 18px; max-width: 11em; }
-    .rv-text .big-title em { color: #E8C98F; }
-    .rv-meta { display: flex; flex-wrap: wrap; gap: 8px 26px; margin-top: 20px; font-size: 15px; color: rgba(247,242,235,.82); }
+    .drawer-bg { position: fixed; inset: 0; z-index: 140; background: rgba(17,48,60,.45); opacity: 0; visibility: hidden; transition: opacity .4s, visibility 0s .4s; }
+    .drawer { position: fixed; top: 0; right: 0; bottom: 0; z-index: 150; width: min(360px, 88vw); background: var(--white); padding: 24px 26px 30px; display: flex; flex-direction: column; gap: 28px;
+      transform: translateX(105%); transition: transform .5s var(--ease); box-shadow: -20px 0 50px -20px rgba(0,0,0,.25); overflow-y: auto; }
+    .drawer-open .drawer { transform: none; }
+    .drawer-open .drawer-bg { opacity: 1; visibility: visible; transition: opacity .4s; }
+    .drawer > * { flex-shrink: 0; }
+    .drawer-top { display: flex; justify-content: space-between; align-items: center; }
+    .drawer-close { width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; }
+    .drawer-close svg { width: 18px; height: 18px; }
+    .drawer nav { display: grid; }
+    .drawer nav a { font-family: var(--serif); font-size: 1.7rem; font-weight: 600; color: var(--ink); padding: 10px 0; border-bottom: 1px solid var(--line); }
+    .drawer-info { display: grid; gap: 10px; font-size: 14.5px; color: var(--muted); }
 
-    /* gallery */
-    .gal { padding: clamp(110px, 13vw, 190px) 0 clamp(60px, 8vw, 120px); }
-    .gal-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 24px; }
-    .gal-head p { margin: 0; max-width: 24em; color: var(--muted); font-size: 1.1rem; }
-    .gal-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; margin-top: clamp(48px, 6vw, 90px); align-items: start; }
-    .g { margin: 0; }
-    .g1 { grid-column: 1 / 8; }
-    .g2 { grid-column: 8 / 13; grid-row: span 2; margin-top: 14vh; }
-    .g3 { grid-column: 2 / 7; margin-top: 2vh; }
-    .g-img { position: relative; overflow: hidden; border-radius: 28px; background: var(--sand); }
-    .g1 .g-img { aspect-ratio: 1320 / 864; }
-    .g2 .g-img { aspect-ratio: 1320 / 1551; border-radius: 999px 999px 28px 28px; }
-    .g3 .g-img { aspect-ratio: 1170 / 791; }
-    .g-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s var(--ease); }
-    .g:hover .g-img img { transform: scale(1.06); }
-    .g figcaption { display: flex; gap: 12px; margin-top: 14px; font-size: 14.5px; color: var(--muted); }
-    .g figcaption b { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); font-size: 18px; line-height: 1; }
-    .hero-title { position: relative; z-index: 0; margin: 0; pointer-events: none; padding-top: 1vh; font-weight: 400; }
-    .ht-k { display: block; font-family: var(--serif); font-size: clamp(13px, 1.25vw, 19px); letter-spacing: .62em; text-transform: uppercase; margin: 0 0 1.4vw .2em; }
-    .ht-1 { font-family: var(--serif); font-weight: 400; font-size: min(10.6vw, 19vh);
-      line-height: .92; letter-spacing: -.035em; margin-left: -.04em; }
-    .ht-2 { font-family: var(--serif); font-style: italic; font-size: min(10.6vw, 19vh); line-height: .95; letter-spacing: -.035em; padding-left: .32em !important;
-      text-align: right; color: var(--accent); margin-top: -.12em; padding-right: .06em; }
-    .ht-1, .ht-2 { display: block; overflow: hidden; padding-bottom: .05em; }
-    .hero-bottom { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 32px; }
-    .hero-lede { margin: 0; max-width: 27em; font-size: clamp(1.06rem, 1.3vw, 1.3rem); line-height: 1.45; }
-    .hero-lede em { color: var(--accent); font-size: 1.12em; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
-    .sticker { position: relative; width: 150px; height: 150px; border-radius: 50%; display: grid; place-items: center; flex: none; }
-    .sticker svg.ring { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 16s linear infinite; }
-    .sticker text { font-family: var(--sans); font-size: 10.5px; font-weight: 700; letter-spacing: .26em; text-transform: uppercase; fill: currentColor; }
-    .sticker .core { width: 64px; height: 64px; border-radius: 50%; background: var(--gold); color: var(--ink); display: grid; place-items: center; transition: transform .6s var(--ease); }
-    .sticker:hover .core { transform: scale(1.15) rotate(45deg); }
-    .sticker .core svg { width: 22px; height: 22px; }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .hero-foot { position: relative; z-index: 2; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 28px; margin-top: 26px; padding-top: 16px;
-      border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
-    .hero-foot b { color: var(--fg); font-weight: 700; }
-    .stars { color: var(--accent); letter-spacing: 2px; }
-    .scroll-hint { display: inline-flex; align-items: center; gap: 10px; }
-    .scroll-hint i { width: 22px; height: 34px; border-radius: 12px; border: 1.5px solid var(--muted); position: relative; }
-    .scroll-hint i::after { content: ""; position: absolute; left: 50%; top: 7px; width: 4px; height: 7px; margin-left: -2px; border-radius: 2px; background: var(--gold); animation: wheel 1.8s var(--ease) infinite; }
-    @keyframes wheel { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(12px); opacity: 0; } }
+    /* ── hero ── */
+    .hero { position: relative; min-height: min(88vh, 860px); min-height: min(88svh, 860px); display: flex; align-items: center; color: var(--white); overflow: hidden; background: var(--sea); }
+    .slides { position: absolute; inset: 0; }
+    .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.6s ease; }
+    .slide.is-active { opacity: 1; }
+    .slide img { width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, 50% 50%); transform: scale(1.12); transition: transform 8s linear; }
+    .slide.is-active img { transform: scale(1); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(17,48,60,.88) 0%, rgba(17,48,60,.62) 42%, rgba(17,48,60,.12) 100%), linear-gradient(0deg, rgba(17,48,60,.55) 0%, rgba(17,48,60,0) 40%); }
+    .hero-content { position: relative; z-index: 2; padding-top: 70px; padding-bottom: 120px; }
+    .hero h1 { color: var(--white); font-size: clamp(2.8rem, 6vw, 5.2rem); line-height: 1.02; max-width: 11.5em; font-weight: 600; }
+    .hero h1 em { color: #E8C98F; }
+    .hero-text { margin-top: 22px; font-size: clamp(1.02rem, 1.3vw, 1.18rem); max-width: 34em; color: rgba(255,255,255,.86); font-weight: 300; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .hero-trust { display: flex; flex-wrap: wrap; gap: 18px 40px; margin-top: 46px; padding-top: 26px; border-top: 1px solid rgba(255,255,255,.2); max-width: 640px; }
+    .hero-trust div { display: grid; line-height: 1.25; }
+    .hero-trust b { font-family: var(--serif); font-size: 2rem; font-weight: 600; color: var(--white); display: flex; align-items: center; gap: 10px; }
+    .hero-trust b .stars { font-family: var(--sans); font-size: 14px; letter-spacing: 2px; color: var(--gold); }
+    .hero-trust div > span { font-size: 13.5px; color: rgba(255,255,255,.72); }
+    .hero-dots { position: absolute; z-index: 3; right: 24px; bottom: 120px; display: grid; gap: 10px; }
+    .hero-dots button { width: 10px; height: 10px; border-radius: 50%; border: 1px solid rgba(255,255,255,.8); transition: background-color .3s, transform .3s; }
+    .hero-dots button.is-active { background: var(--gold); border-color: var(--gold); transform: scale(1.3); }
 
-    /* ── Intro statement ── */
-    .intro { padding: clamp(110px, 16vw, 230px) 0 clamp(70px, 9vw, 130px); }
-    .statement { margin: 28px 0 0; font-family: var(--serif); font-weight: 400; font-size: clamp(2.1rem, 4.7vw, 5rem); line-height: 1.1; letter-spacing: -.02em; max-width: 15.5em; }
-    .statement em { color: var(--accent); }
-    .pill { display: inline-block; height: .8em; width: 2.1em; border-radius: 999px; overflow: hidden; vertical-align: -.06em; margin: 0 .08em; position: relative; background: var(--sand); }
-    .pill img { width: 100%; height: 100%; object-fit: cover; }
-    .pill-wave { width: 1.9em; background: var(--sea); }
-    .pill-wave svg { position: absolute; left: 0; top: 0; width: 200%; height: 100%; animation: wave 3.6s linear infinite; }
-    @keyframes wave { to { transform: translateX(-50%); } }
-    .pill-orb { width: .8em; background: conic-gradient(from 0deg, #f3ddb8, #cfe2ea, #bfdce6, #f6e3c0, #f3ddb8); animation: spin 6s linear infinite; }
-    .pill-orb::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #fff 0 10%, rgba(255,255,255,0) 40%); }
-    .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin-top: clamp(64px, 8vw, 120px); border-top: 1px solid var(--line); }
-    .fact { padding: 26px 24px 0 0; }
-    .fact + .fact { padding-left: 24px; border-left: 1px solid var(--line); }
-    .fact b { display: block; font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96; font-size: clamp(3rem, 6.4vw, 6.4rem); line-height: .9; letter-spacing: -.03em; }
-    .fact b em { color: var(--accent); font-weight: 400; }
-    .fact span { display: block; margin-top: 10px; color: var(--muted); font-size: 15px; }
+    /* ── highlights ── */
+    .highlights { position: relative; z-index: 5; margin-top: -64px; }
+    .hl-grid { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--white); border-radius: 18px; box-shadow: var(--shadow); overflow: hidden; }
+    .hl { display: flex; gap: 16px; padding: 30px 26px; align-items: flex-start; }
+    .hl + .hl { border-left: 1px solid var(--line); }
+    .ico { width: 52px; height: 52px; border-radius: 50%; background: var(--cream); color: var(--gold-d); display: grid; place-items: center; flex: none; transition: background-color .35s, color .35s; }
+    .ico svg { width: 24px; height: 24px; }
+    .hl h3 { font-size: 1.3rem; margin-bottom: 4px; }
+    .hl p { font-size: 14.5px; color: var(--muted); line-height: 1.5; }
 
-    /* ── Marquee rows ── */
-    .mq { padding: clamp(30px, 5vw, 70px) 0; overflow: hidden; }
-    .mq-row { display: flex; white-space: nowrap; }
-    .mq-row + .mq-row { margin-top: .1em; }
-    .mq-track { display: flex; flex: none; align-items: center; will-change: transform; }
-    .mq-item { display: inline-flex; align-items: center; gap: .35em; padding-right: .35em; font-size: clamp(3.4rem, 9vw, 9.6rem); line-height: 1; }
-    .mq-item .s { font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96; text-transform: uppercase; letter-spacing: -.03em; }
-    .mq-item .o { font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96; text-transform: uppercase; letter-spacing: -.03em; color: transparent; -webkit-text-stroke: 1.5px var(--fg); }
-    .mq-item em { color: var(--accent); }
-    .mq-item svg { width: .42em; height: .42em; color: var(--accent); flex: none; }
+    /* ── about ── */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 90px); align-items: center; }
+    .about-media { position: relative; padding: 0 40px 60px 0; }
+    .am-1 { margin: 0; border-radius: 18px; overflow: hidden; aspect-ratio: 4 / 4.6; box-shadow: var(--shadow); }
+    .am-1 img, .am-2 img { width: 100%; height: 100%; object-fit: cover; }
+    .am-1 img { object-position: 50% 60%; }
+    .am-2 { position: absolute; right: 0; bottom: 0; width: 52%; aspect-ratio: 1.3; margin: 0; border-radius: 16px; overflow: hidden; border: 8px solid var(--white); box-shadow: var(--shadow); }
+    .am-2 img { object-position: 35% 40%; }
+    .am-badge { position: absolute; left: -22px; top: 36px; background: var(--sea); color: var(--white); border-radius: 16px; padding: 18px 22px; display: grid; line-height: 1.15; box-shadow: var(--shadow); }
+    .am-badge small { font-size: 11.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+    .am-badge strong { font-family: var(--serif); font-size: 2.5rem; font-weight: 600; }
+    .am-badge span { font-size: 13px; color: rgba(255,255,255,.75); }
+    .about-text p { margin-top: 18px; }
+    .checks { list-style: none; padding: 0; margin: 26px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 22px; }
+    .checks li { display: flex; gap: 10px; align-items: flex-start; font-size: 15.5px; color: var(--ink); line-height: 1.45; }
+    .checks svg { width: 20px; height: 20px; flex: none; color: var(--gold-d); margin-top: 1px; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 34px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .stat { padding: 20px 0; text-align: center; }
+    .stat + .stat { border-left: 1px solid var(--line); }
+    .stat b { display: block; font-family: var(--serif); font-size: 2.3rem; font-weight: 600; color: var(--ink); line-height: 1.1; }
+    .stat > span { font-size: 13.5px; color: var(--muted); }
+    .about-btns { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 32px; }
 
-    /* ── Horizontal services ── */
-    .hs { overflow: hidden; }
-    .hs-pin { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 100px 0 40px; }
-    .hs-bar { display: flex; align-items: center; gap: 22px; margin-bottom: 28px; font-size: 14px; color: var(--muted); }
-    .hs-bar .hs-count { font-variant-numeric: tabular-nums; color: var(--fg); font-weight: 600; }
-    .hs-progress { flex: 1; height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; }
-    .hs-progress i { display: block; height: 100%; background: var(--gold); transform-origin: left; transform: scaleX(0); }
-    .hs-mhead { display: none; }
-    .hs-mhead p { color: var(--muted); font-size: 1.05rem; margin: 18px 0 0; }
-    .hs-mhead b { color: var(--gold); }
-    .hs-track { display: flex; gap: 22px; padding: 0 var(--gutter); width: max-content; align-items: stretch; }
-    .hs-intro { width: min(560px, 80vw); display: flex; flex-direction: column; justify-content: space-between; padding: 10px 40px 10px 0; }
-    .hs-intro p { font-size: 1.12rem; color: var(--muted); max-width: 22em; margin: 26px 0 0; }
-    .hs-hint { display: inline-flex; align-items: center; gap: 12px; font-weight: 600; color: var(--gold); font-size: 15px; }
-    .hs-hint svg { width: 34px; animation: nudge 1.6s var(--ease) infinite; }
-    @keyframes nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(10px); } }
-    .svc-card { position: relative; width: clamp(300px, 30vw, 470px); height: min(66vh, 620px); min-height: 480px; border-radius: 32px; padding: 26px;
-      background: rgba(23,59,77,.5); backdrop-filter: blur(16px) saturate(1.2); -webkit-backdrop-filter: blur(16px) saturate(1.2); border: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between;
-      overflow: hidden; transform-style: preserve-3d; }
-    .svc-card::before { content: ""; position: absolute; inset: auto -30% -40% -30%; height: 70%; background: radial-gradient(50% 50% at 50% 50%, var(--g, rgba(212,170,96,.35)), transparent 70%); opacity: .55; pointer-events: none; }
-    .svc-top { display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); position: relative; }
-    .svc-n { font-family: var(--serif); font-style: italic; font-size: 34px; letter-spacing: 0; text-transform: none; color: var(--gold-2); line-height: 1; }
-    .orb3d { position: relative; width: 58%; aspect-ratio: 1; margin: 0 auto; border-radius: 50%; animation: float 6s ease-in-out infinite; }
-    .orb3d .core { position: absolute; inset: 0; border-radius: 50%; overflow: hidden;
-      box-shadow: inset -18px -26px 50px rgba(14,42,56,.45), inset 10px 14px 30px rgba(255,255,255,.35), 0 40px 70px -30px var(--g, rgba(212,170,96,.6)); }
-    .orb3d .core::before { content: ""; position: absolute; inset: -25%; background: conic-gradient(from 0deg, var(--c1), var(--c2), var(--c3), var(--c4), var(--c1)); animation: spin 9s linear infinite; filter: blur(6px); }
-    .orb3d .core::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 30% 26%, rgba(255,255,255,.95) 0 6%, rgba(255,255,255,0) 30%), radial-gradient(circle at 72% 80%, rgba(255,255,255,.25), transparent 35%); }
-    .orb3d svg { position: absolute; left: 50%; top: 50%; width: 34%; height: 34%; transform: translate(-50%, -50%); color: var(--sea); stroke-width: 1.4; z-index: 2; }
-    .orb3d::after { content: ""; position: absolute; left: 15%; right: 15%; bottom: -14%; height: 10%; border-radius: 50%; background: rgba(0,0,0,.35); filter: blur(10px); animation: shadow 6s ease-in-out infinite; }
-    @keyframes float { 0%, 100% { transform: translateY(-8px) rotate(-2deg); } 50% { transform: translateY(10px) rotate(2deg); } }
-    @keyframes shadow { 0%, 100% { transform: scale(.85); opacity: .5; } 50% { transform: scale(1); opacity: .8; } }
-    .svc-bottom { position: relative; }
-    .svc-card h3 { margin: 0; font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(2.6rem, 3.8vw, 4rem); line-height: .95; letter-spacing: -.02em; }
-    .svc-card p { margin: 12px 0 0; color: var(--muted); font-size: 15.5px; }
-    .svc-cta { margin-top: 20px; display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; color: var(--gold-2); }
-    .svc-cta b { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: var(--gold); color: var(--ink); transition: transform .6s var(--ease); }
-    .svc-card:hover .svc-cta b { transform: rotate(45deg) scale(1.1); }
-    .hs-outro { width: min(520px, 80vw); display: flex; flex-direction: column; justify-content: center; gap: 28px; padding: 0 60px 0 40px; }
-    .hs-outro h3 { margin: 0; font-weight: 800; font-variation-settings: "wdth" 76, "opsz" 96; font-size: clamp(2.8rem, 5vw, 5.4rem); line-height: .9; letter-spacing: -.03em; }
-    .hs-outro h3 em { color: var(--gold-2); }
+    /* ── services ── */
+    .services { background: var(--cream); }
+    .svc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+    .svc { position: relative; background: var(--white); border-radius: var(--radius); padding: 30px 26px 26px; border: 1px solid var(--line); display: flex; flex-direction: column;
+      transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s; }
+    .svc:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: transparent; }
+    .svc:hover .ico { background: var(--gold); color: var(--white); }
+    .svc h3 { margin-top: 20px; font-size: 1.45rem; }
+    .svc p { margin-top: 8px; font-size: 15px; color: var(--muted); line-height: 1.6; flex: 1; }
+    .svc .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+    .svc .tags span { font-size: 12px; padding: 3px 10px; border-radius: 999px; background: var(--cream); color: var(--text); }
+    .svc .link-arrow { margin-top: 20px; }
+    .svc-cta { background: var(--sea); border-color: var(--sea); color: rgba(255,255,255,.82); justify-content: space-between; }
+    .svc-cta h3 { color: var(--white); margin-top: 0; }
+    .svc-cta p { color: rgba(255,255,255,.75); }
+    .svc-cta .btn { margin-top: 22px; align-self: flex-start; }
 
-    /* ── Stacking cards ── */
-    .exp { padding: clamp(110px, 13vw, 190px) 0 clamp(60px, 8vw, 120px); }
-    .exp-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 26px; margin-bottom: clamp(48px, 6vw, 90px); }
-    .exp-head p { max-width: 24em; color: var(--muted); margin: 0; font-size: 1.1rem; }
-    .stack-card { position: sticky; top: calc(96px + var(--i) * 26px); height: min(74vh, 680px); min-height: 520px; margin-bottom: 8vh;
-      border-radius: 40px; padding: clamp(26px, 3.6vw, 56px); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 60px);
-      transform-origin: center top; overflow: hidden; will-change: transform; }
-    .stack-card:last-child { margin-bottom: 0; }
-    .sc-1 { background: var(--sea); color: var(--cream); }
-    .sc-2 { background: #9C5B33; color: var(--cream); }
-    .sc-onda { background: #FFFFFF; color: var(--ink); box-shadow: 0 40px 80px -50px rgba(14,42,56,.4); }
-    .sc-onda .sc-n { color: var(--accent); }
-    .sc-onda h3 em { color: var(--accent); }
-    .sc-3 { background: var(--sky); color: var(--ink); }
-    .sc-text { display: flex; flex-direction: column; justify-content: space-between; }
-    .sc-n { font-family: var(--serif); font-style: italic; font-size: clamp(4rem, 8vw, 8rem); line-height: .8; }
-    .sc-1 .sc-n { color: var(--gold-2); }
-    .stack-card h3 { margin: 0; font-weight: 800; font-variation-settings: "wdth" 76, "opsz" 96; font-size: clamp(2.8rem, 5.4vw, 5.8rem); line-height: .88; letter-spacing: -.03em; }
-    .stack-card h3 em { font-weight: 400; }
-    .sc-1 h3 em { color: var(--gold-2); }
-    .stack-card p { margin: 18px 0 0; font-size: clamp(1.02rem, 1.25vw, 1.2rem); max-width: 26em; opacity: .82; }
-    .sc-visual { position: relative; border-radius: 28px; overflow: hidden; }
-    .sc-photo { position: absolute; inset: 0; }
-    .sc-photo img { width: 100%; height: 120%; object-fit: cover; object-position: 35% 50%; position: absolute; top: -10%; }
-    .sc-waves { position: absolute; left: 0; right: 0; bottom: -2px; height: 34%; }
-    .sc-waves svg { position: absolute; left: 0; bottom: 0; width: 200%; height: 100%; }
-    .sc-waves .wv1 { animation: wave 9s linear infinite; }
-    .sc-waves .wv2 { animation: wave 6s linear infinite reverse; }
-    .sc-2 .sc-visual { background: rgba(20,16,26,.14); display: grid; place-items: center; }
-    .sc-onda .sc-visual { background: linear-gradient(180deg, #F3EEE7 0%, #E8DFD3 100%); }
-    .ceiling { position: absolute; inset: 0; }
-    .ceiling svg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
-    .ceiling .slab { fill: #FFFFFF; filter: drop-shadow(0 22px 26px rgba(14,42,56,.16)); }
-    .ceiling .led { fill: none; stroke: #F2C46B; stroke-width: 3; stroke-linecap: round; filter: drop-shadow(0 0 6px #F2C46B) drop-shadow(0 0 16px rgba(242,196,107,.8));
-      stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: led 5s var(--ease) infinite alternate; }
-    .ceiling .spot { fill: #FFF3D6; filter: drop-shadow(0 0 6px #FFE3A0); animation: twinkle 3s ease-in-out infinite; }
-    .ceiling .spot:nth-of-type(2n) { animation-delay: -1.5s; }
-    .panel-gold { position: absolute; bottom: 10%; width: 22%; aspect-ratio: .62; border-radius: 999px 999px 18px 18px; border: 3px solid #D4AA60;
-      background: radial-gradient(60% 50% at 50% 40%, rgba(255,226,160,.9), rgba(212,170,96,.25) 70%), #F7EBD4; box-shadow: 0 0 40px rgba(242,196,107,.55), inset 0 0 20px rgba(255,255,255,.6);
-      display: grid; grid-template-columns: repeat(4, 1fr); align-content: center; gap: 7px 6px; padding: 26% 14% 12%; animation: glow 4s ease-in-out infinite; }
-    .panel-gold i { display: block; height: clamp(10px, 1.2vw, 16px); border-radius: 3px 3px 2px 2px; background: var(--b, #C9706A); box-shadow: inset 0 3px 0 rgba(0,0,0,.18); }
-    .panel-gold i:nth-child(4n+1) { --b: #B3343E; } .panel-gold i:nth-child(4n+2) { --b: #E4B9A6; }
-    .panel-gold i:nth-child(4n+3) { --b: #D9727F; } .panel-gold i:nth-child(4n) { --b: #8A3A4A; }
-    .panel-gold i:nth-child(5n) { --b: #F2DCCB; } .panel-gold i:nth-child(7n) { --b: #C24A5A; }
-    .panel-gold.p1 { left: 16%; } .panel-gold.p2 { right: 16%; animation-delay: -2s; }
-    @keyframes led { to { stroke-dashoffset: 0; } }
-    @keyframes twinkle { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
-    @keyframes glow { 0%, 100% { box-shadow: 0 0 26px rgba(242,196,107,.4), inset 0 0 20px rgba(255,255,255,.6); } 50% { box-shadow: 0 0 60px rgba(242,196,107,.8), inset 0 0 20px rgba(255,255,255,.6); } }
-    .ring-text { position: relative; width: min(82%, 420px); aspect-ratio: 1; display: grid; place-items: center; }
-    .ring-text svg { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 22s linear infinite; }
-    .ring-text text { font-family: var(--sans); font-weight: 800; font-size: 15px; letter-spacing: .18em; text-transform: uppercase; fill: var(--cream); }
-    .sc-2 h3 em, .sc-2 .sc-n { color: #F3D6A4; }
-    .ring-clock { width: 46%; aspect-ratio: 1; border-radius: 50%; background: var(--cream); position: relative; box-shadow: 0 30px 60px -20px rgba(14,42,56,.45); }
-    .ring-clock i { position: absolute; left: 50%; bottom: 50%; width: 3px; margin-left: -1.5px; border-radius: 3px; background: var(--ink); transform-origin: bottom center; }
-    .ring-clock .hh { height: 26%; animation: spin 40s linear infinite; }
-    .ring-clock .mm { height: 38%; background: var(--gold); animation: spin 6s linear infinite; }
-    .ring-clock::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 12px; margin: -6px; border-radius: 50%; background: var(--ink); }
-    .sc-3 .sc-visual { background: rgba(255,255,255,.35); }
-    .floaters { position: absolute; inset: 0; }
-    .floaters span { position: absolute; padding: 12px 22px; border-radius: 999px; background: var(--cream); color: var(--ink); font-weight: 700; font-size: clamp(14px, 1.3vw, 18px);
-      box-shadow: 0 18px 40px -18px rgba(14,42,56,.45); animation: bob 5s ease-in-out infinite; white-space: nowrap; }
-    .floaters span:nth-child(2n) { background: var(--sea); color: var(--cream); }
-    .floaters span:nth-child(3n) { background: var(--gold); }
-    @keyframes bob { 0%, 100% { transform: translateY(-10px) rotate(var(--r, -4deg)); } 50% { transform: translateY(10px) rotate(calc(var(--r, -4deg) * -1)); } }
+    /* ── space / gallery ── */
+    .gallery { display: grid; grid-template-columns: 1.6fr 1fr 1fr; grid-template-rows: 280px 280px; gap: 18px; }
+    .tile { position: relative; overflow: hidden; border-radius: var(--radius); background: var(--sand); cursor: zoom-in; text-align: left; }
+    .tile.t1 { grid-row: 1 / 3; }
+    .tile.t2 { grid-column: 2 / 4; }
+    .tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+    .tile:hover img { transform: scale(1.06); }
+    .tile .cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 20px 16px; color: var(--white); font-size: 14.5px; background: linear-gradient(0deg, rgba(17,48,60,.8), rgba(17,48,60,0)); display: flex; justify-content: space-between; align-items: end; gap: 10px; }
+    .tile .cap svg { width: 20px; height: 20px; opacity: .85; flex: none; }
 
-    /* ── Rating ── */
-    .rate { padding: clamp(120px, 14vw, 200px) 0; overflow: hidden; text-align: center; }
-    .bands { position: absolute; inset: 0; pointer-events: none; }
-    .band { position: absolute; left: -10%; right: -10%; padding: 14px 0; overflow: hidden; white-space: nowrap; font-weight: 800; font-variation-settings: "wdth" 76, "opsz" 96;
-      font-size: clamp(1.4rem, 2.4vw, 2.2rem); text-transform: uppercase; letter-spacing: .01em; }
-    .band-a { top: 16%; background: var(--ink); color: var(--cream); transform: rotate(-5deg); }
-    .band-b { bottom: 14%; background: var(--cream); color: var(--ink); transform: rotate(4deg); }
-    .band-track { display: inline-flex; animation: marquee 26s linear infinite; }
-    .band-b .band-track { animation-direction: reverse; }
-    .band-track span { padding-right: 1.4em; }
-    @keyframes marquee { to { transform: translateX(-50%); } }
-    .rate-inner { position: relative; }
-    .odo { display: inline-flex; align-items: flex-start; font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96; font-size: clamp(10rem, 34vw, 30rem); line-height: .82; letter-spacing: -.05em; }
-    .odo-col { display: inline-block; height: .82em; overflow: hidden; }
-    .odo-strip { display: flex; flex-direction: column; }
-    .odo-strip span { height: .82em; display: block; }
-    .odo-comma { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: 0; }
-    .rate-stars { display: flex; justify-content: center; gap: 10px; margin-top: 18px; font-size: clamp(30px, 4vw, 52px); line-height: 1; color: var(--ink); }
-    .rate-stars span { display: inline-block; }
-    .rate p { margin: 22px auto 0; max-width: 28em; font-size: clamp(1.1rem, 1.6vw, 1.45rem); }
-    .rate p em { font-size: 1.1em; }
-    .rate .btn { margin-top: 30px; }
+    .lightbox { position: fixed; inset: 0; z-index: 300; background: rgba(12,26,32,.94); display: flex; align-items: center; justify-content: center; padding: 60px 70px; opacity: 0; visibility: hidden; transition: opacity .35s, visibility 0s .35s; }
+    .lightbox.open { opacity: 1; visibility: visible; transition: opacity .35s; }
+    .lightbox img { max-width: 100%; max-height: 100%; border-radius: 10px; box-shadow: 0 30px 80px rgba(0,0,0,.5); transform: scale(.96); transition: transform .45s var(--ease); }
+    .lightbox.open img { transform: none; }
+    .lb-btn { position: absolute; width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,.1); color: var(--white); display: grid; place-items: center; transition: background-color .3s; }
+    .lb-btn:hover { background: var(--gold); color: var(--ink); }
+    .lb-btn svg { width: 22px; height: 22px; }
+    .lb-close { top: 18px; right: 18px; }
+    .lb-prev { left: 14px; top: 50%; margin-top: -25px; }
+    .lb-next { right: 14px; top: 50%; margin-top: -25px; }
+    .lb-cap { position: absolute; left: 0; right: 0; bottom: 18px; text-align: center; color: rgba(255,255,255,.8); font-size: 14.5px; }
 
-    /* ── Booking ── */
-    .book { padding: clamp(110px, 13vw, 190px) 0; }
-    .book-head { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 30px; }
-    .book-head p { margin: 0; max-width: 24em; color: var(--muted); font-size: 1.1rem; }
-    .book-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(24px, 4vw, 60px); margin-top: clamp(44px, 6vw, 80px); align-items: start; }
-    .panel { background: #fff; border-radius: 34px; padding: clamp(22px, 3.2vw, 46px); border: 1px solid var(--line); box-shadow: 0 50px 100px -60px rgba(14,42,56,.4); }
-    .step + .step { margin-top: 34px; padding-top: 30px; border-top: 1px dashed var(--line); }
-    .step-h { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
-    .step-h b { width: 34px; height: 34px; border-radius: 50%; background: var(--sea); color: var(--cream); display: grid; place-items: center; font-size: 14px; font-weight: 700; flex: none; }
-    .step-h h3 { margin: 0; font-size: 19px; font-weight: 700; }
-    .step-h small { margin-left: auto; color: var(--muted); font-size: 13px; }
+    /* ── reviews band ── */
+    .reviews { position: relative; color: var(--white); overflow: hidden; background: var(--sea); }
+    .reviews-bg { position: absolute; inset: -10% 0; }
+    .reviews-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; opacity: .22; }
+    .reviews .container { position: relative; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: clamp(30px, 5vw, 70px); }
+    .rv-score { text-align: center; padding: 26px 34px; border: 1px solid rgba(255,255,255,.2); border-radius: 18px; background: rgba(255,255,255,.04); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+    .rv-score b { display: block; font-family: var(--serif); font-size: 4.6rem; line-height: 1; font-weight: 600; }
+    .rv-score .stars { color: var(--gold); letter-spacing: 4px; font-size: 18px; }
+    .rv-score > span { display: block; font-size: 13.5px; color: rgba(255,255,255,.75); margin-top: 6px; }
+    .reviews h2 { color: var(--white); }
+    .reviews h2 em { color: #E8C98F; }
+    .reviews p { color: rgba(255,255,255,.8); margin-top: 12px; max-width: 34em; }
+    .rv-btns { display: grid; gap: 10px; }
+
+    /* ── booking ── */
+    .booking { background: var(--cream); }
+    .book-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(36px, 5vw, 80px); align-items: start; }
+    .contact-list { list-style: none; padding: 0; margin: 30px 0 0; display: grid; gap: 16px; }
+    .contact-list li { display: flex; gap: 14px; align-items: center; }
+    .contact-list .ico { width: 46px; height: 46px; background: var(--white); }
+    .contact-list .ico svg { width: 20px; height: 20px; }
+    .contact-list small { display: block; font-size: 12.5px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+    .contact-list strong { color: var(--ink); font-weight: 500; }
+    .form-card { background: var(--white); border-radius: 20px; padding: clamp(24px, 3.2vw, 40px); box-shadow: var(--shadow); border: 1px solid var(--line); }
+    .form-card h3 { font-size: 1.7rem; }
+    .form-card > p { color: var(--muted); font-size: 15px; margin-top: 4px; }
+    .field-group { margin-top: 24px; }
+    .field-label { display: block; font-size: 13px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); margin-bottom: 10px; }
     .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-    .chip { height: 46px; padding: 0 18px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--cream); font-size: 15px; font-weight: 600;
-      display: inline-flex; align-items: center; gap: 8px; transition: background-color .3s, color .3s, border-color .3s, transform .5s var(--ease); }
-    .chip:hover { border-color: var(--ink); transform: translateY(-2px); }
-    .chip[aria-pressed="true"] { background: var(--gold); border-color: var(--gold); color: var(--ink); }
-    .chip.day { flex-direction: column; justify-content: center; gap: 0; height: 66px; min-width: 74px; padding: 0 12px; border-radius: 22px; line-height: 1.1; }
-    .chip.day small { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; opacity: .7; }
-    .chip.day strong { font-size: 21px; font-weight: 800; font-variation-settings: "wdth" 80; }
-    .field { width: 100%; height: 58px; border-radius: 18px; border: 1.5px solid var(--line); background: var(--cream); padding: 0 20px; font: inherit; font-size: 16px; color: var(--ink); }
-    .field:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px rgba(212,170,96,.2); }
-    .form-error { color: #C23B2A; font-size: 14px; font-weight: 600; margin: 12px 0 0; min-height: 1px; }
-    .preview { position: sticky; top: 110px; }
-    .phone { background: var(--sea); color: var(--cream); border-radius: 38px; padding: 14px; box-shadow: 0 60px 120px -50px rgba(14,42,56,.7); }
-    .phone-top { display: flex; align-items: center; gap: 12px; padding: 10px 10px 16px; border-bottom: 1px solid rgba(251,244,236,.14); }
-    .avatar { width: 44px; height: 44px; border-radius: 50%; flex: none;
-      background: radial-gradient(circle at 32% 28%, #fff 0 10%, rgba(255,255,255,0) 34%), conic-gradient(from 40deg, #f3ddb8, #cfe2ea, #bfdce6, #f6e3c0, #f3ddb8); }
-    .phone-top strong { display: block; font-size: 15px; }
-    .phone-top span { font-size: 12px; opacity: .65; }
-    .chat { min-height: 300px; padding: 22px 8px 12px; display: flex; flex-direction: column; justify-content: flex-end; }
-    .bubble { align-self: flex-end; max-width: 94%; background: #1F5C4C; color: #EFF7F2; border-radius: 20px 20px 4px 20px; padding: 14px 16px 10px; font-size: 14.5px; line-height: 1.5; white-space: pre-line; transform-origin: bottom right; }
-    .bubble time { display: block; text-align: right; font-size: 11px; opacity: .6; margin-top: 4px; }
-    .send { width: 100%; margin-top: 14px; }
-    .note { margin: 14px 0 0; text-align: center; color: var(--muted); font-size: 13.5px; }
+    .chip { height: 42px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--white); font-size: 14.5px; color: var(--text); display: inline-flex; align-items: center; gap: 6px; transition: border-color .25s, background-color .25s, color .25s; }
+    .chip:hover { border-color: var(--gold); }
+    .chip[aria-pressed="true"] { background: var(--sea); border-color: var(--sea); color: var(--white); }
+    .chip.day { flex-direction: column; justify-content: center; gap: 0; height: 58px; min-width: 66px; padding: 0 10px; border-radius: 14px; line-height: 1.15; }
+    .chip.day small { font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; opacity: .75; }
+    .chip.day strong { font-size: 16px; font-weight: 600; }
+    .input { width: 100%; height: 52px; border-radius: 12px; border: 1px solid var(--line); padding: 0 16px; font: inherit; font-size: 16px; color: var(--ink); background: var(--white); transition: border-color .25s, box-shadow .25s; }
+    .input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px rgba(198,160,102,.18); }
+    .preview { margin-top: 22px; padding: 16px 18px; border-radius: 14px; background: #EEF6F1; border: 1px solid #D5EBDD; font-size: 14px; color: #1F4D36; white-space: pre-line; line-height: 1.55; }
+    .preview small { display: block; font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: #3C7A58; margin-bottom: 6px; }
+    .form-error { color: #B23A2A; font-size: 14px; margin-top: 12px; min-height: 1px; }
+    .form-card .btn { width: 100%; margin-top: 18px; }
+    .form-note { text-align: center; font-size: 13px; color: var(--muted); margin-top: 12px; }
 
-    /* ── Visit + footer ── */
-    .visit { padding-top: clamp(110px, 13vw, 190px); overflow: hidden; }
-    .visit-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: clamp(28px, 5vw, 80px); margin-top: clamp(44px, 6vw, 80px); }
-    .addr { margin: 0; font-family: var(--serif); font-size: clamp(2rem, 3.4vw, 3.3rem); line-height: 1.05; letter-spacing: -.02em; }
-    .addr em { color: var(--accent); }
-    .info-h { margin: 34px 0 12px; font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
-    .hours { list-style: none; margin: 0; padding: 0; }
-    .hours li { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 15.5px; color: var(--muted); }
-    .hours li.today { color: var(--fg); font-weight: 700; }
-    .hours li.today span:first-child::after { content: "  ← hoje"; color: var(--gold-2); }
-    .visit-ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
-    .map { position: relative; min-height: 480px; border-radius: 34px; overflow: hidden; background: var(--sea-2); border: 1px solid var(--line); }
-    .map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: invert(.92) hue-rotate(180deg) saturate(.55) brightness(.92) contrast(.95); }
-    .map-chip { position: absolute; left: 16px; bottom: 16px; right: 16px; max-width: 360px; display: flex; align-items: center; gap: 14px; padding: 10px 18px 10px 10px; border-radius: 22px;
-      background: rgba(14,42,56,.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(251,244,236,.14); color: var(--cream); }
-    .map-chip img { width: 62px; height: 62px; border-radius: 16px; object-fit: cover; }
-    .map-chip strong { display: block; font-size: 15px; }
-    .map-chip span { font-size: 13px; opacity: .7; }
-    .ocean { position: relative; height: clamp(360px, 62vh, 640px); margin-top: clamp(60px, 8vw, 120px); }
-    .ocean canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-    .ocean-word { position: absolute; left: 0; right: 0; top: 4%; text-align: center; font-family: var(--serif); font-style: italic; font-size: min(21vw, 300px); line-height: .9;
-      letter-spacing: -.04em; color: var(--cream); pointer-events: none; white-space: nowrap; }
-    .ocean-word .ch { will-change: transform; }
-    .foot { position: relative; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px 28px; padding-top: 22px; padding-bottom: 26px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
-    .foot nav { display: flex; flex-wrap: wrap; gap: 22px; }
-    .foot a:hover { color: var(--gold-2); }
+    /* ── contact / map ── */
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 28px; align-items: stretch; }
+    .info-cards { display: grid; gap: 18px; }
+    .info { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; display: flex; gap: 16px; }
+    .info h3 { font-size: 1.3rem; margin-bottom: 6px; }
+    .info p, .info li { font-size: 15px; color: var(--text); }
+    .info p a { color: var(--caramel); font-weight: 500; }
+    .info .link-arrow { margin-top: 10px; }
+    .hours { list-style: none; padding: 0; margin: 4px 0 0; width: 100%; }
+    .hours li { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px dashed var(--line); }
+    .hours li:last-child { border-bottom: 0; }
+    .hours li.today { color: var(--caramel); font-weight: 600; }
+    .info-body { flex: 1; min-width: 0; }
+    .map { position: relative; min-height: 460px; border-radius: var(--radius); overflow: hidden; background: var(--sand); border: 1px solid var(--line); }
+    .map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: grayscale(.3) sepia(.1); }
 
-    .mobile-cta { position: fixed; left: 12px; right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); z-index: 80; display: none; transform: translateY(150%); transition: transform .7s var(--ease); }
-    .mobile-cta.show { transform: none; }
-    .mobile-cta .btn { width: 100%; box-shadow: 0 20px 40px -14px rgba(14,42,56,.5); }
+    /* ── footer ── */
+    .footer { background: var(--sea); color: rgba(255,255,255,.72); font-size: 15px; }
+    .footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 40px; padding: 72px 0 50px; }
+    .footer .logo { color: var(--white); }
+    .footer .logo-txt small { color: rgba(255,255,255,.6); }
+    .footer .mono { color: var(--gold); }
+    .footer p { margin-top: 18px; max-width: 26em; }
+    .footer h4 { margin: 6px 0 16px; font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+    .footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 9px; }
+    .footer a:hover { color: var(--white); }
+    .f-rating { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; padding: 8px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); font-size: 14px; }
+    .f-rating .stars { color: var(--gold); letter-spacing: 2px; }
+    .footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; padding: 20px 0 26px; border-top: 1px solid rgba(255,255,255,.12); font-size: 13.5px; color: rgba(255,255,255,.55); }
 
-    /* ── Responsive ── */
+    /* ── floating WhatsApp ── */
+    .wa-float { position: fixed; right: 22px; bottom: 22px; bottom: max(22px, env(safe-area-inset-bottom)); z-index: 120; display: flex; align-items: center; gap: 10px;
+      opacity: 0; transform: translateY(20px) scale(.9); pointer-events: none; transition: opacity .45s var(--ease), transform .45s var(--ease); }
+    .wa-float.show { opacity: 1; transform: none; pointer-events: auto; }
+    .wa-float .wa-btn { width: 60px; height: 60px; border-radius: 50%; background: var(--wa); color: var(--white); display: grid; place-items: center; box-shadow: 0 12px 30px -8px rgba(37,211,102,.7); position: relative; transition: transform .35s var(--ease); }
+    .wa-float .wa-btn:hover { transform: scale(1.08); }
+    .wa-float .wa-btn svg { width: 30px; height: 30px; }
+    .wa-float .wa-btn::before { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--wa); animation: ring 2.2s ease-out infinite; }
+    @keyframes ring { 0% { transform: scale(1); opacity: .8; } 100% { transform: scale(1.6); opacity: 0; } }
+    .wa-tip { border: 1px solid var(--line); background: var(--white); color: var(--ink); font-size: 14px; font-weight: 500; padding: 10px 16px; border-radius: 999px; box-shadow: var(--shadow); opacity: 0; transform: translateX(10px); transition: opacity .35s, transform .35s var(--ease); pointer-events: none; white-space: nowrap; }
+    .wa-float:hover .wa-tip, .wa-float.peek .wa-tip { opacity: 1; transform: none; }
+
+    /* ── responsive ── */
     @media (max-width: 1100px) {
-      .book-grid, .visit-grid { grid-template-columns: 1fr; }
-      .preview { position: static; }
+      .nav { gap: 24px; font-size: 14.5px; }
+      .svc-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
     }
-    @media (max-width: 899px) {
-      .nav { grid-template-columns: 1fr auto; }
-      .nav-status { display: none; }
-      .hs-pin { padding-top: 90px; min-height: 0; }
-      .hs-track { overflow-x: auto; width: 100%; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 10px; }
-      .hs-track::-webkit-scrollbar { display: none; }
-      .hs-track > * { scroll-snap-align: center; flex: none; }
-      .hs-mhead { display: block; margin-bottom: 30px; }
-      .hs-intro { display: none; }
-      .svc-card { width: 82vw; height: 560px; min-height: 0; }
-      .hs-outro { width: 80vw; padding: 0 20px; }
-      .stack-card { grid-template-columns: 1fr; grid-template-rows: auto 1fr; height: auto; min-height: 78vh; top: calc(76px + var(--i) * 14px); border-radius: 30px; }
-      .sc-visual { min-height: 300px; }
-      .sc-n { display: none; }
-      .facts { grid-template-columns: 1fr; }
-      .fact + .fact { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
-      .fact { padding: 22px 0; }
-      .book-head { grid-template-columns: 1fr; }
+    @media (max-width: 960px) {
+      .nav, .header-cta { display: none; }
+      .burger { display: grid; }
+      .tb-hide-md { display: none !important; }
+      .hl-grid { grid-template-columns: 1fr 1fr; }
+      .hl:nth-child(3) { border-left: 0; }
+      .hl:nth-child(n+3) { border-top: 1px solid var(--line); }
+      .about-grid, .book-grid, .contact-grid { grid-template-columns: 1fr; }
+      .about-media { max-width: 560px; }
+      .reviews .container { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+      .reviews p { margin-left: auto; margin-right: auto; }
+      .rv-btns { grid-template-columns: auto auto; }
+      .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 200px 200px; }
+      .tile.t1 { grid-row: auto; grid-column: 1 / 3; }
+      .tile.t2 { grid-column: auto; }
     }
     @media (max-width: 640px) {
       body { font-size: 16px; }
-      .logo { font-size: 19px; }
-      .nav .btn-sm { display: none; }
-      .hero { padding-top: 84px; }
-      .ht-1, .ht-2 { font-size: 19vw; }
-      .ht-2 { padding-left: .35em !important; }
-      .hero-grid { grid-template-columns: 1fr; gap: 0; }
-      .hero-left { display: contents; }
-      .hero-left .hero-title { order: 1; margin-bottom: 26px; }
-      .hero-arch { order: 2; justify-self: end; width: 50vw; margin: -6px 10px 26px 0; }
-      .hero-arch figcaption { display: none; }
-      .hero-lede { order: 3; }
-      .hero-actions { order: 4; }
-      .hero-lede, .hero-actions { position: relative; z-index: 2; }
-      .gal-grid { grid-template-columns: 1fr; gap: 34px; }
-      .g1, .g2, .g3 { grid-column: auto; margin-top: 0; }
-      .g2 { grid-row: auto; }
-      .ocean { height: 440px; }
-      .ocean-word { top: 10%; }
-      .sticker { display: none; }
-      .hero-actions .btn { flex: 1 1 100%; }
-      .hero-foot .scroll-hint { display: none; }
-      .mq-item { font-size: 17vw; }
-      .step-h small { display: none; }
-      .map { min-height: 360px; }
-      .mobile-cta { display: block; }
-      .foot { padding-bottom: 100px; }
-      .band { font-size: 1.15rem; padding: 10px 0; }
-      .band-a { top: 8%; }
-      .band-b { bottom: 6%; }
+      .container { padding: 0 18px; }
+      .topbar { display: none; }
+      .header-in, .header.scrolled .header-in { height: 68px; }
+      .logo-txt strong { font-size: 21px; }
+      .mono { width: 40px; height: 35px; }
+      .hero { min-height: 640px; align-items: flex-end; }
+      .hero-overlay { background: linear-gradient(0deg, rgba(17,48,60,.95) 0%, rgba(17,48,60,.72) 50%, rgba(17,48,60,.25) 100%); }
+      .hero-content { padding-top: 120px; padding-bottom: 96px; }
+      .hero-btns .btn { flex: 1 1 100%; }
+      .hero .eyebrow { font-size: 11px; letter-spacing: .16em; }
+      .hero .eyebrow .eb-long { display: none; }
+      .hero-trust { gap: 14px 26px; margin-top: 32px; }
+      .hero-trust b { font-size: 1.6rem; }
+      .hero-dots { right: auto; left: 18px; bottom: 74px; grid-auto-flow: column; }
+      .highlights { margin-top: -40px; }
+      .hl-grid { grid-template-columns: 1fr; }
+      .hl + .hl, .hl:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
+      .hl { padding: 20px; }
+      .about-media { padding: 0 24px 46px 0; }
+      .am-badge { left: -6px; top: 18px; padding: 14px 16px; }
+      .am-badge strong { font-size: 2rem; }
+      .checks { grid-template-columns: 1fr; }
+      .svc-grid { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-rows: 230px; }
+      .tile.t1, .tile.t2 { grid-column: auto; }
+      .rv-btns { grid-template-columns: 1fr; width: 100%; }
+      .rv-btns .btn { width: 100%; }
+      .footer-top { grid-template-columns: 1fr; gap: 30px; padding-top: 56px; }
+      .lightbox { padding: 70px 12px; }
+      .lb-prev, .lb-next { top: auto; bottom: 14px; margin-top: 0; }
+      .lb-prev { left: 18px; } .lb-next { right: 18px; }
+      .wa-tip { display: none; }
+      .map { min-height: 340px; }
     }
     @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
       *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
     }
   </style>
 </head>
 <body>
 
-  <canvas id="gl" aria-hidden="true"></canvas>
-  <div class="grain" aria-hidden="true"></div>
+  <!-- SVG icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.42 1.3-1.96 1.38-.5.07-1.13.1-1.82-.12-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.18-4.94-4.37-.15-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.3.58-.37.78-.37h.56c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.15.12.32.02.51-.1.2-.15.32-.29.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.3 2.36 1.45.3.15.46.12.63-.07.17-.2.73-.85.92-1.15.2-.3.39-.24.66-.15.27.1 1.71.81 2 .96.3.15.49.22.56.34.07.12.07.7-.17 1.37Z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.5 2.5L16 9.5"/></g></symbol>
+      <symbol id="i-wave" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8" r="3"/><path d="M2 16c2.5-2 5-2 7.5 0s5 2 7.5 0 3.5-1.5 5-1.2M2 20c2.5-2 5-2 7.5 0s5 2 7.5 0 3.5-1.5 5-1.2"/></g></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 2.5c.6 5 4 8.4 9 9-5 .6-8.4 4-9 9-.6-5-4-8.4-9-9 5-.6 8.4-4 9-9Z"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8 6.6 19.7l1.1-6.1-4.5-4.2 6.1-.8L12 3Z"/></symbol>
+      <symbol id="i-scissors" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></g></symbol>
+      <symbol id="i-polish" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2h5v5h-5z"/><path d="M8 7h8l1.2 4v9a2 2 0 0 1-2 2H8.8a2 2 0 0 1-2-2v-9z"/><path d="M9.5 14h5"/></g></symbol>
+      <symbol id="i-hand" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V5.5a1.5 1.5 0 0 1 3 0V12M11 11V4a1.5 1.5 0 0 1 3 0v8M14 11.5V6a1.5 1.5 0 0 1 3 0v7c0 4.4-2.6 8-7 8-2.6 0-4.3-1.3-5.6-3.4L3 14.6a1.5 1.5 0 0 1 2.5-1.6L8 15"/></g></symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"/><circle cx="12" cy="13" r="2.6"/><path d="M12 3.5v2M6.5 5l1 1.8M17.5 5l-1 1.8"/></g></symbol>
+      <symbol id="i-brow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5c3-3.6 9-4.6 15-2l3 1.5"/><path d="M5 15.5s2.5-3 7-3 7 3 7 3-2.5 3-7 3-7-3-7-3z"/><circle cx="12" cy="15.5" r="1.6"/></g></symbol>
+      <symbol id="i-drop" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5s6.5 7 6.5 11.5a6.5 6.5 0 0 1-13 0C5.5 9.5 12 2.5 12 2.5z"/><path d="M9 15a3 3 0 0 0 3 3"/></g></symbol>
+      <symbol id="i-stones" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><ellipse cx="12" cy="19" rx="8" ry="2.6"/><ellipse cx="12" cy="13.4" rx="5.8" ry="2.2"/><ellipse cx="12" cy="8.4" rx="3.8" ry="1.8"/><path d="M12 3v2"/></g></symbol>
+      <symbol id="i-zoom" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4M11 8v6M8 11h6"/></g></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+      <symbol id="i-left" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m15 5-7 7 7 7"/></symbol>
+      <symbol id="i-right" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/></symbol>
+      <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></g></symbol>
+    </defs>
+  </svg>
 
-  <!-- Loader -->
-  <div class="loader" id="loader" aria-hidden="true">
-    <div class="ld-top"><span>Studio Maria Charmosa</span><span>Macaé · RJ</span></div>
-    <div class="ld-mono" id="ldPearl"><svg class="mono" viewBox="0 0 120 100" aria-hidden="true"><text class="mc-c" x="50" y="86" text-anchor="middle">C</text><text class="mc-m" x="66" y="80" text-anchor="middle">M</text></svg></div>
-    <div class="ld-count"><span id="ldNum">0</span><small>%</small></div>
-    <div class="ld-caption">trazendo o mar até você…</div>
+  <!-- ───────── TOP BAR ───────── -->
+  <div class="topbar">
+    <div class="container topbar-in">
+      <div class="tb-group">
+        <span class="tb-item"><svg aria-hidden="true"><use href="#i-pin"/></svg>Av. Atlântica, 2200 · Cavaleiros, Macaé/RJ</span>
+        <span class="tb-item tb-hide-md"><svg aria-hidden="true"><use href="#i-clock"/></svg>Terça a sábado, 9h às 20h</span>
+      </div>
+      <div class="tb-group">
+        <span class="tb-item"><span class="status-dot" id="statusDot"></span><span id="statusText">Terça a sábado, 9h às 20h</span></span>
+        <span class="tb-item tb-hide-md"><svg aria-hidden="true"><use href="#i-wa"/></svg><a data-wa="Olá, Studio Maria Charmosa! Vim pelo site." href="#contato" target="_blank" rel="noopener" class="js-phone">(22) 99948-1780</a></span>
+      </div>
+    </div>
   </div>
 
-  <div class="cursor" id="cursor" aria-hidden="true"><span></span></div>
-
-  <!-- Nav -->
-  <header class="nav" id="nav">
-    <a class="logo" href="#top" aria-label="Studio Maria Charmosa, início"><svg class="mono" viewBox="0 0 120 100" aria-hidden="true"><text class="mc-c" x="50" y="86" text-anchor="middle">C</text><text class="mc-m" x="66" y="80" text-anchor="middle">M</text></svg><span class="logo-txt"><small>Studio</small>Maria Charmosa</span></a>
-    <div class="nav-status"><span class="status-dot" id="statusDot"></span><span id="statusText">Terça a sábado · 9h às 20h</span></div>
-    <div class="nav-right">
-      <a class="btn btn-gold btn-sm" href="#agendar" data-cursor="Bora!"><span class="roll"><span data-t="Agendar">Agendar</span></span></a>
-      <button class="burger" id="menuBtn" aria-expanded="false" aria-controls="menu"><span></span><span></span><b class="sr">Menu</b></button>
+  <!-- ───────── HEADER ───────── -->
+  <header class="header" id="header">
+    <div class="container header-in">
+      <a class="logo" href="#inicio" aria-label="Studio Maria Charmosa, início">
+        <svg class="mono" viewBox="0 0 120 100" aria-hidden="true"><text class="mc-c" x="50" y="86" text-anchor="middle">C</text><text class="mc-m" x="66" y="80" text-anchor="middle">M</text></svg>
+        <span class="logo-txt"><small>Studio</small><strong>Maria Charmosa</strong></span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#inicio" class="active">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#espaco">Espaço</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-gold btn-sm header-cta" href="#agendar"><svg aria-hidden="true"><use href="#i-cal"/></svg>Agendar horário</a>
+        <button class="burger" id="menuBtn" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span><b class="sr">Abrir menu</b></button>
+      </div>
     </div>
   </header>
 
-  <div class="menu" id="menu" aria-hidden="true">
-    <nav class="menu-links" aria-label="Menu">
-      <a href="#studio"><small>01</small>O <em>studio</em></a>
-      <a href="#servicos"><small>02</small>Serviços</a>
-      <a href="#espaco"><small>03</small>O <em>espaço</em></a>
-      <a href="#agendar"><small>04</small>Agendar</a>
-      <a href="#visite"><small>05</small>Visite</a>
+  <div class="drawer-bg" id="drawerBg"></div>
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-top">
+      <a class="logo" href="#inicio"><svg class="mono" viewBox="0 0 120 100" aria-hidden="true"><text class="mc-c" x="50" y="86" text-anchor="middle">C</text><text class="mc-m" x="66" y="80" text-anchor="middle">M</text></svg><span class="logo-txt"><small>Studio</small><strong>Maria Charmosa</strong></span></a>
+      <button class="drawer-close" id="drawerClose" aria-label="Fechar menu"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+    </div>
+    <nav aria-label="Menu">
+      <a href="#inicio">Início</a><a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#espaco">Espaço</a><a href="#avaliacoes">Avaliações</a><a href="#agendar">Agendar</a><a href="#contato">Contato</a>
     </nav>
-    <div class="menu-foot"><span>Av. Atlântica, 2200 · Cavaleiros, Macaé/RJ</span><span>Terça a sábado · 9h às 20h</span></div>
-  </div>
+    <a class="btn btn-gold" data-wa="Olá, Studio Maria Charmosa! Vim pelo site e gostaria de agendar um horário." href="#agendar" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Agendar pelo WhatsApp</a>
+    <div class="drawer-info"><span>Av. Atlântica, 2200 · Cavaleiros, Macaé/RJ</span><span>Terça a sábado, 9h às 20h</span><span class="js-phone">(22) 99948-1780</span></div>
+  </aside>
 
   <main>
     <!-- ───────── HERO ───────── -->
-    <section class="hero" id="top" data-theme="light" data-pearl="hero">
-      <div class="hero-grid">
-        <div class="hero-left">
-          <h1 class="hero-title">
-            <span class="sr">Studio Maria Charmosa: salão de beleza pé na areia em Macaé</span>
-            <span class="ht-k" aria-hidden="true" data-hero>Studio</span>
-            <span class="ht-1" aria-hidden="true">Maria</span>
-            <span class="ht-2" aria-hidden="true">Charmosa</span>
-          </h1>
-          <p class="hero-lede" data-hero>Salão de vidro <em>pé na areia</em> na Av. Atlântica, Praia dos Cavaleiros. Cabelo, unhas, cílios, sobrancelhas, depilação e massagem, com o mar ali na janela.</p>
-          <div class="hero-actions" data-hero>
-            <a class="btn btn-gold" data-wa="Oi, Studio Maria Charmosa! Vim pelo site e quero agendar um horário." href="#agendar" target="_blank" rel="noopener" data-cursor="WhatsApp">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.42 1.3-1.96 1.38-.5.07-1.13.1-1.82-.12-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.18-4.94-4.37-.15-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.3.58-.37.78-.37h.56c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.15.12.32.02.51-.1.2-.15.32-.29.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.3 2.36 1.45.3.15.46.12.63-.07.17-.2.73-.85.92-1.15.2-.3.39-.24.66-.15.27.1 1.71.81 2 .96.3.15.49.22.56.34.07.12.07.7-.17 1.37Z"/></svg>
-              <span class="roll"><span data-t="Agendar pelo WhatsApp">Agendar pelo WhatsApp</span></span>
-            </a>
-            <a class="btn btn-line" href="#servicos" data-cursor="Ver"><span class="roll"><span data-t="Ver serviços">Ver serviços</span></span></a>
+    <section class="hero" id="inicio">
+      <div class="slides" id="slides">
+        <div class="slide is-active" style="--pos: 30% 55%"><img src="assets/salao-mar.jpg" alt="Salão do Studio Maria Charmosa com cadeiras de couro e janelas de vidro de frente para a praia" fetchpriority="high"></div>
+        <div class="slide" style="--pos: 50% 62%"><img src="assets/noite.jpg" alt="Studio Maria Charmosa à noite, com pufe e cadeiras de couro e o teto em onda iluminado" loading="lazy"></div>
+        <div class="slide" style="--pos: 50% 42%"><img src="assets/fachada.jpg" alt="Fachada de vidro do Studio Maria Charmosa com o logo dourado, na Av. Atlântica" loading="lazy"></div>
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <span class="eyebrow light" data-hero><span class="eb-long">Salão de beleza ·&nbsp;</span>Praia dos Cavaleiros, Macaé</span>
+        <h1 data-hero>Seu momento de beleza, <em>de frente para o mar.</em></h1>
+        <p class="hero-text" data-hero>Cabelo, unhas, cílios, sobrancelhas, depilação e massoterapia em um studio na orla de Macaé. Atendimento feminino e masculino, com hora marcada.</p>
+        <div class="hero-btns" data-hero>
+          <a class="btn btn-gold" data-wa="Olá, Studio Maria Charmosa! Vim pelo site e gostaria de agendar um horário." href="#agendar" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Agendar pelo WhatsApp</a>
+          <a class="btn btn-outline-light" href="#servicos">Ver serviços</a>
+        </div>
+        <div class="hero-trust" data-hero>
+          <div><b>4,9 <span class="stars" aria-hidden="true">★★★★★</span></b><span>62 avaliações no Google</span></div>
+          <div><b>2018</b><span>na orla de Macaé</span></div>
+          <div><b>7</b><span>especialidades</span></div>
+        </div>
+      </div>
+      <div class="hero-dots" id="heroDots">
+        <button class="is-active" aria-label="Foto 1: salão com vista para o mar"></button>
+        <button aria-label="Foto 2: salão à noite"></button>
+        <button aria-label="Foto 3: fachada"></button>
+      </div>
+    </section>
+
+    <!-- ───────── HIGHLIGHTS ───────── -->
+    <section class="highlights" aria-label="Destaques">
+      <div class="container">
+        <div class="hl-grid">
+          <div class="hl"><span class="ico"><svg aria-hidden="true"><use href="#i-wave"/></svg></span><div><h3>Vista para o mar</h3><p>Salão de vidro na Av. Atlântica, de frente para a praia.</p></div></div>
+          <div class="hl"><span class="ico"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><div><h3>Hora marcada</h3><p>Atendimento sem fila e no seu tempo.</p></div></div>
+          <div class="hl"><span class="ico"><svg aria-hidden="true"><use href="#i-spark"/></svg></span><div><h3>Tudo em um só lugar</h3><p>Sete especialidades de beleza e bem-estar.</p></div></div>
+          <div class="hl"><span class="ico"><svg aria-hidden="true"><use href="#i-star"/></svg></span><div><h3>Nota 4,9 no Google</h3><p>Com 62 avaliações de clientes.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── ABOUT ───────── -->
+    <section class="section" id="sobre">
+      <div class="container about-grid">
+        <div class="about-media" data-anim>
+          <figure class="am-1"><img src="assets/noite.jpg" alt="Ambiente do Studio Maria Charmosa com cadeiras e pufe de couro caramelo e o teto em onda iluminado" loading="lazy" data-parallax="6"></figure>
+          <figure class="am-2"><img src="assets/marca.jpg" alt="Logo dourado do Studio Maria Charmosa na parede de cimento queimado" loading="lazy"></figure>
+          <div class="am-badge"><small>Desde</small><strong>2018</strong><span>na orla de Macaé</span></div>
+        </div>
+        <div class="about-text">
+          <span class="eyebrow" data-anim>Sobre o studio</span>
+          <h2 data-anim>Beleza, conforto e <em>vista para o mar</em> no mesmo lugar.</h2>
+          <p data-anim>O Studio Maria Charmosa fica na orla da Praia dos Cavaleiros, em Macaé. É um salão de vidro de frente para o mar, com cadeiras de couro, teto em onda iluminado e nichos dourados com a nossa paleta de esmaltes.</p>
+          <p data-anim>Aqui você encontra cabelo, unhas, cílios, sobrancelhas, depilação e massoterapia em um só endereço, com atendimento feminino e masculino e hora marcada.</p>
+          <ul class="checks" data-stagger>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Atendimento feminino e masculino</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Hora marcada, sem fila</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Salão de frente para a praia</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>Agendamento pelo WhatsApp</li>
+          </ul>
+          <div class="stats" data-anim>
+            <div class="stat"><b><span data-count="4.9" data-dec="1">4,9</span></b><span>nota no Google</span></div>
+            <div class="stat"><b><span data-count="62">62</span></b><span>avaliações</span></div>
+            <div class="stat"><b><span data-count="7">7</span></b><span>especialidades</span></div>
+          </div>
+          <div class="about-btns" data-anim>
+            <a class="btn btn-dark" href="#servicos">Conheça os serviços</a>
+            <a class="link-arrow" data-wa="Olá, Studio Maria Charmosa! Vim pelo site e tenho uma dúvida." href="#contato" target="_blank" rel="noopener">Fale com a gente <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </div>
         </div>
-        <figure class="hero-arch">
-          <div class="arch-img"><img src="assets/hero-fachada.jpg" alt="Fachada de vidro do Studio Maria Charmosa com o monograma dourado e a grade bronze, na Av. Atlântica" width="622" height="864"></div>
-          <figcaption><span>A fachada na orla</span><span>Av. Atlântica, 2200</span></figcaption>
-          <a class="sticker" href="#agendar" data-hero aria-label="Agendar horário" data-cursor="Bora!">
-            <svg class="ring" viewBox="0 0 150 150" aria-hidden="true"><defs><path id="stk" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs><text><textPath href="#stk">pé na areia ✺ Macaé ✺ desde 2018 ✺ </textPath></text></svg>
-            <span class="core"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
-          </a>
-        </figure>
-      </div>
-
-        <div class="hero-foot" data-hero>
-          <span><span class="stars" aria-hidden="true">★★★★★</span> <b>4,9</b> no Google · 62 avaliações</span>
-          <span>Av. Atlântica, 2200 · Cavaleiros</span>
-          <span class="scroll-hint"><i></i>role pra ver o mar</span>
-        </div>
-    </section>
-
-    <!-- ───────── INTRO ───────── -->
-    <section class="intro" id="studio" data-theme="light" data-pearl="intro">
-      <div class="wrap content">
-        <span class="tag" data-reveal><i></i>O studio</span>
-        <p class="statement" id="statement">Um salão de vidro <span class="pill"><img src="assets/pill-mar.jpg" alt="" loading="lazy"></span> de frente pro mar <span class="pill pill-wave"><svg viewBox="0 0 120 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 Q15 12 30 22 T60 22 T90 22 T120 22 V40 H0Z" fill="#8FC3D6"/><path d="M0 28 Q15 20 30 28 T60 28 T90 28 T120 28 V40 H0Z" fill="#F7F2EB" opacity=".85"/></svg></span>, cadeiras de couro <span class="pill"><img src="assets/pill-cadeiras.jpg" alt="" loading="lazy"></span> e a marca em dourado <span class="pill"><img src="assets/pill-marca.jpg" alt="" loading="lazy"></span>, onde cabelo, unhas e cílios ganham hora marcada e <em>aquela vista</em> que só a Praia dos Cavaleiros <span class="pill pill-orb"></span> tem.</p>
-
-        <div class="facts">
-          <div class="fact" data-reveal><b data-count="2018" data-from="1990">2018</b><span>Pé na areia desde</span></div>
-          <div class="fact" data-reveal><b><span data-count="6">6</span> <em>em 1</em></b><span>Especialidades num só endereço</span></div>
-          <div class="fact" data-reveal><b>9h<em>–</em>20h</b><span>De terça a sábado, com hora marcada</span></div>
-        </div>
       </div>
     </section>
 
-    <!-- ───────── REVEAL ───────── -->
-    <section class="rv" id="espaco" data-theme="dark" data-pearl="reveal">
-      <div class="rv-pin">
-        <div class="rv-frame"><img src="assets/salao-mar.jpg" alt="Interior do Studio Maria Charmosa: cadeiras de couro caramelo, bancada branca, teto em onda, nichos dourados de esmaltes e janelas de vidro com vista para a Praia dos Cavaleiros" loading="lazy"></div>
-        <div class="rv-text wrap">
-          <span class="tag"><i></i>O espaço</span>
-          <h2 class="big-title">Senta, relaxa <em>e olha o mar.</em></h2>
-          <div class="rv-meta"><span>Fachada de vidro</span><span>Teto em onda</span><span>Nichos dourados de esmaltes</span><span>Cadeiras de couro</span></div>
+    <!-- ───────── SERVICES ───────── -->
+    <section class="section services" id="servicos">
+      <div class="container">
+        <div class="sec-head center">
+          <span class="eyebrow" data-anim>Nossos serviços</span>
+          <h2 data-anim>Cuidado completo <em>para você</em></h2>
+          <p class="lead" data-anim>Escolha o serviço e agende direto pelo WhatsApp. Valores e horários disponíveis são informados pela nossa equipe.</p>
         </div>
-      </div>
-    </section>
-
-    <!-- ───────── GALLERY ───────── -->
-    <section class="gal" id="galeria" data-theme="light" data-pearl="gallery">
-      <div class="wrap content">
-        <div class="gal-head">
-          <h2 class="big-title" data-split>Cada canto <em>tem charme.</em></h2>
-          <p data-reveal>Da fachada de vidro ao pufe de couro: é assim o Studio Maria Charmosa, na orla de Macaé.</p>
-        </div>
-        <div class="gal-grid">
-          <figure class="g g1" data-speed="-6" data-cursor="Charme"><div class="g-img"><img src="assets/fachada.jpg" alt="Fachada do Studio Maria Charmosa com vidro, monograma dourado e grade bronze" loading="lazy"></div><figcaption><b>01</b>A fachada de vidro com a grade bronze, de frente pra praia</figcaption></figure>
-          <figure class="g g2" data-speed="8" data-cursor="Charme"><div class="g-img"><img src="assets/noite.jpg" alt="Salão à noite com pufe e cadeiras de couro caramelo e o teto em onda iluminado" loading="lazy"></div><figcaption><b>02</b>À noite, o teto em onda acende sobre o couro caramelo</figcaption></figure>
-          <figure class="g g3" data-speed="-3" data-cursor="Charme"><div class="g-img"><img src="assets/marca.jpg" alt="Logo dourado do Studio Maria Charmosa na parede de cimento queimado com luz em onda" loading="lazy"></div><figcaption><b>03</b>A marca dourada na parede de cimento queimado</figcaption></figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ───────── MARQUEE ───────── -->
-    <section class="mq" data-theme="light" data-pearl="intro" aria-hidden="true">
-      <div class="mq-row"><div class="mq-track">
-        <span class="mq-item"><span class="s">Cabelo</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg></span>
-        <span class="mq-item"><em>unhas</em><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg></span>
-        <span class="mq-item"><span class="o">Cílios</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg></span>
-        <span class="mq-item"><em>sobrancelhas</em><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg></span>
-      </div></div>
-      <div class="mq-row"><div class="mq-track">
-        <span class="mq-item"><span class="o">Depilação</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg></span>
-        <span class="mq-item"><em>massagem</em><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg></span>
-        <span class="mq-item"><span class="s">Vista pro mar</span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.7 6.6 5.4 11.3 12 12-6.6.7-11.3 5.4-12 12-.7-6.6-5.4-11.3-12-12C6.6 11.3 11.3 6.6 12 0Z"/></svg></span>
-      </div></div>
-    </section>
-
-    <!-- ───────── SERVICES (horizontal) ───────── -->
-    <section class="hs" id="servicos" data-theme="dark" data-pearl="services">
-      <div class="hs-pin">
-        <div class="hs-mhead wrap">
-          <h2 class="big-title" data-split>O menu da <em>beleza.</em></h2>
-          <p>Escolhe, toca e agenda direto no WhatsApp. Atendimento feminino e masculino, sempre com hora marcada. <b>Arrasta pro lado →</b></p>
-        </div>
-        <div class="hs-bar wrap"><span>Serviços</span><span class="hs-count"><span id="hsNow">01</span> / 06</span><div class="hs-progress"><i id="hsBar"></i></div></div>
-        <div class="hs-track" id="hsTrack">
-          <div class="hs-intro">
+        <div class="svc-grid" data-stagger>
+          <article class="svc">
+            <span class="ico"><svg aria-hidden="true"><use href="#i-scissors"/></svg></span>
+            <h3>Cabelo</h3>
+            <p>Cortes, escova e tratamentos para cabelos femininos e masculinos.</p>
+            <div class="tags"><span>Feminino</span><span>Masculino</span></div>
+            <a class="link-arrow" data-wa="Olá! Vim pelo site e gostaria de agendar um horário para CABELO." href="#agendar" target="_blank" rel="noopener">Agendar <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="svc">
+            <span class="ico"><svg aria-hidden="true"><use href="#i-hand"/></svg></span>
+            <h3>Manicure e pedicure</h3>
+            <p>Cuidado completo para mãos e pés, com a nossa paleta de esmaltes.</p>
+            <div class="tags"><span>Mãos</span><span>Pés</span></div>
+            <a class="link-arrow" data-wa="Olá! Vim pelo site e gostaria de agendar MANICURE E/OU PEDICURE." href="#agendar" target="_blank" rel="noopener">Agendar <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="svc">
+            <span class="ico"><svg aria-hidden="true"><use href="#i-polish"/></svg></span>
+            <h3>Alongamento de unhas</h3>
+            <p>Unhas alongadas com acabamento bonito e resistente.</p>
+            <div class="tags"><span>Unhas</span></div>
+            <a class="link-arrow" data-wa="Olá! Vim pelo site e gostaria de agendar ALONGAMENTO DE UNHAS." href="#agendar" target="_blank" rel="noopener">Agendar <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="svc">
+            <span class="ico"><svg aria-hidden="true"><use href="#i-brow"/></svg></span>
+            <h3>Design de sobrancelhas</h3>
+            <p>Design que valoriza o formato do seu rosto e o seu olhar.</p>
+            <div class="tags"><span>Rosto</span></div>
+            <a class="link-arrow" data-wa="Olá! Vim pelo site e gostaria de agendar DESIGN DE SOBRANCELHAS." href="#agendar" target="_blank" rel="noopener">Agendar <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="svc">
+            <span class="ico"><svg aria-hidden="true"><use href="#i-eye"/></svg></span>
+            <h3>Extensão de cílios</h3>
+            <p>Lash design para um olhar marcante, do efeito natural ao volume.</p>
+            <div class="tags"><span>Lash design</span></div>
+            <a class="link-arrow" data-wa="Olá! Vim pelo site e gostaria de agendar EXTENSÃO DE CÍLIOS." href="#agendar" target="_blank" rel="noopener">Agendar <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="svc">
+            <span class="ico"><svg aria-hidden="true"><use href="#i-drop"/></svg></span>
+            <h3>Depilação</h3>
+            <p>Depilação feita com cuidado, higiene e conforto.</p>
+            <div class="tags"><span>Corpo</span><span>Rosto</span></div>
+            <a class="link-arrow" data-wa="Olá! Vim pelo site e gostaria de agendar DEPILAÇÃO." href="#agendar" target="_blank" rel="noopener">Agendar <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="svc">
+            <span class="ico"><svg aria-hidden="true"><use href="#i-stones"/></svg></span>
+            <h3>Massoterapia</h3>
+            <p>Massagens para relaxar e aliviar as tensões do dia a dia.</p>
+            <div class="tags"><span>Bem-estar</span></div>
+            <a class="link-arrow" data-wa="Olá! Vim pelo site e gostaria de agendar MASSOTERAPIA." href="#agendar" target="_blank" rel="noopener">Agendar <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+          <article class="svc svc-cta">
             <div>
-              <h2 class="big-title" data-split>O menu da <em>beleza.</em></h2>
-              <p>Escolhe, toca e agenda direto no WhatsApp. Atendimento feminino e masculino, sempre com hora marcada.</p>
+              <h3>Quer fazer mais de um serviço?</h3>
+              <p>Monte o seu horário com vários serviços e envie tudo de uma vez pelo WhatsApp.</p>
             </div>
-            <span class="hs-hint">Arrasta pro lado <svg viewBox="0 0 34 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 6h32M27 1l5 5-5 5"/></svg></span>
-          </div>
-
-          <article class="svc-card" style="--c1:#F3DDB8;--c2:#E8C98F;--c3:#CFE2EA;--c4:#F6E3C0;--g:rgba(212,170,96,.55)">
-            <div class="svc-top"><span class="svc-n">01</span><span>Feminino · Masculino</span></div>
-            <div class="orb3d"><div class="core"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg></div>
-            <div class="svc-bottom">
-              <h3>Cabelo</h3>
-              <p>Corte, escova, tratamento e cor. Do jeito que você imaginou.</p>
-              <a class="svc-cta" data-wa="Oi! Vim pelo site e quero agendar CABELO. Quais horários vocês têm?" href="#agendar" target="_blank" rel="noopener" data-cursor="Agendar">Agendar <b>↗</b></a>
-            </div>
-          </article>
-          <article class="svc-card" style="--c1:#E9C7A5;--c2:#F6E3C0;--c3:#E8C98F;--c4:#DCEBF0;--g:rgba(232,201,143,.5)">
-            <div class="svc-top"><span class="svc-n">02</span><span>Mãos &amp; pés</span></div>
-            <div class="orb3d"><div class="core"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 2h5v5h-5z"/><path d="M8 7h8l1.2 4v9a2 2 0 0 1-2 2H8.8a2 2 0 0 1-2-2v-9z"/><path d="M9.5 14h5"/></svg></div>
-            <div class="svc-bottom">
-              <h3>Unhas</h3>
-              <p>Manicure, pedicure e alongamento com acabamento impecável.</p>
-              <a class="svc-cta" data-wa="Oi! Vim pelo site e quero agendar UNHAS (manicure/pedicure/alongamento). Quais horários vocês têm?" href="#agendar" target="_blank" rel="noopener" data-cursor="Agendar">Agendar <b>↗</b></a>
-            </div>
-          </article>
-          <article class="svc-card" style="--c1:#CFE2EA;--c2:#8FC3D6;--c3:#FFFFFF;--c4:#A9CFDD;--g:rgba(143,195,214,.45)">
-            <div class="svc-top"><span class="svc-n">03</span><span>Olhar</span></div>
-            <div class="orb3d"><div class="core"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 13s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"/><circle cx="12" cy="13" r="2.6"/><path d="M12 3.5v2M6.5 5l1 1.8M17.5 5l-1 1.8M3 8l1.7 1.2M21 8l-1.7 1.2"/></svg></div>
-            <div class="svc-bottom">
-              <h3>Cílios</h3>
-              <p>Extensão de cílios do efeito natural ao volume marcante.</p>
-              <a class="svc-cta" data-wa="Oi! Vim pelo site e quero agendar EXTENSÃO DE CÍLIOS. Quais horários vocês têm?" href="#agendar" target="_blank" rel="noopener" data-cursor="Agendar">Agendar <b>↗</b></a>
-            </div>
-          </article>
-          <article class="svc-card" style="--c1:#F6E3C0;--c2:#F3DDB8;--c3:#BFDCE6;--c4:#FFFFFF;--g:rgba(246,227,192,.4)">
-            <div class="svc-top"><span class="svc-n">04</span><span>Design</span></div>
-            <div class="orb3d"><div class="core"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5c3-3.6 9-4.6 15-2l3 1.5"/><path d="M5 15.5s2.5-3 7-3 7 3 7 3-2.5 3-7 3-7-3-7-3z"/><circle cx="12" cy="15.5" r="1.6"/></svg></div>
-            <div class="svc-bottom">
-              <h3>Sobrancelhas</h3>
-              <p>Design que respeita o seu rosto e valoriza o olhar.</p>
-              <a class="svc-cta" data-wa="Oi! Vim pelo site e quero agendar DESIGN DE SOBRANCELHAS. Quais horários vocês têm?" href="#agendar" target="_blank" rel="noopener" data-cursor="Agendar">Agendar <b>↗</b></a>
-            </div>
-          </article>
-          <article class="svc-card" style="--c1:#BFDCE6;--c2:#CFE2EA;--c3:#F3DDB8;--c4:#8FC3D6;--g:rgba(143,195,214,.4)">
-            <div class="svc-top"><span class="svc-n">05</span><span>Corpo &amp; rosto</span></div>
-            <div class="orb3d"><div class="core"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5s6.5 7 6.5 11.5a6.5 6.5 0 0 1-13 0C5.5 9.5 12 2.5 12 2.5z"/><path d="M9 15a3 3 0 0 0 3 3"/></svg></div>
-            <div class="svc-bottom">
-              <h3>Depilação</h3>
-              <p>Com cuidado, higiene e conforto do começo ao fim.</p>
-              <a class="svc-cta" data-wa="Oi! Vim pelo site e quero agendar DEPILAÇÃO. Quais horários vocês têm?" href="#agendar" target="_blank" rel="noopener" data-cursor="Agendar">Agendar <b>↗</b></a>
-            </div>
-          </article>
-          <article class="svc-card" style="--c1:#E8C98F;--c2:#CFE2EA;--c3:#F6E3C0;--c4:#E9C7A5;--g:rgba(207,226,234,.45)">
-            <div class="svc-top"><span class="svc-n">06</span><span>Bem-estar</span></div>
-            <div class="orb3d"><div class="core"></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="19" rx="8" ry="2.6"/><ellipse cx="12" cy="13.4" rx="5.8" ry="2.2"/><ellipse cx="12" cy="8.4" rx="3.8" ry="1.8"/><path d="M12 3v2"/></svg></div>
-            <div class="svc-bottom">
-              <h3>Massagem</h3>
-              <p>Massoterapia pra desacelerar, com o barulho do mar lá fora.</p>
-              <a class="svc-cta" data-wa="Oi! Vim pelo site e quero agendar MASSAGEM. Quais horários vocês têm?" href="#agendar" target="_blank" rel="noopener" data-cursor="Agendar">Agendar <b>↗</b></a>
-            </div>
-          </article>
-
-          <div class="hs-outro">
-            <h3>Quer juntar <em>vários?</em></h3>
-            <a class="btn btn-gold" href="#agendar" data-cursor="Bora!" style="align-self:flex-start"><span class="roll"><span data-t="Montar meu horário">Montar meu horário</span></span></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ───────── EXPERIENCE (stacking cards) ───────── -->
-    <section class="exp" id="experiencia" data-theme="light" data-pearl="exp">
-      <div class="wrap content">
-        <div class="exp-head">
-          <h2 class="big-title" data-split>Por que quem vem, <em>volta.</em></h2>
-          <p data-reveal>Quatro motivos que fazem a orla inteira marcar horário de novo.</p>
-        </div>
-
-        <div class="stack">
-          <article class="stack-card sc-1" style="--i:0">
-            <div class="sc-text">
-              <span class="sc-n">01</span>
-              <div><h3>Couro, madeira <em>e luz quente.</em></h3><p>Cadeiras e pufe de couro caramelo, piso de madeira e a luz dourada do teto. Dá vontade de ficar mais um pouco.</p></div>
-            </div>
-            <div class="sc-visual">
-              <div class="sc-photo"><img src="assets/onda-noite.jpg" alt="Cadeiras de couro caramelo e o teto em onda iluminado do Studio Maria Charmosa" loading="lazy"></div>
-            </div>
-          </article>
-          <article class="stack-card sc-onda" style="--i:1">
-            <div class="sc-text">
-              <span class="sc-n">02</span>
-              <div><h3>Até o teto <em>faz onda.</em></h3><p>O teto do salão desenha uma onda de luz e os nichos dourados guardam a paleta de esmaltes. A gente trouxe o mar pra dentro.</p></div>
-            </div>
-            <div class="sc-visual">
-              <div class="ceiling" aria-hidden="true">
-                <svg viewBox="0 0 600 600" preserveAspectRatio="none">
-                  <path class="slab" d="M0 0 H600 V150 C520 150 500 230 420 230 C340 230 330 120 250 120 C170 120 150 210 80 210 C40 210 20 190 0 190 Z"/>
-                  <path class="led" d="M0 190 C20 190 40 210 80 210 C150 210 170 120 250 120 C330 120 340 230 420 230 C500 230 520 150 600 150"/>
-                  <circle class="spot" cx="120" cy="70" r="7"/><circle class="spot" cx="300" cy="55" r="7"/><circle class="spot" cx="480" cy="80" r="7"/>
-                </svg>
-                <div class="panel-gold p1"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-                <div class="panel-gold p2"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-              </div>
-            </div>
-          </article>
-          <article class="stack-card sc-2" style="--i:2">
-            <div class="sc-text">
-              <span class="sc-n">03</span>
-              <div><h3>No seu <em>tempo.</em></h3><p>Atendimento com hora marcada. Sem fila, sem correria, sem ficar olhando o relógio.</p></div>
-            </div>
-            <div class="sc-visual">
-              <div class="ring-text">
-                <svg viewBox="0 0 300 300" aria-hidden="true"><defs><path id="rt" d="M150,150 m-120,0 a120,120 0 1,1 240,0 a120,120 0 1,1 -240,0"/></defs><text><textPath href="#rt">sem fila ✺ sem pressa ✺ hora marcada ✺ sem correria ✺ </textPath></text></svg>
-                <div class="ring-clock" aria-hidden="true"><i class="hh"></i><i class="mm"></i></div>
-              </div>
-            </div>
-          </article>
-          <article class="stack-card sc-3" style="--i:3">
-            <div class="sc-text">
-              <span class="sc-n">04</span>
-              <div><h3>Tudo num <em>só lugar.</em></h3><p>Cabelo, unhas, cílios, sobrancelhas, depilação e massagem, feminino e masculino. Uma visita, tudo resolvido.</p></div>
-            </div>
-            <div class="sc-visual">
-              <div class="floaters" aria-hidden="true">
-                <span style="left:8%;top:12%;--r:-6deg">Cabelo</span>
-                <span style="right:10%;top:20%;--r:5deg;animation-delay:-1s">Unhas</span>
-                <span style="left:22%;top:40%;--r:3deg;animation-delay:-2.2s">Cílios</span>
-                <span style="right:6%;top:52%;--r:-4deg;animation-delay:-3s">Sobrancelhas</span>
-                <span style="left:6%;top:68%;--r:6deg;animation-delay:-1.6s">Depilação</span>
-                <span style="right:18%;top:80%;--r:-5deg;animation-delay:-.6s">Massagem</span>
-              </div>
-            </div>
+            <a class="btn btn-gold btn-sm" href="#agendar">Montar agendamento</a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ───────── RATING ───────── -->
-    <section class="rate" id="avaliacoes" data-theme="gold" data-pearl="rate">
-      <div class="bands" aria-hidden="true">
-        <div class="band band-a"><div class="band-track"><span>★ 4,9 no Google</span><span>★ 62 avaliações</span><span>★ Quem conhece, recomenda</span><span>★ 4,9 no Google</span><span>★ 62 avaliações</span><span>★ Quem conhece, recomenda</span></div></div>
-        <div class="band band-b"><div class="band-track"><span>✺ Pé na areia</span><span>✺ Vista pro mar</span><span>✺ Macaé</span><span>✺ Pé na areia</span><span>✺ Vista pro mar</span><span>✺ Macaé</span></div></div>
-      </div>
-      <div class="wrap content rate-inner">
-        <div class="odo" role="img" aria-label="Nota 4,9 de 5">
-          <span class="odo-col" data-digit="4"><span class="odo-strip"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></span></span><span class="odo-comma">,</span><span class="odo-col" data-digit="9"><span class="odo-strip"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></span></span>
+    <!-- ───────── SPACE / GALLERY ───────── -->
+    <section class="section" id="espaco">
+      <div class="container">
+        <div class="sec-head center">
+          <span class="eyebrow" data-anim>Nosso espaço</span>
+          <h2 data-anim>Conheça o studio <em>por dentro</em></h2>
+          <p class="lead" data-anim>Um ambiente pensado para você relaxar: fachada de vidro, vista para a praia, couro, madeira e luz dourada.</p>
         </div>
-        <div class="rate-stars" aria-hidden="true"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p data-reveal>São <b>62 avaliações</b> no Google. <em>Quem conhece, recomenda.</em></p>
-        <a class="btn btn-ink" id="reviewsLink" href="#" target="_blank" rel="noopener" data-reveal data-cursor="Ler"><span class="roll"><span data-t="Ler as avaliações ↗">Ler as avaliações ↗</span></span></a>
+        <div class="gallery" data-stagger>
+          <button class="tile t1"><img src="assets/salao-mar.jpg" alt="Salão com cadeiras de couro, bancada branca e vista para a Praia dos Cavaleiros" loading="lazy"><span class="cap">O salão com vista para o mar <svg aria-hidden="true"><use href="#i-zoom"/></svg></span></button>
+          <button class="tile t2"><img src="assets/fachada.jpg" alt="Fachada de vidro com o logo dourado e a grade bronze" loading="lazy" style="object-position:50% 40%"><span class="cap">A fachada na Av. Atlântica <svg aria-hidden="true"><use href="#i-zoom"/></svg></span></button>
+          <button class="tile t3"><img src="assets/noite.jpg" alt="Salão à noite com pufe e cadeiras de couro caramelo" loading="lazy" style="object-position:50% 70%"><span class="cap">Couro e luz quente <svg aria-hidden="true"><use href="#i-zoom"/></svg></span></button>
+          <button class="tile t4"><img src="assets/marca.jpg" alt="Logo dourado na parede de cimento queimado com luz em onda" loading="lazy" style="object-position:35% 40%"><span class="cap">A nossa marca <svg aria-hidden="true"><use href="#i-zoom"/></svg></span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── REVIEWS ───────── -->
+    <section class="section reviews" id="avaliacoes">
+      <div class="reviews-bg" aria-hidden="true"><img src="assets/salao-mar.jpg" alt="" loading="lazy" data-parallax="8"></div>
+      <div class="container">
+        <div class="rv-score" data-anim>
+          <b><span data-count="4.9" data-dec="1">4,9</span></b>
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <span>62 avaliações no Google</span>
+        </div>
+        <div data-anim>
+          <span class="eyebrow light">Avaliações</span>
+          <h2>Quem conhece, <em>recomenda.</em></h2>
+          <p>Nossa nota no Google é o reflexo do cuidado com cada cliente. Veja o que dizem sobre o Studio Maria Charmosa.</p>
+        </div>
+        <div class="rv-btns" data-anim>
+          <a class="btn btn-gold" id="reviewsLink" href="#" target="_blank" rel="noopener">Ver avaliações no Google</a>
+          <a class="btn btn-outline-light" id="reviewsLink2" href="#" target="_blank" rel="noopener">Deixar uma avaliação</a>
+        </div>
       </div>
     </section>
 
     <!-- ───────── BOOKING ───────── -->
-    <section class="book" id="agendar" data-theme="light" data-pearl="book">
-      <div class="wrap content">
-        <div class="book-head">
-          <h2 class="big-title" data-split>Bora <em>marcar?</em></h2>
-          <p data-reveal>Monta seu horário em segundos e manda direto no WhatsApp do studio. A equipe confirma pra você.</p>
+    <section class="section booking" id="agendar">
+      <div class="container book-grid">
+        <div>
+          <span class="eyebrow" data-anim>Agendamento</span>
+          <h2 data-anim>Agende seu horário <em>em poucos cliques</em></h2>
+          <p class="lead" data-anim style="margin-top:16px">Escolha os serviços, o dia e o período. A mensagem chega pronta no nosso WhatsApp e a equipe confirma o melhor horário para você.</p>
+          <ul class="contact-list" data-stagger>
+            <li><span class="ico"><svg aria-hidden="true"><use href="#i-wa"/></svg></span><div><small>WhatsApp</small><strong><a data-wa="Olá, Studio Maria Charmosa! Vim pelo site." href="#" target="_blank" rel="noopener" class="js-phone">(22) 99948-1780</a></strong></div></li>
+            <li><span class="ico"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><div><small>Horário</small><strong>Terça a sábado, 9h às 20h</strong></div></li>
+            <li><span class="ico"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><div><small>Endereço</small><strong>Av. Atlântica, 2200 · Cavaleiros, Macaé/RJ</strong></div></li>
+          </ul>
         </div>
 
-        <div class="book-grid">
-          <form class="panel" id="bookingForm" novalidate data-reveal>
-            <div class="step">
-              <div class="step-h"><b>1</b><h3>O que você quer fazer?</h3><small>Pode escolher vários</small></div>
-              <div class="chips" id="svcChips" role="group" aria-label="Serviços">
-                <button type="button" class="chip" aria-pressed="false" data-value="Cabelo">Cabelo</button>
-                <button type="button" class="chip" aria-pressed="false" data-value="Manicure">Manicure</button>
-                <button type="button" class="chip" aria-pressed="false" data-value="Pedicure">Pedicure</button>
-                <button type="button" class="chip" aria-pressed="false" data-value="Alongamento de unhas">Alongamento</button>
-                <button type="button" class="chip" aria-pressed="false" data-value="Extensão de cílios">Cílios</button>
-                <button type="button" class="chip" aria-pressed="false" data-value="Design de sobrancelhas">Sobrancelhas</button>
-                <button type="button" class="chip" aria-pressed="false" data-value="Depilação">Depilação</button>
-                <button type="button" class="chip" aria-pressed="false" data-value="Massagem">Massagem</button>
-              </div>
+        <form class="form-card" id="bookingForm" novalidate data-anim>
+          <h3>Monte seu agendamento</h3>
+          <p>Leva menos de um minuto.</p>
+          <div class="field-group">
+            <span class="field-label">1. Serviços</span>
+            <div class="chips" id="svcChips" role="group" aria-label="Serviços">
+              <button type="button" class="chip" aria-pressed="false" data-value="Cabelo">Cabelo</button>
+              <button type="button" class="chip" aria-pressed="false" data-value="Manicure">Manicure</button>
+              <button type="button" class="chip" aria-pressed="false" data-value="Pedicure">Pedicure</button>
+              <button type="button" class="chip" aria-pressed="false" data-value="Alongamento de unhas">Alongamento de unhas</button>
+              <button type="button" class="chip" aria-pressed="false" data-value="Design de sobrancelhas">Sobrancelhas</button>
+              <button type="button" class="chip" aria-pressed="false" data-value="Extensão de cílios">Cílios</button>
+              <button type="button" class="chip" aria-pressed="false" data-value="Depilação">Depilação</button>
+              <button type="button" class="chip" aria-pressed="false" data-value="Massoterapia">Massoterapia</button>
             </div>
-            <div class="step">
-              <div class="step-h"><b>2</b><h3>Qual dia?</h3><small>Terça a sábado</small></div>
-              <div class="chips" id="dayChips" role="group" aria-label="Dia"></div>
+          </div>
+          <div class="field-group">
+            <span class="field-label">2. Dia de preferência</span>
+            <div class="chips" id="dayChips" role="group" aria-label="Dia"></div>
+          </div>
+          <div class="field-group">
+            <span class="field-label">3. Período</span>
+            <div class="chips" id="periodChips" role="group" aria-label="Período">
+              <button type="button" class="chip" aria-pressed="false" data-value="Manhã (9h às 12h)">Manhã</button>
+              <button type="button" class="chip" aria-pressed="false" data-value="Tarde (12h às 17h)">Tarde</button>
+              <button type="button" class="chip" aria-pressed="false" data-value="Fim de tarde (17h às 20h)">Fim de tarde</button>
             </div>
-            <div class="step">
-              <div class="step-h"><b>3</b><h3>Que horas, mais ou menos?</h3></div>
-              <div class="chips" id="periodChips" role="group" aria-label="Período">
-                <button type="button" class="chip" aria-pressed="false" data-value="Manhã (9h–12h)">Manhã</button>
-                <button type="button" class="chip" aria-pressed="false" data-value="Tarde (12h–17h)">Tarde</button>
-                <button type="button" class="chip" aria-pressed="false" data-value="Fim de tarde (17h–20h)">Fim de tarde</button>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-h"><b>4</b><h3>Seu nome</h3></div>
-              <label for="clientName" class="sr">Seu nome</label>
-              <input class="field" id="clientName" type="text" autocomplete="given-name" placeholder="Como podemos te chamar?" maxlength="60">
-              <p class="form-error" id="formError" role="alert"></p>
-            </div>
-          </form>
-
-          <aside class="preview" data-reveal>
-            <div class="phone">
-              <div class="phone-top"><span class="avatar"></span><div><strong>Studio Maria Charmosa</strong><span>WhatsApp · online</span></div></div>
-              <div class="chat"><div class="bubble" id="bubbleText" aria-live="polite"></div></div>
-            </div>
-            <button class="btn btn-gold send" type="submit" form="bookingForm" data-cursor="Enviar">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.42 1.3-1.96 1.38-.5.07-1.13.1-1.82-.12-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.18-4.94-4.37-.15-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.3.58-.37.78-.37h.56c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.15.12.32.02.51-.1.2-.15.32-.29.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.3 2.36 1.45.3.15.46.12.63-.07.17-.2.73-.85.92-1.15.2-.3.39-.24.66-.15.27.1 1.71.81 2 .96.3.15.49.22.56.34.07.12.07.7-.17 1.37Z"/></svg>
-              <span class="roll"><span data-t="Enviar no WhatsApp">Enviar no WhatsApp</span></span>
-            </button>
-            <p class="note">Sem cadastro e sem compromisso. O horário é confirmado pela equipe.</p>
-          </aside>
-        </div>
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="clientName">4. Seu nome</label>
+            <input class="input" id="clientName" type="text" autocomplete="given-name" placeholder="Como podemos te chamar?" maxlength="60">
+          </div>
+          <div class="preview" aria-live="polite"><small>Prévia da mensagem</small><span id="previewText"></span></div>
+          <p class="form-error" id="formError" role="alert"></p>
+          <button class="btn btn-gold" type="submit"><svg aria-hidden="true"><use href="#i-wa"/></svg>Enviar pelo WhatsApp</button>
+          <p class="form-note">Sem cadastro e sem compromisso. O horário é confirmado pela equipe.</p>
+        </form>
       </div>
     </section>
 
-    <!-- ───────── VISIT + FOOTER ───────── -->
-    <section class="visit" id="visite" data-theme="dark" data-pearl="visit">
-      <div class="wrap content">
-        <h2 class="big-title" data-split>Vem ver o mar <em>daqui.</em></h2>
-        <div class="visit-grid">
-          <div data-reveal>
-            <p class="addr">Av. Atlântica, 2200<br><em>Cavaleiros</em>, Macaé · RJ</p>
-            <p style="margin:10px 0 0;color:var(--muted)">CEP 27920-390 · na orla da Praia dos Cavaleiros</p>
-            <h3 class="info-h">Horários</h3>
-            <ul class="hours" id="hoursList"></ul>
-            <div class="visit-ctas">
-              <a class="btn btn-gold" id="routeLink" href="#" target="_blank" rel="noopener" data-cursor="Rota"><span class="roll"><span data-t="Como chegar">Como chegar</span></span></a>
-              <a class="btn btn-line" data-wa="Oi, Studio Maria Charmosa! Vim pelo site e tenho uma dúvida." href="#" target="_blank" rel="noopener"><span class="roll"><span data-t="WhatsApp">WhatsApp</span></span></a>
-              <a class="btn btn-line" id="callLink" href="#"><span class="roll"><span data-t="Ligar">Ligar</span></span></a>
-            </div>
+    <!-- ───────── CONTACT ───────── -->
+    <section class="section" id="contato">
+      <div class="container">
+        <div class="sec-head center">
+          <span class="eyebrow" data-anim>Contato e localização</span>
+          <h2 data-anim>Venha nos <em>visitar</em></h2>
+        </div>
+        <div class="contact-grid">
+          <div class="info-cards" data-stagger>
+            <div class="info"><span class="ico"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><div class="info-body"><h3>Endereço</h3><p>Av. Atlântica, 2200 · Cavaleiros<br>Macaé · RJ · CEP 27920-390</p><a class="link-arrow" id="routeLink" href="#" target="_blank" rel="noopener">Como chegar <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div>
+            <div class="info"><span class="ico"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><div class="info-body"><h3>Horário de funcionamento</h3><ul class="hours" id="hoursList"></ul></div></div>
+            <div class="info"><span class="ico"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><div class="info-body"><h3>Fale com a gente</h3><p>WhatsApp e telefone: <a class="js-phone" id="callLink" href="#">(22) 99948-1780</a></p><a class="link-arrow" data-wa="Olá, Studio Maria Charmosa! Vim pelo site." href="#" target="_blank" rel="noopener">Chamar no WhatsApp <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div>
           </div>
-          <div class="map" data-reveal>
+          <div class="map" data-anim>
             <iframe id="mapFrame" title="Mapa: Studio Maria Charmosa, Av. Atlântica, 2200, Macaé" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <div class="map-chip"><img src="assets/hero-fachada.jpg" alt="Fachada de vidro do Studio Maria Charmosa" loading="lazy"><div><strong>Studio Maria Charmosa</strong><span>Fachada de vidro, de frente pra praia</span></div></div>
           </div>
         </div>
       </div>
-
-      <div class="ocean" id="oceanWrap">
-        <canvas id="ocean" aria-hidden="true"></canvas>
-        <div class="ocean-word" id="oceanWord" aria-hidden="true">Charmosa</div>
-      </div>
-
-      <footer class="foot wrap content">
-        <span>© <span id="year">2026</span> Studio Maria Charmosa · pé na areia desde 2018</span>
-        <nav aria-label="Rodapé">
-          <a data-wa="Oi, Studio Maria Charmosa! Vim pelo site." href="#" target="_blank" rel="noopener">WhatsApp</a>
-          <a id="footerPhone" href="#">(22) 99948-1780</a>
-          <a id="footerInsta" href="#" target="_blank" rel="noopener" hidden>Instagram</a>
-          <a href="#top">Voltar ao topo ↑</a>
-        </nav>
-      </footer>
     </section>
   </main>
 
-  <div class="mobile-cta" id="mobileCta">
-    <a class="btn btn-gold" data-wa="Oi, Studio Maria Charmosa! Vim pelo site e quero agendar um horário." href="#agendar" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2Zm5.8 14.03c-.24.68-1.42 1.3-1.96 1.38-.5.07-1.13.1-1.82-.12-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.18-4.94-4.37-.15-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.3.58-.37.78-.37h.56c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.15.12.32.02.51-.1.2-.15.32-.29.5-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12 1 2.06 1.3 2.36 1.45.3.15.46.12.63-.07.17-.2.73-.85.92-1.15.2-.3.39-.24.66-.15.27.1 1.71.81 2 .96.3.15.49.22.56.34.07.12.07.7-.17 1.37Z"/></svg>
-      Agendar pelo WhatsApp
-    </a>
+  <!-- ───────── FOOTER ───────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="logo" href="#inicio"><svg class="mono" viewBox="0 0 120 100" aria-hidden="true"><text class="mc-c" x="50" y="86" text-anchor="middle">C</text><text class="mc-m" x="66" y="80" text-anchor="middle">M</text></svg><span class="logo-txt"><small>Studio</small><strong>Maria Charmosa</strong></span></a>
+          <p>Salão de beleza na orla da Praia dos Cavaleiros, em Macaé. Cabelo, unhas, cílios, sobrancelhas, depilação e massoterapia.</p>
+          <span class="f-rating"><span class="stars" aria-hidden="true">★★★★★</span>4,9 no Google · 62 avaliações</span>
+        </div>
+        <div>
+          <h4>Navegação</h4>
+          <ul><li><a href="#sobre">Sobre</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#espaco">Espaço</a></li><li><a href="#avaliacoes">Avaliações</a></li><li><a href="#agendar">Agendar</a></li></ul>
+        </div>
+        <div>
+          <h4>Serviços</h4>
+          <ul><li>Cabelo</li><li>Manicure e pedicure</li><li>Alongamento de unhas</li><li>Sobrancelhas e cílios</li><li>Depilação</li><li>Massoterapia</li></ul>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <ul>
+            <li>Av. Atlântica, 2200 · Cavaleiros<br>Macaé · RJ · 27920-390</li>
+            <li><a data-wa="Olá, Studio Maria Charmosa! Vim pelo site." href="#" target="_blank" rel="noopener" class="js-phone">(22) 99948-1780</a></li>
+            <li>Terça a sábado, 9h às 20h</li>
+            <li><a id="footerInsta" href="#" target="_blank" rel="noopener" hidden>Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Studio Maria Charmosa. Todos os direitos reservados.</span>
+        <a href="#inicio">Voltar ao topo ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <div class="wa-float" id="waFloat">
+    <span class="wa-tip">Agende pelo WhatsApp</span>
+    <a class="wa-btn" data-wa="Olá, Studio Maria Charmosa! Vim pelo site e gostaria de agendar um horário." href="#agendar" target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada" aria-hidden="true">
+    <button class="lb-btn lb-close" id="lbClose" aria-label="Fechar"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+    <button class="lb-btn lb-prev" id="lbPrev" aria-label="Foto anterior"><svg aria-hidden="true"><use href="#i-left"/></svg></button>
+    <img id="lbImg" src="data:," alt="">
+    <button class="lb-btn lb-next" id="lbNext" aria-label="Próxima foto"><svg aria-hidden="true"><use href="#i-right"/></svg></button>
+    <p class="lb-cap" id="lbCap"></p>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
@@ -976,36 +804,31 @@
     hours: { 2: [9, 20], 3: [9, 20], 4: [9, 20], 5: [9, 20], 6: [9, 20] } // 0 = domingo … 6 = sábado
   };
 
-  /* Shared state read by the 3D scene (module script below) */
-  window.PEARL = { x: 0.3, y: 0.34, s: 0, distort: 0.3, color: '#F3DDB8', vel: 0, mx: 0, my: 0, ocean: 0 };
-
   (function () {
     'use strict';
     const $ = (s, c = document) => c.querySelector(s);
     const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    const hasGSAP = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
-    const motion = hasGSAP && !reduce;
 
-    /* ---------- Links ---------- */
+    /* ---------- Links & data ---------- */
     const waLink = (msg) => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
     $$('[data-wa]').forEach((a) => { a.href = waLink(a.dataset.wa); });
-    $('#routeLink').href = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(CONFIG.address);
-    $('#reviewsLink').href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(CONFIG.mapsQuery);
+    $$('.js-phone').forEach((el) => { el.textContent = CONFIG.phoneDisplay; });
     $('#callLink').href = 'tel:+' + CONFIG.whatsapp;
-    $('#footerPhone').href = 'tel:+' + CONFIG.whatsapp;
-    $('#footerPhone').textContent = CONFIG.phoneDisplay;
+    $('#routeLink').href = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(CONFIG.address);
+    const reviewsUrl = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(CONFIG.mapsQuery);
+    $('#reviewsLink').href = reviewsUrl;
+    $('#reviewsLink2').href = reviewsUrl;
     if (CONFIG.instagram) { const ig = $('#footerInsta'); ig.href = CONFIG.instagram; ig.hidden = false; }
     $('#year').textContent = new Date().getFullYear();
     const mapFrame = $('#mapFrame');
     const mapSrc = 'https://www.google.com/maps?q=' + encodeURIComponent(CONFIG.mapsQuery) + '&z=16&output=embed';
     if ('IntersectionObserver' in window) {
-      const mo = new IntersectionObserver((e) => { if (e[0].isIntersecting) { mapFrame.src = mapSrc; mo.disconnect(); } }, { rootMargin: '800px' });
+      const mo = new IntersectionObserver((e) => { if (e[0].isIntersecting) { mapFrame.src = mapSrc; mo.disconnect(); } }, { rootMargin: '600px' });
       mo.observe(mapFrame);
     } else mapFrame.src = mapSrc;
 
-    /* ---------- Time in Macaé (UTC−3) ---------- */
+    /* ---------- Opening hours (Macaé, UTC−3) ---------- */
     const nowBR = () => new Date(Date.now() - 3 * 3600e3);
     const DAYS = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
     const DAYS_SHORT = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
@@ -1024,15 +847,15 @@
     const todayIdx = nowBR().getUTCDay();
     $('#hoursList').innerHTML = [1, 2, 3, 4, 5, 6, 0].map((d) => {
       const h = CONFIG.hours[d];
-      return `<li class="${d === todayIdx ? 'today' : ''}"><span>${DAYS[d]}</span><span>${h ? `${h[0]}h às ${h[1]}h` : 'Fechado'}</span></li>`;
+      return `<li class="${d === todayIdx ? 'today' : ''}"><span>${DAYS[d]}${d === todayIdx ? ' (hoje)' : ''}</span><span>${h ? `${h[0]}h às ${h[1]}h` : 'Fechado'}</span></li>`;
     }).join('');
 
-    /* ---------- Booking builder ---------- */
+    /* ---------- Booking form ---------- */
     const state = { services: new Set(), day: '', period: '' };
     const dayWrap = $('#dayChips');
     (function buildDays() {
       const base = nowBR(); const out = [];
-      for (let i = 0; out.length < 8 && i < 21; i++) {
+      for (let i = 0; out.length < 7 && i < 21; i++) {
         const dt = new Date(base.getTime() + i * 86400e3), wd = dt.getUTCDay(), h = CONFIG.hours[wd];
         if (!h) continue;
         if (i === 0 && base.getUTCHours() >= h[1] - 1) continue;
@@ -1044,7 +867,6 @@
       out.push('<button type="button" class="chip day" aria-pressed="false" data-value="a combinar"><small>Outro</small><strong>dia</strong></button>');
       dayWrap.innerHTML = out.join('');
     })();
-    const pop = () => { if (motion) gsap.fromTo('#bubbleText', { scale: .94, rotate: -1.5 }, { scale: 1, rotate: 0, duration: .6, ease: 'back.out(3)' }); };
     function single(group, key) {
       group.addEventListener('click', (e) => {
         const b = e.target.closest('.chip'); if (!b) return;
@@ -1052,7 +874,7 @@
         $$('.chip', group).forEach((c) => c.setAttribute('aria-pressed', 'false'));
         b.setAttribute('aria-pressed', String(on));
         state[key] = on ? b.dataset.value : '';
-        renderMsg(); pop();
+        renderMsg();
       });
     }
     single(dayWrap, 'day');
@@ -1063,575 +885,143 @@
       b.setAttribute('aria-pressed', String(on));
       on ? state.services.add(b.dataset.value) : state.services.delete(b.dataset.value);
       $('#formError').textContent = '';
-      renderMsg(); pop();
+      renderMsg();
     });
     $('#clientName').addEventListener('input', renderMsg);
     function buildMsg() {
       const name = $('#clientName').value.trim(), svcs = [...state.services];
       return [
-        `Oi, ${CONFIG.name}! ✨`,
-        'Vim pelo site e quero agendar:',
-        `• Serviço${svcs.length > 1 ? 's' : ''}: ${svcs.length ? svcs.join(', ') : '(escolha ao lado)'}`,
+        `Olá, ${CONFIG.name}!`,
+        'Vim pelo site e gostaria de agendar:',
+        `• Serviço${svcs.length > 1 ? 's' : ''}: ${svcs.length ? svcs.join(', ') : '(escolha acima)'}`,
         `• Dia: ${state.day || 'a combinar'}`,
-        `• Horário: ${state.period || 'qualquer um'}`,
+        `• Período: ${state.period || 'qualquer horário'}`,
         name ? `\nMeu nome é ${name}.` : ''
       ].join('\n').trim();
     }
-    function renderMsg() {
-      const n = nowBR(), b = $('#bubbleText');
-      b.textContent = buildMsg();
-      const t = document.createElement('time');
-      t.textContent = `${String(n.getUTCHours()).padStart(2, '0')}:${String(n.getUTCMinutes()).padStart(2, '0')} ✓✓`;
-      b.appendChild(t);
-    }
+    function renderMsg() { $('#previewText').textContent = buildMsg(); }
     renderMsg();
     $('#bookingForm').addEventListener('submit', (e) => {
       e.preventDefault();
-      if (!state.services.size) {
-        $('#formError').textContent = 'Escolhe pelo menos um serviço pra continuar.';
-        if (motion) gsap.fromTo('#svcChips', { x: -10 }, { x: 0, duration: .6, ease: 'elastic.out(1, .3)' });
-        return;
-      }
+      if (!state.services.size) { $('#formError').textContent = 'Escolha pelo menos um serviço para continuar.'; return; }
       window.open(waLink(buildMsg()), '_blank', 'noopener');
     });
 
-    /* ---------- Menu ---------- */
-    const menuBtn = $('#menuBtn');
-    const setMenu = (open) => {
-      document.body.classList.toggle('menu-open', open);
-      menuBtn.setAttribute('aria-expanded', String(open));
-      $('#menu').setAttribute('aria-hidden', String(!open));
+    /* ---------- Header + drawer ---------- */
+    const header = $('#header');
+    const waFloat = $('#waFloat');
+    const onScroll = () => { header.classList.toggle('scrolled', window.scrollY > 60); waFloat.classList.toggle('show', window.scrollY > 420); };
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+    const setDrawer = (open) => {
+      document.body.classList.toggle('drawer-open', open);
+      $('#menuBtn').setAttribute('aria-expanded', String(open));
+      $('#drawer').setAttribute('aria-hidden', String(!open));
       if (window.__lenis) open ? window.__lenis.stop() : window.__lenis.start();
-      if (open && motion) gsap.fromTo('.menu-links a', { yPercent: 110, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 1, ease: 'expo.out', stagger: .06, delay: .15 });
     };
-    menuBtn.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
-    $$('#menu a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+    $('#menuBtn').addEventListener('click', () => setDrawer(true));
+    $('#drawerClose').addEventListener('click', () => setDrawer(false));
+    $('#drawerBg').addEventListener('click', () => setDrawer(false));
+    $$('#drawer a').forEach((a) => a.addEventListener('click', () => setDrawer(false)));
 
-    /* ---------- Mobile CTA ---------- */
-    const mobileCta = $('#mobileCta');
-    let pastHero = true, inBook = false;
-    const updCta = () => mobileCta.classList.toggle('show', pastHero && !inBook);
-    setTimeout(updCta, 4200);
+    // active nav item
+    const navLinks = $$('.nav a');
     if ('IntersectionObserver' in window) {
-      new IntersectionObserver((e) => { inBook = e[0].isIntersecting; updCta(); }, { threshold: .05 }).observe($('#agendar'));
+      const so = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (!en.isIntersecting) return;
+          navLinks.forEach((l) => l.classList.toggle('active', l.getAttribute('href') === '#' + en.target.id));
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      ['inicio', 'sobre', 'servicos', 'espaco', 'avaliacoes', 'agendar', 'contato'].forEach((id) => { const el = document.getElementById(id); if (el) so.observe(el); });
     }
 
-    /* ---------- Without motion: show everything as is ---------- */
-    const loader = $('#loader');
-    if (!motion) {
-      if (loader) loader.remove();
-      Object.assign(window.PEARL, window.innerWidth >= 900 ? { x: .3, y: .34, s: .42 } : { x: -.5, y: -.08, s: .36 });
-      return;
-    }
+    /* ---------- Hero slider ---------- */
+    const slides = $$('#slides .slide'), dots = $$('#heroDots button');
+    let cur = 0, timer = null;
+    const show = (i) => {
+      slides[cur].classList.remove('is-active'); dots[cur].classList.remove('is-active');
+      cur = (i + slides.length) % slides.length;
+      slides[cur].classList.add('is-active'); dots[cur].classList.add('is-active');
+    };
+    const play = () => { if (reduce) return; clearInterval(timer); timer = setInterval(() => show(cur + 1), 6500); };
+    dots.forEach((d, i) => d.addEventListener('click', () => { show(i); play(); }));
+    window.addEventListener('load', () => { $$('#slides img').forEach((img) => { img.loading = 'eager'; }); });
+    play();
 
-    document.documentElement.classList.add('motion');
+    /* ---------- Gallery lightbox ---------- */
+    const tiles = $$('.tile'), lb = $('#lightbox'), lbImg = $('#lbImg'), lbCap = $('#lbCap');
+    let lbIdx = 0;
+    const openLb = (i) => {
+      lbIdx = (i + tiles.length) % tiles.length;
+      const img = $('img', tiles[lbIdx]);
+      lbImg.src = img.currentSrc || img.src; lbImg.alt = img.alt; lbCap.textContent = $('.cap', tiles[lbIdx]).textContent.trim();
+      lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false');
+      if (window.__lenis) window.__lenis.stop();
+      $('#lbClose').focus();
+    };
+    const closeLb = () => { lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); if (window.__lenis) window.__lenis.start(); tiles[lbIdx].focus(); };
+    tiles.forEach((t, i) => t.addEventListener('click', () => openLb(i)));
+    $('#lbClose').addEventListener('click', closeLb);
+    $('#lbPrev').addEventListener('click', () => openLb(lbIdx - 1));
+    $('#lbNext').addEventListener('click', () => openLb(lbIdx + 1));
+    lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { if (lb.classList.contains('open')) closeLb(); setDrawer(false); }
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'ArrowLeft') openLb(lbIdx - 1);
+      if (e.key === 'ArrowRight') openLb(lbIdx + 1);
+    });
+
+    // WhatsApp tooltip peeks once
+
+    /* ---------- Motion (subtle, professional) ---------- */
+    if (reduce || typeof window.gsap === 'undefined' || typeof window.ScrollTrigger === 'undefined') return;
     gsap.registerPlugin(ScrollTrigger);
-    const isDesk = () => window.innerWidth >= 900;
 
-    /* ---------- Smooth scroll ---------- */
-    let lenis = null;
     if (typeof window.Lenis !== 'undefined') {
-      lenis = new Lenis({ lerp: .085 });
+      const lenis = new Lenis({ lerp: .1 });
       window.__lenis = lenis;
-      lenis.on('scroll', (e) => { ScrollTrigger.update(); window.PEARL.vel = e.velocity; });
+      document.documentElement.style.scrollBehavior = 'auto';
+      lenis.on('scroll', ScrollTrigger.update);
       gsap.ticker.add((t) => lenis.raf(t * 1000));
       gsap.ticker.lagSmoothing(0);
-      lenis.stop();
       $$('a[href^="#"]').forEach((a) => a.addEventListener('click', (e) => {
         const id = a.getAttribute('href'); if (id.length < 2) return;
         const target = document.querySelector(id); if (!target) return;
         e.preventDefault();
-        lenis.scrollTo(target, { offset: id === '#top' ? 0 : -20, duration: 1.8 });
+        lenis.scrollTo(id === '#inicio' ? 0 : target, { offset: -70, duration: 1.4 });
       }));
     }
 
-    /* ---------- Nav hide on scroll down ---------- */
-    const nav = $('#nav'); let lastY = 0;
-    const onScrollNav = (y) => {
-      if (document.body.classList.contains('menu-open')) return;
-      nav.classList.toggle('hide', y > 300 && y > lastY + 2);
-      if (y < lastY - 2 || y < 300) nav.classList.remove('hide');
-      lastY = y;
-    };
-    if (lenis) lenis.on('scroll', (e) => onScrollNav(e.scroll)); else window.addEventListener('scroll', () => onScrollNav(scrollY), { passive: true });
+    // hero entrance
+    gsap.from('[data-hero]', { y: 34, opacity: 0, duration: 1.2, ease: 'power3.out', stagger: .12, delay: .15 });
+    gsap.from('.hl-grid', { y: 40, opacity: 0, duration: 1.2, ease: 'power3.out', delay: .6 });
 
-    /* ---------- Pointer → 3D + cursor ---------- */
-    window.addEventListener('pointermove', (e) => {
-      window.PEARL.mx = (e.clientX / innerWidth) * 2 - 1;
-      window.PEARL.my = -((e.clientY / innerHeight) * 2 - 1);
-    }, { passive: true });
-    if (fine) {
-      document.documentElement.classList.add('has-cursor');
-      const cur = $('#cursor'), lbl = cur.querySelector('span');
-      const xTo = gsap.quickTo(cur, 'x', { duration: .45, ease: 'power3' }), yTo = gsap.quickTo(cur, 'y', { duration: .45, ease: 'power3' });
-      window.addEventListener('pointermove', (e) => { xTo(e.clientX); yTo(e.clientY); }, { passive: true });
-      document.addEventListener('pointerover', (e) => {
-        const t = e.target.closest('[data-cursor], a, button, .chip');
-        if (!t) { cur.classList.remove('hover', 'label'); return; }
-        const l = t.dataset.cursor || '';
-        lbl.textContent = l;
-        cur.classList.toggle('label', !!l);
-        cur.classList.toggle('hover', !l);
-      });
-      // magnetic buttons
-      $$('.btn, .sticker, .burger').forEach((b) => {
-        b.addEventListener('pointermove', (e) => {
-          const r = b.getBoundingClientRect();
-          gsap.to(b, { x: (e.clientX - r.left - r.width / 2) * .22, y: (e.clientY - r.top - r.height / 2) * .35, duration: .6, ease: 'power3.out' });
-        });
-        b.addEventListener('pointerleave', () => gsap.to(b, { x: 0, y: 0, duration: 1, ease: 'elastic.out(1, .35)' }));
-      });
-      // 3D tilt on service cards
-      $$('.svc-card').forEach((c) => {
-        const orb = $('.orb3d', c);
-        c.addEventListener('pointermove', (e) => {
-          const r = c.getBoundingClientRect(), px = (e.clientX - r.left) / r.width - .5, py = (e.clientY - r.top) / r.height - .5;
-          gsap.to(c, { rotateY: px * 12, rotateX: -py * 12, transformPerspective: 900, duration: .6, ease: 'power3.out' });
-          gsap.to(orb, { x: px * 40, y: py * 40, duration: .8, ease: 'power3.out' });
-        });
-        c.addEventListener('pointerleave', () => { gsap.to(c, { rotateY: 0, rotateX: 0, duration: 1.2, ease: 'elastic.out(1, .4)' }); gsap.to(orb, { x: 0, y: 0, duration: 1.2, ease: 'elastic.out(1, .4)' }); });
-      });
-    }
-
-    /* ---------- Split helpers ---------- */
-    function splitChars(el) {
-      const txt = el.textContent; el.textContent = '';
-      return [...txt].map((c) => { const s = document.createElement('span'); s.className = 'ch'; s.textContent = c === ' ' ? ' ' : c; el.appendChild(s); return s; });
-    }
-    function splitWords(el, skip) {
-      const walk = (node) => {
-        Array.from(node.childNodes).forEach((child) => {
-          if (child.nodeType === 3) {
-            const frag = document.createDocumentFragment();
-            child.textContent.split(/(\s+)/).forEach((part) => {
-              if (!part) return;
-              if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
-              const w = document.createElement('span'); w.className = 'w';
-              const i = document.createElement('span'); i.className = 'wi'; i.textContent = part;
-              w.appendChild(i); frag.appendChild(w);
-            });
-            node.replaceChild(frag, child);
-          } else if (child.nodeType === 1 && child.tagName !== 'BR' && !(skip && child.matches(skip))) walk(child);
-        });
-      };
-      walk(el);
-      return $$('.wi', el);
-    }
-
-    /* ---------- Hero intro ---------- */
-    const c1 = splitChars($('.ht-1')), c2 = splitChars($('.ht-2'));
-    gsap.set('.arch-img', { clipPath: 'inset(100% 0% 0% 0%)' });
-    gsap.set('.arch-img img', { scale: 1.35 });
-    gsap.set(c1, { yPercent: 105, rotate: 6 });
-    gsap.set(c2, { yPercent: 110, rotate: -8 });
-    gsap.set('[data-hero]', { opacity: 0, y: 30 });
-    let introDone = false, pendingPearl = 'hero';
-    const intro = () => {
-      const tl = gsap.timeline({ defaults: { ease: 'expo.out' }, onComplete: () => { introDone = true; goPearl(pendingPearl); } });
-      tl.to(c1, { yPercent: 0, rotate: 0, duration: 1.6, stagger: .06 })
-        .to(c2, { yPercent: 0, rotate: 0, duration: 1.6, stagger: .045 }, .12)
-        .to('.arch-img', { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.6, ease: 'expo.inOut' }, .05)
-        .to('.arch-img img', { scale: 1, duration: 2.2, ease: 'expo.out' }, .3)
-        .to(window.PEARL, { s: (isDesk() ? .42 : .4), duration: 2.2, ease: 'elastic.out(1, .55)' }, .6)
-        .to('[data-hero]', { opacity: 1, y: 0, duration: 1.3, stagger: .1 }, .5)
-        .add(() => lenis && lenis.start(), .6);
-    };
-
-    /* ---------- Loader ---------- */
-    const counter = { v: 0 };
-    gsap.set(loader, { clipPath: 'inset(0% 0% 0% 0%)' });
-    const ltl = gsap.timeline();
-    ltl.to(counter, { v: 100, duration: 1.9, ease: 'power2.inOut', onUpdate: () => { $('#ldNum').textContent = Math.round(counter.v); } })
-      .to('#ldPearl', { scale: 1, opacity: 1, duration: 1.9, ease: 'power2.inOut' }, 0)
-      .to('#ldPearl', { scale: 14, opacity: 0, duration: .9, ease: 'expo.in' })
-      .to(loader, { clipPath: 'inset(0 0 100% 0)', duration: 1, ease: 'expo.inOut' }, '-=.45')
-      .add(intro, '-=.65')
-      .add(() => loader.remove());
-    setTimeout(() => { if (document.body.contains(loader)) { loader.remove(); intro(); } }, 7000);
-
-    // hero parallax on scroll
-    gsap.to('.ht-1', { xPercent: -10, ease: 'none', scrollTrigger: { trigger: '#top', start: 'top top', end: 'bottom top', scrub: true } });
-    gsap.to('.ht-2', { xPercent: 10, ease: 'none', scrollTrigger: { trigger: '#top', start: 'top top', end: 'bottom top', scrub: true } });
-    gsap.to('.arch-img img', { yPercent: 8, ease: 'none', scrollTrigger: { trigger: '#top', start: 'top top', end: 'bottom top', scrub: true } });
-
-    /* ---------- Reveal: the salon opens up to full screen ---------- */
-    const rvTl = gsap.timeline({ scrollTrigger: { trigger: '#espaco', start: 'top top', end: () => '+=' + Math.round(window.innerHeight * (isDesk() ? 1.3 : .9)), pin: true, scrub: 1, invalidateOnRefresh: true } });
-    rvTl.fromTo('.rv-frame', { clipPath: () => isDesk() ? 'inset(20% 32% 20% 32% round 320px 320px 32px 32px)' : 'inset(18% 12% 18% 12% round 200px 200px 28px 28px)' },
-                             { clipPath: 'inset(0% 0% 0% 0% round 0px 0px 0px 0px)', ease: 'power2.inOut', duration: 1 })
-        .fromTo('.rv-frame img', { scale: 1.45 }, { scale: 1, ease: 'power2.out', duration: 1 }, 0)
-        .fromTo('.rv-text > *', { y: 60, opacity: 0 }, { y: 0, opacity: 1, stagger: .08, duration: .45, ease: 'power3.out' }, .6);
-
-    /* ---------- Gallery: curtain reveal + parallax ---------- */
-    $$('.g').forEach((g) => {
-      const box = $('.g-img', g), img = $('img', g);
-      gsap.fromTo(box, { clipPath: 'inset(100% 0% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.5, ease: 'expo.inOut', scrollTrigger: { trigger: g, start: 'top 88%' } });
-      gsap.fromTo(img, { scale: 1.35 }, { scale: 1, duration: 2, ease: 'expo.out', scrollTrigger: { trigger: g, start: 'top 88%' } });
-      if (isDesk()) gsap.to(g, { yPercent: +g.dataset.speed || 0, ease: 'none', scrollTrigger: { trigger: g, start: 'top bottom', end: 'bottom top', scrub: true } });
+    // reveals
+    $$('[data-anim]').forEach((el) => {
+      gsap.from(el, { y: 36, opacity: 0, duration: 1.1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
+    });
+    $$('[data-stagger]').forEach((wrap) => {
+      gsap.from(wrap.children, { y: 40, opacity: 0, duration: 1, ease: 'power3.out', stagger: .08, scrollTrigger: { trigger: wrap, start: 'top 86%', once: true } });
     });
 
-    /* ---------- Titles & reveals ---------- */
-    $$('[data-split]').forEach((el) => {
-      const w = splitWords(el);
-      gsap.from(w, { yPercent: 120, rotate: 5, duration: 1.4, ease: 'expo.out', stagger: .06, scrollTrigger: { trigger: el, start: 'top 86%' } });
+    // gentle parallax on photos
+    $$('[data-parallax]').forEach((img) => {
+      const amt = +img.dataset.parallax || 6;
+      gsap.fromTo(img, { yPercent: -amt, scale: 1.14 }, { yPercent: amt, scale: 1.14, ease: 'none', scrollTrigger: { trigger: img.parentElement, start: 'top bottom', end: 'bottom top', scrub: true } });
     });
-    $$('[data-reveal]').forEach((el) => {
-      gsap.from(el, { y: 50, opacity: 0, duration: 1.3, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 90%' } });
-    });
-
-    // statement: words light up + pills grow
-    const st = $('#statement');
-    const sw = splitWords(st, '.pill');
-    gsap.fromTo(sw, { opacity: .12 }, { opacity: 1, ease: 'none', stagger: .1, scrollTrigger: { trigger: st, start: 'top 78%', end: 'bottom 50%', scrub: true } });
-    $$('.pill', st).forEach((p) => gsap.from(p, { width: 0, marginLeft: 0, marginRight: 0, duration: 1.4, ease: 'expo.out', scrollTrigger: { trigger: p, start: 'top 82%' } }));
 
     // counters
     $$('[data-count]').forEach((el) => {
-      const end = +el.dataset.count, from = +(el.dataset.from || 0), o = { v: from };
-      el.textContent = from;
-      gsap.to(o, { v: end, duration: 2.2, ease: 'power3.out', onUpdate: () => { el.textContent = Math.round(o.v); }, scrollTrigger: { trigger: el, start: 'top 90%' } });
+      const end = +el.dataset.count, dec = +(el.dataset.dec || 0), o = { v: 0 };
+      const fmt = (v) => dec ? v.toFixed(dec).replace('.', ',') : String(Math.round(v));
+      ScrollTrigger.create({ trigger: el, start: 'top 90%', once: true, onEnter: () => {
+        gsap.fromTo(o, { v: 0 }, { v: end, duration: 1.8, ease: 'power2.out', onUpdate: () => { el.textContent = fmt(o.v); } });
+      } });
     });
-
-    /* ---------- Marquee rows driven by scroll velocity ---------- */
-    const mqTweens = $$('.mq-track').map((tr, i) => {
-      tr.innerHTML += tr.innerHTML;
-      return i % 2 === 0
-        ? gsap.to(tr, { xPercent: -50, duration: 26, ease: 'none', repeat: -1 })
-        : gsap.fromTo(tr, { xPercent: -50 }, { xPercent: 0, duration: 26, ease: 'none', repeat: -1 });
-    });
-    let mqDir = 1;
-    gsap.ticker.add(() => {
-      const v = window.PEARL.vel || 0;
-      if (v > .5) mqDir = 1; else if (v < -.5) mqDir = -1;
-      const target = mqDir * (1 + Math.min(Math.abs(v) / 6, 6));
-      mqTweens.forEach((t) => t.timeScale(t.timeScale() + (target - t.timeScale()) * .08));
-      window.PEARL.vel *= .92;
-    });
-
-    /* ---------- Horizontal services ---------- */
-    const mm = gsap.matchMedia();
-    mm.add('(min-width: 900px)', () => {
-      const track = $('#hsTrack');
-      const dist = () => track.scrollWidth - window.innerWidth;
-      const cards = $$('.svc-card');
-      const tw = gsap.to(track, {
-        x: () => -dist(), ease: 'none',
-        scrollTrigger: {
-          trigger: '#servicos', start: 'top top', end: () => '+=' + dist(), pin: true, scrub: 1, invalidateOnRefresh: true, anticipatePin: 1,
-          onUpdate: (self) => {
-            $('#hsBar').style.transform = `scaleX(${self.progress})`;
-            const idx = Math.min(6, Math.max(1, Math.round(self.progress * 6.4)));
-            $('#hsNow').textContent = String(idx).padStart(2, '0');
-            gsap.to(track, { skewX: gsap.utils.clamp(-6, 6, self.getVelocity() / -400), duration: .5, ease: 'power3.out', overwrite: 'auto' });
-          }
-        }
-      });
-      cards.forEach((c) => {
-        gsap.fromTo($('.orb3d', c), { xPercent: 30, rotate: 25 }, { xPercent: -30, rotate: -25, ease: 'none', scrollTrigger: { trigger: c, containerAnimation: tw, start: 'left right', end: 'right left', scrub: true } });
-        gsap.from(c, { y: 80, rotate: 4, opacity: .2, ease: 'none', scrollTrigger: { trigger: c, containerAnimation: tw, start: 'left 105%', end: 'left 65%', scrub: true } });
-      });
-      return () => gsap.set(track, { clearProps: 'all' });
-    });
-
-    /* ---------- Stacking cards ---------- */
-    const stack = $$('.stack-card');
-    stack.forEach((c, i) => {
-      if (i === stack.length - 1) return;
-      gsap.fromTo(c, { scale: 1, rotateX: 0, filter: 'brightness(1)' }, { scale: .9, rotateX: 4, transformPerspective: 1400, filter: 'brightness(.8)', ease: 'none',
-        scrollTrigger: { trigger: stack[i + 1], start: 'top 75%', end: 'top 20%', scrub: true } });
-    });
-    gsap.fromTo('.sc-photo img', { yPercent: -8, scale: 1.1 }, { yPercent: 8, scale: 1, ease: 'none', scrollTrigger: { trigger: '.sc-1', start: 'top bottom', end: 'bottom top', scrub: true } });
-
-    /* ---------- Rating ---------- */
-    gsap.set('.rate-stars span', { scale: 0, rotate: -120 });
-    ScrollTrigger.create({
-      trigger: '.odo', start: 'top 80%', once: true,
-      onEnter: () => {
-        $$('.odo-col').forEach((col, i) => {
-          const d = +col.dataset.digit;
-          gsap.fromTo($('.odo-strip', col), { yPercent: 0 }, { yPercent: -(10 + d) * 5, duration: 2.6, delay: i * .25, ease: 'expo.out' });
-        });
-        gsap.to('.rate-stars span', { scale: 1, rotate: 0, duration: 1.2, stagger: .1, delay: .6, ease: 'elastic.out(1, .4)' });
-      }
-    });
-
-    /* ---------- Ocean word ---------- */
-    const ow = splitChars($('#oceanWord'));
-    gsap.from(ow, { yPercent: 120, rotate: 12, opacity: 0, duration: 1.6, ease: 'expo.out', stagger: .05, scrollTrigger: { trigger: '#oceanWrap', start: 'top 80%' } });
-    ScrollTrigger.create({ trigger: '#oceanWrap', start: 'top bottom', end: 'bottom top', onToggle: (s) => { window.PEARL.ocean = s.isActive ? 1 : 0; } });
-
-    /* ---------- Section themes + pearl choreography ---------- */
-    const THEMES = {
-      light: { '--bg': '#F7F2EB', '--fg': '#14101A', '--muted': 'rgba(20,16,26,0.62)', '--line': 'rgba(20,16,26,0.14)', '--accent': '#9C5B33' },
-      dark:  { '--bg': '#0E2A38', '--fg': '#F7F2EB', '--muted': 'rgba(251,244,236,0.64)', '--line': 'rgba(251,244,236,0.16)', '--accent': '#E8C98F' },
-      gold:  { '--bg': '#D4AA60', '--fg': '#14101A', '--muted': 'rgba(20,16,26,0.72)', '--line': 'rgba(20,16,26,0.22)', '--accent': '#0E2A38' }
-    };
-    const PSTATES = {
-      hero:     { d: { x: .3, y: .34, s: .42, distort: .2, color: '#F0D3A6' },  m: { x: -.5, y: -.08, s: .36, distort: .2, color: '#F0D3A6' } },
-      reveal:   { d: { x: 0, y: 0, s: 0, distort: .2, color: '#F0D3A6' },     m: { x: 0, y: 0, s: 0, distort: .2, color: '#F0D3A6' } },
-      gallery:  { d: { x: .84, y: .7, s: .3, distort: .26, color: '#F6E6CC' },  m: { x: .7, y: .82, s: .26, distort: .26, color: '#F6E6CC' } },
-      intro:    { d: { x: .68, y: -.34, s: .5, distort: .26, color: '#F6E6CC' }, m: { x: .55, y: .7, s: .45, distort: .26, color: '#F6E6CC' } },
-      services: { d: { x: .62, y: -.5, s: .62, distort: .25, color: '#D8E9F0' },  m: { x: .55, y: .72, s: .4, distort: .25, color: '#D8E9F0' } },
-      exp:      { d: { x: .82, y: .66, s: .34, distort: .31, color: '#EBD7BC' },  m: { x: .6, y: .82, s: .28, distort: .31, color: '#EBD7BC' } },
-      rate:     { d: { x: 0, y: -.02, s: 1.08, distort: .29, color: '#FFF6E8' }, m: { x: 0, y: .02, s: 1, distort: .29, color: '#FFF6E8' } },
-      book:     { d: { x: -.86, y: -.66, s: .3, distort: .22, color: '#F3DDB8' }, m: { x: -.7, y: -.85, s: 0, distort: .22, color: '#F3DDB8' } },
-      visit:    { d: { x: 0, y: -.6, s: 0, distort: .19, color: '#D8E9F0' },     m: { x: 0, y: -.6, s: 0, distort: .19, color: '#D8E9F0' } }
-    };
-    function goPearl(key) {
-      pendingPearl = key;
-      if (!introDone) return;
-      const st = PSTATES[key]; if (!st) return;
-      const t = isDesk() ? st.d : st.m;
-      window.PEARL.color = t.color;
-      gsap.to(window.PEARL, { x: t.x, y: t.y, distort: t.distort, duration: 1.8, ease: 'expo.inOut', overwrite: 'auto' });
-      gsap.to(window.PEARL, { s: t.s, duration: 1.6, ease: t.s > window.PEARL.s ? 'back.out(1.6)' : 'expo.inOut' });
-    }
-    let current = -1;
-    const secs = $$('main section[data-theme]');
-    const meta = document.querySelector('meta[name="theme-color"]');
-    function activate(i) {
-      if (i < 0 || i === current) return;
-      current = i;
-      const sec = secs[i];
-      gsap.to(document.documentElement, { ...THEMES[sec.dataset.theme], duration: .9, ease: 'power2.out', overwrite: 'auto' });
-      meta.setAttribute('content', THEMES[sec.dataset.theme]['--bg']);
-      goPearl(sec.dataset.pearl);
-    }
-    secs.forEach((sec, i) => ScrollTrigger.create({ trigger: sec, start: 'top 55%', onEnter: () => activate(i), onLeaveBack: () => activate(Math.max(0, i - 1)) }));
-    activate(0);
 
     window.addEventListener('load', () => ScrollTrigger.refresh());
   })();
-  </script>
-
-  <!-- ───────── 3D: pearl + ocean (three.js) ───────── -->
-  <script type="importmap">
-  { "imports": {
-      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
-  } }
-  </script>
-  <script type="module">
-    import * as THREE from 'three';
-    import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-
-    const P = window.PEARL || (window.PEARL = { x: .16, y: 0, s: 1, distort: .19, color: '#F3DDB8', vel: 0, mx: 0, my: 0, ocean: 0 });
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const mobile = window.innerWidth < 760;
-
-    const NOISE = `
-      vec3 mod289(vec3 x){return x-floor(x*(1.0/289.0))*289.0;}
-      vec4 mod289(vec4 x){return x-floor(x*(1.0/289.0))*289.0;}
-      vec4 permute(vec4 x){return mod289(((x*34.0)+1.0)*x);}
-      vec4 taylorInvSqrt(vec4 r){return 1.79284291400159-0.85373472095314*r;}
-      float snoise(vec3 v){
-        const vec2 C=vec2(1.0/6.0,1.0/3.0); const vec4 D=vec4(0.0,0.5,1.0,2.0);
-        vec3 i=floor(v+dot(v,C.yyy)); vec3 x0=v-i+dot(i,C.xxx);
-        vec3 g=step(x0.yzx,x0.xyz); vec3 l=1.0-g; vec3 i1=min(g.xyz,l.zxy); vec3 i2=max(g.xyz,l.zxy);
-        vec3 x1=x0-i1+C.xxx; vec3 x2=x0-i2+C.yyy; vec3 x3=x0-D.yyy;
-        i=mod289(i);
-        vec4 p=permute(permute(permute(i.z+vec4(0.0,i1.z,i2.z,1.0))+i.y+vec4(0.0,i1.y,i2.y,1.0))+i.x+vec4(0.0,i1.x,i2.x,1.0));
-        float n_=0.142857142857; vec3 ns=n_*D.wyz-D.xzx;
-        vec4 j=p-49.0*floor(p*ns.z*ns.z); vec4 x_=floor(j*ns.z); vec4 y_=floor(j-7.0*x_);
-        vec4 x=x_*ns.x+ns.yyyy; vec4 y=y_*ns.x+ns.yyyy; vec4 h=1.0-abs(x)-abs(y);
-        vec4 b0=vec4(x.xy,y.xy); vec4 b1=vec4(x.zw,y.zw);
-        vec4 s0=floor(b0)*2.0+1.0; vec4 s1=floor(b1)*2.0+1.0; vec4 sh=-step(h,vec4(0.0));
-        vec4 a0=b0.xzyw+s0.xzyw*sh.xxyy; vec4 a1=b1.xzyw+s1.xzyw*sh.zzww;
-        vec3 p0=vec3(a0.xy,h.x); vec3 p1=vec3(a0.zw,h.y); vec3 p2=vec3(a1.xy,h.z); vec3 p3=vec3(a1.zw,h.w);
-        vec4 norm=taylorInvSqrt(vec4(dot(p0,p0),dot(p1,p1),dot(p2,p2),dot(p3,p3)));
-        p0*=norm.x; p1*=norm.y; p2*=norm.z; p3*=norm.w;
-        vec4 m=max(0.6-vec4(dot(x0,x0),dot(x1,x1),dot(x2,x2),dot(x3,x3)),0.0); m=m*m;
-        return 42.0*dot(m*m,vec4(dot(p0,x0),dot(p1,x1),dot(p2,x2),dot(p3,x3)));
-      }`;
-
-    /* ================= Pearl ================= */
-    (function pearl() {
-      const canvas = document.getElementById('gl');
-      let renderer;
-      try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' }); }
-      catch (e) { canvas.remove(); return; }
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, mobile ? 1.5 : 1.75));
-      renderer.toneMapping = THREE.ACESFilmicToneMapping;
-      renderer.toneMappingExposure = 1.05;
-      renderer.outputColorSpace = THREE.SRGBColorSpace;
-
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(35, 1, .1, 100);
-      camera.position.set(0, 0, 8);
-      const pmrem = new THREE.PMREMGenerator(renderer);
-      scene.environment = pmrem.fromScene(new RoomEnvironment(renderer), .04).texture;
-
-      const key = new THREE.DirectionalLight(0xffffff, 1.4); key.position.set(3, 4, 5); scene.add(key);
-      const rim = new THREE.DirectionalLight(0xd4aa60, 2.2); rim.position.set(-4, -2, -1); scene.add(rim);
-      const fill = new THREE.DirectionalLight(0x8fc3d6, 1.1); fill.position.set(4, -3, 2); scene.add(fill);
-
-      const uniforms = { uTime: { value: 0 }, uDistort: { value: .3 }, uFreq: { value: .78 }, uSpeed: { value: .28 }, uRadius: { value: 1.35 }, uMouse: { value: new THREE.Vector3(0, 0, 1) }, uPull: { value: 0 } };
-      const mat = new THREE.MeshPhysicalMaterial({
-        color: new THREE.Color(P.color), roughness: .14, metalness: .18, clearcoat: 1, clearcoatRoughness: .05,
-        iridescence: 1, iridescenceIOR: 1.6, iridescenceThicknessRange: [120, 520], sheen: .5, sheenColor: new THREE.Color('#E8D3A8'), envMapIntensity: .95
-      });
-      mat.onBeforeCompile = (shader) => {
-        Object.assign(shader.uniforms, uniforms);
-        shader.vertexShader = shader.vertexShader
-          .replace('#include <common>', `#include <common>
-            uniform float uTime; uniform float uDistort; uniform float uFreq; uniform float uSpeed; uniform float uRadius; uniform vec3 uMouse; uniform float uPull;
-            ${NOISE}
-            vec3 dispPos(vec3 n){
-              float d = snoise(n * uFreq + vec3(uTime * uSpeed, 0.0, uTime * uSpeed * .6)) * .88
-                      + snoise(n * uFreq * 1.9 - vec3(0.0, uTime * uSpeed * 1.3, 0.0)) * .12;
-              float pull = uPull * pow(max(dot(n, uMouse), 0.0), 4.0);
-              return n * (uRadius + d * uDistort + pull);
-            }`)
-          .replace('#include <beginnormal_vertex>', `
-            vec3 _n = normalize(position);
-            vec3 _t = normalize(abs(_n.y) < .99 ? cross(_n, vec3(0.0, 1.0, 0.0)) : cross(_n, vec3(1.0, 0.0, 0.0)));
-            vec3 _b = normalize(cross(_n, _t));
-            vec3 _p0 = dispPos(_n);
-            vec3 _p1 = dispPos(normalize(_n + _t * .012));
-            vec3 _p2 = dispPos(normalize(_n + _b * .012));
-            vec3 objectNormal = normalize(cross(_p1 - _p0, _p2 - _p0));
-            #ifdef USE_TANGENT
-              vec3 objectTangent = vec3(tangent.xyz);
-            #endif`)
-          .replace('#include <begin_vertex>', 'vec3 transformed = _p0;');
-      };
-      const seg = mobile ? 120 : 180;
-      const blob = new THREE.Mesh(new THREE.SphereGeometry(1, seg, seg), mat);
-      const group = new THREE.Group();
-      group.add(blob);
-      scene.add(group);
-
-      // small floating pearls
-      const pearlMat = new THREE.MeshPhysicalMaterial({ color: 0xfff4e4, roughness: .14, metalness: .05, clearcoat: 1, iridescence: 1, iridescenceIOR: 1.4, iridescenceThicknessRange: [200, 700], envMapIntensity: 1.3 });
-      const small = [];
-      const sGeo = new THREE.SphereGeometry(1, 32, 32);
-      const count = mobile ? 6 : 10;
-      for (let i = 0; i < count; i++) {
-        const m = new THREE.Mesh(sGeo, pearlMat);
-        const r = .045 + Math.random() * .09;
-        m.scale.setScalar(r);
-        m.userData = { a: Math.random() * Math.PI * 2, rad: 2.1 + Math.random() * 1.2, h: (Math.random() - .5) * 2.4, sp: (.08 + Math.random() * .16) * (Math.random() < .5 ? -1 : 1), bob: Math.random() * 6 };
-        group.add(m); small.push(m);
-      }
-
-      let W = 0, H = 0, halfW = 1, halfH = 1, base = 1;
-      const resize = () => {
-        const w = window.innerWidth, h = window.innerHeight;
-        if (Math.abs(w - W) < 2 && Math.abs(h - H) < 140 && W) return;
-        W = w; H = h;
-        renderer.setSize(W, H, false);
-        camera.aspect = W / H; camera.updateProjectionMatrix();
-        halfH = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * camera.position.z;
-        halfW = halfH * camera.aspect;
-        base = Math.min(1, (halfW * .86) / 1.6);
-      };
-      resize();
-      window.addEventListener('resize', resize);
-
-      const target = new THREE.Color(P.color);
-      const mouse = new THREE.Vector2();
-      const clock = new THREE.Clock();
-      let t = 0, rotY = 0;
-      function frame() {
-        const dt = Math.min(clock.getDelta(), .05);
-        t += reduce ? 0 : dt;
-        mouse.x += ((P.mx || 0) - mouse.x) * .05;
-        mouse.y += ((P.my || 0) - mouse.y) * .05;
-        const vel = Math.min(Math.abs(P.vel || 0) / 60, .25);
-        uniforms.uTime.value = t;
-        uniforms.uDistort.value += ((P.distort + vel) - uniforms.uDistort.value) * .08;
-        uniforms.uPull.value += ((.25 * Math.min(1, Math.hypot(mouse.x, mouse.y))) - uniforms.uPull.value) * .05;
-        uniforms.uMouse.value.set(mouse.x, mouse.y, .7).normalize();
-        target.set(P.color); mat.color.lerp(target, .04);
-
-        const s = Math.max(P.s, 0) * base;
-        group.visible = s > .004;
-        group.scale.setScalar(Math.max(s, .0001));
-        group.position.set(P.x * halfW + mouse.x * .18, P.y * halfH + mouse.y * .12, 0);
-        rotY += dt * .12;
-        blob.rotation.set(-mouse.y * .35, rotY + mouse.x * .5, 0);
-        small.forEach((m) => {
-          const u = m.userData; u.a += u.sp * dt;
-          m.position.set(Math.cos(u.a) * u.rad + mouse.x * .3, u.h + Math.sin(t * .8 + u.bob) * .18 + mouse.y * .2, Math.sin(u.a) * u.rad * .6);
-        });
-        if (group.visible && !document.hidden) renderer.render(scene, camera);
-        else if (!group.visible) renderer.clear();
-        requestAnimationFrame(frame);
-      }
-      requestAnimationFrame(frame);
-    })();
-
-    /* ================= Ocean of particles ================= */
-    (function ocean() {
-      const canvas = document.getElementById('ocean');
-      if (!canvas) return;
-      let renderer;
-      try { renderer = new THREE.WebGLRenderer({ canvas, antialias: false, alpha: true }); } catch (e) { return; }
-      const pr = Math.min(window.devicePixelRatio || 1, 1.5);
-      renderer.setPixelRatio(pr);
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(45, 1, .1, 100);
-      camera.position.set(0, 2.6, 7); camera.lookAt(0, 0, -3);
-      const COLS = mobile ? 80 : 170, ROWS = mobile ? 46 : 72, SP = .16;
-      const pos = new Float32Array(COLS * ROWS * 3), rnd = new Float32Array(COLS * ROWS);
-      let k = 0;
-      for (let j = 0; j < ROWS; j++) for (let i = 0; i < COLS; i++) {
-        pos[k * 3] = (i - COLS / 2) * SP; pos[k * 3 + 1] = 0; pos[k * 3 + 2] = -j * SP * 1.2 + 2; rnd[k] = Math.random(); k++;
-      }
-      const geo = new THREE.BufferGeometry();
-      geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-      geo.setAttribute('aRand', new THREE.BufferAttribute(rnd, 1));
-      const u = { uTime: { value: 0 }, uMouse: { value: new THREE.Vector2(0, 0) }, uPR: { value: pr } };
-      const mat = new THREE.ShaderMaterial({
-        uniforms: u, transparent: true, depthWrite: false,
-        vertexShader: `
-          uniform float uTime; uniform vec2 uMouse; uniform float uPR; attribute float aRand;
-          varying float vH; varying float vD;
-          void main(){
-            vec3 p = position;
-            float w = sin(p.x * .55 + uTime * .9) * .32 + sin(p.z * .8 + uTime * 1.25) * .22 + sin((p.x + p.z) * .32 + uTime * .55) * .3;
-            float d = distance(p.xz, uMouse);
-            w += exp(-d * d * .35) * .55 * sin(d * 3.2 - uTime * 4.0);
-            p.y += w; vH = w;
-            vec4 mv = modelViewMatrix * vec4(p, 1.0);
-            gl_Position = projectionMatrix * mv;
-            gl_PointSize = (1.6 + aRand * 1.8) * uPR * (9.0 / -mv.z);
-            vD = clamp((-mv.z - 3.0) / 14.0, 0.0, 1.0);
-          }`,
-        fragmentShader: `
-          varying float vH; varying float vD;
-          void main(){
-            float r = length(gl_PointCoord - .5);
-            if (r > .5) discard;
-            vec3 gold = vec3(.86, .69, .40), sea = vec3(.56, .76, .84), cream = vec3(.98, .96, .93);
-            vec3 c = mix(gold, sea, vD);
-            c = mix(c, cream, smoothstep(.15, .7, vH));
-            gl_FragColor = vec4(c, (1.0 - smoothstep(.25, .5, r)) * (1.0 - vD * .8));
-          }`
-      });
-      scene.add(new THREE.Points(geo, mat));
-      const resize = () => {
-        const w = canvas.clientWidth, h = canvas.clientHeight;
-        renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
-      };
-      resize(); window.addEventListener('resize', resize);
-      let visible = false;
-      new IntersectionObserver((e) => { visible = e[0].isIntersecting; }, { rootMargin: '100px' }).observe(canvas);
-      const m = new THREE.Vector2();
-      const clock = new THREE.Clock();
-      function frame() {
-        const dt = Math.min(clock.getDelta(), .05);
-        if (visible && !document.hidden) {
-          u.uTime.value += reduce ? 0 : dt;
-          m.x += ((P.mx || 0) * 9 - m.x) * .06;
-          m.y += (-1 - (P.my || 0) * 4 - m.y) * .06;
-          u.uMouse.value.copy(m);
-          renderer.render(scene, camera);
-        }
-        requestAnimationFrame(frame);
-      }
-      requestAnimationFrame(frame);
-    })();
   </script>
 </body>
 </html>
