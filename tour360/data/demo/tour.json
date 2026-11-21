@@ -1,0 +1,30 @@
+{
+  "titulo": "Apartamento decorado",
+  "subtitulo": "Exemplo · 2 dormitórios · 92 m² · 11º andar",
+  "endereco": "Tour de demonstração gerado em 3D",
+  "corretor": { "nome": "Seu Nome · Corretor", "whatsapp": "5511999999999" },
+  "alturaCamera": 1.5,
+  "inicio": "p1",
+  "comodos": [
+    { "id": "sala", "nome": "Sala e cozinha", "x0": 0, "z0": 0, "x1": 9, "z1": 7, "altura": 2.7 },
+    { "id": "corredor", "nome": "Corredor", "x0": 5.6, "z0": 7, "x1": 7, "z1": 10.5, "altura": 2.7 },
+    { "id": "suite", "nome": "Suíte", "x0": 0, "z0": 7, "x1": 5.6, "z1": 11, "altura": 2.7 },
+    { "id": "banho", "nome": "Banheiro", "x0": 7, "z0": 7, "x1": 9, "z1": 10.5, "altura": 2.7 },
+    { "id": "varanda", "nome": "Varanda", "x0": 1, "z0": -2, "x1": 8, "z1": 0, "altura": 2.7, "aberto": true }
+  ],
+  "pontos": [
+    { "id": "p1", "nome": "Sala", "img": "p1.jpg", "x": 6.4, "z": 2.6, "rumo": 0, "links": ["p2", "p3", "p4"] },
+    { "id": "p2", "nome": "Cozinha e jantar", "img": "p2.jpg", "x": 4.0, "z": 4.0, "rumo": 0, "links": ["p1", "p3", "p4"] },
+    { "id": "p3", "nome": "Varanda", "img": "p3.jpg", "x": 4.6, "z": -1.0, "rumo": 0, "links": ["p1", "p2"] },
+    { "id": "p4", "nome": "Corredor", "img": "p4.jpg", "x": 6.3, "z": 8.6, "rumo": 0, "links": ["p1", "p2", "p5", "p6"] },
+    { "id": "p5", "nome": "Suíte", "img": "p5.jpg", "x": 4.3, "z": 8.25, "rumo": 0, "links": ["p4"] },
+    { "id": "p6", "nome": "Banheiro", "img": "p6.jpg", "x": 8.0, "z": 9.3, "rumo": 0, "links": ["p4"] }
+  ],
+  "tags": [
+    { "titulo": "Cozinha com ilha", "texto": "Bancada em quartzo branco, cooktop por indução e coluna de forno embutido.", "x": 2.3, "y": 1.1, "z": 5.4 },
+    { "titulo": "Porta de correr do piso ao teto", "texto": "Vão de 8 metros com vidro laminado e integração total com a varanda.", "x": 4.5, "y": 1.4, "z": 0.05 },
+    { "titulo": "Painel de TV em madeira", "texto": "Marcenaria sob medida com nicho para soundbar.", "x": 8.85, "y": 1.5, "z": 3.2 },
+    { "titulo": "Guarda-roupa planejado", "texto": "3,6 m de armários com portas em laca e iluminação interna.", "x": 2.6, "y": 1.3, "z": 7.65 },
+    { "titulo": "Vista livre", "texto": "Varanda voltada para o nascente, sem prédios na frente até o horizonte.", "x": 4.5, "y": 1.2, "z": -1.95 }
+  ]
+}

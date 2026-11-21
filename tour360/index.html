@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <title>Tour 360°</title>
+  <meta name="tour" content="data/demo/tour.json">
+  <meta name="theme-color" content="#1a1d22">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tour.css">
+  <style>html, body { margin: 0; height: 100%; background: #1a1d22; overflow: hidden; } #tour { position: fixed; inset: 0; }</style>
+  <script type="importmap">{ "imports": { "three": "./vendor/three/three.module.min.js" } }</script>
+</head>
+<body>
+  <div id="tour"></div>
+  <script type="module">
+    import { createViewer } from './js/viewer.js';
+    const el = document.getElementById('tour');
+    const url = new URLSearchParams(location.search).get('tour') || document.querySelector('meta[name="tour"]').content;
+    try {
+      const tour = await (await fetch(url)).json();
+      document.title = (tour.titulo || 'Tour') + ' · Tour 360°';
+      window.viewer = createViewer(el, tour, { base: url.replace(/[^/]*$/, '') });
+    } catch (e) {
+      el.innerHTML = '<p style="color:#ddd;font:14px system-ui;padding:24px">Não foi possível carregar o tour: ' + e.message + '</p>';
+    }
+  </script>
+</body>
+</html>

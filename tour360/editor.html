@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editor de Tour 360°</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tour.css">
+  <link rel="stylesheet" href="css/editor.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script type="importmap">{ "imports": { "three": "./vendor/three/three.module.min.js" } }</script>
+</head>
+<body>
+  <header class="ed-top">
+    <div class="ed-brand"><b>Tour 360°</b><span>Editor</span></div>
+    <input id="tTitulo" class="ed-title" placeholder="Nome do imóvel (ex.: Apto 1203 · Moema)">
+    <div class="ed-actions">
+      <button id="btnExemplo" class="ed-ghost">Abrir exemplo</button>
+      <button id="btnNovo" class="ed-ghost">Novo</button>
+      <button id="btnVer" class="ed-ghost">Testar em tela cheia</button>
+      <button id="btnExport" class="ed-primary">Publicar…</button>
+    </div>
+  </header>
+
+  <main class="ed-main">
+    <!-- Coluna esquerda -->
+    <aside class="ed-side">
+      <section>
+        <h3><i>1</i>Fotos 360°</h3>
+        <label class="ed-drop" id="drop">
+          <input type="file" id="files" accept="image/*" multiple hidden>
+          <b>Escolher fotos 360°</b><span>ou arraste aqui. Uma foto por ponto do imóvel.</span>
+        </label>
+        <ul class="ed-points" id="pontos"></ul>
+      </section>
+      <section id="secPonto" hidden>
+        <h3>Ponto selecionado</h3>
+        <label>Nome<input id="pNome"></label>
+        <label>Direção da foto (rumo) <output id="pRumoV">0°</output><input type="range" id="pRumo" min="0" max="359" step="1"></label>
+        <button class="ed-ghost wide" id="btnAlinhar">Alinhar com a planta</button>
+        <p class="ed-help" id="alinharHelp" hidden>Na prévia à direita, deixe a porta (ou outra referência) no centro da tela. Depois clique na planta onde fica essa porta.</p>
+        <label class="ed-check"><input type="checkbox" id="pInicio"> Começar o tour por aqui</label>
+        <button class="ed-danger" id="btnDelPonto">Remover ponto</button>
+      </section>
+      <section>
+        <h3><i>2</i>Cômodos</h3>
+        <p class="ed-help">Clique em <b>Desenhar cômodo</b> e arraste na planta. Os cômodos dão profundidade à caminhada e formam a casa de bonecas 3D.</p>
+        <button class="ed-ghost wide" id="btnDesenhar">▭ Desenhar cômodo</button>
+        <ul class="ed-rooms" id="comodos"></ul>
+      </section>
+      <section>
+        <h3><i>3</i>Informações</h3>
+        <label>Descrição curta<input id="tSub" placeholder="3 dorm. · 120 m² · 12º andar"></label>
+        <label>Seu nome<input id="tCorretor" placeholder="Nome · Corretor"></label>
+        <label>WhatsApp (55 + DDD + número)<input id="tWhats" inputmode="numeric" placeholder="5511999999999"></label>
+        <label>Altura da câmera (m)<input id="tAltura" type="number" step="0.05" min="0.8" max="2.2" value="1.5"></label>
+      </section>
+      <section>
+        <h3><i>4</i>Marcadores</h3>
+        <button class="ed-ghost wide" id="btnTag">＋ Adicionar marcador na prévia</button>
+        <ul class="ed-tags" id="tags"></ul>
+      </section>
+    </aside>
+
+    <!-- Planta -->
+    <section class="ed-plan">
+      <canvas id="plan"></canvas>
+      <div class="ed-plan-hint" id="planHint">Arraste os pontos para a posição real de cada foto. Gire a seta para indicar para onde a câmera apontava.</div>
+      <div class="ed-zoom"><button id="zMais">＋</button><button id="zMenos">−</button><button id="zFit">⤢</button></div>
+    </section>
+
+    <!-- Prévia -->
+    <section class="ed-preview">
+      <div id="preview"></div>
+      <div class="ed-prev-hint" id="prevHint">Prévia ao vivo</div>
+    </section>
+  </main>
+
+  <!-- Publicar -->
+  <div class="ed-modal" id="modal" hidden>
+    <div class="ed-box">
+      <button class="ed-x" id="mClose">×</button>
+      <h2>Publicar o tour</h2>
+      <ol>
+        <li>Baixe o pacote. É um .zip com o tour e o visualizador.</li>
+        <li>Descompacte e arraste a pasta em <b>app.netlify.com/drop</b>, ou suba no GitHub Pages ou na sua hospedagem.</li>
+        <li>Pronto: o link abre o tour em qualquer celular ou computador.</li>
+      </ol>
+      <div class="ed-row">
+        <button class="ed-primary" id="btnZip">Baixar pacote (.zip)</button>
+        <button class="ed-ghost" id="btnJson">Baixar só o tour.json</button>
+      </div>
+      <p class="ed-help" id="zipStatus"></p>
+    </div>
+  </div>
+  <div class="ed-toast" id="toast"></div>
+
+  <script type="module" src="js/editor.js"></script>
+</body>
+</html>
