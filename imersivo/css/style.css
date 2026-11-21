@@ -385,3 +385,7 @@ body.interior .unit-panel, body.interior .units-panel { opacity: 0; pointer-even
 }
 body.pres .bottom-wrap { z-index: 48; }
 body.catalog .bottombar, body.catalog .assist-btn, body.catalog .legend { display: none; }
+.prop-result { margin: 4px 0 10px; padding: 12px 14px; border-radius: 14px; background: #1f1d10; border: 1px solid rgba(255, 225, 74, 0.35); font-size: 13px; line-height: 1.5; }
+.prop-result small { display: block; color: var(--muted); margin-top: 6px; user-select: all; }
+.prop-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.prop-links a { text-decoration: none; }

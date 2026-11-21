@@ -17,7 +17,7 @@ document.querySelectorAll('[data-bind]').forEach((el) => {
   const k = el.dataset.bind;
   el.textContent = k === 'assistente' ? CONFIG.assistente.nome : k === 'assistenteCargo' ? CONFIG.assistente.cargo : CONFIG[k] || '';
 });
-document.title = `${CONFIG.nome} · Tour 3D`;
+document.title = CONFIG.nome;
 
 const isMobile = matchMedia('(max-width: 760px)').matches || /Android|iPhone|iPad|Mobile/i.test(navigator.userAgent);
 const quality = { level: isMobile ? 'low' : 'high', trees: isMobile ? 9000 : 26000, shadowSize: isMobile ? 1024 : 2048 };
@@ -216,9 +216,13 @@ async function boot() {
     towers.setSelected(u);
     if (u && opts.fly !== false) { const [p, t] = app.unitCamera(u); app.fly(p, t, opts.dur || 1.6); }
     app.emit('select', u);
-    const url = new URL(location.href);
-    if (u) url.searchParams.set('unit', u.id); else url.searchParams.delete('unit');
-    history.replaceState(null, '', url);
+    // link direto da unidade via #A-3202 (funciona no GitHub Pages e no artefato)
+    try {
+      const url = new URL(location.href);
+      url.searchParams.delete('unit');
+      url.hash = u ? u.id : '';
+      history.replaceState(null, '', url.pathname + url.search + url.hash);
+    } catch { /* ambiente sem history */ }
   };
   app.findUnit = (id) => units.find((u) => u.id.toUpperCase() === String(id).toUpperCase().replace(/\s/g, ''));
 

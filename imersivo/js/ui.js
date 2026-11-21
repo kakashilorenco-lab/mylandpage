@@ -29,7 +29,18 @@ export function initUI(app) {
   };
   ui.copy = async (text, msg = 'Copiado!') => {
     try { await navigator.clipboard.writeText(text); ui.toast(msg); }
-    catch { prompt('Copie:', text); }
+    catch {
+      // sem acesso à área de transferência: mostra o texto selecionado para copiar à mão
+      $('#lightContent').innerHTML = `<h3>Copie o texto</h3><textarea id="copyBox" rows="8" style="width:100%;color:#111;background:#fff;border:1px solid #ccc">${text.replace(/</g, '&lt;')}</textarea>`;
+      modal('lightbox', true);
+      const box = $('#copyBox'); box.focus(); box.select();
+    }
+  };
+  ui.embedded = (() => { try { return window.self !== window.top; } catch { return true; } })();
+  ui.shareUrl = (id) => {
+    let base = window.SHARE_BASE;
+    if (!base) { try { base = location.origin + location.pathname; } catch { base = ''; } }
+    return base + (id ? '#' + id : '');
   };
   const panel = (id, open) => { const el = $('#' + id); if (el) el.setAttribute('aria-hidden', open ? 'false' : 'true'); };
   const isOpen = (id) => $('#' + id).getAttribute('aria-hidden') === 'false';
@@ -237,11 +248,14 @@ export function initUI(app) {
     if (k === 'tabela') openPriceTable();
     if (k === 'plantas') openPlans();
   });
-  $('#btnShare').addEventListener('click', () => ui.copy(location.href, 'Link copiado! Envie para o seu cliente.'));
+  $('#btnShare').addEventListener('click', () => ui.copy(ui.shareUrl(app.state.selected && app.state.selected.id), 'Link copiado! Envie para o seu cliente.'));
   $('#optAutoRotate').addEventListener('change', (e) => { app.controls.autoRotate = e.target.checked; app.controls.autoRotateSpeed = 0.6; });
   $('#optLabels').addEventListener('change', (e) => { app.state.labels = e.target.checked; });
   $('#optShadows').addEventListener('change', (e) => { app.renderer.shadowMap.enabled = e.target.checked; app.scene.traverse((o) => { if (o.material) o.material.needsUpdate = true; }); });
-  $('#btnFullscreen').addEventListener('click', () => { if (!document.fullscreenElement) document.documentElement.requestFullscreen?.(); else document.exitFullscreen?.(); });
+  $('#btnFullscreen').addEventListener('click', () => {
+    const p = !document.fullscreenElement ? document.documentElement.requestFullscreen?.() : document.exitFullscreen?.();
+    if (p && p.catch) p.catch(() => ui.toast('Tela cheia não disponível aqui'));
+  });
   $('#compass').addEventListener('click', () => {
     if (app.state.interior || app.state.vista) return;
     const t = app.controls.target.clone();
@@ -310,7 +324,7 @@ export function initUI(app) {
     fillUnit(u);
     if (compare.length >= 2) openCompare(); else ui.toast('Selecione outra unidade e toque em Comparar');
   });
-  $('#upShare').addEventListener('click', () => { const u = sel(); if (u) ui.copy(location.origin + location.pathname + '?unit=' + u.id, `Link da ${u.id} copiado!`); });
+  $('#upShare').addEventListener('click', () => { const u = sel(); if (u) ui.copy(ui.shareUrl(u.id), `Link da ${u.id} copiado!`); });
 
   function openCompare() {
     const list = compare.map((id) => app.findUnit(id)).filter(Boolean);
@@ -497,10 +511,17 @@ export function initUI(app) {
   app.on('ready', async () => {
     hint('Arraste para girar · role para aproximar · clique numa unidade', 6000);
     await app.fly(...app.presets.geral, 4.2);
-    const q = new URLSearchParams(location.search);
-    const u = q.get('unit') && app.findUnit(q.get('unit'));
+    let q, hash = '';
+    try { q = new URLSearchParams(location.search); hash = decodeURIComponent(location.hash.slice(1)); } catch { q = new URLSearchParams(); }
+    const u = app.findUnit(q.get('unit') || hash);
     if (u) { app.setDisp(true); app.selectUnit(u); }
-    if (q.has('apresentacao')) ui.openPresentation();
+    if (q.has('apresentacao') || hash === 'apresentacao') ui.openPresentation();
+    addEventListener('hashchange', () => {
+      const h = decodeURIComponent(location.hash.slice(1));
+      const x = app.findUnit(h);
+      if (x && x !== app.state.selected) { app.setDisp(true); app.selectUnit(x); }
+      if (h === 'apresentacao') ui.openPresentation();
+    });
   });
   return ui;
 }

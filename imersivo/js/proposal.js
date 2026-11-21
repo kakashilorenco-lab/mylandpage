@@ -81,13 +81,21 @@ export function initProposal(app, ui) {
   $('#propForm').addEventListener('submit', (e) => {
     e.preventDefault();
     if (!validate()) return;
+    // Links reais (funcionam em qualquer navegador e dentro do artefato)
     const msg = encodeURIComponent(text());
-    window.open(`https://wa.me/${CONFIG.whatsappComercial}?text=${msg}`, '_blank');
     const tel = $('#pCorretorTel').value.replace(/\D/g, '');
     const me = tel ? `https://wa.me/${tel.length <= 11 ? '55' + tel : tel}?text=${msg}` : null;
-    ui.toast(`Proposta enviada ao comercial! ${me ? `<a href="${me}" target="_blank" style="color:inherit;text-decoration:underline;margin-left:6px">Mandar cópia pro meu WhatsApp</a>` : ''}`, 9000);
+    const box = $('#propResult');
+    box.innerHTML = `<b>Proposta pronta.</b> Toque para abrir o WhatsApp com a mensagem preenchida:
+      <div class="prop-links"><a class="btn-yellow" href="https://wa.me/${CONFIG.whatsappComercial}?text=${msg}" target="_blank" rel="noopener">WhatsApp do comercial →</a>
+      ${me ? `<a class="btn-dark" href="${me}" target="_blank" rel="noopener">Cópia pro meu WhatsApp</a>` : ''}</div>
+      <small>Comercial: +${CONFIG.whatsappComercial}</small>`;
+    box.hidden = false;
+    box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   });
   $('#propCopy').addEventListener('click', () => ui.copy(text().replace(/[*_]/g, ''), 'Resumo da proposta copiado!'));
+  // PDF via impressão do navegador (indisponível quando o site roda embutido, ex.: artefato)
+  if (ui.embedded) $('#propPrint').hidden = true;
   $('#propPrint').addEventListener('click', () => { if (validate()) window.print(); });
   $('#propPortal').addEventListener('click', async () => {
     if (!validate()) return;
@@ -114,6 +122,7 @@ export function initProposal(app, ui) {
       $('#propKicker').textContent = `PROPOSTA · ${CONFIG.nome}`;
       $('#propTitle').textContent = `${u.id} · ${u.tip.area} m²`;
       $('#propTabela').textContent = brl(u.preco);
+      $('#propResult').hidden = true;
       render();
       ui.modal('propModal', true);
     },
