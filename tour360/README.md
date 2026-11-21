@@ -14,6 +14,7 @@ Os dois precisam de um servidor (GitHub Pages, Netlify ou `python3 -m http.serve
 | Recurso | Como funciona |
 |---|---|
 | Caminhada 360° | Arrasta para olhar e clica no piso ou nos círculos para andar até o próximo ponto. A transição dá a sensação de profundidade. |
+| Joystick | A bolinha no canto: para frente anda até o próximo ponto na direção do olhar (segurando, continua andando), para trás volta e para os lados vira. No computador, setas ou W A S D. |
 | Casa de bonecas (3D) | O imóvel inteiro sem teto, com as fotos projetadas nas paredes e no piso. Clicar num cômodo entra nele. |
 | Planta | Vista de cima, também com as fotos. |
 | Mini-mapa | Mostra onde você está e para onde olha. Clicar num ponto leva até ele. |

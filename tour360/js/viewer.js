@@ -76,6 +76,7 @@ export function createViewer(container, tour, opts = {}) {
       <button data-t="share" title="Copiar link"><svg viewBox="0 0 24 24"><path d="M10 14a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1m2 5a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/></svg></button>
     </div>
     <canvas class="tv-mini" width="220" height="220"></canvas>
+    <div class="tv-joy" title="Arraste a bolinha para andar"><div class="tv-joy-knob"></div><span class="tv-joy-up">▲</span></div>
     <a class="tv-cta" target="_blank" rel="noopener">Tenho interesse</a>
     <div class="tv-tagcard" hidden><button class="tv-x">×</button><b></b><p></p></div>
     <div class="tv-msg"></div>
@@ -224,11 +225,15 @@ export function createViewer(container, tour, opts = {}) {
     const A = st.cur;
     const p0 = eye(A), p1 = eye(B);
     const fov0 = st.fov;
-    await tween(o.rapido ? 0.01 : Math.min(1.3, 0.6 + p0.distanceTo(p1) * 0.12), (k) => {
-      const e = ease(k);
+    const dist = p0.distanceTo(p1);
+    const dur = o.rapido ? 0.01 : o.andando ? THREE.MathUtils.clamp(dist / 2.1, 0.7, 2.6) : Math.min(1.3, 0.6 + dist * 0.12);
+    const curva = o.andando ? (k) => (1 - Math.cos(PI * k)) / 2 : ease;
+    await tween(dur, (k) => {
+      const e = curva(k);
       camera.position.lerpVectors(p0, p1, e);
-      camera.fov = fov0 - Math.sin(PI * k) * 8; camera.updateProjectionMatrix();
-      for (const m of allMats) m.uniforms.mixT.value = smooth(0.12, 0.88, k);
+      camera.fov = fov0 - Math.sin(PI * k) * (o.andando ? 4 : 8); camera.updateProjectionMatrix();
+      look.copy(camera.position).add(dirOf(st.yaw, st.pitch));
+      for (const m of allMats) m.uniforms.mixT.value = o.andando ? smooth(0.05, 0.95, k) : smooth(0.12, 0.88, k);
     });
     camera.fov = fov0; camera.updateProjectionMatrix();
     for (const m of allMats) { setSlot(m, 'A', B, tex); m.uniforms.mixT.value = 0; }
@@ -486,6 +491,66 @@ export function createViewer(container, tour, opts = {}) {
   });
   addEventListener('keydown', (e) => { if (e.key === 'Escape') { limparMedida(); q('.tv-tagcard').hidden = true; } });
 
+  // ---------- Joystick (bolinha) e teclado para andar ----------
+  const joyEl = q('.tv-joy'), knob = q('.tv-joy-knob');
+  const joy = { on: false, id: null, x: 0, y: 0 };
+  const teclas = new Set();
+  const moverKnob = (e) => {
+    const r = joyEl.getBoundingClientRect();
+    let dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
+    const R = r.width / 2 - 20, L = Math.hypot(dx, dy);
+    if (L > R) { dx *= R / L; dy *= R / L; }
+    knob.style.transform = `translate(${dx}px, ${dy}px)`;
+    joy.x = dx / R; joy.y = -dy / R;
+  };
+  joyEl.addEventListener('pointerdown', (e) => {
+    e.preventDefault(); e.stopPropagation();
+    joyEl.setPointerCapture(e.pointerId);
+    joy.on = true; joy.id = e.pointerId;
+    knob.style.transition = 'none';
+    joyEl.classList.add('on');
+    moverKnob(e); stopTour(); lastInteract = performance.now();
+  });
+  joyEl.addEventListener('pointermove', (e) => { if (joy.on && e.pointerId === joy.id) moverKnob(e); });
+  const soltar = (e) => {
+    if (e.pointerId !== joy.id) return;
+    joy.on = false; joy.x = joy.y = 0;
+    knob.style.transition = ''; knob.style.transform = '';
+    joyEl.classList.remove('on');
+  };
+  joyEl.addEventListener('pointerup', soltar);
+  joyEl.addEventListener('pointercancel', soltar);
+  const MAPA = { ArrowUp: 'f', KeyW: 'f', ArrowDown: 't', KeyS: 't', ArrowLeft: 'e', KeyA: 'e', ArrowRight: 'd', KeyD: 'd' };
+  const alvoTexto = (e) => /input|textarea|select/i.test(e.target?.tagName || '') || e.target?.isContentEditable;
+  addEventListener('keydown', (e) => { if (MAPA[e.code] && !alvoTexto(e) && st.mode === '360' && container.isConnected) { teclas.add(MAPA[e.code]); stopTour(); e.preventDefault(); } });
+  addEventListener('keyup', (e) => { if (MAPA[e.code]) teclas.delete(MAPA[e.code]); });
+  addEventListener('blur', () => teclas.clear());
+  let avisoAt = 0;
+  const difAng = (a, b) => Math.atan2(Math.sin(a - b), Math.cos(a - b));
+  function pontoNaDirecao(dir, cone) {
+    let best = null, bs = Infinity;
+    for (const p of pts) {
+      if (p === st.cur) continue;
+      const dx = p.x - st.cur.x, dz = p.z - st.cur.z, d = Math.hypot(dx, dz);
+      if (d < 0.25 || d > 9) continue;
+      const dif = Math.abs(difAng(Math.atan2(dx, -dz), dir));
+      if (dif > cone) continue;
+      const s = d * (1 + 1.6 * dif);
+      if (s < bs) { bs = s; best = p; }
+    }
+    return best;
+  }
+  function andar(dt) {
+    let x = joy.x, y = joy.y;
+    if (!joy.on) { x = (teclas.has('d') ? 1 : 0) - (teclas.has('e') ? 1 : 0); y = (teclas.has('f') ? 1 : 0) - (teclas.has('t') ? 1 : 0); }
+    if (Math.abs(x) > 0.18) st.yaw += x * Math.abs(x) * dt * 1.4;            // lados: vira
+    if (Math.abs(y) < 0.45 || st.busy || anim.upd) return;     // frente/trás: anda
+    const dir = st.yaw + (y > 0 ? 0 : PI);
+    const alvo = pontoNaDirecao(dir, 0.6) || pontoNaDirecao(dir, 1.05);
+    if (alvo) { irPara(alvo.id, { andando: true }); return; }
+    if (performance.now() > avisoAt) { msg(y > 0 ? 'Não há outro ponto nessa direção: vire para os lados' : 'Não há ponto atrás de você'); avisoAt = performance.now() + 2600; }
+  }
+
   // Giroscópio (celular)
   let giro = null;
   if ('DeviceOrientationEvent' in window && matchMedia('(pointer: coarse)').matches) q('[data-t="giro"]').hidden = false;
@@ -542,6 +607,7 @@ export function createViewer(container, tour, opts = {}) {
   function frame() {
     if (!alive) return;
     const dt = Math.min(clock.getDelta(), 0.1);
+    if (st.mode === '360' && st.cur) andar(dt);
     if (anim.upd) {
       anim.t += dt / anim.dur;
       const k = Math.min(1, anim.t);
@@ -600,7 +666,7 @@ export function createViewer(container, tour, opts = {}) {
     frame();
     preloadLinks(inicio);
     setTimeout(() => pts.forEach((p) => loadTex(p)), 1500);
-    if (!opts.minimal) msg('Arraste para olhar · clique no piso para andar', 3500);
+    if (!opts.minimal) msg(matchMedia('(pointer: coarse)').matches ? 'Use a bolinha para andar · arraste a tela para olhar' : 'Use a bolinha ou as setas para andar · arraste para olhar', 4500);
   })();
 
   function atualizarPonto(p) {
