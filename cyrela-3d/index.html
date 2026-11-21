@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <title>Mapa 3D Cyrela</title>
+  <meta name="description" content="Todos os empreendimentos Cyrela em São Paulo num mapa 3D: veja onde fica cada prédio, escolha o andar e entre no apartamento.">
+  <meta name="theme-color" content="#0e1620">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="vendor/suncalc.js"></script>
+  <script type="importmap">{ "imports": { "three": "./vendor/three/three.module.min.js" } }</script>
+</head>
+<body>
+  <canvas id="c3d"></canvas>
+  <div id="labels"></div>
+  <div id="fade"></div>
+
+  <div id="loader">
+    <div class="ld-in">
+      <div class="ld-title">Mapa 3D</div>
+      <div class="ld-sub">Empreendimentos Cyrela · São Paulo</div>
+      <div class="ld-bar"><i id="loaderBar"></i></div>
+      <div class="ld-msg" id="loaderMsg">Carregando…</div>
+    </div>
+  </div>
+
+  <!-- Marca -->
+  <header class="brand" id="brand">
+    <div class="b-title" id="bTitle">Mapa 3D Cyrela</div>
+    <div class="b-sub" id="bSub">SÃO PAULO</div>
+  </header>
+
+  <!-- Voltar (como "Back to the tower") -->
+  <button class="back" id="btnBack" hidden>← Voltar ao mapa</button>
+
+  <!-- Barra superior direita -->
+  <div class="topright" id="topright">
+    <div class="seg" id="tempo">
+      <button data-t="dia" class="on">Dia</button><button data-t="tarde">Fim de tarde</button><button data-t="noite">Noite</button>
+    </div>
+    <button class="ghost" id="btnTour">▶ Tour</button>
+    <button class="ghost" id="btnShare" title="Copiar link">Copiar link</button>
+  </div>
+
+  <!-- Lista e filtros -->
+  <aside class="sidebar" id="sidebar">
+    <button class="sb-toggle" id="sbToggle"><span id="sbCount">80 empreendimentos</span><i>▾</i></button>
+    <div class="sb-body">
+      <input id="q" type="search" placeholder="Buscar por nome, bairro ou rua" autocomplete="off">
+      <div class="chips" id="fStatus"></div>
+      <div class="row2">
+        <select id="fBairro"><option value="">Todos os bairros</option></select>
+        <select id="fTipo">
+          <option value="">Qualquer tipologia</option>
+          <option value="studio">Studios</option>
+          <option value="1-2">1 a 2 dormitórios</option>
+          <option value="3">3 dormitórios</option>
+          <option value="4">4 ou mais</option>
+        </select>
+      </div>
+      <ul class="list" id="list"></ul>
+      <div class="legend" id="legend"></div>
+    </div>
+  </aside>
+
+  <!-- Painel "Escolha o andar" -->
+  <aside class="floorpanel" id="floorPanel" aria-hidden="true">
+    <div class="fp-kicker" id="fpKicker"></div>
+    <h1 class="fp-title" id="fpTitle"></h1>
+    <p class="fp-hint">Aponte para um andar e ele acende. Clique nele, ou deslize até o andar e toque em Entrar, e você entra pelo vidro.</p>
+    <div class="fp-level"><span>Andar</span><b id="fpLevel">—</b></div>
+    <div class="fp-sub" id="fpSub"></div>
+    <p class="fp-desc" id="fpDesc"></p>
+    <input type="range" id="fpSlider" min="1" max="30" value="15">
+    <div class="fp-range"><span id="fpMin">1</span><span id="fpMax">30</span></div>
+    <button class="enter" id="fpEnter">Entrar</button>
+    <dl class="fp-facts" id="fpFacts"></dl>
+    <div class="fp-dist" id="fpDist"></div>
+    <div class="fp-links">
+      <a class="cta" id="fpInteresse" target="_blank" rel="noopener">Tenho interesse</a>
+      <a class="lnk" id="fpSite" target="_blank" rel="noopener">Ver no site da Cyrela ↗</a>
+      <a class="lnk" id="fpMaps" target="_blank" rel="noopener">Como chegar ↗</a>
+    </div>
+  </aside>
+
+  <!-- Interior -->
+  <div class="interior" id="interiorUI" hidden>
+    <a class="cta top" id="inInteresse" target="_blank" rel="noopener">Tenho interesse</a>
+    <div class="in-caption">
+      <h2 id="inTitle">Andar 14</h2>
+      <p id="inDesc">A sala se abre para a varanda; a cozinha e o jantar ficam integrados.</p>
+      <small>Decorado ilustrativo. A vista pela janela é a do modelo 3D, na altura deste andar.</small>
+    </div>
+  </div>
+
+  <div class="hint" id="hint"></div>
+  <footer class="aviso" id="aviso"></footer>
+  <div class="toast" id="toast"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
