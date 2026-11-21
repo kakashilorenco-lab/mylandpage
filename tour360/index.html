@@ -22,7 +22,7 @@
     try {
       const tour = await (await fetch(url)).json();
       document.title = (tour.titulo || 'Tour') + ' · Tour 360°';
-      window.viewer = createViewer(el, tour, { base: url.replace(/[^/]*$/, '') });
+      window.viewer = createViewer(el, tour, { base: url.replace(/[^/]*$/, ''), shareUrl: window.SHARE_BASE });
     } catch (e) {
       el.innerHTML = '<p style="color:#ddd;font:14px system-ui;padding:24px">Não foi possível carregar o tour: ' + e.message + '</p>';
     }

@@ -553,7 +553,8 @@ export function createViewer(container, tour, opts = {}) {
 
   // Giroscópio (celular)
   let giro = null;
-  if ('DeviceOrientationEvent' in window && matchMedia('(pointer: coarse)').matches) q('[data-t="giro"]').hidden = false;
+  const embutido = (() => { try { return window.self !== window.top; } catch { return true; } })();
+  if (!embutido && 'DeviceOrientationEvent' in window && matchMedia('(pointer: coarse)').matches) q('[data-t="giro"]').hidden = false;
   async function toggleGiro(b) {
     if (st.giro) { st.giro = false; b.classList.remove('on'); removeEventListener('deviceorientation', onOri); return; }
     try { if (DeviceOrientationEvent.requestPermission) { const r = await DeviceOrientationEvent.requestPermission(); if (r !== 'granted') throw 0; } }
