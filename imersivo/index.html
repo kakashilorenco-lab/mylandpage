@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <title>Atlântica Towers · Tour 3D Imersivo</title>
+  <meta name="description" content="Explore o empreendimento em 3D: unidades disponíveis, estudo solar, vista real de cada andar, interiores decorados e simulação de proposta.">
+  <meta name="theme-color" content="#0d0d0f">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="vendor/suncalc.js"></script>
+  <script type="importmap">
+    { "imports": { "three": "./vendor/three/three.module.min.js" } }
+  </script>
+</head>
+<body>
+  <canvas id="c3d"></canvas>
+  <div id="labels"></div>
+
+  <!-- Tela de carregamento -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-dot"></div>
+      <div class="loader-brand" data-bind="nome"></div>
+      <div class="loader-sub" data-bind="cidade"></div>
+      <div class="loader-bar"><i id="loaderBar"></i></div>
+      <div class="loader-msg" id="loaderMsg">Preparando o ambiente 3D…</div>
+    </div>
+  </div>
+
+  <!-- Barra superior -->
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Início">
+      <span class="brand-name" data-bind="nome"></span>
+      <span class="brand-sub" data-bind="subtitulo"></span>
+    </a>
+    <div class="topcenter">
+      <nav class="pill mainnav" id="mainnav">
+        <button data-nav="explorar" class="active">Explorar</button>
+        <button data-nav="unidades">Unidades</button>
+        <button data-nav="lazer">Lazer</button>
+        <button data-nav="vistas">Vistas</button>
+        <button data-nav="interiores">Interiores</button>
+      </nav>
+      <div class="menu-wrap">
+        <button class="btn-yellow" id="btnMaterial"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>Material de vendas</button>
+        <div class="dropdown" id="ddMaterial">
+          <button data-mat="catalogo"><b>Catálogo</b><span>Book completo, página por página</span></button>
+          <button data-mat="filme"><b>Filme</b><span>O filme do empreendimento</span></button>
+          <button data-mat="tabela"><b>Tabela de preços</b><span>Todas as unidades e condições</span></button>
+          <button data-mat="plantas"><b>Plantas humanizadas</b><span>As 4 tipologias</span></button>
+        </div>
+      </div>
+      <button class="icon-btn" id="btnShare" title="Copiar link"><svg viewBox="0 0 24 24"><path d="M10 14a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1m2 5a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/></svg></button>
+      <button class="btn-ghost" id="btnApresentacao"><svg viewBox="0 0 24 24"><path d="M3 4h18v12H3zM8 20h8M12 16v4"/></svg>Apresentação</button>
+    </div>
+    <div class="topright">
+      <button class="icon-btn" id="btnSettings" title="Configurações"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg></button>
+      <button class="compass" id="compass" title="Norte"><i></i><span>N</span></button>
+      <div class="dropdown settings" id="ddSettings">
+        <label><input type="checkbox" id="optAutoRotate"> Girar automaticamente</label>
+        <label><input type="checkbox" id="optLabels" checked> Mostrar marcadores</label>
+        <label><input type="checkbox" id="optShadows" checked> Sombras</label>
+        <button id="btnFullscreen">Tela cheia</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Painel da unidade -->
+  <aside class="panel unit-panel" id="unitPanel" aria-hidden="true">
+    <button class="close" data-close="unit">×</button>
+    <div class="up-kicker" id="upKicker">APARTAMENTO · TORRE A</div>
+    <div class="up-code" id="upCode">A-3202</div>
+    <div class="up-sub" id="upSub">Final 02 · 73 m²</div>
+    <div class="up-row"><span class="badge" id="upStatus">DISPONÍVEL</span><span class="up-price" id="upPrice">R$ 0</span></div>
+    <div class="up-label">CONDIÇÃO DE PAGAMENTO</div>
+    <div class="chips" id="upConds"></div>
+    <button class="up-plan" id="upPlan"><div class="plan-holder" id="upPlanSvg"></div><span class="up-plan-tag">PLANTA HUMANIZADA</span><span class="up-plan-zoom">Ampliar ↗</span></button>
+    <dl class="specs" id="upSpecs"></dl>
+    <button class="btn-yellow wide" id="upInside"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>Ver por dentro · 360°</button>
+    <button class="btn-dark wide" id="upView">Ver a vista desta unidade</button>
+    <button class="btn-dark wide" id="upProposal">Simular proposta</button>
+    <div class="up-actions">
+      <button id="upFav">♡ Favoritar</button><button id="upCompare">⇄ Comparar</button><button id="upShare">↗ Compartilhar</button>
+    </div>
+  </aside>
+
+  <!-- Espelho de vendas -->
+  <aside class="panel units-panel" id="unitsPanel" aria-hidden="true">
+    <button class="close" data-close="units">×</button>
+    <div class="pp-kicker">ESPELHO DE VENDAS</div>
+    <div class="pp-title">Unidades</div>
+    <div class="seg" id="towerSeg"></div>
+    <div class="filters">
+      <select id="fFinal"><option value="">Todos os finais</option></select>
+      <select id="fStatus"><option value="">Todos os status</option><option value="disponivel" selected>Só disponíveis</option></select>
+    </div>
+    <div class="mirror" id="mirror"></div>
+    <div class="mirror-legend"><span><i class="d"></i>Disponível</span><span><i class="r"></i>Reservado</span><span><i class="c"></i>Contrato</span><span><i class="v"></i>Vendido</span></div>
+    <div class="pp-foot" id="unitsCount"></div>
+  </aside>
+
+  <!-- Estudo solar -->
+  <aside class="panel solar-panel" id="solarPanel" aria-hidden="true">
+    <button class="close" data-close="solar">×</button>
+    <div class="pp-kicker" id="solarKicker">ESTUDO SOLAR</div>
+    <div class="sol-time"><span id="solClock">12:00</span><small id="solPeriod">Dia</small></div>
+    <input type="range" id="solSlider" min="0" max="1439" step="1" value="720">
+    <div class="sol-scale"><span>00h</span><span>06h</span><span>12h</span><span>18h</span><span>24h</span></div>
+    <div class="sol-row">
+      <input type="date" id="solDate">
+      <button class="btn-mini" id="solAnimate">▶ Animar dia</button>
+    </div>
+    <div class="sol-times">
+      <span>Nascer · <b id="solRise">--:--</b></span>
+      <span>Meio-dia · <b id="solNoon">--:--</b></span>
+      <span>Pôr do sol · <b id="solSet">--:--</b></span>
+      <span id="solNowTag"></span>
+    </div>
+    <div class="seasons" id="seasons"></div>
+    <dl class="sol-data">
+      <dt>Sol</dt><dd id="solSun">--</dd>
+      <dt>Lua</dt><dd id="solMoon">--</dd>
+      <dt>Luz do dia</dt><dd id="solDay">--</dd>
+    </dl>
+    <p class="sol-note">Simulação astronômica para a localização real do empreendimento. Sombras dependem da geometria representada no modelo.</p>
+  </aside>
+
+  <!-- Vistas -->
+  <aside class="panel vistas-panel" id="vistasPanel" aria-hidden="true">
+    <button class="close" data-close="vistas">×</button>
+    <div class="pp-kicker">VISTA REAL</div>
+    <div class="pp-title" id="vistaTitle">32º pavimento</div>
+    <div class="seg" id="vistaTower"></div>
+    <label class="field-label">Andar</label>
+    <input type="range" id="vistaFloor" min="1" max="36" value="32">
+    <label class="field-label">Orientação</label>
+    <div class="seg" id="vistaDir">
+      <button data-dir="01">Mar · Norte</button><button data-dir="02">Mar · Sul</button><button data-dir="03">Morro · Sul</button><button data-dir="04">Morro · Norte</button>
+    </div>
+    <p class="sol-note">Arraste para olhar ao redor. A paisagem é a mesma do modelo 3D, na altura exata do andar.</p>
+  </aside>
+
+  <!-- Card de lazer -->
+  <div class="panel lazer-card" id="lazerCard" aria-hidden="true">
+    <button class="close" data-close="lazer">×</button>
+    <div class="pp-kicker">LAZER</div>
+    <div class="pp-title" id="lazerTitle"></div>
+    <p id="lazerDesc"></p>
+    <div class="lazer-list" id="lazerList"></div>
+  </div>
+
+  <!-- Barra inferior -->
+  <div class="bottom-wrap">
+    <div class="pres-bar" id="presBar" hidden>
+      <span class="pres-dot"></span><span id="presInfo">Apresentação · 1 de 4 · Vídeo</span>
+      <button class="round" id="presPrev" title="Anterior">←</button>
+      <button class="btn-yellow small" id="presNext">Próximo →</button>
+      <button class="round" id="presClose" title="Sair">×</button>
+    </div>
+    <div class="pill bottombar" id="bottombar">
+      <button data-view="geral" class="active">Visão geral</button>
+      <button data-view="aerea">Visão aérea</button>
+      <button data-view="localizacao" class="hl"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Ver localização</button>
+      <button data-toggle="sol"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>Sol</button>
+      <button data-toggle="noite" id="btnNight">Ver à noite</button>
+      <button data-toggle="disp" id="btnDisp">Disponibilidade</button>
+      <button data-toggle="qualidade" id="btnQuality">Qualidade alta</button>
+    </div>
+  </div>
+  <div class="legend" id="legend" hidden>
+    <span><i class="d"></i>Disponível</span><span><i class="r"></i>Reservado</span><span><i class="c"></i>Reservado (contrato)</span>
+  </div>
+
+  <!-- Barra do interior -->
+  <div class="interior-bar" id="interiorBar" hidden>
+    <div class="ib-info"><b id="ibCode">A-3202</b><span id="ibSub">Final 02 · 32º pavimento</span></div>
+    <div class="pill">
+      <button data-iv="sala" class="active">Sala</button>
+      <button data-iv="cozinha">Cozinha</button>
+      <button data-iv="estar">Estar</button>
+      <button data-iv="sacada">Sacada</button>
+    </div>
+    <button class="btn-ghost" id="ibBack">← Voltar ao empreendimento</button>
+    <button class="btn-yellow small" id="ibProposal">Simular proposta</button>
+  </div>
+
+  <div class="env-loading" id="envLoading" hidden><div class="spinner"></div><span>Carregando ambiente…</span></div>
+  <div class="hint" id="hint">Arraste para girar · role para aproximar · clique numa unidade</div>
+
+  <!-- Assistente -->
+  <button class="assist-btn" id="assistBtn"><span class="avatar">T</span><span>Pergunte ao <b data-bind="assistente"></b></span></button>
+  <div class="assist" id="assist" hidden>
+    <div class="assist-head"><span class="avatar">T</span><div><b data-bind="assistente"></b><small data-bind="assistenteCargo"></small></div><button class="close" id="assistClose">×</button></div>
+    <div class="assist-log" id="assistLog"></div>
+    <div class="assist-chips" id="assistChips"></div>
+    <form class="assist-form" id="assistForm"><input id="assistInput" placeholder="Pergunte sobre preços, lazer, entrega…" autocomplete="off"><button class="btn-yellow small">Enviar</button></form>
+  </div>
+
+  <!-- Modo apresentação -->
+  <div class="modal-bg" id="presModal" hidden>
+    <div class="modal pres-modal">
+      <button class="close" data-close="presModal">×</button>
+      <div class="pp-kicker">MODO APRESENTAÇÃO · <span data-bind="nome"></span></div>
+      <h2 class="display">POR ONDE COMEÇAMOS?</h2>
+      <p class="muted">Toque numa etapa para começar por ela, ou siga a ordem abaixo. Ajuste a ordem com as setas; ela fica guardada neste aparelho.</p>
+      <ol class="steps" id="presSteps"></ol>
+      <div class="modal-actions">
+        <button class="btn-ghost" data-close="presModal">Agora não</button>
+        <button class="btn-yellow" id="presStart">Começar apresentação →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Proposta -->
+  <div class="modal-bg" id="propModal" hidden>
+    <form class="modal prop-modal" id="propForm" autocomplete="on">
+      <button type="button" class="close" data-close="propModal">×</button>
+      <div class="pp-kicker" id="propKicker">PROPOSTA</div>
+      <h2 class="display" id="propTitle">A-3202</h2>
+      <div class="prop-table">Valor de tabela <b id="propTabela">R$ 0</b></div>
+      <div class="prop-grid">
+        <div class="field">
+          <label>Valor ofertado</label>
+          <div class="val" id="propOfferVal">R$ 0</div>
+          <input type="range" id="propOffer" min="70" max="100" step="0.5" value="95">
+          <small id="propOfferPct">95% da tabela</small>
+        </div>
+        <div class="field">
+          <label>Entrada</label>
+          <div class="val" id="propDownVal">R$ 0</div>
+          <input type="range" id="propDown" min="10" max="100" step="1" value="30">
+          <small id="propDownPct">30% do valor</small>
+        </div>
+        <div class="field">
+          <label>Reforços</label>
+          <select id="propReforco"><option value="0">Sem reforços</option><option value="1">Anuais</option><option value="2">Semestrais</option></select>
+          <input type="text" inputmode="numeric" id="propReforcoVal" placeholder="Valor de cada reforço (R$)" hidden>
+        </div>
+        <div class="field">
+          <label>Parcelas mensais</label>
+          <input type="number" id="propParcelas" min="1" max="120" value="60">
+          <small>Parcela estimada <b id="propParcela">R$ 0</b></small>
+        </div>
+        <div class="field full">
+          <button type="button" class="btn-dark" id="propPermutaBtn">+ Incluir permuta (carro, moto, imóvel…)</button>
+          <div class="permuta" id="propPermuta" hidden>
+            <input type="text" id="propPermutaDesc" placeholder="Descrição do bem">
+            <input type="text" inputmode="numeric" id="propPermutaVal" placeholder="Valor estimado (R$)">
+          </div>
+        </div>
+      </div>
+      <div class="prop-sum" id="propSum"></div>
+      <p class="muted tiny">Estimativa simples, sem correção monetária nem juros. Condições finais sujeitas à aprovação da construtora.</p>
+      <div class="prop-grid">
+        <div class="field"><label>Nome do corretor</label><input id="pCorretor" name="corretor" required></div>
+        <div class="field"><label>CRECI</label><input id="pCreci" placeholder="ex.: 12345-F/SC"></div>
+        <div class="field"><label>Telefone / WhatsApp do corretor</label><input id="pCorretorTel" inputmode="tel" placeholder="+55 (47) 99999-0000" required></div>
+        <div class="field"><label>E-mail do corretor</label><input id="pCorretorEmail" type="email"></div>
+        <div class="field"><label>Nome do cliente</label><input id="pCliente" required></div>
+        <div class="field"><label>Telefone do cliente</label><input id="pClienteTel" inputmode="tel"></div>
+        <div class="field full"><label>Observações</label><textarea id="pObs" rows="2"></textarea></div>
+      </div>
+      <div class="modal-actions wrap">
+        <button type="button" class="btn-ghost" id="propCopy">Copiar resumo</button>
+        <button type="button" class="btn-ghost" id="propPrint">Baixar PDF</button>
+        <button type="button" class="btn-dark" id="propPortal">Enviar ao portal da construtora</button>
+        <button type="submit" class="btn-yellow">Enviar no WhatsApp →</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Catálogo -->
+  <div class="fullview" id="catalogView" hidden>
+    <div class="fv-head"><b data-bind="nome"></b> · Catálogo<button class="close" data-close="catalogView">×</button></div>
+    <button class="fv-arrow left" id="catPrev">‹</button>
+    <div class="cat-stage" id="catStage"></div>
+    <button class="fv-arrow right" id="catNext">›</button>
+    <div class="fv-foot"><span id="catCount">Book · página 1 de 12</span><span class="muted">← → trocam a página</span></div>
+  </div>
+
+  <!-- Filme -->
+  <div class="film" id="filmView" hidden>
+    <div class="film-bar top"></div><div class="film-bar bottom"></div>
+    <div class="film-title" id="filmTitle"></div>
+    <video id="filmVideo" playsinline hidden></video>
+    <div class="film-ui">
+      <button class="round" id="filmPlay">❚❚</button>
+      <div class="film-progress"><i id="filmProg"></i></div>
+      <span id="filmTime">0:00</span>
+      <button class="btn-ghost small" id="filmSkip">Pular filme</button>
+      <button class="round" id="filmClose">×</button>
+    </div>
+  </div>
+
+  <!-- Lightbox de planta / tabela -->
+  <div class="modal-bg" id="lightbox" hidden>
+    <div class="modal light-modal"><button class="close" data-close="lightbox">×</button><div id="lightContent"></div></div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
