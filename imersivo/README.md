@@ -1,5 +1,7 @@
 # Tour 3D imersivo de empreendimento
 
+![Telas do tour 3D](preview.jpg)
+
 Site 100% em 3D (WebGL) para apresentar um empreendimento imobiliário: o prédio, a cidade, o mar e o morro em volta, com unidades clicáveis, estudo solar, vista real de cada andar, apartamento decorado, catálogo, filme e simulador de proposta.
 
 Abra `imersivo/index.html` num servidor (GitHub Pages, Netlify, Vercel ou `python3 -m http.server`). Abrir com duplo clique (`file://`) não funciona por causa dos módulos JavaScript.
