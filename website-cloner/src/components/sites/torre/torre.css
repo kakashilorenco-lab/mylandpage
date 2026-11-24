@@ -1,0 +1,464 @@
+/* Tower experience — measurements from the perspective-corrected source video
+   (1600×900 frame ≈ a 1440×810 viewport, so 1 vw ≈ 16 source px). */
+
+.tr-root {
+  --cream: #f2ead0;
+  --gold: #e3c272;
+  --gold-thumb: #d9b45c;
+  --ink: #f4f0e4;
+  --pale: #e2f1f6;
+  --button: #ece4c3;
+  --button-ink: #8a8670;
+  --font: "Albert Sans", "Helvetica Neue", Arial, sans-serif;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #05080c;
+  color: var(--ink);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- stage: covers the viewport at the source aspect ---------- */
+.tr-stage {
+  --aspect: 1.7182; /* 1488 / 866 */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100vw, calc(100dvh * var(--aspect)));
+  height: max(100dvh, calc(100vw / var(--aspect)));
+  transform: translate(-50%, -50%);
+  container-type: inline-size;
+}
+@media (max-aspect-ratio: 1/1) {
+  /* portrait: keep the tower (≈47% across the image) in the middle of the screen */
+  .tr-stage.tr-focus-tower {
+    transform: translate(-46.8%, -50%);
+  }
+}
+
+.tr-still {
+  position: absolute;
+  inset: 0;
+  background-size: 100% 100%;
+  transition: opacity 0.5s ease, transform 1.3s cubic-bezier(0.6, 0, 0.2, 1);
+}
+.tr-still.tr-fade-out {
+  opacity: 0;
+}
+.tr-still.tr-zoomed {
+  transform: scale(1.45);
+}
+
+.tr-clip {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  opacity: 0;
+  pointer-events: none;
+}
+.tr-clip.tr-clip-on {
+  opacity: 1;
+}
+
+/* ---------- tower hover ---------- */
+.tr-hit {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+.tr-band {
+  position: absolute;
+  transform: translateY(-50%);
+  /* the floor's rooms light up: warm window panes split by mullions, fading at the curved edges */
+  background:
+    linear-gradient(180deg, transparent 30%, rgba(255, 248, 230, 0.55) 48%, transparent 66%),
+    repeating-linear-gradient(90deg, rgba(255, 208, 140, 0.95) 0 5.2%, rgba(150, 110, 70, 0.55) 5.2% 6.4%);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 82%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 14%, #000 82%, transparent);
+  filter: blur(0.5px) drop-shadow(0 0 0.5cqw rgba(255, 196, 120, 0.8));
+  opacity: 0.92;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  transition: top 0.18s ease, left 0.18s ease, width 0.18s ease;
+}
+.tr-floor-label {
+  position: absolute;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.9cqw;
+  font-size: 2.2cqw;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.88);
+  letter-spacing: 0.01em;
+  pointer-events: none;
+  transition: top 0.18s ease;
+}
+.tr-dash {
+  display: inline-block;
+  width: 1.9cqw;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.8;
+}
+.tr-floor-label-hold {
+  animation: tr-fade 0.6s ease 0.2s both reverse;
+}
+
+/* ---------- floor panel (frosted glass) ---------- */
+.tr-panel {
+  position: absolute;
+  top: 7.2dvh;
+  bottom: 9.4dvh;
+  right: 3.4vw;
+  width: clamp(340px, 31.2vw, 520px);
+  display: flex;
+  flex-direction: column;
+  padding: 3.2vw 2.5vw 2.6vw;
+  background: linear-gradient(180deg, rgba(28, 88, 120, 0.34) 0%, rgba(38, 66, 84, 0.42) 50%, rgba(62, 64, 66, 0.5) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px) saturate(1.05);
+  -webkit-backdrop-filter: blur(16px) saturate(1.05);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  overflow-y: auto;
+}
+.tr-panel-hidden {
+  opacity: 0;
+  transform: translateX(1.2vw);
+  pointer-events: none;
+}
+.tr-panel-title {
+  margin: 0;
+  font-size: clamp(34px, 3.95vw, 66px);
+  line-height: 0.96;
+  font-weight: 400;
+  letter-spacing: -0.012em;
+  color: var(--cream);
+}
+.tr-panel-intro,
+.tr-unit-text {
+  margin: 1.5vw 0 0;
+  font-size: clamp(14px, 1.18vw, 19px);
+  line-height: 1.6;
+  font-weight: 500;
+  color: var(--ink);
+  max-width: 24em;
+}
+.tr-level {
+  display: flex;
+  align-items: baseline;
+  gap: 1.6vw;
+  margin-top: 3.6vw;
+}
+.tr-level-word {
+  font-size: clamp(15px, 1.32vw, 21px);
+  font-weight: 600;
+  color: var(--cream);
+}
+.tr-level-num {
+  font-size: clamp(64px, 6.1vw, 104px);
+  line-height: 0.82;
+  font-weight: 200;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+  min-width: 1.2em;
+}
+.tr-unit {
+  margin: 1.5vw 0 0;
+  font-size: clamp(17px, 1.55vw, 26px);
+  font-weight: 600;
+  color: var(--cream);
+}
+.tr-unit-text {
+  margin-top: 0.6vw;
+}
+
+.tr-slider {
+  margin-top: auto;
+  padding-top: 2vw;
+}
+.tr-slider input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 18px;
+  background: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)) no-repeat center / 100% 1px;
+  cursor: pointer;
+}
+.tr-slider input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--gold-thumb);
+  border: 0;
+  box-shadow: 0 0 0 4px rgba(217, 180, 92, 0.18);
+}
+.tr-slider input::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--gold-thumb);
+  border: 0;
+}
+.tr-slider input:focus-visible {
+  outline: 1px solid var(--cream);
+  outline-offset: 4px;
+}
+.tr-slider-ends {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5vw;
+  font-size: clamp(10px, 0.68vw, 12px);
+  color: rgba(244, 240, 228, 0.8);
+}
+.tr-enter {
+  align-self: flex-start;
+  margin-top: 2.6vw;
+  min-width: clamp(88px, 6.9vw, 120px);
+  height: clamp(40px, 3.3vw, 56px);
+  padding: 0 1.2em;
+  border: 0;
+  background: var(--button);
+  color: var(--button-ink);
+  font: 500 clamp(10px, 0.66vw, 12px) / 1 var(--font);
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.tr-enter:hover,
+.tr-enter:focus-visible {
+  background: #fff8dd;
+  color: #5f5c4c;
+  outline: none;
+}
+
+/* ---------- top bar ---------- */
+.tr-topbar {
+  position: absolute;
+  top: 2.4dvh;
+  left: 2.3vw;
+  right: 3vw;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease 0.3s;
+  z-index: 5;
+}
+.tr-topbar-on {
+  opacity: 1;
+  pointer-events: auto;
+}
+.tr-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7em;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #fff;
+  font: 500 clamp(12px, 0.92vw, 15px) / 1.4 var(--font);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.tr-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* ---------- hotspots ---------- */
+.tr-hotspot {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6cqw;
+  padding: 0.5cqw 0.6cqw 0.5cqw 0.8cqw;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(64, 64, 62, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
+  font: 500 max(11px, 0.85cqw) / 1 var(--font);
+  cursor: pointer;
+  animation: tr-fade 0.6s ease both;
+  transition: background 0.2s ease;
+}
+.tr-hotspot:hover,
+.tr-hotspot:focus-visible {
+  background: rgba(40, 40, 38, 0.75);
+  outline: none;
+}
+.tr-hotspot-dot {
+  width: max(8px, 0.62cqw);
+  height: max(8px, 0.62cqw);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+/* ---------- room caption ---------- */
+.tr-caption {
+  position: absolute;
+  left: 2.5vw;
+  bottom: 5dvh;
+  max-width: min(34vw, 560px);
+  z-index: 4;
+  animation: tr-rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.35s both;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.18);
+}
+.tr-caption-title {
+  margin: 0;
+  font-size: clamp(36px, 4.15vw, 70px);
+  line-height: 0.98;
+  font-weight: 200;
+  letter-spacing: -0.01em;
+  color: var(--pale);
+}
+.tr-caption-text {
+  margin: 1.4vw 0 0;
+  max-width: 23em;
+  font-size: clamp(14px, 1.18vw, 19px);
+  line-height: 1.7;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* ---------- register interest ---------- */
+.tr-modal {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  background: rgba(5, 10, 14, 0.35);
+  animation: tr-fade 0.3s ease both;
+}
+.tr-form {
+  width: min(420px, calc(100vw - 32px));
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 32px;
+  background: linear-gradient(180deg, rgba(28, 88, 120, 0.5), rgba(50, 60, 66, 0.62));
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.tr-form-title {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 300;
+  color: var(--cream);
+}
+.tr-form .tr-unit-text {
+  margin: 0 0 8px;
+}
+.tr-input {
+  height: 44px;
+  padding: 0 12px;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font: 500 15px var(--font);
+}
+.tr-input::placeholder {
+  color: rgba(244, 240, 228, 0.65);
+}
+.tr-input:focus {
+  outline: none;
+  border-bottom-color: var(--gold);
+}
+
+@keyframes tr-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes tr-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+/* ---------- phones: panel becomes a bottom sheet ---------- */
+@media (max-width: 760px) {
+  .tr-panel {
+    top: auto;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    width: auto;
+    max-height: 52dvh;
+    padding: 22px 20px 20px;
+  }
+  .tr-panel-title {
+    font-size: 34px;
+  }
+  .tr-panel-intro {
+    display: none;
+  }
+  .tr-level {
+    margin-top: 10px;
+    gap: 14px;
+  }
+  .tr-level-num {
+    font-size: 56px;
+  }
+  .tr-unit {
+    margin-top: 8px;
+  }
+  .tr-slider {
+    padding-top: 14px;
+  }
+  .tr-slider-ends {
+    margin-top: 4px;
+  }
+  .tr-enter {
+    margin-top: 14px;
+  }
+  .tr-panel-hidden {
+    transform: translateY(16px);
+  }
+  .tr-floor-label {
+    font-size: 18px;
+    gap: 6px;
+  }
+  .tr-dash {
+    width: 14px;
+  }
+  .tr-topbar {
+    top: 14px;
+    left: 16px;
+    right: 16px;
+  }
+  .tr-caption {
+    left: 16px;
+    right: 16px;
+    bottom: 22px;
+    max-width: none;
+  }
+  .tr-caption-text {
+    margin-top: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tr-root *,
+  .tr-root *::before,
+  .tr-root *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

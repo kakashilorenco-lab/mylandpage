@@ -1,0 +1,1168 @@
+{
+  "source": "/root/.claude/uploads/45429893-a885-52fd-b284-9e081c7ad9f3/cc96e0ba-5444860411744417193.mp4",
+  "file": "../../../../root/.claude/uploads/45429893-a885-52fd-b284-9e081c7ad9f3/cc96e0ba-5444860411744417193.mp4",
+  "post": null,
+  "video": {
+    "width": 720,
+    "height": 1280,
+    "duration": 20.27,
+    "fps": 30,
+    "hasAudio": true
+  },
+  "crop": {
+    "x": 2,
+    "y": 416,
+    "w": 676,
+    "h": 482
+  },
+  "analysis": {
+    "width": 676,
+    "height": 482,
+    "fps": 8,
+    "device": "desktop",
+    "cssWidth": 1440,
+    "cssPerPx": 2.1302
+  },
+  "stickyBands": {
+    "topCss": 0,
+    "bottomCss": 77
+  },
+  "floatingElements": [],
+  "timeline": [
+    {
+      "kind": "anim",
+      "t0": 0,
+      "t1": 0.13,
+      "dur": 0.13,
+      "scene": 1
+    },
+    {
+      "kind": "still",
+      "t0": 0.13,
+      "t1": 0.25,
+      "dur": 0.12,
+      "scene": 1
+    },
+    {
+      "kind": "anim",
+      "t0": 0.25,
+      "t1": 1.38,
+      "dur": 1.13,
+      "scene": 1
+    },
+    {
+      "kind": "still",
+      "t0": 1.38,
+      "t1": 1.5,
+      "dur": 0.12,
+      "scene": 1
+    },
+    {
+      "kind": "anim",
+      "t0": 1.5,
+      "t1": 1.63,
+      "dur": 0.13,
+      "scene": 1
+    },
+    {
+      "kind": "still",
+      "t0": 1.63,
+      "t1": 1.88,
+      "dur": 0.25,
+      "scene": 1
+    },
+    {
+      "kind": "anim",
+      "t0": 1.88,
+      "t1": 2.13,
+      "dur": 0.25,
+      "scene": 1
+    },
+    {
+      "kind": "still",
+      "t0": 2.13,
+      "t1": 2.25,
+      "dur": 0.12,
+      "scene": 1
+    },
+    {
+      "kind": "anim",
+      "t0": 2.25,
+      "t1": 2.5,
+      "dur": 0.25,
+      "scene": 1
+    },
+    {
+      "kind": "still",
+      "t0": 2.5,
+      "t1": 2.63,
+      "dur": 0.13,
+      "scene": 1
+    },
+    {
+      "kind": "anim",
+      "t0": 2.63,
+      "t1": 2.88,
+      "dur": 0.25,
+      "scene": 1
+    },
+    {
+      "kind": "still",
+      "t0": 2.88,
+      "t1": 3,
+      "dur": 0.12,
+      "scene": 1
+    },
+    {
+      "kind": "anim",
+      "t0": 3,
+      "t1": 3.13,
+      "dur": 0.13,
+      "scene": 1
+    },
+    {
+      "kind": "still",
+      "t0": 3.13,
+      "t1": 3.63,
+      "dur": 0.5,
+      "scene": 1
+    },
+    {
+      "kind": "cut",
+      "t0": 3.63,
+      "t1": 3.75,
+      "dur": 0.12,
+      "scene": 1
+    },
+    {
+      "kind": "anim",
+      "t0": 3.75,
+      "t1": 8.38,
+      "dur": 4.63,
+      "scene": 2
+    },
+    {
+      "kind": "still",
+      "t0": 8.38,
+      "t1": 8.5,
+      "dur": 0.12,
+      "scene": 2
+    },
+    {
+      "kind": "anim",
+      "t0": 8.5,
+      "t1": 9.13,
+      "dur": 0.63,
+      "scene": 2
+    },
+    {
+      "kind": "still",
+      "t0": 9.13,
+      "t1": 9.63,
+      "dur": 0.5,
+      "scene": 2
+    },
+    {
+      "kind": "anim",
+      "t0": 9.63,
+      "t1": 9.75,
+      "dur": 0.12,
+      "scene": 2
+    },
+    {
+      "kind": "still",
+      "t0": 9.75,
+      "t1": 9.88,
+      "dur": 0.13,
+      "scene": 2
+    },
+    {
+      "kind": "anim",
+      "t0": 9.88,
+      "t1": 10,
+      "dur": 0.12,
+      "scene": 2
+    },
+    {
+      "kind": "still",
+      "t0": 10,
+      "t1": 10.13,
+      "dur": 0.13,
+      "scene": 2
+    },
+    {
+      "kind": "anim",
+      "t0": 10.13,
+      "t1": 10.25,
+      "dur": 0.12,
+      "scene": 2
+    },
+    {
+      "kind": "still",
+      "t0": 10.25,
+      "t1": 10.38,
+      "dur": 0.13,
+      "scene": 2
+    },
+    {
+      "kind": "anim",
+      "t0": 10.38,
+      "t1": 10.88,
+      "dur": 0.5,
+      "scene": 2
+    },
+    {
+      "kind": "still",
+      "t0": 10.88,
+      "t1": 11.13,
+      "dur": 0.25,
+      "scene": 2
+    },
+    {
+      "kind": "anim",
+      "t0": 11.13,
+      "t1": 11.38,
+      "dur": 0.25,
+      "scene": 2
+    },
+    {
+      "kind": "still",
+      "t0": 11.38,
+      "t1": 11.88,
+      "dur": 0.5,
+      "scene": 2
+    },
+    {
+      "kind": "anim",
+      "t0": 11.88,
+      "t1": 12.25,
+      "dur": 0.37,
+      "scene": 2
+    },
+    {
+      "kind": "still",
+      "t0": 12.25,
+      "t1": 12.63,
+      "dur": 0.38,
+      "scene": 2
+    },
+    {
+      "kind": "anim",
+      "t0": 12.63,
+      "t1": 14.75,
+      "dur": 2.12,
+      "scene": 2
+    },
+    {
+      "kind": "still",
+      "t0": 14.75,
+      "t1": 14.88,
+      "dur": 0.13,
+      "scene": 2
+    },
+    {
+      "kind": "anim",
+      "t0": 14.88,
+      "t1": 15,
+      "dur": 0.12,
+      "scene": 2
+    },
+    {
+      "kind": "still",
+      "t0": 15,
+      "t1": 16,
+      "dur": 1,
+      "scene": 2
+    },
+    {
+      "kind": "anim",
+      "t0": 16,
+      "t1": 17.75,
+      "dur": 1.75,
+      "scene": 2
+    },
+    {
+      "kind": "still",
+      "t0": 17.75,
+      "t1": 18,
+      "dur": 0.25,
+      "scene": 2
+    },
+    {
+      "kind": "anim",
+      "t0": 18,
+      "t1": 18.13,
+      "dur": 0.13,
+      "scene": 2
+    },
+    {
+      "kind": "still",
+      "t0": 18.13,
+      "t1": 19.88,
+      "dur": 1.75,
+      "scene": 2
+    },
+    {
+      "kind": "anim",
+      "t0": 19.88,
+      "t1": 20,
+      "dur": 0.12,
+      "scene": 2
+    }
+  ],
+  "scenes": [
+    {
+      "id": 1,
+      "t0": 0,
+      "t1": 3.75,
+      "frames": 30,
+      "page": "scenes/scene-01-page.png",
+      "pageAtCssWidth": "scenes/scene-01-page@1x.png",
+      "topBand": null,
+      "bottomBand": "scenes/scene-01-bottom-band.png",
+      "heightCss": 950,
+      "sections": [
+        {
+          "index": 1,
+          "y0": 0,
+          "y1": 162,
+          "y0Css": 0,
+          "heightCss": 347,
+          "bg": "#10011d",
+          "text": []
+        },
+        {
+          "index": 2,
+          "y0": 163,
+          "y1": 191,
+          "y0Css": 347,
+          "heightCss": 62,
+          "bg": "#1e062d",
+          "text": []
+        },
+        {
+          "index": 3,
+          "y0": 192,
+          "y1": 215,
+          "y0Css": 409,
+          "heightCss": 51,
+          "bg": "#2b143d",
+          "text": []
+        },
+        {
+          "index": 4,
+          "y0": 216,
+          "y1": 243,
+          "y0Css": 460,
+          "heightCss": 60,
+          "bg": "#3c2448",
+          "text": []
+        },
+        {
+          "index": 5,
+          "y0": 244,
+          "y1": 269,
+          "y0Css": 520,
+          "heightCss": 55,
+          "bg": "#4b2d57",
+          "text": []
+        },
+        {
+          "index": 6,
+          "y0": 270,
+          "y1": 301,
+          "y0Css": 575,
+          "heightCss": 68,
+          "bg": "#43346b",
+          "text": []
+        },
+        {
+          "index": 7,
+          "y0": 302,
+          "y1": 336,
+          "y0Css": 643,
+          "heightCss": 75,
+          "bg": "#553d7c",
+          "text": []
+        },
+        {
+          "index": 8,
+          "y0": 337,
+          "y1": 356,
+          "y0Css": 718,
+          "heightCss": 43,
+          "bg": "#2c013e",
+          "text": []
+        },
+        {
+          "index": 9,
+          "y0": 357,
+          "y1": 445,
+          "y0Css": 760,
+          "heightCss": 190,
+          "bg": "#3b004d",
+          "text": []
+        }
+      ],
+      "palette": [
+        {
+          "color": "#0484e4",
+          "pct": 21.3
+        },
+        {
+          "color": "#04040c",
+          "pct": 10.5
+        },
+        {
+          "color": "#0474cc",
+          "pct": 7.9
+        },
+        {
+          "color": "#049cf4",
+          "pct": 6.2
+        },
+        {
+          "color": "#24042c",
+          "pct": 5.1
+        },
+        {
+          "color": "#046cac",
+          "pct": 1.9
+        },
+        {
+          "color": "#546474",
+          "pct": 0.6
+        },
+        {
+          "color": "#3c045c",
+          "pct": 0.5
+        },
+        {
+          "color": "#5c047c",
+          "pct": 0.2
+        }
+      ],
+      "ocr": []
+    },
+    {
+      "id": 2,
+      "t0": 3.75,
+      "t1": 20.13,
+      "frames": 131,
+      "page": "scenes/scene-02-page.png",
+      "pageAtCssWidth": "scenes/scene-02-page@1x.png",
+      "topBand": null,
+      "bottomBand": "scenes/scene-02-bottom-band.png",
+      "heightCss": 950,
+      "sections": [
+        {
+          "index": 1,
+          "y0": 0,
+          "y1": 109,
+          "y0Css": 0,
+          "heightCss": 234,
+          "bg": "#12001d",
+          "text": []
+        },
+        {
+          "index": 2,
+          "y0": 110,
+          "y1": 161,
+          "y0Css": 234,
+          "heightCss": 111,
+          "bg": "#1d052e",
+          "text": []
+        },
+        {
+          "index": 3,
+          "y0": 162,
+          "y1": 183,
+          "y0Css": 345,
+          "heightCss": 47,
+          "bg": "#2a143c",
+          "text": []
+        },
+        {
+          "index": 4,
+          "y0": 184,
+          "y1": 203,
+          "y0Css": 392,
+          "heightCss": 43,
+          "bg": "#38244b",
+          "text": []
+        },
+        {
+          "index": 5,
+          "y0": 204,
+          "y1": 227,
+          "y0Css": 435,
+          "heightCss": 51,
+          "bg": "#4a3257",
+          "text": []
+        },
+        {
+          "index": 6,
+          "y0": 228,
+          "y1": 263,
+          "y0Css": 486,
+          "heightCss": 77,
+          "bg": "#5d3a5e",
+          "text": []
+        },
+        {
+          "index": 7,
+          "y0": 264,
+          "y1": 297,
+          "y0Css": 562,
+          "heightCss": 72,
+          "bg": "#4e3c74",
+          "text": []
+        },
+        {
+          "index": 8,
+          "y0": 298,
+          "y1": 338,
+          "y0Css": 635,
+          "heightCss": 87,
+          "bg": "#634e8d",
+          "text": []
+        },
+        {
+          "index": 9,
+          "y0": 339,
+          "y1": 355,
+          "y0Css": 722,
+          "heightCss": 36,
+          "bg": "#310041",
+          "text": []
+        },
+        {
+          "index": 10,
+          "y0": 356,
+          "y1": 445,
+          "y0Css": 758,
+          "heightCss": 192,
+          "bg": "#420050",
+          "text": []
+        }
+      ],
+      "palette": [
+        {
+          "color": "#04acfc",
+          "pct": 22.8
+        },
+        {
+          "color": "#048cec",
+          "pct": 10.9
+        },
+        {
+          "color": "#04040c",
+          "pct": 9.2
+        },
+        {
+          "color": "#24042c",
+          "pct": 5.3
+        },
+        {
+          "color": "#047cd4",
+          "pct": 1.3
+        },
+        {
+          "color": "#640484",
+          "pct": 0.7
+        },
+        {
+          "color": "#34044c",
+          "pct": 0.5
+        },
+        {
+          "color": "#7c049c",
+          "pct": 0.4
+        },
+        {
+          "color": "#54acec",
+          "pct": 0.4
+        },
+        {
+          "color": "#046cac",
+          "pct": 0.2
+        },
+        {
+          "color": "#4c0c64",
+          "pct": 0.2
+        },
+        {
+          "color": "#8ca4c4",
+          "pct": 0.2
+        }
+      ],
+      "ocr": []
+    }
+  ],
+  "motions": [
+    {
+      "bbox": {
+        "x": 32,
+        "y": 0,
+        "w": 656,
+        "h": 464
+      },
+      "maxFrac": 0.568,
+      "t0": 4,
+      "t1": 8.25,
+      "dur": 4.25,
+      "scene": 2,
+      "docYCss": 0,
+      "areaPct": {
+        "x": 4.7,
+        "y": 0,
+        "w": 97,
+        "h": 96.3
+      },
+      "type": "large transition (slide / fade / carousel / page transition)",
+      "id": 1,
+      "strip": "motion/motion-01-strip.png",
+      "clip": "motion/motion-01.mp4"
+    },
+    {
+      "bbox": {
+        "x": 32,
+        "y": 0,
+        "w": 656,
+        "h": 448
+      },
+      "maxFrac": 0.511,
+      "t0": 16,
+      "t1": 17.75,
+      "dur": 1.75,
+      "scene": 2,
+      "docYCss": 0,
+      "areaPct": {
+        "x": 4.7,
+        "y": 0,
+        "w": 97,
+        "h": 92.9
+      },
+      "type": "large transition (slide / fade / carousel / page transition)",
+      "id": 2,
+      "strip": "motion/motion-02-strip.png",
+      "clip": "motion/motion-02.mp4"
+    },
+    {
+      "bbox": {
+        "x": 32,
+        "y": 0,
+        "w": 656,
+        "h": 448
+      },
+      "maxFrac": 0.508,
+      "t0": 12.63,
+      "t1": 14.13,
+      "dur": 1.5,
+      "scene": 2,
+      "docYCss": 0,
+      "areaPct": {
+        "x": 4.7,
+        "y": 0,
+        "w": 97,
+        "h": 92.9
+      },
+      "type": "large transition (slide / fade / carousel / page transition)",
+      "id": 3,
+      "strip": "motion/motion-03-strip.png",
+      "clip": "motion/motion-03.mp4"
+    },
+    {
+      "bbox": {
+        "x": 80,
+        "y": 48,
+        "w": 576,
+        "h": 336
+      },
+      "maxFrac": 0.155,
+      "t0": 0.25,
+      "t1": 1.63,
+      "dur": 1.38,
+      "scene": 1,
+      "docYCss": 102,
+      "areaPct": {
+        "x": 11.8,
+        "y": 10,
+        "w": 85.2,
+        "h": 69.7
+      },
+      "type": "local animation (hover, counter, carousel, typing, toggle)",
+      "id": 4,
+      "strip": "motion/motion-04-strip.png",
+      "clip": "motion/motion-04.mp4"
+    },
+    {
+      "bbox": {
+        "x": 32,
+        "y": 0,
+        "w": 656,
+        "h": 448
+      },
+      "maxFrac": 0.199,
+      "t0": 8.5,
+      "t1": 9.13,
+      "dur": 0.63,
+      "scene": 2,
+      "docYCss": 0,
+      "areaPct": {
+        "x": 4.7,
+        "y": 0,
+        "w": 97,
+        "h": 92.9
+      },
+      "type": "local animation (hover, counter, carousel, typing, toggle)",
+      "id": 5,
+      "strip": "motion/motion-05-strip.png",
+      "clip": "motion/motion-05.mp4"
+    },
+    {
+      "bbox": {
+        "x": 128,
+        "y": 144,
+        "w": 256,
+        "h": 112
+      },
+      "maxFrac": 0.029,
+      "t0": 10.13,
+      "t1": 10.88,
+      "dur": 0.75,
+      "scene": 2,
+      "docYCss": 307,
+      "areaPct": {
+        "x": 18.9,
+        "y": 29.9,
+        "w": 37.9,
+        "h": 23.2
+      },
+      "type": "local animation (hover, counter, carousel, typing, toggle)",
+      "id": 6,
+      "strip": "motion/motion-06-strip.png",
+      "clip": "motion/motion-06.mp4"
+    },
+    {
+      "bbox": {
+        "x": 336,
+        "y": 112,
+        "w": 208,
+        "h": 112
+      },
+      "maxFrac": 0.011,
+      "t0": 1.88,
+      "t1": 3.13,
+      "dur": 1.25,
+      "scene": 1,
+      "docYCss": 239,
+      "areaPct": {
+        "x": 49.7,
+        "y": 23.2,
+        "w": 30.8,
+        "h": 23.2
+      },
+      "type": "local animation (hover, counter, carousel, typing, toggle)",
+      "id": 7,
+      "strip": "motion/motion-07-strip.png",
+      "clip": "motion/motion-07.mp4"
+    },
+    {
+      "bbox": {
+        "x": 96,
+        "y": 304,
+        "w": 144,
+        "h": 128
+      },
+      "maxFrac": 0.018,
+      "t0": 14.38,
+      "t1": 14.75,
+      "dur": 0.37,
+      "scene": 2,
+      "docYCss": 648,
+      "areaPct": {
+        "x": 14.2,
+        "y": 63.1,
+        "w": 21.3,
+        "h": 26.6
+      },
+      "type": "local animation (hover, counter, carousel, typing, toggle)",
+      "id": 8,
+      "strip": "motion/motion-08-strip.png",
+      "clip": "motion/motion-08.mp4"
+    },
+    {
+      "bbox": {
+        "x": 96,
+        "y": 112,
+        "w": 512,
+        "h": 304
+      },
+      "maxFrac": 0.012,
+      "t0": 11.88,
+      "t1": 12.25,
+      "dur": 0.37,
+      "scene": 2,
+      "docYCss": 239,
+      "areaPct": {
+        "x": 14.2,
+        "y": 23.2,
+        "w": 75.7,
+        "h": 63.1
+      },
+      "type": "local animation (hover, counter, carousel, typing, toggle)",
+      "id": 9,
+      "strip": "motion/motion-09-strip.png",
+      "clip": "motion/motion-09.mp4"
+    },
+    {
+      "bbox": {
+        "x": 240,
+        "y": 128,
+        "w": 160,
+        "h": 112
+      },
+      "maxFrac": 0.034,
+      "t0": 9.63,
+      "t1": 9.75,
+      "dur": 0.12,
+      "scene": 2,
+      "docYCss": 273,
+      "areaPct": {
+        "x": 35.5,
+        "y": 26.6,
+        "w": 23.7,
+        "h": 23.2
+      },
+      "type": "local animation (hover, counter, carousel, typing, toggle)",
+      "id": 10,
+      "strip": "motion/motion-10-strip.png"
+    },
+    {
+      "bbox": {
+        "x": 560,
+        "y": 112,
+        "w": 48,
+        "h": 112
+      },
+      "maxFrac": 0.01,
+      "t0": 11.13,
+      "t1": 11.38,
+      "dur": 0.25,
+      "scene": 2,
+      "docYCss": 239,
+      "areaPct": {
+        "x": 82.8,
+        "y": 23.2,
+        "w": 7.1,
+        "h": 23.2
+      },
+      "type": "local animation (hover, counter, carousel, typing, toggle)",
+      "id": 11,
+      "strip": "motion/motion-11-strip.png",
+      "clip": "motion/motion-11.mp4"
+    },
+    {
+      "bbox": {
+        "x": 96,
+        "y": 160,
+        "w": 512,
+        "h": 256
+      },
+      "maxFrac": 0.016,
+      "t0": 18,
+      "t1": 18.13,
+      "dur": 0.13,
+      "scene": 2,
+      "docYCss": 341,
+      "areaPct": {
+        "x": 14.2,
+        "y": 33.2,
+        "w": 75.7,
+        "h": 53.1
+      },
+      "type": "local animation (hover, counter, carousel, typing, toggle)",
+      "id": 12,
+      "strip": "motion/motion-12-strip.png"
+    }
+  ],
+  "revealOnScroll": [],
+  "candidates": [],
+  "keyframes": [
+    {
+      "file": "keyframes/kf-001-0.05s.png",
+      "t": 0.05,
+      "why": [
+        "scene 1 start",
+        "scene 1 scroll 0px"
+      ]
+    },
+    {
+      "file": "keyframes/kf-002-0.25s.png",
+      "t": 0.25,
+      "why": [
+        "motion 4 start"
+      ]
+    },
+    {
+      "file": "keyframes/kf-003-0.94s.png",
+      "t": 0.94,
+      "why": [
+        "motion 4 mid"
+      ]
+    },
+    {
+      "file": "keyframes/kf-004-1.63s.png",
+      "t": 1.63,
+      "why": [
+        "motion 4 end"
+      ]
+    },
+    {
+      "file": "keyframes/kf-005-1.88s.png",
+      "t": 1.88,
+      "why": [
+        "motion 7 start"
+      ]
+    },
+    {
+      "file": "keyframes/kf-006-2.50s.png",
+      "t": 2.5,
+      "why": [
+        "motion 7 mid"
+      ]
+    },
+    {
+      "file": "keyframes/kf-007-3.13s.png",
+      "t": 3.13,
+      "why": [
+        "motion 7 end"
+      ]
+    },
+    {
+      "file": "keyframes/kf-008-3.38s.png",
+      "t": 3.38,
+      "why": [
+        "pause 0.5s"
+      ]
+    },
+    {
+      "file": "keyframes/kf-009-3.80s.png",
+      "t": 3.8,
+      "why": [
+        "scene 2 start",
+        "scene 2 scroll 0px"
+      ]
+    },
+    {
+      "file": "keyframes/kf-010-4.00s.png",
+      "t": 4,
+      "why": [
+        "motion 1 start"
+      ]
+    },
+    {
+      "file": "keyframes/kf-011-6.13s.png",
+      "t": 6.13,
+      "why": [
+        "motion 1 mid"
+      ]
+    },
+    {
+      "file": "keyframes/kf-012-8.25s.png",
+      "t": 8.25,
+      "why": [
+        "motion 1 end"
+      ]
+    },
+    {
+      "file": "keyframes/kf-013-8.50s.png",
+      "t": 8.5,
+      "why": [
+        "motion 5 start"
+      ]
+    },
+    {
+      "file": "keyframes/kf-014-8.82s.png",
+      "t": 8.82,
+      "why": [
+        "motion 5 mid"
+      ]
+    },
+    {
+      "file": "keyframes/kf-015-9.13s.png",
+      "t": 9.13,
+      "why": [
+        "motion 5 end"
+      ]
+    },
+    {
+      "file": "keyframes/kf-016-9.38s.png",
+      "t": 9.38,
+      "why": [
+        "pause 0.5s"
+      ]
+    },
+    {
+      "file": "keyframes/kf-017-9.63s.png",
+      "t": 9.63,
+      "why": [
+        "motion 10 start",
+        "motion 10 mid",
+        "motion 10 end"
+      ]
+    },
+    {
+      "file": "keyframes/kf-018-10.13s.png",
+      "t": 10.13,
+      "why": [
+        "motion 6 start"
+      ]
+    },
+    {
+      "file": "keyframes/kf-019-10.51s.png",
+      "t": 10.51,
+      "why": [
+        "motion 6 mid"
+      ]
+    },
+    {
+      "file": "keyframes/kf-020-10.88s.png",
+      "t": 10.88,
+      "why": [
+        "motion 6 end"
+      ]
+    },
+    {
+      "file": "keyframes/kf-021-11.13s.png",
+      "t": 11.13,
+      "why": [
+        "motion 11 start",
+        "motion 11 mid"
+      ]
+    },
+    {
+      "file": "keyframes/kf-022-11.38s.png",
+      "t": 11.38,
+      "why": [
+        "motion 11 end"
+      ]
+    },
+    {
+      "file": "keyframes/kf-023-11.63s.png",
+      "t": 11.63,
+      "why": [
+        "pause 0.5s"
+      ]
+    },
+    {
+      "file": "keyframes/kf-024-11.88s.png",
+      "t": 11.88,
+      "why": [
+        "motion 9 start"
+      ]
+    },
+    {
+      "file": "keyframes/kf-025-12.07s.png",
+      "t": 12.07,
+      "why": [
+        "motion 9 mid"
+      ]
+    },
+    {
+      "file": "keyframes/kf-026-12.25s.png",
+      "t": 12.25,
+      "why": [
+        "motion 9 end"
+      ]
+    },
+    {
+      "file": "keyframes/kf-027-12.63s.png",
+      "t": 12.63,
+      "why": [
+        "motion 3 start"
+      ]
+    },
+    {
+      "file": "keyframes/kf-028-13.38s.png",
+      "t": 13.38,
+      "why": [
+        "motion 3 mid"
+      ]
+    },
+    {
+      "file": "keyframes/kf-029-14.13s.png",
+      "t": 14.13,
+      "why": [
+        "motion 3 end"
+      ]
+    },
+    {
+      "file": "keyframes/kf-030-14.38s.png",
+      "t": 14.38,
+      "why": [
+        "motion 8 start"
+      ]
+    },
+    {
+      "file": "keyframes/kf-031-14.57s.png",
+      "t": 14.57,
+      "why": [
+        "motion 8 mid"
+      ]
+    },
+    {
+      "file": "keyframes/kf-032-14.75s.png",
+      "t": 14.75,
+      "why": [
+        "motion 8 end"
+      ]
+    },
+    {
+      "file": "keyframes/kf-033-15.50s.png",
+      "t": 15.5,
+      "why": [
+        "pause 1s"
+      ]
+    },
+    {
+      "file": "keyframes/kf-034-16.00s.png",
+      "t": 16,
+      "why": [
+        "motion 2 start"
+      ]
+    },
+    {
+      "file": "keyframes/kf-035-16.88s.png",
+      "t": 16.88,
+      "why": [
+        "motion 2 mid"
+      ]
+    },
+    {
+      "file": "keyframes/kf-036-17.75s.png",
+      "t": 17.75,
+      "why": [
+        "motion 2 end"
+      ]
+    },
+    {
+      "file": "keyframes/kf-037-18.00s.png",
+      "t": 18,
+      "why": [
+        "motion 12 start",
+        "motion 12 mid",
+        "motion 12 end"
+      ]
+    },
+    {
+      "file": "keyframes/kf-038-19.00s.png",
+      "t": 19,
+      "why": [
+        "pause 1.75s"
+      ]
+    }
+  ],
+  "ocr": "por+eng"
+}
