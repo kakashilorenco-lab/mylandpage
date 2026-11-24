@@ -1,11 +1,15 @@
 ---
 name: clone-website
-description: Rebuild existing web pages as working local code, matching their real content, assets, responsive layout, and interactions. Use for website cloning, replication, or reverse engineering, including Framer sites and animated pages.
+description: Rebuild existing web pages as working local code, matching their real content, assets, responsive layout, and interactions — from a URL or from a VIDEO of the site (Instagram/TikTok/YouTube link or screen recording). Use for website cloning, replication, or reverse engineering, including Framer sites and animated pages. Also triggers in Portuguese - "copiar site", "clonar site", "copia esse site", "reproduz o site do vídeo", "site que apareceu no reels/insta", "skill de copy".
 ---
 
 # Clone a website
 
 Recreate the supplied pages in the current app. Match the source before adding a new design direction. Deliver working, editable code: screenshots, iframes, and downloaded production bundles are references, not the implementation.
+
+## 0. Source is a video?
+
+If the user gives a **video** (an Instagram / TikTok / YouTube / X link, a screen recording, or a file) instead of, or as well as, a website URL, read [Clone from a video](references/from-video.md) and follow it. It runs `npm run video` to watch the whole video. That produces a timeline of scrolls, pauses, cuts and animations, full pages rebuilt from the scroll, OCR text per section, keyframes and leads to the live site. Then it either switches to the live-site workflow below, or rebuilds from the video and checks the result with `npm run compare -- --ref`.
 
 ## 1. Map the work
 

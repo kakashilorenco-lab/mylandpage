@@ -6,27 +6,30 @@
 // errors, failed requests and horizontal overflow.
 //
 // Usage: npm run compare -- <sourceUrl> <localUrl> [--site name] [--viewports desktop,mobile] [--no-freeze] [--band 200]
+//        npm run compare -- --ref <reconstructed-page.png> <localUrl> [--viewports mobile]   (source = image from a video)
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
 import pixelmatch from "pixelmatch";
 import { PNG } from "pngjs";
+import { readPng, resizeToWidth } from "./img.mjs";
 import { FREEZE_CSS, VIEWPORTS, ensureDir, gotoSettled, parseArgs, routeSlug, settle, siteSlug, wheelThrough, writeJson } from "./lib.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const args = parseArgs(process.argv.slice(2));
-const [sourceUrl, localUrl] = args._;
+const refImage = typeof args.ref === "string" ? args.ref : null;
+const [sourceUrl, localUrl] = refImage ? [`file://${path.resolve(refImage)}`, args._[0]] : args._;
 if (!sourceUrl || !localUrl) {
   console.error("Usage: npm run compare -- <sourceUrl> <localUrl> [--site name] [--viewports desktop,mobile] [--no-freeze] [--band 200]");
   process.exit(1);
 }
-const site = args.site || siteSlug(sourceUrl);
-const vpNames = (args.viewports || "desktop,mobile").split(",");
+const site = args.site || (refImage ? "video-ref" : siteSlug(sourceUrl));
+const vpNames = (args.viewports || (refImage ? "mobile" : "desktop,mobile")).split(",");
 const band = Number(args.band || 200);
 const freeze = !args["no-freeze"];
 const stamp = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
-const outDir = ensureDir(path.join(ROOT, "docs/research", site, routeSlug(sourceUrl), "compare", stamp));
+const outDir = ensureDir(path.join(ROOT, "docs/research", site, refImage ? "video" : routeSlug(sourceUrl), "compare", stamp));
 
 async function shoot(browser, url, vp, label) {
   const ctx = await browser.newContext({ viewport: { width: vp.width, height: vp.height }, deviceScaleFactor: 1, isMobile: !!vp.isMobile, hasTouch: !!vp.hasTouch });
@@ -63,7 +66,11 @@ for (const name of vpNames) {
   const vp = VIEWPORTS[name];
   if (!vp) continue;
   process.stdout.write(`▶ ${name} … `);
-  const src = await shoot(browser, sourceUrl, vp, `${name}-source`);
+  // A reference image (e.g. a page reconstructed from a video) is scaled to the viewport width.
+  const src = refImage
+    ? { png: resizeToWidth(readPng(refImage), vp.width), overflow: false, issues: { consoleErrors: [], failed: [] } }
+    : await shoot(browser, sourceUrl, vp, `${name}-source`);
+  if (refImage) fs.writeFileSync(path.join(outDir, `${name}-source.png`), PNG.sync.write(src.png));
   const loc = await shoot(browser, localUrl, vp, `${name}-local`);
   const w = Math.max(src.png.width, loc.png.width);
   const h = Math.max(src.png.height, loc.png.height);

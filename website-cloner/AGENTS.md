@@ -27,7 +27,9 @@ A reusable template for reverse-engineering any website into a clean, modern Nex
 - `npm run typecheck` — TypeScript check
 - `npm run check` — Run lint + typecheck + build
 - `npm run capture -- <url>` — Screenshots, page brief, design tokens and real assets of a source page
-- `npm run compare -- <sourceUrl> <localUrl>` — Visual diff montage + worst-region report
+- `npm run compare -- <sourceUrl> <localUrl>` — Visual diff montage + worst-region report (`--ref <png>` to compare against an image, e.g. a page rebuilt from a video)
+- `npm run video -- <link-or-file>` — Watch a video of a site: timeline, stitched full pages, OCR, motion, site leads (needs ffmpeg, yt-dlp, tesseract)
+- `npm run crop -- <png> x y w h <out>` — Cut an asset out of a keyframe
 
 ## Code Style
 - TypeScript strict mode, no `any`
@@ -58,7 +60,7 @@ public/
 docs/
   research/<site>/  # Page brief, asset map, and inspection evidence
   design-references/ # Screenshots and visual references
-scripts/            # capture.mjs, compare.mjs, extract.js (runs in page), lib.mjs
+scripts/            # capture, compare, video, crop (+ extract.js runs in page, lib/img helpers)
 .agents/
   skills/
     clone-website/  # Canonical cross-agent cloning workflow
