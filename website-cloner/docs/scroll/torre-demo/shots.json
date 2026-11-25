@@ -1,0 +1,31 @@
+{
+  "source": "public/sites/torre/enter.mp4",
+  "duration": 4.166667,
+  "aspect": "1600:932",
+  "shots": [
+    {
+      "shot": 1,
+      "from": 0,
+      "to": 0.96,
+      "seconds": 4,
+      "startsWithCut": false,
+      "frames": [
+        "shots/shot-01-start.jpg",
+        "shots/shot-01-mid.jpg",
+        "shots/shot-01-end.jpg"
+      ]
+    },
+    {
+      "shot": 2,
+      "from": 0.96,
+      "to": 1,
+      "seconds": 0.17,
+      "startsWithCut": false,
+      "frames": [
+        "shots/shot-02-start.jpg",
+        "shots/shot-02-mid.jpg",
+        "shots/shot-02-end.jpg"
+      ]
+    }
+  ]
+}

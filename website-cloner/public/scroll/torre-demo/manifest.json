@@ -1,0 +1,27 @@
+{
+  "name": "torre-demo",
+  "version": 1795567893088,
+  "frames": 150,
+  "sets": {
+    "desktop": {
+      "path": "desktop/f{n}.webp",
+      "pad": 4,
+      "count": 150,
+      "width": 1600,
+      "height": 932,
+      "poster": "poster-desktop.webp",
+      "mp4": "scrub-desktop.mp4",
+      "bytes": 6169214
+    },
+    "mobile": {
+      "path": "mobile/f{n}.webp",
+      "pad": 4,
+      "count": 150,
+      "width": 800,
+      "height": 466,
+      "poster": "poster-mobile.webp",
+      "mp4": "scrub-mobile.mp4",
+      "bytes": 2692626
+    }
+  }
+}

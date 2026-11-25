@@ -11,6 +11,13 @@ Recreate the supplied pages in the current app. Match the source before adding a
 
 If the user gives a **video** (an Instagram / TikTok / YouTube / X link, a screen recording, or a file) instead of, or as well as, a website URL, read [Clone from a video](references/from-video.md) and follow it. It runs `npm run video` to watch the whole video. That produces a timeline of scrolls, pauses, cuts and animations, full pages rebuilt from the scroll, OCR text per section, keyframes and leads to the live site. Then it either switches to the live-site workflow below, or rebuilds from the video and checks the result with `npm run compare -- --ref`.
 
+## 0b. Scroll-driven "3D" site?
+
+If the capture brief has a `🎬 Scroll-driven 3D media` section, or the video shows a camera move that follows the scroll, read [Scroll video](references/scroll-video.md):
+
+1. Clone it first with the original footage (`npm run scroll-video -- import|build` + `ScrollVideo`).
+2. Then **offer the remake**: the same camera path and rhythm with the user's own house, building or product. Break the original into shots, write Google Flow / Higgsfield prompts chained by start/end frames, and swap the new footage in.
+
 ## 1. Map the work
 
 Read project instructions, the actual framework/scripts, and existing routes. Open the source URLs with the available browser. Prefer direct HTTP, asset tools, or APIs for extraction when practical; use the browser to establish appearance and behavior.
@@ -77,5 +84,8 @@ Exercise the real local workflow: navigation between cloned routes, mobile menu,
 Run the project's production check. Completion requires a successful build **and** rendered comparison. State remaining differences precisely instead of calling an unchecked result pixel-perfect.
 
 ## Deliver
+
+If the source used scroll-driven footage, end by offering the AI-video remake (references/scroll-video.md §3).
+
 
 Return preview/run instructions, the source-to-local route map, representative desktop/mobile comparisons, checks actually run, and remaining visual/functional gaps. Keep reference clones in separate apps when maintaining the reusable template.

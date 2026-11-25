@@ -30,6 +30,7 @@ A reusable template for reverse-engineering any website into a clean, modern Nex
 - `npm run compare -- <sourceUrl> <localUrl>` — Visual diff montage + worst-region report (`--ref <png>` to compare against an image, e.g. a page rebuilt from a video)
 - `npm run video -- <link-or-file>` — Watch a video of a site: timeline, stitched full pages, OCR, motion, site leads (needs ffmpeg, yt-dlp, tesseract)
 - `npm run crop -- <png> x y w h <out>` — Cut an asset out of a keyframe
+- `npm run scroll-video -- check|frame|shots|import|build` — Scroll-scrubbed "3D" sequences: join AI clips, re-pack cloned frame sequences, split originals into shots for Flow/Higgsfield remakes (player: `src/components/scroll-video/`, `templates/scroll-video.html`)
 
 ## Code Style
 - TypeScript strict mode, no `any`

@@ -10,7 +10,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { chromium } from "playwright";
+import { chromium, request as pwRequest } from "playwright";
 import {
   KIND_BY_EXT, VIEWPORTS, ensureDir, gotoSettled, parseArgs, routeSlug, settle,
   shortHash, siteSlug, sleep, sniffType, wheelThrough, writeJson,
@@ -152,6 +152,13 @@ function toMarkdown(brief, perViewport) {
   if (vars.length) L.push("", `CSS variables on :root (${vars.length}, full list in brief.json):`, "", ...vars.slice(0, 40).map(([k, v]) => `- \`${k}: ${v}\``));
   L.push("", "## Media", "", `- ${brief.media.images.length} images, ${brief.media.backgrounds.length} CSS backgrounds, ${brief.media.videos.length} videos, ${brief.media.iframes.length} iframes, ${brief.media.svgs.length} unique inline SVGs (saved to svgs/)`);
   brief.media.videos.forEach((v) => L.push(`- video ${assetMap.get(v.src)?.local ?? v.src} autoplay=${v.autoplay} loop=${v.loop} muted=${v.muted} ${v.rect.w}×${v.rect.h}`));
+  const sm = brief.media.scrollMedia || [];
+  const sq = brief.media.scrollSequences || [];
+  if (sm.length || sq.length) {
+    L.push("", "## 🎬 Scroll-driven 3D media (see references/scroll-video.md)", "");
+    sq.forEach((q) => L.push(`- Image sequence \`${q.pattern}\` — frames ${q.from}–${q.to} (${q.saved}/${q.frames} saved) → \`${q.folder}\` · rebuild: \`npm run scroll-video -- import ${q.folder} --name ${site}\``));
+    sm.forEach((v) => L.push(`- Pinned ${v.kind} \`${v.selector}\`${v.src ? ` src ${assetMap.get(v.src)?.local ?? v.src}` : ""}${v.trackHeightScreens ? ` · scroll track ≈ ${v.trackHeightScreens} screens` : ""}${v.kind === "video" && !v.autoplay ? " · not autoplay → scrubbed by scroll" : ""}`));
+  }
   L.push("", "## Interactions to reproduce", "");
   const it = brief.interactives;
   L.push(`- Buttons: ${it.buttons.map((b) => b.text).filter(Boolean).slice(0, 15).join(" · ") || "none"}`);
@@ -229,6 +236,58 @@ for (const name of vpNames) {
   console.log(`done (${brief.sections.length} sections, ${brief.meta.scrollHeight}px)`);
 }
 await browser.close();
+
+// ---------------------------------------------------------------- scroll sequences
+// Numbered frames (frame_0001.jpg … frame_0240.jpg) = an image sequence scrubbed by scroll.
+// Group every image URL by its name with the last number replaced, fill gaps between the
+// lowest and highest index, and lay the frames out in order for `npm run scroll-video -- import`.
+const sequences = [];
+{
+  const groups = new Map();
+  const seen = new Set([...assetMap.keys(), ...desktopBrief.media.images.map((i) => i.src)]);
+  for (const u of seen) {
+    if (!u || !/^https?:|^file:/.test(u)) continue;
+    const m = new URL(u).pathname.match(/^(.*?)(\d+)(\D*)$/);
+    if (!m || !/\.(jpe?g|png|webp|avif)$/i.test(m[3])) continue;
+    const origin = new URL(u).origin;
+    const key = (origin === "null" ? "file://" : origin) + m[1] + "{n}" + m[3];
+    const g = groups.get(key) || { key, pad: m[2].length, items: new Map(), search: new URL(u).search };
+    g.items.set(Number(m[2]), u);
+    g.pad = Math.min(g.pad, m[2].length);
+    groups.set(key, g);
+  }
+  const big = [...groups.values()].filter((g) => g.items.size >= 20);
+  if (big.length) {
+    const req = await pwRequest.newContext({ extraHTTPHeaders: { referer: url } });
+    for (const [k, g] of big.entries()) {
+      const idx = [...g.items.keys()].sort((a, b) => a - b);
+      const lo = idx[0], hi = idx.at(-1);
+      const dir = ensureDir(path.join(ROOT, "public/sites", site, `sequence-${k + 1}`));
+      let saved = 0;
+      for (let n = lo; n <= hi; n++) {
+        const src = g.items.get(n) || g.key.replace("{n}", String(n).padStart(g.pad, "0")) + (g.search || "");
+        let body = null;
+        const local = assetMap.get(src);
+        if (local) body = fs.readFileSync(path.join(ROOT, "public", local.local));
+        else {
+          try {
+            const res = await req.get(src, { timeout: 30_000 });
+            if (res.ok()) body = await res.body();
+          } catch {
+            /* missing frame: the player falls back to its neighbour */
+          }
+        }
+        if (!body) continue;
+        const ext = sniffType(body);
+        fs.writeFileSync(path.join(dir, `f${String(n - lo + 1).padStart(4, "0")}.${ext === "bin" ? "jpg" : ext}`), body);
+        saved++;
+      }
+      sequences.push({ pattern: g.key, from: lo, to: hi, frames: hi - lo + 1, saved, folder: path.relative(ROOT, dir) });
+    }
+    await req.dispose();
+  }
+}
+desktopBrief.media.scrollSequences = sequences;
 
 desktopBrief.media.svgs = writeSvgs(desktopBrief.media.svgs);
 writeJson(path.join(researchDir, "brief.json"), { site, route, source: url, perViewport, ...desktopBrief });

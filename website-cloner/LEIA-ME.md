@@ -54,6 +54,23 @@ E pra recortar logo ou imagem de um frame: `npm run crop -- frame.png 10% 5% 30%
 
 A skill `/clone-website` já sabe usar todos esses comandos sozinha.
 
+### 4. Sites 3D: vídeo sincronizado com o scroll 🏠
+
+Muitos "sites 3D" são **um vídeo de câmera contínuo** (voo, órbita, entrada pela janela) que anda pra frente e pra trás conforme você rola a página. Não tem 3D de verdade rodando.
+
+- **Clonar**: o `capture` detecta esses sites sozinho, seja pela sequência de imagens numeradas ou pelo vídeo grudado na tela, baixa tudo na ordem e a skill remonta com o mesmo efeito.
+- **Remake com IA**: depois a skill oferece refazer **o mesmo movimento de câmera com outra casa, prédio ou produto**. Ela quebra o vídeo original em takes e escreve os prompts pro **Google Flow** e pro **Higgsfield**, encadeados: o último frame de um take vira o primeiro do próximo, pra parecer um voo só.
+- Exemplo pronto: `docs/scroll/torre-demo/remake.md`, a torre refeita como casa de praia em SC.
+
+```bash
+npm run scroll-video -- shots video-original.mp4 --name minha-casa      # quebra em takes
+npm run scroll-video -- frame take1.mp4 --at last --out take1-fim.png    # frame pra encadear o próximo take
+npm run scroll-video -- check take1.mp4 take2.mp4 take3.mp4              # emendas estão lisas?
+npm run scroll-video -- build take1.mp4 take2.mp4 take3.mp4 --name minha-casa
+```
+
+Pra ver o efeito: `npm run dev` → **http://localhost:3000/scroll-demo**. Pra página em HTML simples, use `templates/scroll-video.html`.
+
 ### Instagram
 
 O Instagram costuma exigir login pra baixar. No seu computador, use `--cookies-from-browser chrome` (ele usa o login do seu navegador). Ou baixe o vídeo manualmente e passe o arquivo: `npm run video -- ~/Downloads/reel.mp4`.

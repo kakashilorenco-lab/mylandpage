@@ -202,6 +202,35 @@ function extractPage(opts) {
     rect: rectOf(v),
   }));
   const iframes = [...document.querySelectorAll("iframe")].map((f) => ({ src: f.src, rect: rectOf(f) }));
+
+  // Scroll-driven "3D" media: a big canvas or a non-autoplay video pinned inside a tall
+  // section is almost always an image sequence / video scrubbed by scroll.
+  const pinnedAncestor = (el) => {
+    for (let a = el.parentElement; a && a !== document.body; a = a.parentElement) {
+      const pos = getComputedStyle(a).position;
+      if (pos === "sticky" || pos === "fixed") return a;
+    }
+    return null;
+  };
+  const scrollMedia = [];
+  for (const el of document.querySelectorAll("canvas, video")) {
+    const r = el.getBoundingClientRect();
+    if (r.width < innerWidth * 0.5 || r.height < innerHeight * 0.4) continue;
+    const pin = pinnedAncestor(el) || (getComputedStyle(el).position === "sticky" ? el : null);
+    const track = pin?.parentElement;
+    const trackH = track ? track.getBoundingClientRect().height : 0;
+    const isVideo = el.tagName === "VIDEO";
+    if (!pin && !(isVideo && !el.autoplay)) continue;
+    scrollMedia.push({
+      kind: isVideo ? "video" : "canvas",
+      selector: cssPath(el),
+      src: isVideo ? el.currentSrc || el.querySelector("source")?.src || null : null,
+      autoplay: isVideo ? el.autoplay : null,
+      pinned: !!pin,
+      trackHeightScreens: trackH ? +(trackH / innerHeight).toFixed(1) : null,
+      rect: rectOf(el),
+    });
+  }
   const svgSeen = new Set();
   const svgs = [];
   for (const svg of document.querySelectorAll("svg")) {
@@ -307,7 +336,7 @@ function extractPage(opts) {
     typography,
     sections,
     layers,
-    media: { images, backgrounds, videos, iframes, svgs },
+    media: { images, backgrounds, videos, iframes, svgs, scrollMedia },
     libs,
     smoothScroll,
     links,
