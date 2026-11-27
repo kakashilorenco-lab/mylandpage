@@ -1,0 +1,29 @@
+{
+  "finalists": {
+    "BTC-USD": {
+      "invalidation": "Sustained ETF net inflows or daily close back above prior breakdown levels: short bias invalid. New low with expanding rv_ratio: long fades invalid.",
+      "long_when": "Only mean-reversion longs after flushes: r1h strongly negative, imbalance turning positive, spread normal.",
+      "quality_notes": "Quality 3 requires aligned imbalance + trend_z + calm spread.",
+      "short_when": "Trend-following shorts when trend_z < -1.5 and bounces fade on thinning bid depth.",
+      "symbol": "BTC-USD",
+      "thesis": "Regime trade, not value thesis: risk-off tape (record Nov-2026 ETF outflows, new cycle low ~55.1k on 2026-11-21), neutral funding, rallies driven by short covering."
+    },
+    "ETH-USD": {
+      "invalidation": "ETH/BTC turning up with positive imbalance invalidates shorts.",
+      "long_when": "Same as BTC mean-reversion longs, only if BTC snapshot is not in crisis.",
+      "quality_notes": "Penalise quality when spread_bps > 3 or depth5_usd is thin.",
+      "short_when": "Shorts on breakdown continuation, trend_z < -1.5.",
+      "symbol": "ETH-USD",
+      "thesis": "Higher-beta leg of the same risk-off regime (ETH ~1,670 late Nov 2026); trades as BTC beta."
+    },
+    "HYPE-USD": {
+      "invalidation": "Buyback run-rate falls >40% month-over-month, perp DEX share falls below ~35%, or regulatory action against the venue.",
+      "long_when": "Long only on pullbacks absorbed with positive imbalance, never into unlock dates (Nov 29, Dec 6 2026).",
+      "quality_notes": "Quality 3 only outside unlock windows.",
+      "short_when": "Short on unlock-week weakness with negative imbalance and widening spread.",
+      "symbol": "HYPE-USD",
+      "thesis": "Value accrual is real: ~99% of perp fees fund open-market buybacks (Castle Labs: $77.9M holder buybacks in 30d to 2026-11-24). Discounted ~37% from ~$98 ATH (2026-09-23)."
+    }
+  },
+  "version": 1
+}
